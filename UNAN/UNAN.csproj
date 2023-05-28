@@ -48,6 +48,12 @@
     <Compile Include="Logica\Bases.cs" />
     <Compile Include="Logica\Desencryptacion.cs" />
     <Compile Include="Logica\Encryptacion.cs" />
+    <Compile Include="Presentacion\UCPersonal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentacion\UCPersonal.Designer.cs">
+      <DependentUpon>UCPersonal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Usuarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentacion\UCPersonal.resx">
+      <DependentUpon>UCPersonal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +127,8 @@
   <ItemGroup>
     <None Include="Resources\lupa.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\volver.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

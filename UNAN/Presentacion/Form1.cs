@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using UNAN.Control_Usuario;
 using UNAN.FrmPlanDidactico;
+using UNAN.Presentacion;
 
 namespace UNAN
 {
@@ -39,6 +40,15 @@ namespace UNAN
             plan.Dock = DockStyle.Fill;
             panel6.Controls.Add(plan);
             lblNombre.Text = "Usuarios";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panel6.Controls.Clear();
+            UCPersonal P = new UCPersonal();
+            P.Dock = DockStyle.Fill;
+            panel6.Controls.Add(P);
+            lblNombre.Text = "Personal";
         }
     }
 }
