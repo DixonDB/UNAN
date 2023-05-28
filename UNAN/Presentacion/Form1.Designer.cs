@@ -300,7 +300,7 @@ namespace UNAN
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(284, 131);
             this.button5.TabIndex = 16;
-            this.button5.Text = "Pre-Planilla";
+            this.button5.Text = "Carreras";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // panel14

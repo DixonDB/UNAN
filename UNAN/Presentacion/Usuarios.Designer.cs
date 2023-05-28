@@ -286,6 +286,7 @@
             this.btnvolver.TabIndex = 635;
             this.btnvolver.Text = "Volver";
             this.btnvolver.UseVisualStyleBackColor = true;
+            this.btnvolver.Click += new System.EventHandler(this.btnvolver_Click);
             // 
             // lblanuncioIcono
             // 

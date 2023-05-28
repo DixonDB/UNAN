@@ -90,5 +90,13 @@ namespace UNAN.Control_Usuario
                 lblanuncioIcono.Visible = false;
             }
         }
+
+        private void btnvolver_Click(object sender, EventArgs e)
+        {
+            panelRegistro.Visible = false;
+            lblanuncioIcono.Visible = false;
+            datalistadoUsuarios.Visible = true;
+            panelRegistro.Visible=false;
+        }
     }
 }
