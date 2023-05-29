@@ -49,18 +49,18 @@
     <Compile Include="Logica\Bases.cs" />
     <Compile Include="Logica\Desencryptacion.cs" />
     <Compile Include="Logica\Encryptacion.cs" />
-    <Compile Include="Logica\LPersonal.cs" />
+    <Compile Include="Logica\LProfesores.cs" />
     <Compile Include="Presentacion\FrmCarrera.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\FrmCarrera.Designer.cs">
       <DependentUpon>FrmCarrera.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\UCPersonal.cs">
+    <Compile Include="Presentacion\UCProfesores.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Presentacion\UCPersonal.Designer.cs">
-      <DependentUpon>UCPersonal.cs</DependentUpon>
+      <DependentUpon>UCProfesores.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Usuarios.cs">
       <SubType>UserControl</SubType>
@@ -86,7 +86,7 @@
       <DependentUpon>FrmCarrera.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\UCPersonal.resx">
-      <DependentUpon>UCPersonal.cs</DependentUpon>
+      <DependentUpon>UCProfesores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
