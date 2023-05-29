@@ -83,6 +83,16 @@ namespace UNAN.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap addC {
+            get {
+                object obj = ResourceManager.GetObject("addC", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Logo-removebg-preview", resourceCulture);
