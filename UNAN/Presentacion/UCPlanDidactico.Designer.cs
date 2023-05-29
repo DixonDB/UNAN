@@ -79,7 +79,7 @@
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnSubirPlan = new System.Windows.Forms.Button();
             this.btnSubir = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCarrera = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.GBDetalles.SuspendLayout();
             this.gbDatos.SuspendLayout();
@@ -119,7 +119,7 @@
             // GBDetalles
             // 
             this.GBDetalles.BackColor = System.Drawing.Color.White;
-            this.GBDetalles.Controls.Add(this.button1);
+            this.GBDetalles.Controls.Add(this.btnCarrera);
             this.GBDetalles.Controls.Add(this.cbCarrera);
             this.GBDetalles.Controls.Add(this.label17);
             this.GBDetalles.Controls.Add(this.cbSemestre);
@@ -671,15 +671,16 @@
             this.btnSubir.UseVisualStyleBackColor = false;
             this.btnSubir.Click += new System.EventHandler(this.btnSubir_Click);
             // 
-            // button1
+            // btnCarrera
             // 
-            this.button1.BackgroundImage = global::UNAN.Properties.Resources.addC;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(1043, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(41, 44);
-            this.button1.TabIndex = 8;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCarrera.BackgroundImage = global::UNAN.Properties.Resources.addC;
+            this.btnCarrera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCarrera.Location = new System.Drawing.Point(1043, 14);
+            this.btnCarrera.Name = "btnCarrera";
+            this.btnCarrera.Size = new System.Drawing.Size(41, 44);
+            this.btnCarrera.TabIndex = 8;
+            this.btnCarrera.UseVisualStyleBackColor = true;
+            this.btnCarrera.Click += new System.EventHandler(this.btnCarrera_Click);
             // 
             // UCPlanDidactico
             // 
@@ -755,6 +756,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCarrera;
     }
 }
