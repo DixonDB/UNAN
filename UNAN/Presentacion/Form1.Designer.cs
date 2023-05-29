@@ -364,13 +364,13 @@ namespace UNAN
             // 
             this.button5.Dock = System.Windows.Forms.DockStyle.Top;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Image = global::UNAN.Properties.Resources.classroom;
+            this.button5.Image = global::UNAN.Properties.Resources.Asistencia;
             this.button5.Location = new System.Drawing.Point(8, 365);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(142, 68);
             this.button5.TabIndex = 16;
-            this.button5.Text = "Carreras";
+            this.button5.Text = "Asistencia";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button5.UseVisualStyleBackColor = true;
             // 
