@@ -32,6 +32,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.GBDetalles = new System.Windows.Forms.GroupBox();
+            this.btnCarrera = new System.Windows.Forms.Button();
             this.cbCarrera = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.cbSemestre = new System.Windows.Forms.ComboBox();
@@ -46,6 +47,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.gbDatos = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnInsertar = new System.Windows.Forms.Button();
+            this.btnSubirPlan = new System.Windows.Forms.Button();
+            this.btnSubir = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.txtPorcentaje = new System.Windows.Forms.TextBox();
             this.dtFechaInico = new System.Windows.Forms.DateTimePicker();
@@ -67,24 +71,20 @@
             this.txtSemInicio = new System.Windows.Forms.TextBox();
             this.txtSemFin = new System.Windows.Forms.TextBox();
             this.dtPlan = new System.Windows.Forms.DataGridView();
-            this.fInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SIncio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Objetivos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contenidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstEnsApr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FormEva = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstrEva = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Porcentaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnInsertar = new System.Windows.Forms.Button();
-            this.btnSubirPlan = new System.Windows.Forms.Button();
-            this.btnSubir = new System.Windows.Forms.Button();
-            this.btnCarrera = new System.Windows.Forms.Button();
+            this.PCargarPlan = new System.Windows.Forms.Panel();
+            this.btnCargar = new System.Windows.Forms.Button();
+            this.cboHojas = new System.Windows.Forms.ComboBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtRuta = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.btnCerrarP = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.GBDetalles.SuspendLayout();
             this.gbDatos.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtPlan)).BeginInit();
+            this.PCargarPlan.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -139,6 +139,17 @@
             this.GBDetalles.Size = new System.Drawing.Size(1137, 110);
             this.GBDetalles.TabIndex = 1;
             this.GBDetalles.TabStop = false;
+            // 
+            // btnCarrera
+            // 
+            this.btnCarrera.BackgroundImage = global::UNAN.Properties.Resources.addC;
+            this.btnCarrera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCarrera.Location = new System.Drawing.Point(1043, 14);
+            this.btnCarrera.Name = "btnCarrera";
+            this.btnCarrera.Size = new System.Drawing.Size(41, 44);
+            this.btnCarrera.TabIndex = 8;
+            this.btnCarrera.UseVisualStyleBackColor = true;
+            this.btnCarrera.Click += new System.EventHandler(this.btnCarrera_Click);
             // 
             // cbCarrera
             // 
@@ -289,6 +300,7 @@
             // gbDatos
             // 
             this.gbDatos.BackColor = System.Drawing.Color.White;
+            this.gbDatos.Controls.Add(this.PCargarPlan);
             this.gbDatos.Controls.Add(this.flowLayoutPanel1);
             this.gbDatos.Controls.Add(this.label14);
             this.gbDatos.Controls.Add(this.txtPorcentaje);
@@ -328,6 +340,55 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(567, 50);
             this.flowLayoutPanel1.TabIndex = 6;
+            // 
+            // btnInsertar
+            // 
+            this.btnInsertar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnInsertar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInsertar.FlatAppearance.BorderSize = 0;
+            this.btnInsertar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsertar.ForeColor = System.Drawing.Color.Black;
+            this.btnInsertar.Image = global::UNAN.Properties.Resources.Add_32x;
+            this.btnInsertar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInsertar.Location = new System.Drawing.Point(3, 3);
+            this.btnInsertar.Name = "btnInsertar";
+            this.btnInsertar.Size = new System.Drawing.Size(121, 39);
+            this.btnInsertar.TabIndex = 5;
+            this.btnInsertar.Text = "Insertar";
+            this.btnInsertar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInsertar.UseVisualStyleBackColor = false;
+            // 
+            // btnSubirPlan
+            // 
+            this.btnSubirPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSubirPlan.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubirPlan.ForeColor = System.Drawing.Color.Black;
+            this.btnSubirPlan.Image = global::UNAN.Properties.Resources.save32px;
+            this.btnSubirPlan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubirPlan.Location = new System.Drawing.Point(130, 3);
+            this.btnSubirPlan.Name = "btnSubirPlan";
+            this.btnSubirPlan.Size = new System.Drawing.Size(178, 39);
+            this.btnSubirPlan.TabIndex = 6;
+            this.btnSubirPlan.Text = "Guardar Plan Didáctico";
+            this.btnSubirPlan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSubirPlan.UseVisualStyleBackColor = false;
+            // 
+            // btnSubir
+            // 
+            this.btnSubir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSubir.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubir.ForeColor = System.Drawing.Color.Black;
+            this.btnSubir.Image = global::UNAN.Properties.Resources.up_32px;
+            this.btnSubir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubir.Location = new System.Drawing.Point(314, 3);
+            this.btnSubir.Name = "btnSubir";
+            this.btnSubir.Size = new System.Drawing.Size(226, 39);
+            this.btnSubir.TabIndex = 5;
+            this.btnSubir.Text = "Subir Plan Didáctico";
+            this.btnSubir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSubir.UseVisualStyleBackColor = false;
+            this.btnSubir.Click += new System.EventHandler(this.btnSubir_Click);
             // 
             // label14
             // 
@@ -534,153 +595,107 @@
             // 
             // dtPlan
             // 
-            this.dtPlan.AllowUserToAddRows = false;
-            this.dtPlan.AllowUserToDeleteRows = false;
+            this.dtPlan.AllowUserToOrderColumns = true;
             this.dtPlan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtPlan.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtPlan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtPlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fInicio,
-            this.SIncio,
-            this.FFin,
-            this.Objetivos,
-            this.Contenidos,
-            this.EstEnsApr,
-            this.FormEva,
-            this.EstrEva,
-            this.Porcentaje});
             this.dtPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtPlan.Location = new System.Drawing.Point(0, 451);
             this.dtPlan.Name = "dtPlan";
-            this.dtPlan.ReadOnly = true;
             this.dtPlan.RowHeadersVisible = false;
             this.dtPlan.RowHeadersWidth = 82;
             this.dtPlan.Size = new System.Drawing.Size(1137, 472);
             this.dtPlan.TabIndex = 3;
             // 
-            // fInicio
+            // PCargarPlan
             // 
-            this.fInicio.HeaderText = "FInicio";
-            this.fInicio.MinimumWidth = 10;
-            this.fInicio.Name = "fInicio";
-            this.fInicio.ReadOnly = true;
+            this.PCargarPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.PCargarPlan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PCargarPlan.Controls.Add(this.btnCerrarP);
+            this.PCargarPlan.Controls.Add(this.btnCargar);
+            this.PCargarPlan.Controls.Add(this.cboHojas);
+            this.PCargarPlan.Controls.Add(this.btnBuscar);
+            this.PCargarPlan.Controls.Add(this.txtRuta);
+            this.PCargarPlan.Controls.Add(this.label1);
+            this.PCargarPlan.Controls.Add(this.label18);
+            this.PCargarPlan.Location = new System.Drawing.Point(969, 238);
+            this.PCargarPlan.Name = "PCargarPlan";
+            this.PCargarPlan.Size = new System.Drawing.Size(68, 48);
+            this.PCargarPlan.TabIndex = 7;
+            this.PCargarPlan.Visible = false;
             // 
-            // SIncio
+            // btnCargar
             // 
-            this.SIncio.HeaderText = "SemanaI";
-            this.SIncio.MinimumWidth = 10;
-            this.SIncio.Name = "SIncio";
-            this.SIncio.ReadOnly = true;
+            this.btnCargar.Enabled = false;
+            this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargar.Location = new System.Drawing.Point(412, 84);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(75, 30);
+            this.btnCargar.TabIndex = 17;
+            this.btnCargar.Text = "Cargar";
+            this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
-            // FFin
+            // cboHojas
             // 
-            this.FFin.HeaderText = "FFin";
-            this.FFin.MinimumWidth = 10;
-            this.FFin.Name = "FFin";
-            this.FFin.ReadOnly = true;
+            this.cboHojas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboHojas.FormattingEnabled = true;
+            this.cboHojas.Location = new System.Drawing.Point(188, 86);
+            this.cboHojas.Name = "cboHojas";
+            this.cboHojas.Size = new System.Drawing.Size(218, 28);
+            this.cboHojas.TabIndex = 16;
             // 
-            // Objetivos
+            // btnBuscar
             // 
-            this.Objetivos.HeaderText = "Objetivos";
-            this.Objetivos.MinimumWidth = 10;
-            this.Objetivos.Name = "Objetivos";
-            this.Objetivos.ReadOnly = true;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(307, 22);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(58, 29);
+            this.btnBuscar.TabIndex = 15;
+            this.btnBuscar.Text = "...";
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // Contenidos
+            // txtRuta
             // 
-            this.Contenidos.HeaderText = "Contenidos";
-            this.Contenidos.MinimumWidth = 10;
-            this.Contenidos.Name = "Contenidos";
-            this.Contenidos.ReadOnly = true;
+            this.txtRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRuta.Location = new System.Drawing.Point(71, 25);
+            this.txtRuta.Name = "txtRuta";
+            this.txtRuta.Size = new System.Drawing.Size(217, 26);
+            this.txtRuta.TabIndex = 14;
             // 
-            // EstEnsApr
+            // label1
             // 
-            this.EstEnsApr.HeaderText = "EstEnsApr";
-            this.EstEnsApr.MinimumWidth = 10;
-            this.EstEnsApr.Name = "EstEnsApr";
-            this.EstEnsApr.ReadOnly = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 84);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(158, 20);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Hoja Encontradas:";
             // 
-            // FormEva
+            // label18
             // 
-            this.FormEva.HeaderText = "FormEva";
-            this.FormEva.MinimumWidth = 10;
-            this.FormEva.Name = "FormEva";
-            this.FormEva.ReadOnly = true;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(12, 25);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(53, 20);
+            this.label18.TabIndex = 13;
+            this.label18.Text = "Ruta:";
             // 
-            // EstrEva
+            // btnCerrarP
             // 
-            this.EstrEva.HeaderText = "EstrEva";
-            this.EstrEva.MinimumWidth = 10;
-            this.EstrEva.Name = "EstrEva";
-            this.EstrEva.ReadOnly = true;
-            // 
-            // Porcentaje
-            // 
-            this.Porcentaje.HeaderText = "%";
-            this.Porcentaje.MinimumWidth = 10;
-            this.Porcentaje.Name = "Porcentaje";
-            this.Porcentaje.ReadOnly = true;
-            // 
-            // btnInsertar
-            // 
-            this.btnInsertar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnInsertar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInsertar.FlatAppearance.BorderSize = 0;
-            this.btnInsertar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertar.ForeColor = System.Drawing.Color.Black;
-            this.btnInsertar.Image = global::UNAN.Properties.Resources.Add_32x;
-            this.btnInsertar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInsertar.Location = new System.Drawing.Point(3, 3);
-            this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(121, 39);
-            this.btnInsertar.TabIndex = 5;
-            this.btnInsertar.Text = "Insertar";
-            this.btnInsertar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInsertar.UseVisualStyleBackColor = false;
-            // 
-            // btnSubirPlan
-            // 
-            this.btnSubirPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSubirPlan.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubirPlan.ForeColor = System.Drawing.Color.Black;
-            this.btnSubirPlan.Image = global::UNAN.Properties.Resources.save32px;
-            this.btnSubirPlan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubirPlan.Location = new System.Drawing.Point(130, 3);
-            this.btnSubirPlan.Name = "btnSubirPlan";
-            this.btnSubirPlan.Size = new System.Drawing.Size(178, 39);
-            this.btnSubirPlan.TabIndex = 6;
-            this.btnSubirPlan.Text = "Guardar Plan Didáctico";
-            this.btnSubirPlan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSubirPlan.UseVisualStyleBackColor = false;
-            // 
-            // btnSubir
-            // 
-            this.btnSubir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSubir.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubir.ForeColor = System.Drawing.Color.Black;
-            this.btnSubir.Image = global::UNAN.Properties.Resources.up_32px;
-            this.btnSubir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubir.Location = new System.Drawing.Point(314, 3);
-            this.btnSubir.Name = "btnSubir";
-            this.btnSubir.Size = new System.Drawing.Size(226, 39);
-            this.btnSubir.TabIndex = 5;
-            this.btnSubir.Text = "Subir Plan Didáctico";
-            this.btnSubir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSubir.UseVisualStyleBackColor = false;
-            this.btnSubir.Click += new System.EventHandler(this.btnSubir_Click);
-            // 
-            // btnCarrera
-            // 
-            this.btnCarrera.BackgroundImage = global::UNAN.Properties.Resources.addC;
-            this.btnCarrera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCarrera.Location = new System.Drawing.Point(1043, 14);
-            this.btnCarrera.Name = "btnCarrera";
-            this.btnCarrera.Size = new System.Drawing.Size(41, 44);
-            this.btnCarrera.TabIndex = 8;
-            this.btnCarrera.UseVisualStyleBackColor = true;
-            this.btnCarrera.Click += new System.EventHandler(this.btnCarrera_Click);
+            this.btnCerrarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarP.Location = new System.Drawing.Point(275, 121);
+            this.btnCerrarP.Name = "btnCerrarP";
+            this.btnCerrarP.Size = new System.Drawing.Size(75, 30);
+            this.btnCerrarP.TabIndex = 18;
+            this.btnCerrarP.Text = "Cerrar";
+            this.btnCerrarP.UseVisualStyleBackColor = true;
+            this.btnCerrarP.Click += new System.EventHandler(this.btnCerrarP_Click);
             // 
             // UCPlanDidactico
             // 
@@ -692,6 +707,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "UCPlanDidactico";
             this.Size = new System.Drawing.Size(1137, 923);
+            this.Load += new System.EventHandler(this.UCPlanDidactico_Load);
             this.panel1.ResumeLayout(false);
             this.GBDetalles.ResumeLayout(false);
             this.GBDetalles.PerformLayout();
@@ -699,6 +715,8 @@
             this.gbDatos.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtPlan)).EndInit();
+            this.PCargarPlan.ResumeLayout(false);
+            this.PCargarPlan.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -739,16 +757,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtSemInicio;
         private System.Windows.Forms.Button btnInsertar;
-        private System.Windows.Forms.DataGridView dtPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fInicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SIncio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FFin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Objetivos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Contenidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstEnsApr;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FormEva;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstrEva;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Porcentaje;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnSubir;
         private System.Windows.Forms.Button btnSubirPlan;
@@ -757,5 +765,14 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnCarrera;
+        public System.Windows.Forms.DataGridView dtPlan;
+        private System.Windows.Forms.Panel PCargarPlan;
+        private System.Windows.Forms.Button btnCargar;
+        private System.Windows.Forms.ComboBox cboHojas;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtRuta;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button btnCerrarP;
     }
 }
