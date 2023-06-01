@@ -20,11 +20,11 @@ namespace UNAN
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {  
-            panel6.Controls.Clear();
+        {
+            panelPadre.Controls.Clear();
             UCPlanDidactico plan = new UCPlanDidactico();
             plan.Dock = DockStyle.Fill;
-            panel6.Controls.Add(plan);
+            panelPadre.Controls.Add(plan);
             lblNombre.Text = "Plan Didactico Semestral";
         }
 
@@ -35,20 +35,30 @@ namespace UNAN
 
         private void button3_Click(object sender, EventArgs e)
         {
-            panel6.Controls.Clear();
+            panelPadre.Controls.Clear();
             Usuarios plan = new Usuarios();
             plan.Dock = DockStyle.Fill;
-            panel6.Controls.Add(plan);
+            panelPadre.Controls.Add(plan);
             lblNombre.Text = "Usuarios";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            panel6.Controls.Clear();
+            panelPadre.Controls.Clear();
             UCProfesores P = new UCProfesores();
             P.Dock = DockStyle.Fill;
-            panel6.Controls.Add(P);
+            panelPadre.Controls.Add(P);
             lblNombre.Text = "Personal";
+        }
+
+        private void reloj_Tick(object sender, EventArgs e)
+        {
+           lblReloj.Text = DateTime.Now.ToString("hh:mm:ss");
+        }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+            reloj.Enabled = true;
         }
     }
 }
