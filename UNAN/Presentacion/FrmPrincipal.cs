@@ -45,7 +45,7 @@ namespace UNAN
         private void button1_Click(object sender, EventArgs e)
         {
             panelPadre.Controls.Clear();
-            UCProfesores P = new UCProfesores();
+            UCProfes P = new UCProfes();
             P.Dock = DockStyle.Fill;
             panelPadre.Controls.Add(P);
             lblNombre.Text = "Personal";

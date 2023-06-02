@@ -10,9 +10,9 @@ using UNAN.Logica;
 using UNAN.Datos;
 namespace UNAN.Presentacion
 {
-    public partial class UCProfesores : UserControl
+    public partial class UCProfes : UserControl
     {
-        public UCProfesores()
+        public UCProfes()
         {
             InitializeComponent();
         }
@@ -23,10 +23,6 @@ namespace UNAN.Presentacion
         private int items_por_pagina = 10;
         string Estado;
         int totalPaginas;
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -45,13 +41,14 @@ namespace UNAN.Presentacion
             txtCorreo.Clear();
             txtCorreo.Clear();
         }
-        private void DiseñarDtvPersonal()
+        private void DiseñarDtvProfes()
         {
             Bases.DiseñoDtv(ref dataPersonal);
-            Bases.DiseñoDtvEliminar(ref dataPersonal);
+            //Bases.DiseñoDtvEliminar(ref dataPersonal);
             PanelPaginado.Visible = true;
+            dataPersonal.Columns[0].Visible = false;
         }
-        private void InsertarPersonal()
+        private void InsertarProfesores()
         {
             LProfesores parametros = new LProfesores();
             DProfesores funcion = new DProfesores();
@@ -116,13 +113,28 @@ namespace UNAN.Presentacion
                     {
                         if (!string.IsNullOrEmpty(txtIdentificacion.Text))
                         {
-                            InsertarPersonal();
+                            InsertarProfesores();
+                            MostrarProfessores();
                         }
                     }
                 }
 
 
             }
+        }
+        private void MostrarProfessores()
+        {
+            DataTable dt = new DataTable();
+            DProfesores funcion = new DProfesores();
+            funcion.MostrarProfesores(ref dt, desde, hasta);
+            dataPersonal.DataSource = dt;
+            DiseñarDtvProfes();
+        }
+
+        private void UCProfesores_Load(object sender, EventArgs e)
+        {
+            ReiniciarPaginado();
+            MostrarProfessores();
         }
     }
 }

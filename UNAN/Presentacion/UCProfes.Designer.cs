@@ -1,6 +1,6 @@
 ﻿namespace UNAN.Presentacion
 {
-    partial class UCProfesores
+    partial class UCProfes
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -130,7 +130,6 @@
             // 
             this.dataPersonal.AllowUserToAddRows = false;
             this.dataPersonal.AllowUserToDeleteRows = false;
-            this.dataPersonal.AllowUserToOrderColumns = true;
             this.dataPersonal.AllowUserToResizeRows = false;
             this.dataPersonal.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataPersonal.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -138,9 +137,12 @@
             this.dataPersonal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataPersonal.Location = new System.Drawing.Point(0, 102);
             this.dataPersonal.Name = "dataPersonal";
+            this.dataPersonal.ReadOnly = true;
             this.dataPersonal.RowHeadersWidth = 82;
             this.dataPersonal.RowTemplate.Height = 33;
             this.dataPersonal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataPersonal.ShowCellToolTips = false;
+            this.dataPersonal.ShowEditingIcon = false;
             this.dataPersonal.Size = new System.Drawing.Size(1937, 801);
             this.dataPersonal.TabIndex = 1;
             // 
@@ -392,7 +394,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(508, 1);
             this.panel6.TabIndex = 9;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // txtCelular
             // 
@@ -476,7 +477,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre y apellidos:";
             // 
-            // UCProfesores
+            // UCProfes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -484,8 +485,9 @@
             this.Controls.Add(this.dataPersonal);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "UCProfesores";
+            this.Name = "UCProfes";
             this.Size = new System.Drawing.Size(1937, 1056);
+            this.Load += new System.EventHandler(this.UCProfesores_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
