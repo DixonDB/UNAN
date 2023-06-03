@@ -34,5 +34,19 @@ namespace UNAN.Datos
 				Conexion.cerrar();
 			}
 		}
+
+		public void MostrarCarrera(ComboBox combo)
+		{
+			Conexion.abrir();
+			SqlCommand da = new SqlCommand("MostrarCarrera", Conexion.conectar);
+			da.CommandType= CommandType.StoredProcedure;
+			SqlDataAdapter cb = new SqlDataAdapter(da);
+			DataTable dt = new DataTable();
+			cb.Fill(dt);
+			combo.ValueMember = "IdCarreras";
+			combo.DisplayMember = "NombreC";
+			combo.DataSource = dt;
+
+        }
     }
 }

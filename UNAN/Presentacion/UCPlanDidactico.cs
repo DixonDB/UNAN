@@ -4,6 +4,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using UNAN.Datos;
 using UNAN.Presentacion;
 
 namespace UNAN.FrmPlanDidactico
@@ -12,6 +13,7 @@ namespace UNAN.FrmPlanDidactico
     {
         //Un DataSet es un objeto que almacena n número de DataTables, estas tablas puedes estar conectadas dentro del dataset.
         private DataSet dtsTablas = new DataSet();
+        DCarreras carreras = new DCarreras();
         public UCPlanDidactico()
         {
             InitializeComponent();
@@ -46,7 +48,7 @@ namespace UNAN.FrmPlanDidactico
 
         private void UCPlanDidactico_Load(object sender, EventArgs e)
         {
-            
+            carreras.MostrarCarrera(cbCarrera);
         }
 
         public void DiseñoInicial()
