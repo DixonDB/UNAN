@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using UNAN.Logica;
+
+namespace UNAN.Datos
+{
+    public class DCarreras
+    {
+		public bool InsertarCarrera(LCarreras parametros)
+		{
+			try
+			{
+				Conexion.abrir();
+				SqlCommand cmd = new SqlCommand("Insertar_Carrera", Conexion.conectar);
+				cmd.CommandType = CommandType.StoredProcedure;
+				cmd.Parameters.AddWithValue("@NombreC", parametros.NombreC);
+				cmd.Parameters.AddWithValue("@CodigoC", parametros.CodigoC);
+				cmd.Parameters.AddWithValue("@IdModalidad", parametros.IdModalidad);
+				cmd.ExecuteNonQuery();
+				return true;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+				return false;
+			}
+			finally
+			{
+				Conexion.cerrar();
+			}
+		}
+    }
+}

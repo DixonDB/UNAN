@@ -32,7 +32,6 @@ namespace UNAN
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panelPadre = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -52,6 +51,8 @@ namespace UNAN
             this.button1 = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panelPadre = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lblUser = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@ namespace UNAN
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.reloj = new System.Windows.Forms.Timer(this.components);
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -79,9 +79,9 @@ namespace UNAN
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2357, 1424);
+            this.panel1.Size = new System.Drawing.Size(693, 410);
             this.panel1.TabIndex = 2;
             // 
             // panel6
@@ -90,28 +90,20 @@ namespace UNAN
             this.panel6.Controls.Add(this.panel4);
             this.panel6.Controls.Add(this.panelPadre);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 144);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4);
+            this.panel6.Location = new System.Drawing.Point(0, 75);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(2357, 1280);
+            this.panel6.Size = new System.Drawing.Size(693, 335);
             this.panel6.TabIndex = 2;
-            // 
-            // panelPadre
-            // 
-            this.panelPadre.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPadre.Location = new System.Drawing.Point(0, 0);
-            this.panelPadre.Name = "panelPadre";
-            this.panelPadre.Size = new System.Drawing.Size(2357, 1280);
-            this.panelPadre.TabIndex = 3;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 1136);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(0, 261);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(2357, 124);
+            this.panel2.Size = new System.Drawing.Size(693, 64);
             this.panel2.TabIndex = 2;
             // 
             // panel5
@@ -135,19 +127,19 @@ namespace UNAN
             this.panel5.Controls.Add(this.panel9);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(2357, 124);
+            this.panel5.Size = new System.Drawing.Size(693, 64);
             this.panel5.TabIndex = 2;
             // 
             // panel10
             // 
             this.panel10.Controls.Add(this.lblReloj);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(2127, 10);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4);
+            this.panel10.Location = new System.Drawing.Point(1063, 5);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(230, 114);
+            this.panel10.Size = new System.Drawing.Size(0, 59);
             this.panel10.TabIndex = 23;
             // 
             // lblReloj
@@ -159,10 +151,9 @@ namespace UNAN
             this.lblReloj.BackColor = System.Drawing.Color.Transparent;
             this.lblReloj.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReloj.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblReloj.Location = new System.Drawing.Point(14, 27);
-            this.lblReloj.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblReloj.Location = new System.Drawing.Point(7, 14);
             this.lblReloj.Name = "lblReloj";
-            this.lblReloj.Size = new System.Drawing.Size(180, 56);
+            this.lblReloj.Size = new System.Drawing.Size(90, 28);
             this.lblReloj.TabIndex = 23;
             this.lblReloj.Text = "------";
             // 
@@ -171,10 +162,10 @@ namespace UNAN
             this.button7.Dock = System.Windows.Forms.DockStyle.Left;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.Image = global::UNAN.Properties.Resources.Atras;
-            this.button7.Location = new System.Drawing.Point(1843, 10);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
+            this.button7.Location = new System.Drawing.Point(921, 5);
+            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(284, 114);
+            this.button7.Size = new System.Drawing.Size(142, 59);
             this.button7.TabIndex = 20;
             this.button7.Text = "Salir";
             this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -184,10 +175,10 @@ namespace UNAN
             // panel16
             // 
             this.panel16.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel16.Location = new System.Drawing.Point(1826, 10);
-            this.panel16.Margin = new System.Windows.Forms.Padding(4);
+            this.panel16.Location = new System.Drawing.Point(913, 5);
+            this.panel16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(17, 114);
+            this.panel16.Size = new System.Drawing.Size(8, 59);
             this.panel16.TabIndex = 19;
             // 
             // button6
@@ -195,10 +186,10 @@ namespace UNAN
             this.button6.Dock = System.Windows.Forms.DockStyle.Left;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Image = global::UNAN.Properties.Resources.data_backup;
-            this.button6.Location = new System.Drawing.Point(1542, 10);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
+            this.button6.Location = new System.Drawing.Point(771, 5);
+            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(284, 114);
+            this.button6.Size = new System.Drawing.Size(142, 59);
             this.button6.TabIndex = 18;
             this.button6.Text = "Restaurar BD";
             this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -207,10 +198,10 @@ namespace UNAN
             // panel15
             // 
             this.panel15.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel15.Location = new System.Drawing.Point(1526, 10);
-            this.panel15.Margin = new System.Windows.Forms.Padding(4);
+            this.panel15.Location = new System.Drawing.Point(763, 5);
+            this.panel15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(16, 114);
+            this.panel15.Size = new System.Drawing.Size(8, 59);
             this.panel15.TabIndex = 17;
             // 
             // button5
@@ -218,10 +209,10 @@ namespace UNAN
             this.button5.Dock = System.Windows.Forms.DockStyle.Left;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Image = global::UNAN.Properties.Resources.Asistencia;
-            this.button5.Location = new System.Drawing.Point(1242, 10);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Location = new System.Drawing.Point(621, 5);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(284, 114);
+            this.button5.Size = new System.Drawing.Size(142, 59);
             this.button5.TabIndex = 16;
             this.button5.Text = "Asistencia";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -230,10 +221,10 @@ namespace UNAN
             // panel14
             // 
             this.panel14.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel14.Location = new System.Drawing.Point(1220, 10);
-            this.panel14.Margin = new System.Windows.Forms.Padding(4);
+            this.panel14.Location = new System.Drawing.Point(610, 5);
+            this.panel14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(22, 114);
+            this.panel14.Size = new System.Drawing.Size(11, 59);
             this.panel14.TabIndex = 15;
             // 
             // button4
@@ -241,10 +232,10 @@ namespace UNAN
             this.button4.Dock = System.Windows.Forms.DockStyle.Left;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Image = global::UNAN.Properties.Resources.Avance;
-            this.button4.Location = new System.Drawing.Point(936, 10);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Location = new System.Drawing.Point(468, 5);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(284, 114);
+            this.button4.Size = new System.Drawing.Size(142, 59);
             this.button4.TabIndex = 14;
             this.button4.Text = "Avance Programatico";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -253,10 +244,10 @@ namespace UNAN
             // panel13
             // 
             this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel13.Location = new System.Drawing.Point(917, 10);
-            this.panel13.Margin = new System.Windows.Forms.Padding(4);
+            this.panel13.Location = new System.Drawing.Point(458, 5);
+            this.panel13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(19, 114);
+            this.panel13.Size = new System.Drawing.Size(10, 59);
             this.panel13.TabIndex = 13;
             // 
             // button3
@@ -264,10 +255,10 @@ namespace UNAN
             this.button3.Dock = System.Windows.Forms.DockStyle.Left;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Image = global::UNAN.Properties.Resources.user_30px;
-            this.button3.Location = new System.Drawing.Point(633, 10);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Location = new System.Drawing.Point(316, 5);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(284, 114);
+            this.button3.Size = new System.Drawing.Size(142, 59);
             this.button3.TabIndex = 12;
             this.button3.Text = "Usuarios";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -277,10 +268,10 @@ namespace UNAN
             // panel12
             // 
             this.panel12.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel12.Location = new System.Drawing.Point(605, 10);
-            this.panel12.Margin = new System.Windows.Forms.Padding(4);
+            this.panel12.Location = new System.Drawing.Point(302, 5);
+            this.panel12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(28, 114);
+            this.panel12.Size = new System.Drawing.Size(14, 59);
             this.panel12.TabIndex = 11;
             // 
             // button2
@@ -288,10 +279,10 @@ namespace UNAN
             this.button2.Dock = System.Windows.Forms.DockStyle.Left;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = global::UNAN.Properties.Resources.Plan;
-            this.button2.Location = new System.Drawing.Point(321, 10);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(160, 5);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(284, 114);
+            this.button2.Size = new System.Drawing.Size(142, 59);
             this.button2.TabIndex = 10;
             this.button2.Text = "Plan de estudios";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -301,10 +292,10 @@ namespace UNAN
             // panel11
             // 
             this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel11.Location = new System.Drawing.Point(300, 10);
-            this.panel11.Margin = new System.Windows.Forms.Padding(4);
+            this.panel11.Location = new System.Drawing.Point(150, 5);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(21, 114);
+            this.panel11.Size = new System.Drawing.Size(10, 59);
             this.panel11.TabIndex = 9;
             // 
             // button1
@@ -312,10 +303,10 @@ namespace UNAN
             this.button1.Dock = System.Windows.Forms.DockStyle.Left;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::UNAN.Properties.Resources.personal;
-            this.button1.Location = new System.Drawing.Point(16, 10);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(8, 5);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(284, 114);
+            this.button1.Size = new System.Drawing.Size(142, 59);
             this.button1.TabIndex = 8;
             this.button1.Text = "Profesores";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -325,20 +316,38 @@ namespace UNAN
             // panel8
             // 
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(16, 0);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4);
+            this.panel8.Location = new System.Drawing.Point(8, 0);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(2341, 10);
+            this.panel8.Size = new System.Drawing.Size(685, 5);
             this.panel8.TabIndex = 7;
             // 
             // panel9
             // 
             this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(16, 124);
+            this.panel9.Size = new System.Drawing.Size(8, 64);
             this.panel9.TabIndex = 4;
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 325);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(693, 10);
+            this.panel4.TabIndex = 4;
+            // 
+            // panelPadre
+            // 
+            this.panelPadre.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPadre.Location = new System.Drawing.Point(0, 0);
+            this.panelPadre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelPadre.Name = "panelPadre";
+            this.panelPadre.Size = new System.Drawing.Size(693, 335);
+            this.panelPadre.TabIndex = 3;
             // 
             // panel3
             // 
@@ -349,19 +358,19 @@ namespace UNAN
             this.panel3.Controls.Add(this.lblNombre);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(2357, 144);
+            this.panel3.Size = new System.Drawing.Size(693, 75);
             this.panel3.TabIndex = 1;
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.lblUser);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel7.Location = new System.Drawing.Point(195, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4);
+            this.panel7.Location = new System.Drawing.Point(98, 0);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(209, 144);
+            this.panel7.Size = new System.Drawing.Size(104, 75);
             this.panel7.TabIndex = 4;
             // 
             // lblUser
@@ -370,9 +379,9 @@ namespace UNAN
             this.lblUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.Location = new System.Drawing.Point(0, 0);
-            this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(160, 31);
+            this.lblUser.Size = new System.Drawing.Size(88, 17);
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "User Name";
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -382,9 +391,9 @@ namespace UNAN
             this.pbUser.Dock = System.Windows.Forms.DockStyle.Left;
             this.pbUser.Image = global::UNAN.Properties.Resources.usuario;
             this.pbUser.Location = new System.Drawing.Point(0, 0);
-            this.pbUser.Margin = new System.Windows.Forms.Padding(4);
+            this.pbUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbUser.Name = "pbUser";
-            this.pbUser.Size = new System.Drawing.Size(195, 144);
+            this.pbUser.Size = new System.Drawing.Size(98, 75);
             this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbUser.TabIndex = 3;
             this.pbUser.TabStop = false;
@@ -393,10 +402,10 @@ namespace UNAN
             // 
             this.panel18.Controls.Add(this.pictureBox1);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel18.Location = new System.Drawing.Point(2145, 0);
-            this.panel18.Margin = new System.Windows.Forms.Padding(4);
+            this.panel18.Location = new System.Drawing.Point(587, 0);
+            this.panel18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(212, 144);
+            this.panel18.Size = new System.Drawing.Size(106, 75);
             this.panel18.TabIndex = 2;
             // 
             // pictureBox1
@@ -404,9 +413,9 @@ namespace UNAN
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::UNAN.Properties.Resources.Logo_removebg_preview;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(212, 144);
+            this.pictureBox1.Size = new System.Drawing.Size(106, 75);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -415,10 +424,10 @@ namespace UNAN
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Consolas", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(625, 47);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Location = new System.Drawing.Point(312, 24);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(959, 43);
+            this.lblNombre.Size = new System.Drawing.Size(480, 22);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Sistema Control de Asistencia Docentes Horarios";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -427,22 +436,13 @@ namespace UNAN
             // 
             this.reloj.Tick += new System.EventHandler(this.reloj_Tick);
             // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 1260);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(2357, 20);
-            this.panel4.TabIndex = 4;
-            // 
             // frmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2357, 1424);
+            this.ClientSize = new System.Drawing.Size(693, 410);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMenu";
