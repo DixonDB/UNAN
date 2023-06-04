@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using UNAN.Datos;
+using UNAN.FrmPlanDidactico;
 using UNAN.Logica;
 
 namespace UNAN.Presentacion
@@ -66,6 +67,7 @@ namespace UNAN.Presentacion
             parametros.IdModalidad = Convert.ToInt32(cbModalidad.SelectedValue);
             if (funcion.InsertarCarrera(parametros)==true)
             {
+
                 MessageBox.Show("Carrera Insertada con exito", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }

@@ -44,6 +44,7 @@ namespace UNAN.FrmPlanDidactico
         {
             FrmCarrera carrera = new FrmCarrera();
             carrera.ShowDialog();
+            carreras.MostrarCarrera(cbCarrera);
         }
 
         private void UCPlanDidactico_Load(object sender, EventArgs e)
