@@ -46,6 +46,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gbDatos = new System.Windows.Forms.GroupBox();
+            this.PCargarPlan = new System.Windows.Forms.Panel();
+            this.btnCerrarP = new System.Windows.Forms.Button();
+            this.btnCargar = new System.Windows.Forms.Button();
+            this.cboHojas = new System.Windows.Forms.ComboBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtRuta = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnSubirPlan = new System.Windows.Forms.Button();
@@ -71,20 +79,12 @@
             this.txtSemInicio = new System.Windows.Forms.TextBox();
             this.txtSemFin = new System.Windows.Forms.TextBox();
             this.dtPlan = new System.Windows.Forms.DataGridView();
-            this.PCargarPlan = new System.Windows.Forms.Panel();
-            this.btnCargar = new System.Windows.Forms.Button();
-            this.cboHojas = new System.Windows.Forms.ComboBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtRuta = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.btnCerrarP = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.GBDetalles.SuspendLayout();
             this.gbDatos.SuspendLayout();
+            this.PCargarPlan.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtPlan)).BeginInit();
-            this.PCargarPlan.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -154,6 +154,7 @@
             // cbCarrera
             // 
             this.cbCarrera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.cbCarrera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCarrera.FormattingEnabled = true;
             this.cbCarrera.Items.AddRange(new object[] {
             "Primer Año",
@@ -181,6 +182,7 @@
             // cbSemestre
             // 
             this.cbSemestre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.cbSemestre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSemestre.FormattingEnabled = true;
             this.cbSemestre.Items.AddRange(new object[] {
             "l",
@@ -205,6 +207,7 @@
             // cbGrupo
             // 
             this.cbGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.cbGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGrupo.FormattingEnabled = true;
             this.cbGrupo.Items.AddRange(new object[] {
             "Primer Año",
@@ -261,6 +264,7 @@
             // cbAsignaturas
             // 
             this.cbAsignaturas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.cbAsignaturas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAsignaturas.FormattingEnabled = true;
             this.cbAsignaturas.Items.AddRange(new object[] {
             "Estructura l",
@@ -330,6 +334,95 @@
             this.gbDatos.TabIndex = 2;
             this.gbDatos.TabStop = false;
             this.gbDatos.Enter += new System.EventHandler(this.gbDatos_Enter);
+            // 
+            // PCargarPlan
+            // 
+            this.PCargarPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.PCargarPlan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PCargarPlan.Controls.Add(this.btnCerrarP);
+            this.PCargarPlan.Controls.Add(this.btnCargar);
+            this.PCargarPlan.Controls.Add(this.cboHojas);
+            this.PCargarPlan.Controls.Add(this.btnBuscar);
+            this.PCargarPlan.Controls.Add(this.txtRuta);
+            this.PCargarPlan.Controls.Add(this.label1);
+            this.PCargarPlan.Controls.Add(this.label18);
+            this.PCargarPlan.Location = new System.Drawing.Point(969, 238);
+            this.PCargarPlan.Name = "PCargarPlan";
+            this.PCargarPlan.Size = new System.Drawing.Size(68, 48);
+            this.PCargarPlan.TabIndex = 7;
+            this.PCargarPlan.Visible = false;
+            // 
+            // btnCerrarP
+            // 
+            this.btnCerrarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarP.Location = new System.Drawing.Point(275, 121);
+            this.btnCerrarP.Name = "btnCerrarP";
+            this.btnCerrarP.Size = new System.Drawing.Size(75, 30);
+            this.btnCerrarP.TabIndex = 18;
+            this.btnCerrarP.Text = "Cerrar";
+            this.btnCerrarP.UseVisualStyleBackColor = true;
+            this.btnCerrarP.Click += new System.EventHandler(this.btnCerrarP_Click);
+            // 
+            // btnCargar
+            // 
+            this.btnCargar.Enabled = false;
+            this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargar.Location = new System.Drawing.Point(412, 84);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(75, 30);
+            this.btnCargar.TabIndex = 17;
+            this.btnCargar.Text = "Cargar";
+            this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            // 
+            // cboHojas
+            // 
+            this.cboHojas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboHojas.FormattingEnabled = true;
+            this.cboHojas.Location = new System.Drawing.Point(188, 86);
+            this.cboHojas.Name = "cboHojas";
+            this.cboHojas.Size = new System.Drawing.Size(218, 28);
+            this.cboHojas.TabIndex = 16;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(307, 22);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(58, 29);
+            this.btnBuscar.TabIndex = 15;
+            this.btnBuscar.Text = "...";
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtRuta
+            // 
+            this.txtRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRuta.Location = new System.Drawing.Point(71, 25);
+            this.txtRuta.Name = "txtRuta";
+            this.txtRuta.Size = new System.Drawing.Size(217, 26);
+            this.txtRuta.TabIndex = 14;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 84);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(158, 20);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Hoja Encontradas:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(12, 25);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(53, 20);
+            this.label18.TabIndex = 13;
+            this.label18.Text = "Ruta:";
             // 
             // flowLayoutPanel1
             // 
@@ -608,95 +701,6 @@
             this.dtPlan.Size = new System.Drawing.Size(1137, 472);
             this.dtPlan.TabIndex = 3;
             // 
-            // PCargarPlan
-            // 
-            this.PCargarPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.PCargarPlan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PCargarPlan.Controls.Add(this.btnCerrarP);
-            this.PCargarPlan.Controls.Add(this.btnCargar);
-            this.PCargarPlan.Controls.Add(this.cboHojas);
-            this.PCargarPlan.Controls.Add(this.btnBuscar);
-            this.PCargarPlan.Controls.Add(this.txtRuta);
-            this.PCargarPlan.Controls.Add(this.label1);
-            this.PCargarPlan.Controls.Add(this.label18);
-            this.PCargarPlan.Location = new System.Drawing.Point(969, 238);
-            this.PCargarPlan.Name = "PCargarPlan";
-            this.PCargarPlan.Size = new System.Drawing.Size(68, 48);
-            this.PCargarPlan.TabIndex = 7;
-            this.PCargarPlan.Visible = false;
-            // 
-            // btnCargar
-            // 
-            this.btnCargar.Enabled = false;
-            this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargar.Location = new System.Drawing.Point(412, 84);
-            this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(75, 30);
-            this.btnCargar.TabIndex = 17;
-            this.btnCargar.Text = "Cargar";
-            this.btnCargar.UseVisualStyleBackColor = true;
-            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
-            // 
-            // cboHojas
-            // 
-            this.cboHojas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboHojas.FormattingEnabled = true;
-            this.cboHojas.Location = new System.Drawing.Point(188, 86);
-            this.cboHojas.Name = "cboHojas";
-            this.cboHojas.Size = new System.Drawing.Size(218, 28);
-            this.cboHojas.TabIndex = 16;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(307, 22);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(58, 29);
-            this.btnBuscar.TabIndex = 15;
-            this.btnBuscar.Text = "...";
-            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // txtRuta
-            // 
-            this.txtRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRuta.Location = new System.Drawing.Point(71, 25);
-            this.txtRuta.Name = "txtRuta";
-            this.txtRuta.Size = new System.Drawing.Size(217, 26);
-            this.txtRuta.TabIndex = 14;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 84);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 20);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Hoja Encontradas:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(12, 25);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(53, 20);
-            this.label18.TabIndex = 13;
-            this.label18.Text = "Ruta:";
-            // 
-            // btnCerrarP
-            // 
-            this.btnCerrarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarP.Location = new System.Drawing.Point(275, 121);
-            this.btnCerrarP.Name = "btnCerrarP";
-            this.btnCerrarP.Size = new System.Drawing.Size(75, 30);
-            this.btnCerrarP.TabIndex = 18;
-            this.btnCerrarP.Text = "Cerrar";
-            this.btnCerrarP.UseVisualStyleBackColor = true;
-            this.btnCerrarP.Click += new System.EventHandler(this.btnCerrarP_Click);
-            // 
             // UCPlanDidactico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -713,10 +717,10 @@
             this.GBDetalles.PerformLayout();
             this.gbDatos.ResumeLayout(false);
             this.gbDatos.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtPlan)).EndInit();
             this.PCargarPlan.ResumeLayout(false);
             this.PCargarPlan.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtPlan)).EndInit();
             this.ResumeLayout(false);
 
         }
