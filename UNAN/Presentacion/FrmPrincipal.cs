@@ -21,10 +21,10 @@ namespace UNAN
 
         private void button2_Click(object sender, EventArgs e)
         {
-            panelPadre.Controls.Clear();
+            panelpadre.Controls.Clear();
             UCPlanDidactico plan = new UCPlanDidactico();
             plan.Dock = DockStyle.Fill;
-            panelPadre.Controls.Add(plan);
+            panelpadre.Controls.Add(plan);
             lblNombre.Text = "Plan Didactico Semestral";
         }
 
@@ -35,19 +35,19 @@ namespace UNAN
 
         private void button3_Click(object sender, EventArgs e)
         {
-            panelPadre.Controls.Clear();
+            panelpadre.Controls.Clear();
             Usuarios plan = new Usuarios();
             plan.Dock = DockStyle.Fill;
-            panelPadre.Controls.Add(plan);
+            panelpadre.Controls.Add(plan);
             lblNombre.Text = "Usuarios";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            panelPadre.Controls.Clear();
+            panelpadre.Controls.Clear();
             UCProfes P = new UCProfes();
             P.Dock = DockStyle.Fill;
-            panelPadre.Controls.Add(P);
+            panelpadre.Controls.Add(P);
             lblNombre.Text = "Personal";
         }
 

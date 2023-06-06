@@ -46,19 +46,21 @@ namespace UNAN.Presentacion
             Bases.DiseñoDtv(ref dataPersonal);
             //Bases.DiseñoDtvEliminar(ref dataPersonal);
             PanelPaginado.Visible = true;
-            dataPersonal.Columns[0].Visible = false;
+            dataPersonal.Columns[2].Visible = false;
         }
         private void InsertarProfesores()
         {
             LProfesores parametros = new LProfesores();
             DProfesores funcion = new DProfesores();
             parametros.NombreApellido = txtNombreApellidos.Text;
-            parametros.CorreoP= txtCorreo.Text; 
-            parametros.CelularP=int.Parse( txtCelular.Text);
-            parametros.CarnetP= int.Parse(txtIdentificacion.Text);
+            parametros.CorreoP = txtCorreo.Text;
+            parametros.CelularP = int.Parse(txtCelular.Text);
+            parametros.CarnetP = int.Parse(txtIdentificacion.Text);
             if (funcion.InsertarProfesores(parametros) == true)
             {
+                MostrarProfessores();
                 panelRegitroP.Visible = false;
+
             }
         }
         private void ReiniciarPaginado()
@@ -133,8 +135,57 @@ namespace UNAN.Presentacion
 
         private void UCProfesores_Load(object sender, EventArgs e)
         {
-            ReiniciarPaginado();
+            // ReiniciarPaginado();
             MostrarProfessores();
+        }
+
+        private void dataPersonal_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataPersonal.Columns["Eliminar"].Index)
+            {
+                EliminarProfes();
+            }
+            if (e.ColumnIndex == dataPersonal.Columns["Editar"].Index)
+            {
+                Obtenerdatos();
+            }
+        }
+        private void EliminarProfes()
+        {
+            Idpersonal = Convert.ToInt32(dataPersonal.SelectedCells[2].Value);
+            LProfesores parametros = new LProfesores();
+            DProfesores funcion = new DProfesores();
+            parametros.IdProfesores = Idpersonal;
+            if (funcion.EliminarProfesores(parametros) == true)
+            {
+                MostrarProfessores();
+            }
+        }
+        private void Obtenerdatos()
+        {
+            Idpersonal = Convert.ToInt32(dataPersonal.SelectedCells[2].Value);
+            Estado = dataPersonal.SelectedCells[7].Value.ToString();
+            if (Estado == "ELIMINADO")
+            {
+                RestaurarP();
+            }
+            else
+            {
+                txtNombreApellidos.Text = dataPersonal.SelectedCells[3].Value.ToString();
+                txtCorreo.Text= dataPersonal.SelectedCells[4].Value.ToString();
+                txtCelular.Text = dataPersonal.SelectedCells[5].Value.ToString();
+                txtIdentificacion.Text= dataPersonal.SelectedCells[6].Value.ToString();
+                PanelPaginado.Visible = false;
+                panelRegitroP.Visible = true;
+                panelRegitroP.Dock= DockStyle.Fill;
+                btnActualizar.Visible = true;
+                btnGuardar.Visible = false;
+            }
+
+        }
+        private void RestaurarP()
+        {
+
         }
     }
 }

@@ -52,7 +52,6 @@ namespace UNAN
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panelPadre = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lblUser = new System.Windows.Forms.Label();
@@ -61,6 +60,7 @@ namespace UNAN
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.reloj = new System.Windows.Forms.Timer(this.components);
+            this.panelpadre = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -81,26 +81,26 @@ namespace UNAN
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2529, 793);
+            this.panel1.Size = new System.Drawing.Size(2529, 1157);
             this.panel1.TabIndex = 2;
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.panelpadre);
             this.panel6.Controls.Add(this.panel2);
             this.panel6.Controls.Add(this.panel4);
-            this.panel6.Controls.Add(this.panelPadre);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 144);
             this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(2529, 649);
+            this.panel6.Size = new System.Drawing.Size(2529, 1013);
             this.panel6.TabIndex = 2;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 498);
+            this.panel2.Location = new System.Drawing.Point(0, 862);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(2529, 132);
@@ -335,20 +335,11 @@ namespace UNAN
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 630);
+            this.panel4.Location = new System.Drawing.Point(0, 994);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(2529, 19);
             this.panel4.TabIndex = 4;
-            // 
-            // panelPadre
-            // 
-            this.panelPadre.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPadre.Location = new System.Drawing.Point(0, 0);
-            this.panelPadre.Margin = new System.Windows.Forms.Padding(4);
-            this.panelPadre.Name = "panelPadre";
-            this.panelPadre.Size = new System.Drawing.Size(2529, 649);
-            this.panelPadre.TabIndex = 3;
             // 
             // panel3
             // 
@@ -437,11 +428,19 @@ namespace UNAN
             // 
             this.reloj.Tick += new System.EventHandler(this.reloj_Tick);
             // 
+            // panelpadre
+            // 
+            this.panelpadre.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelpadre.Location = new System.Drawing.Point(0, 0);
+            this.panelpadre.Name = "panelpadre";
+            this.panelpadre.Size = new System.Drawing.Size(2529, 862);
+            this.panelpadre.TabIndex = 5;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2529, 793);
+            this.ClientSize = new System.Drawing.Size(2529, 1157);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -497,9 +496,9 @@ namespace UNAN
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.PictureBox pbUser;
-        private System.Windows.Forms.Panel panelPadre;
         private System.Windows.Forms.Timer reloj;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panelpadre;
     }
 }
 
