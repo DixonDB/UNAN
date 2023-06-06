@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
 using System.Windows.Forms;
 using UNAN.Logica;
@@ -11,7 +13,10 @@ namespace UNAN.Datos
 {
     public class DCarreras
     {
-		public bool InsertarCarrera(LCarreras parametros)
+		public string cod;
+        private DataSet dt;
+
+        public bool InsertarCarrera(LCarreras parametros)
 		{
 			try
 			{
@@ -48,5 +53,36 @@ namespace UNAN.Datos
 			combo.DataSource = dt;
 
         }
+
+        public void MostrarCodigoC(string carr, Label codi)
+        {
+            try
+            {
+                Conexion.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("MostrarCodigoC", Conexion.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@Cod", carr);
+                DataTable codigo = new DataTable();
+                da.Fill(codigo);
+
+                if (codigo.Rows.Count > 0)
+                {
+                    codi.Text = codigo.Rows[0]["CodigoC"].ToString();
+                }
+                else
+                {
+                    codi.Text = "No se encontró el código";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+            finally
+            {
+                Conexion.cerrar();
+            }
+        }
+
     }
 }

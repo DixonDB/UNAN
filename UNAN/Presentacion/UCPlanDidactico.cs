@@ -1,8 +1,11 @@
 ﻿using ExcelDataReader;
 using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
+using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Windows.Forms;
 using UNAN.Datos;
 using UNAN.Presentacion;
@@ -50,7 +53,14 @@ namespace UNAN.FrmPlanDidactico
         private void UCPlanDidactico_Load(object sender, EventArgs e)
         {
             carreras.MostrarCarrera(cbCarrera);
+            Mostrarcod();
         }
+        public void Mostrarcod()
+        {
+            DCarreras funcion = new DCarreras();
+            funcion.MostrarCodigoC(cbCarrera.Text, lblCod);
+        }
+
 
         public void DiseñoInicial()
         {
@@ -116,6 +126,11 @@ namespace UNAN.FrmPlanDidactico
             PCargarPlan.Visible = false;
             PCargarPlan.Size = new Size(77, 48);
             PCargarPlan.Location = new Point(960, 238);
+        }
+
+        private void cbCarrera_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            Mostrarcod();
         }
     }
 }
