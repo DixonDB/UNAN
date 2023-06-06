@@ -32,9 +32,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.GBDetalles = new System.Windows.Forms.GroupBox();
-            this.btnCarrera = new System.Windows.Forms.Button();
-            this.cbCarrera = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.cbSemestre = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cbGrupo = new System.Windows.Forms.ComboBox();
@@ -79,6 +76,10 @@
             this.txtSemInicio = new System.Windows.Forms.TextBox();
             this.txtSemFin = new System.Windows.Forms.TextBox();
             this.dtPlan = new System.Windows.Forms.DataGridView();
+            this.btnCarrera = new System.Windows.Forms.Button();
+            this.cbCarrera = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.GBDetalles.SuspendLayout();
             this.gbDatos.SuspendLayout();
@@ -119,6 +120,7 @@
             // GBDetalles
             // 
             this.GBDetalles.BackColor = System.Drawing.Color.White;
+            this.GBDetalles.Controls.Add(this.label19);
             this.GBDetalles.Controls.Add(this.btnCarrera);
             this.GBDetalles.Controls.Add(this.cbCarrera);
             this.GBDetalles.Controls.Add(this.label17);
@@ -128,9 +130,9 @@
             this.GBDetalles.Controls.Add(this.label4);
             this.GBDetalles.Controls.Add(this.txtDocente);
             this.GBDetalles.Controls.Add(this.txtAAcademico);
-            this.GBDetalles.Controls.Add(this.label3);
             this.GBDetalles.Controls.Add(this.cbAsignaturas);
             this.GBDetalles.Controls.Add(this.label5);
+            this.GBDetalles.Controls.Add(this.label3);
             this.GBDetalles.Controls.Add(this.label2);
             this.GBDetalles.Dock = System.Windows.Forms.DockStyle.Top;
             this.GBDetalles.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -140,45 +142,6 @@
             this.GBDetalles.TabIndex = 1;
             this.GBDetalles.TabStop = false;
             // 
-            // btnCarrera
-            // 
-            this.btnCarrera.BackgroundImage = global::UNAN.Properties.Resources.addC;
-            this.btnCarrera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCarrera.Location = new System.Drawing.Point(1043, 14);
-            this.btnCarrera.Name = "btnCarrera";
-            this.btnCarrera.Size = new System.Drawing.Size(41, 44);
-            this.btnCarrera.TabIndex = 8;
-            this.btnCarrera.UseVisualStyleBackColor = true;
-            this.btnCarrera.Click += new System.EventHandler(this.btnCarrera_Click);
-            // 
-            // cbCarrera
-            // 
-            this.cbCarrera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.cbCarrera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCarrera.FormattingEnabled = true;
-            this.cbCarrera.Items.AddRange(new object[] {
-            "Primer Año",
-            "Segundo Año",
-            "Tercer Año",
-            "Cuarto Año",
-            "Quinto Año"});
-            this.cbCarrera.Location = new System.Drawing.Point(797, 18);
-            this.cbCarrera.Name = "cbCarrera";
-            this.cbCarrera.Size = new System.Drawing.Size(240, 30);
-            this.cbCarrera.TabIndex = 7;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label17.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(701, 22);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(90, 26);
-            this.label17.TabIndex = 6;
-            this.label17.Text = "Carrera:";
-            // 
             // cbSemestre
             // 
             this.cbSemestre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -187,7 +150,7 @@
             this.cbSemestre.Items.AddRange(new object[] {
             "l",
             "ll"});
-            this.cbSemestre.Location = new System.Drawing.Point(531, 65);
+            this.cbSemestre.Location = new System.Drawing.Point(875, 23);
             this.cbSemestre.Name = "cbSemestre";
             this.cbSemestre.Size = new System.Drawing.Size(161, 30);
             this.cbSemestre.TabIndex = 5;
@@ -198,7 +161,7 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(417, 66);
+            this.label6.Location = new System.Drawing.Point(761, 24);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(108, 26);
             this.label6.TabIndex = 4;
@@ -215,9 +178,9 @@
             "Tercer Año",
             "Cuarto Año",
             "Quinto Año"});
-            this.cbGrupo.Location = new System.Drawing.Point(799, 62);
+            this.cbGrupo.Location = new System.Drawing.Point(631, 23);
             this.cbGrupo.Name = "cbGrupo";
-            this.cbGrupo.Size = new System.Drawing.Size(240, 30);
+            this.cbGrupo.Size = new System.Drawing.Size(104, 30);
             this.cbGrupo.TabIndex = 5;
             // 
             // label4
@@ -226,7 +189,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(716, 68);
+            this.label4.Location = new System.Drawing.Point(548, 29);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 26);
             this.label4.TabIndex = 4;
@@ -235,7 +198,7 @@
             // txtDocente
             // 
             this.txtDocente.BackColor = System.Drawing.Color.White;
-            this.txtDocente.Location = new System.Drawing.Point(138, 66);
+            this.txtDocente.Location = new System.Drawing.Point(541, 69);
             this.txtDocente.Name = "txtDocente";
             this.txtDocente.Size = new System.Drawing.Size(260, 29);
             this.txtDocente.TabIndex = 3;
@@ -243,7 +206,7 @@
             // txtAAcademico
             // 
             this.txtAAcademico.BackColor = System.Drawing.Color.White;
-            this.txtAAcademico.Location = new System.Drawing.Point(580, 25);
+            this.txtAAcademico.Location = new System.Drawing.Point(1004, 72);
             this.txtAAcademico.Name = "txtAAcademico";
             this.txtAAcademico.Size = new System.Drawing.Size(100, 29);
             this.txtAAcademico.TabIndex = 3;
@@ -255,7 +218,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(409, 22);
+            this.label3.Location = new System.Drawing.Point(833, 69);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(162, 26);
             this.label3.TabIndex = 2;
@@ -272,7 +235,7 @@
             "Prog Alg",
             "Inf Bas",
             "Fund Prog"});
-            this.cbAsignaturas.Location = new System.Drawing.Point(130, 22);
+            this.cbAsignaturas.Location = new System.Drawing.Point(159, 69);
             this.cbAsignaturas.Name = "cbAsignaturas";
             this.cbAsignaturas.Size = new System.Drawing.Size(260, 30);
             this.cbAsignaturas.TabIndex = 1;
@@ -283,7 +246,7 @@
             this.label5.BackColor = System.Drawing.Color.Gainsboro;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(35, 66);
+            this.label5.Location = new System.Drawing.Point(438, 69);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 26);
             this.label5.TabIndex = 0;
@@ -295,7 +258,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 22);
+            this.label2.Location = new System.Drawing.Point(35, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 26);
             this.label2.TabIndex = 0;
@@ -701,6 +664,55 @@
             this.dtPlan.Size = new System.Drawing.Size(1137, 472);
             this.dtPlan.TabIndex = 3;
             // 
+            // btnCarrera
+            // 
+            this.btnCarrera.BackgroundImage = global::UNAN.Properties.Resources.addC;
+            this.btnCarrera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCarrera.Location = new System.Drawing.Point(377, 17);
+            this.btnCarrera.Name = "btnCarrera";
+            this.btnCarrera.Size = new System.Drawing.Size(41, 44);
+            this.btnCarrera.TabIndex = 11;
+            this.btnCarrera.UseVisualStyleBackColor = true;
+            this.btnCarrera.Click += new System.EventHandler(this.btnCarrera_Click);
+            // 
+            // cbCarrera
+            // 
+            this.cbCarrera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.cbCarrera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCarrera.FormattingEnabled = true;
+            this.cbCarrera.Items.AddRange(new object[] {
+            "Primer Año",
+            "Segundo Año",
+            "Tercer Año",
+            "Cuarto Año",
+            "Quinto Año"});
+            this.cbCarrera.Location = new System.Drawing.Point(131, 21);
+            this.cbCarrera.Name = "cbCarrera";
+            this.cbCarrera.Size = new System.Drawing.Size(240, 30);
+            this.cbCarrera.TabIndex = 10;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label17.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(35, 25);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(90, 26);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "Carrera:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(444, 29);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(72, 18);
+            this.label19.TabIndex = 12;
+            this.label19.Text = "CodigoC";
+            // 
             // UCPlanDidactico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -764,11 +776,8 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnSubir;
         private System.Windows.Forms.Button btnSubirPlan;
-        private System.Windows.Forms.ComboBox cbCarrera;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnCarrera;
         public System.Windows.Forms.DataGridView dtPlan;
         private System.Windows.Forms.Panel PCargarPlan;
         private System.Windows.Forms.Button btnCargar;
@@ -778,5 +787,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnCerrarP;
+        private System.Windows.Forms.Button btnCarrera;
+        private System.Windows.Forms.ComboBox cbCarrera;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label19;
     }
 }
