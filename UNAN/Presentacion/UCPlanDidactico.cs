@@ -54,6 +54,7 @@ namespace UNAN.FrmPlanDidactico
         {
             carreras.MostrarCarrera(cbCarrera);
             Mostrarcod();
+            lblCod.Visible = false;
         }
         public void Mostrarcod()
         {
@@ -131,6 +132,7 @@ namespace UNAN.FrmPlanDidactico
         private void cbCarrera_SelectionChangeCommitted(object sender, EventArgs e)
         {
             Mostrarcod();
+            lblCod.Visible = true;
         }
     }
 }
