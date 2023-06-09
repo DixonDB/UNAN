@@ -44,7 +44,7 @@ namespace UNAN.Datos
                 SqlCommand cmd = new SqlCommand("EditarProfesores", Conexion.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@IdProfesor", parametros.IdProfesores);
-                cmd.Parameters.AddWithValue("@NombreApellidos", parametros.NombreApellido);
+                cmd.Parameters.AddWithValue("@NombreApellido", parametros.NombreApellido);
                 cmd.Parameters.AddWithValue("@CorreoP", parametros.CorreoP);
                 cmd.Parameters.AddWithValue("@CelularP", parametros.CelularP);
                 cmd.Parameters.AddWithValue("@CarnetP", parametros.CarnetP);
@@ -119,7 +119,7 @@ namespace UNAN.Datos
             }
             finally { Conexion.cerrar(); }
         }
-        public void ContarPersonal(ref int Contador)
+        public void ContarProfesores(ref int Contador)
         {
             try
             {
@@ -130,6 +130,28 @@ namespace UNAN.Datos
             catch (Exception)
             {
                 Contador = 0;
+            }
+            finally
+            {
+                Conexion.cerrar();
+            }
+        }
+        public bool restaurarProfesores(LProfesores parametros)
+        {
+            try
+            {
+                Conexion.abrir();
+                SqlCommand cmd = new SqlCommand("restaurar_profesores", Conexion.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Idprofesor", parametros.IdProfesores); ;
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                return false;
             }
             finally
             {

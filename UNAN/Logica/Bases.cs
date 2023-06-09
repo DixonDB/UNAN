@@ -28,20 +28,20 @@ namespace UNAN.Logica
             cabecera.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             Listado.ColumnHeadersDefaultCellStyle = cabecera;
         }
-        //public static void DiseñoDtvEliminar(ref DataGridView Listado)
-        //{
-        //    foreach (DataGridViewRow row in Listado.Rows)
-        //    {
-        //        string estado;
-        //        estado = row.Cells["Estado"].Value.ToString();
-        //        if (estado == "ELIMINADO")
-        //        {
-        //            row.DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Strikeout | FontStyle.Bold);
-        //            row.DefaultCellStyle.ForeColor = Color.FromArgb(255, 128, 128);
-        //        }
-        //    }
+        public static void DiseñoDtvEliminar(ref DataGridView Listado)
+        {
+            foreach (DataGridViewRow row in Listado.Rows)
+            {
+                string estado;
+                estado = row.Cells["Estado"].Value.ToString();
+                if (estado == "ELIMINADO")
+                {
+                    row.DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Strikeout | FontStyle.Bold);
+                    row.DefaultCellStyle.ForeColor = Color.FromArgb(255, 128, 128);
+                }
+            }
 
-        //}
+        }
         public static object Decimales(TextBox CajaTexto, KeyPressEventArgs e)
         {
             if ((e.KeyChar == '.') || (e.KeyChar == ','))

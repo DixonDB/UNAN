@@ -19,7 +19,7 @@ namespace UNAN.Presentacion
         int desde = 1;
         int hasta = 10;
         int Contador;
-        int Idpersonal;
+        int Idprofesor;
         private int items_por_pagina = 10;
         string Estado;
         int totalPaginas;
@@ -44,7 +44,7 @@ namespace UNAN.Presentacion
         private void DiseñarDtvProfes()
         {
             Bases.DiseñoDtv(ref dataPersonal);
-            //Bases.DiseñoDtvEliminar(ref dataPersonal);
+            Bases.DiseñoDtvEliminar(ref dataPersonal);
             PanelPaginado.Visible = true;
             dataPersonal.Columns[2].Visible = false;
         }
@@ -90,7 +90,7 @@ namespace UNAN.Presentacion
         private void Contar()
         {
             DProfesores funcion = new DProfesores();
-            funcion.ContarPersonal(ref Contador);
+            funcion.ContarProfesores(ref Contador);
         }
         private void Paginar()
         {
@@ -135,7 +135,7 @@ namespace UNAN.Presentacion
 
         private void UCProfesores_Load(object sender, EventArgs e)
         {
-            // ReiniciarPaginado();
+            ReiniciarPaginado();
             MostrarProfessores();
         }
 
@@ -143,7 +143,12 @@ namespace UNAN.Presentacion
         {
             if (e.ColumnIndex == dataPersonal.Columns["Eliminar"].Index)
             {
-                EliminarProfes();
+                DialogResult result = MessageBox.Show("¿Solo se Cambiara el Estado para que no pueda acceder, Desea Continuar?", "Eliminando registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if(result== DialogResult.OK)
+                {
+                    EliminarProfes();
+                }
+                
             }
             if (e.ColumnIndex == dataPersonal.Columns["Editar"].Index)
             {
@@ -152,10 +157,10 @@ namespace UNAN.Presentacion
         }
         private void EliminarProfes()
         {
-            Idpersonal = Convert.ToInt32(dataPersonal.SelectedCells[2].Value);
+            Idprofesor = Convert.ToInt32(dataPersonal.SelectedCells[2].Value);
             LProfesores parametros = new LProfesores();
             DProfesores funcion = new DProfesores();
-            parametros.IdProfesores = Idpersonal;
+            parametros.IdProfesores = Idprofesor;
             if (funcion.EliminarProfesores(parametros) == true)
             {
                 MostrarProfessores();
@@ -163,7 +168,7 @@ namespace UNAN.Presentacion
         }
         private void Obtenerdatos()
         {
-            Idpersonal = Convert.ToInt32(dataPersonal.SelectedCells[2].Value);
+            Idprofesor = Convert.ToInt32(dataPersonal.SelectedCells[2].Value);
             Estado = dataPersonal.SelectedCells[7].Value.ToString();
             if (Estado == "ELIMINADO")
             {
@@ -177,15 +182,64 @@ namespace UNAN.Presentacion
                 txtIdentificacion.Text= dataPersonal.SelectedCells[6].Value.ToString();
                 PanelPaginado.Visible = false;
                 panelRegitroP.Visible = true;
-                panelRegitroP.Dock= DockStyle.Fill;
-                btnActualizar.Visible = true;
+                panelRegitroP.Dock = DockStyle.Fill;
+                dataPersonal.Visible = false;
+                btnGuardar.Visible = true;                
                 btnGuardar.Visible = false;
+                btnActualizar.Visible = true;
             }
 
         }
         private void RestaurarP()
         {
+            DialogResult result = MessageBox.Show("Este Personal se Elimino. ¿Desea Volver a Habilitarlo?", "Restauracion de registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                HabilitarPersonal();
+            }
+        }
+        private void HabilitarPersonal()
+        {
+            LProfesores parametros = new LProfesores();
+            DProfesores funcion = new DProfesores();
+            parametros.IdProfesores = Idprofesor;
+            if (funcion.restaurarProfesores(parametros) == true)
+            {
+                MostrarProfessores();
+            }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panelRegitroP.Visible = false;
+            PanelPaginado.Visible = true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DiseñarDtvProfes();
+            timer1.Stop();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            EditarProfesores();
+        }
+        private void EditarProfesores()
+        {
+            LProfesores parametros= new LProfesores();
+            DProfesores funcion= new DProfesores();
+            parametros.IdProfesores= Idprofesor;
+            parametros.NombreApellido = txtNombreApellidos.Text;
+            parametros.CorreoP = txtCorreo.Text;
+            parametros.CelularP =Convert.ToInt32( txtCelular.Text);
+            parametros.CarnetP = Convert.ToInt32(txtIdentificacion.Text);
+            if(funcion.EditarProfesores(parametros)==true)
+            {
+                MostrarProfessores();
+                panelRegitroP.Visible = false;
+            }
         }
     }
 }
