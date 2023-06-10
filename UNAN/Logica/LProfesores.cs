@@ -11,7 +11,10 @@ namespace UNAN.Logica
         public string NombreApellido { get; set; }
         public string CorreoP { get; set; }
         public int CelularP { get; set; }
-        public int CarnetP { get; set; }
+        public string CarnetP { get; set; }
+        public string Usuario { get; set; }
+        public string Password { get; set; }
+        public byte[] Icono { get; set; }
         public string Estado { get; set; }
     }
 }

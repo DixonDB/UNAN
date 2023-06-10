@@ -56,11 +56,15 @@
     <Compile Include="Datos\Conexion.cs" />
     <Compile Include="Datos\DCarreras.cs" />
     <Compile Include="Datos\DModalidades.cs" />
+    <Compile Include="Datos\DModulos.cs" />
+    <Compile Include="Datos\DPermisos.cs" />
     <Compile Include="Datos\DProfesores.cs" />
     <Compile Include="Logica\Bases.cs" />
     <Compile Include="Logica\Desencryptacion.cs" />
     <Compile Include="Logica\Encryptacion.cs" />
     <Compile Include="Logica\LCarreras.cs" />
+    <Compile Include="Logica\Lmodulos.cs" />
+    <Compile Include="Logica\Lpermisos.cs" />
     <Compile Include="Logica\LProfesores.cs" />
     <Compile Include="Presentacion\FrmCarrera.cs">
       <SubType>Form</SubType>
@@ -73,6 +77,12 @@
     </Compile>
     <Compile Include="Presentacion\frmGrupo.Designer.cs">
       <DependentUpon>frmGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\UCAsistencia.cs">
       <SubType>UserControl</SubType>
@@ -111,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmGrupo.resx">
       <DependentUpon>frmGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\UCAsistencia.resx">
       <DependentUpon>UCAsistencia.cs</DependentUpon>
@@ -217,6 +230,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\help_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UnAN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bloquear.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

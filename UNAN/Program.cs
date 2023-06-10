@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using UNAN.Presentacion;
 
 namespace UNAN
 {
@@ -15,7 +16,7 @@ namespace UNAN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMenu());
+            Application.Run(new Login());
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using UNAN.Logica;
 using System.Windows.Forms;
 
@@ -22,6 +23,9 @@ namespace UNAN.Datos
                 cmd.Parameters.AddWithValue("@CorreoP", parametros.CorreoP);
                 cmd.Parameters.AddWithValue("@CelularP", parametros.CelularP);
                 cmd.Parameters.AddWithValue("@CarnetP", parametros.CarnetP);
+                cmd.Parameters.AddWithValue("@Usuario", parametros.Usuario);
+                cmd.Parameters.AddWithValue("@Password", parametros.Password);
+                cmd.Parameters.AddWithValue("@Icono", parametros.Icono);
                 cmd.ExecuteNonQuery();
                 return true;
 
@@ -48,6 +52,9 @@ namespace UNAN.Datos
                 cmd.Parameters.AddWithValue("@CorreoP", parametros.CorreoP);
                 cmd.Parameters.AddWithValue("@CelularP", parametros.CelularP);
                 cmd.Parameters.AddWithValue("@CarnetP", parametros.CarnetP);
+                cmd.Parameters.AddWithValue("@Usuario", parametros.Usuario);
+                cmd.Parameters.AddWithValue("@Password", parametros.Password);
+                cmd.Parameters.AddWithValue("@Icono", parametros.Icono);
                 cmd.ExecuteNonQuery();
                 return true;
 
@@ -178,5 +185,67 @@ namespace UNAN.Datos
             }
         }
 
+        #region Validar Usuarios Para login
+        public void VerificarUsuarios(ref string Indicador)
+        {
+            try
+            {
+                int Iduser;
+                Conexion.abrir();
+                SqlCommand da = new SqlCommand("Select idUsuario From Usuarios", Conexion.conectar);
+                Iduser = Convert.ToInt32(da.ExecuteScalar());
+                Conexion.cerrar();
+                Indicador = "Correcto";
+            }
+            catch (Exception)
+            {
+
+                Indicador = "Incorrecto";
+            }
+        }
+        public void validarUsuario(LProfesores parametros, ref int id)
+        {
+            try
+            {
+                Conexion.abrir();
+                SqlCommand cmd = new SqlCommand("validar_usuario", Conexion.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Password", parametros.Password);
+                cmd.Parameters.AddWithValue("@Usuario", parametros.Usuario);
+                id = Convert.ToInt32(cmd.ExecuteScalar());
+
+
+            }
+            catch (Exception ex)
+            {
+                id = 0;
+
+            }
+            finally
+            {
+                Conexion.cerrar();
+            }
+        }
+        public void ObtenerIdProfesor(ref int Idprofesor, string Usuario)
+        {
+            try
+            {
+                Conexion.abrir();
+                SqlCommand cmd = new SqlCommand("ObtenerIdProfesor", Conexion.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Usuario", Usuario);
+                Idprofesor = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+            finally
+            {
+                Conexion.cerrar();
+            }
+        }
+        #endregion
     }
 }

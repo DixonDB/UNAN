@@ -8,6 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 using UNAN.Logica;
 using UNAN.Datos;
+using System.IO;
+using System.Xml.Linq;
+
 namespace UNAN.Presentacion
 {
     public partial class UCProfes : UserControl
@@ -23,6 +26,7 @@ namespace UNAN.Presentacion
         private int items_por_pagina = 10;
         string Estado;
         int totalPaginas;
+        string usuario;
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -32,6 +36,7 @@ namespace UNAN.Presentacion
             btnActualizar.Visible = false;
             this.Limpiar();
             PanelPaginado.Visible = false;
+            MostrarModulos();
 
         }
         private void Limpiar()
@@ -40,13 +45,19 @@ namespace UNAN.Presentacion
             txtIdentificacion.Clear();
             txtCelular.Clear();
             txtCorreo.Clear();
+            txtUsuario.Clear();
+            Icono.Controls.Clear();
+            lblanuncioIcono.Visible = true;
+            txtContraseña.Clear();
+
         }
         private void DiseñarDtvProfes()
         {
-            Bases.DiseñoDtv(ref dataPersonal);
-            Bases.DiseñoDtvEliminar(ref dataPersonal);
+            Bases.DiseñoDtv(ref dataProfesores);
+            Bases.DiseñoDtvEliminar(ref dataProfesores);
             PanelPaginado.Visible = true;
-            dataPersonal.Columns[2].Visible = false;
+            dataProfesores.Columns[2].Visible = false;
+            dataProfesores.Columns[9].Visible = false;
         }
         private void InsertarProfesores()
         {
@@ -55,13 +66,51 @@ namespace UNAN.Presentacion
             parametros.NombreApellido = txtNombreApellidos.Text;
             parametros.CorreoP = txtCorreo.Text;
             parametros.CelularP = int.Parse(txtCelular.Text);
-            parametros.CarnetP = int.Parse(txtIdentificacion.Text);
+            parametros.CarnetP = txtIdentificacion.Text;
+            parametros.Usuario= txtUsuario.Text;
+            parametros.Password = txtContraseña.Text;
+            MemoryStream ms = new MemoryStream();
+            Icono.Image.Save(ms, Icono.Image.RawFormat);
+            parametros.Icono = ms.GetBuffer();
             if (funcion.InsertarProfesores(parametros) == true)
             {
+                InsertarPermisos();
+                ObtenerIdProfesor();
                 MostrarProfessores();
                 panelRegitroP.Visible = false;
 
             }
+        }
+        private void MostrarModulos()
+        {
+            DModulos funcion = new DModulos();
+            DataTable dt = new DataTable();
+            funcion.mostrar_Modulos(ref dt);
+            datalistadoModulos.DataSource = dt;
+            datalistadoModulos.Columns[1].Visible = false;
+        }
+        private void MostrarPermisos()
+        {
+            DataTable dt = new DataTable();
+            DPermisos funcion= new DPermisos();
+            Lpermisos parametros= new Lpermisos();
+            foreach (DataRow rowPermisos in dt.Rows)
+            {
+                int idmoduloPermisos = Convert.ToInt32(rowPermisos["IdModulo"]);
+                foreach (DataGridViewRow rowModulos in datalistadoModulos.Rows)
+                {
+                    int Idmodulo = Convert.ToInt32(rowModulos.Cells["IdModulo"].Value);
+                    if (idmoduloPermisos == Idmodulo)
+                    {
+                        rowModulos.Cells[0].Value = true;
+                    }
+                }
+            }
+        }
+        private void ObtenerIdProfesor()
+        {
+            DProfesores funcion = new DProfesores();
+            funcion.ObtenerIdProfesor(ref Idprofesor, txtUsuario.Text);
         }
         private void ReiniciarPaginado()
         {
@@ -115,12 +164,29 @@ namespace UNAN.Presentacion
                     {
                         if (!string.IsNullOrEmpty(txtIdentificacion.Text))
                         {
-                            InsertarProfesores();
-                            MostrarProfessores();
+                            if (!string.IsNullOrEmpty(txtUsuario.Text))
+                            {
+                                if (!string.IsNullOrEmpty(txtContraseña.Text))
+                                {
+                                    if (lblanuncioIcono.Visible == false)
+                                    {
+                                        InsertarProfesores();
+                                        MostrarProfessores();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Ingresa un Icono Para agregar este Profesor");
+                                    }
+                                }
+                               
+                            }                          
                         }
                     }
                 }
-
+                else
+                {
+                    MessageBox.Show("Completa todos los campos");
+                }
 
             }
         }
@@ -129,7 +195,7 @@ namespace UNAN.Presentacion
             DataTable dt = new DataTable();
             DProfesores funcion = new DProfesores();
             funcion.MostrarProfesores(ref dt, desde, hasta);
-            dataPersonal.DataSource = dt;
+            dataProfesores.DataSource = dt;
             DiseñarDtvProfes();
         }
 
@@ -141,7 +207,8 @@ namespace UNAN.Presentacion
 
         private void dataPersonal_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataPersonal.Columns["Eliminar"].Index)
+            ObtenerEstado();
+            if (e.ColumnIndex == dataProfesores.Columns["Eliminar"].Index)
             {
                 DialogResult result = MessageBox.Show("¿Solo se Cambiara el Estado para que no pueda acceder, Desea Continuar?", "Eliminando registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if(result== DialogResult.OK)
@@ -150,14 +217,27 @@ namespace UNAN.Presentacion
                 }
                 
             }
-            if (e.ColumnIndex == dataPersonal.Columns["Editar"].Index)
+            if (e.ColumnIndex == dataProfesores.Columns["Editar"].Index)
             {
-                Obtenerdatos();
+                ObtenerEstado();
+                if (Estado == "ELIMINADO")
+                {
+                    DialogResult resultado = MessageBox.Show("Este Usuario se Elimino. ¿Desea Volver a Habilitarlo?", "Restauracion de registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (resultado == DialogResult.OK)
+                    {
+                        RestaurarP();
+                    }
+                }
+                else
+                {
+                    Obtenerdatos();
+                }
+
             }
         }
         private void EliminarProfes()
         {
-            Idprofesor = Convert.ToInt32(dataPersonal.SelectedCells[2].Value);
+            Idprofesor = Convert.ToInt32(dataProfesores.SelectedCells[2].Value);
             LProfesores parametros = new LProfesores();
             DProfesores funcion = new DProfesores();
             parametros.IdProfesores = Idprofesor;
@@ -166,26 +246,48 @@ namespace UNAN.Presentacion
                 MostrarProfessores();
             }
         }
+        private void capturaridprofesor()
+        {
+            Idprofesor = Convert.ToInt32(dataProfesores.SelectedCells[2].Value);
+            usuario = dataProfesores.SelectedCells[10].Value.ToString();
+
+        }
+        private void ObtenerEstado()
+        {
+           
+                Estado = dataProfesores.SelectedCells[10].Value.ToString();
+            
+        }
         private void Obtenerdatos()
         {
-            Idprofesor = Convert.ToInt32(dataPersonal.SelectedCells[2].Value);
-            Estado = dataPersonal.SelectedCells[7].Value.ToString();
+            capturaridprofesor();
+            Idprofesor = Convert.ToInt32(dataProfesores.SelectedCells[2].Value);
+            Estado = dataProfesores.SelectedCells[7].Value.ToString();
             if (Estado == "ELIMINADO")
             {
                 RestaurarP();
             }
             else
             {
-                txtNombreApellidos.Text = dataPersonal.SelectedCells[3].Value.ToString();
-                txtCorreo.Text= dataPersonal.SelectedCells[4].Value.ToString();
-                txtCelular.Text = dataPersonal.SelectedCells[5].Value.ToString();
-                txtIdentificacion.Text= dataPersonal.SelectedCells[6].Value.ToString();
+                txtNombreApellidos.Text = dataProfesores.SelectedCells[3].Value.ToString();
+                txtCorreo.Text= dataProfesores.SelectedCells[4].Value.ToString();
+                txtCelular.Text = dataProfesores.SelectedCells[5].Value.ToString();
+                txtIdentificacion.Text= dataProfesores.SelectedCells[6].Value.ToString();
+                txtUsuario.Text = dataProfesores.SelectedCells[7].Value.ToString();
+                txtContraseña.Text= dataProfesores.SelectedCells[8].Value.ToString();
+                Icono.BackgroundImage = null;
+                byte[] b = (byte[])(dataProfesores.SelectedCells[9].Value);
+                MemoryStream ms = new MemoryStream(b);
+                Icono.Image = Image.FromStream(ms);
                 PanelPaginado.Visible = false;
                 panelRegitroP.Visible = true;
                 panelRegitroP.Dock = DockStyle.Fill;
                 btnGuardar.Visible = true;                
                 btnGuardar.Visible = false;
                 btnActualizar.Visible = true;
+                lblanuncioIcono.Visible = false;
+                MostrarModulos();
+                MostrarPermisos();
             }
 
         }
@@ -227,12 +329,18 @@ namespace UNAN.Presentacion
             parametros.NombreApellido = txtNombreApellidos.Text;
             parametros.CorreoP = txtCorreo.Text;
             parametros.CelularP =Convert.ToInt32( txtCelular.Text);
-            parametros.CarnetP = Convert.ToInt32(txtIdentificacion.Text);
-            if(funcion.EditarProfesores(parametros)==true)
+            parametros.CarnetP = txtIdentificacion.Text;
+            parametros.Usuario= txtUsuario.Text;
+            parametros.Password = txtContraseña.Text;
+            MemoryStream ms = new MemoryStream();
+            Icono.Image.Save(ms, Icono.Image.RawFormat);
+            parametros.Icono = ms.GetBuffer();
+            if (funcion.EditarProfesores(parametros)==true)
             {
                 MostrarProfessores();
                 panelRegitroP.Visible = false;
             }
+            MessageBox.Show("Se Edito correctamente");
         }
 
         private void btnVolverPersonal_Click(object sender, EventArgs e)
@@ -240,7 +348,6 @@ namespace UNAN.Presentacion
             panelRegitroP.Visible = false;
             PanelPaginado.Visible = true;
         }
-
         private void btn_atras_Click(object sender, EventArgs e)
         {
             desde -= 10;
@@ -263,7 +370,6 @@ namespace UNAN.Presentacion
             }
             Paginar();
         }
-
         private void btn_Sig_Click(object sender, EventArgs e)
         {
 
@@ -283,7 +389,6 @@ namespace UNAN.Presentacion
             }
             Paginar();
         }
-
         private void btn_Ultima_Click(object sender, EventArgs e)
         {
             hasta = totalPaginas * items_por_pagina;
@@ -302,11 +407,54 @@ namespace UNAN.Presentacion
             }
             Paginar();
         }
-
         private void btn_Primera_Click(object sender, EventArgs e)
         {
             ReiniciarPaginado();
             MostrarProfessores();
+        }
+        private void lblanuncioIcono_Click(object sender, EventArgs e)
+        {
+            dlg.InitialDirectory = "";
+            dlg.Filter = "Imagenes|*.jpg;*.png";
+            dlg.FilterIndex = 2;
+            dlg.Title = "Cargador de imagenes";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Icono.BackgroundImage = null;
+                Icono.Image = new Bitmap(dlg.FileName);
+                lblanuncioIcono.Visible = false;
+            }
+        }
+        private void Icono_Click(object sender, EventArgs e)
+        {
+            dlg.InitialDirectory = "";
+            dlg.Filter = "Imagenes|*.jpg;*.png";
+            dlg.FilterIndex = 2;
+            dlg.Title = "Cargador de imagenes";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Icono.BackgroundImage = null;
+                Icono.Image = new Bitmap(dlg.FileName);
+                lblanuncioIcono.Visible = false;
+            }
+        }
+        private void InsertarPermisos()
+        {
+            foreach (DataGridViewRow row in datalistadoModulos.Rows)
+            {
+                int Idmodulo= Convert.ToInt32(row.Cells["IdModulo"].Value);
+                bool marcado = Convert.ToBoolean(row.Cells["Marcar"].Value);
+                if (marcado== true)
+                {
+                    Lpermisos parametros= new Lpermisos();
+                    DPermisos funcion= new DPermisos();
+                    parametros.IdModulo = Idmodulo;
+                    parametros.IdProfesor = Idprofesor;
+                    funcion.Insertar_Permisos(parametros);
+                }
+            }
+            MostrarProfessores();
+            panelRegitroP.Visible = false;
         }
     }
 }
