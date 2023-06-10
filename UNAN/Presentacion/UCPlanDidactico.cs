@@ -54,9 +54,8 @@ namespace UNAN.FrmPlanDidactico
         private void UCPlanDidactico_Load(object sender, EventArgs e)
         {
             carreras.MostrarCarrera(cbCarrera);
-            mod.MostrarModalidades(cbModalidad);
             Mostrarcod();
-            lblCod.Visible = false;
+            mod.MostrarModalidades(cbModalidad);
         }
         public void Mostrarcod()
         {
@@ -137,12 +136,21 @@ namespace UNAN.FrmPlanDidactico
             lblCod.Visible = true;
         }
 
+        private void btnCarrera_Click_1(object sender, EventArgs e)
+        {
+            FrmCarrera cr=new FrmCarrera();
+            cr.ShowDialog();
+        }
+
         private void btnAddGrupo_Click(object sender, EventArgs e)
         {
-            FrmGrupo FG = new FrmGrupo();
-            FG.ShowDialog();
-            carreras.MostrarCarrera(cbCarrera);
-            mod.MostrarModalidades(cbModalidad);
+            frmGrupo fg=new frmGrupo();
+            fg.ShowDialog();
+        }
+
+        private void cbCarrera_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Mostrarcod();
         }
     }
 }

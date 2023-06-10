@@ -68,11 +68,11 @@
     <Compile Include="Presentacion\FrmCarrera.Designer.cs">
       <DependentUpon>FrmCarrera.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\FrmGrupo.cs">
+    <Compile Include="Presentacion\frmGrupo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\FrmGrupo.Designer.cs">
-      <DependentUpon>FrmGrupo.cs</DependentUpon>
+    <Compile Include="Presentacion\frmGrupo.Designer.cs">
+      <DependentUpon>frmGrupo.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\UCProfes.cs">
       <SubType>UserControl</SubType>
@@ -103,8 +103,8 @@
     <EmbeddedResource Include="Presentacion\FrmCarrera.resx">
       <DependentUpon>FrmCarrera.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\FrmGrupo.resx">
-      <DependentUpon>FrmGrupo.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\frmGrupo.resx">
+      <DependentUpon>frmGrupo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\UCProfes.resx">
       <DependentUpon>UCProfes.cs</DependentUpon>

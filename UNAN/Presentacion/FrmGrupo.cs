@@ -10,19 +10,19 @@ using UNAN.Datos;
 
 namespace UNAN.Presentacion
 {
-    public partial class FrmGrupo : Form
+    public partial class frmGrupo : Form
     {
-        DCarreras carreras = new DCarreras();
-        DModalidades mod = new DModalidades();
-        public FrmGrupo()
+        DModalidades mod=new DModalidades();
+        DCarreras cr=new DCarreras();
+        public frmGrupo()
         {
             InitializeComponent();
         }
 
-        private void FrmGrupo_Load(object sender, EventArgs e)
+        private void frmGrupo_Load(object sender, EventArgs e)
         {
-            carreras.MostrarCarrera(cbCarrera);
             mod.MostrarModalidades(cbModalidad);
+            cr.MostrarCarrera(cbCarrera);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

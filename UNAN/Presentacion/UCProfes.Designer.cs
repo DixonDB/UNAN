@@ -30,10 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-<<<<<<< HEAD
-=======
             this.btnAgregar = new System.Windows.Forms.Button();
->>>>>>> 810aee2172a94f2a55422d597bd50b818fe6f7ad
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -68,12 +65,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-<<<<<<< HEAD
-            this.btnAyuda = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-=======
             this.timer1 = new System.Windows.Forms.Timer(this.components);
->>>>>>> 810aee2172a94f2a55422d597bd50b818fe6f7ad
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataPersonal)).BeginInit();
@@ -84,8 +77,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btnAgregar);
-            this.panel1.Controls.Add(this.btnAyuda);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.textBox1);
@@ -96,15 +89,6 @@
             this.panel1.Size = new System.Drawing.Size(968, 53);
             this.panel1.TabIndex = 0;
             // 
-<<<<<<< HEAD
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::UNAN.Properties.Resources.lupa;
-            this.pictureBox1.Location = new System.Drawing.Point(276, 18);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 31);
-=======
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.SystemColors.Control;
@@ -114,9 +98,10 @@
             this.btnAgregar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Location = new System.Drawing.Point(1796, 0);
+            this.btnAgregar.Location = new System.Drawing.Point(898, 0);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(141, 102);
+            this.btnAgregar.Size = new System.Drawing.Size(70, 53);
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -124,10 +109,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::UNAN.Properties.Resources.lupa;
-            this.pictureBox1.Location = new System.Drawing.Point(551, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(276, 18);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(69, 59);
->>>>>>> 810aee2172a94f2a55422d597bd50b818fe6f7ad
+            this.pictureBox1.Size = new System.Drawing.Size(34, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -355,7 +340,6 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-<<<<<<< HEAD
             this.button1.Location = new System.Drawing.Point(518, 20);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
@@ -363,15 +347,7 @@
             this.button1.TabIndex = 13;
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
-=======
-            this.button1.Location = new System.Drawing.Point(1036, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 79);
-            this.button1.TabIndex = 13;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
->>>>>>> 810aee2172a94f2a55422d597bd50b818fe6f7ad
             // 
             // flowLayoutPanel1
             // 
@@ -391,16 +367,10 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Image = global::UNAN.Properties.Resources.save32px;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-<<<<<<< HEAD
             this.btnGuardar.Location = new System.Drawing.Point(10, 8);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(102, 41);
-=======
-            this.btnGuardar.Location = new System.Drawing.Point(18, 15);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(203, 79);
->>>>>>> 810aee2172a94f2a55422d597bd50b818fe6f7ad
             this.btnGuardar.TabIndex = 0;
             this.btnGuardar.Text = " Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -414,24 +384,15 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Image = global::UNAN.Properties.Resources.save32px;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-<<<<<<< HEAD
             this.btnActualizar.Location = new System.Drawing.Point(116, 8);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(122, 41);
-=======
-            this.btnActualizar.Location = new System.Drawing.Point(227, 15);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(245, 79);
->>>>>>> 810aee2172a94f2a55422d597bd50b818fe6f7ad
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnActualizar.UseVisualStyleBackColor = false;
-<<<<<<< HEAD
-=======
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
->>>>>>> 810aee2172a94f2a55422d597bd50b818fe6f7ad
             // 
             // panel7
             // 
@@ -573,45 +534,26 @@
             this.dataGridViewImageColumn2.ReadOnly = true;
             this.dataGridViewImageColumn2.Width = 200;
             // 
-<<<<<<< HEAD
-            // btnAyuda
-            // 
-            this.btnAyuda.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAyuda.BackgroundImage = global::UNAN.Properties.Resources.help_32px;
-            this.btnAyuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAyuda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAyuda.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAyuda.FlatAppearance.BorderSize = 0;
-            this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAyuda.Location = new System.Drawing.Point(898, 0);
-            this.btnAyuda.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAyuda.Name = "btnAyuda";
-            this.btnAyuda.Size = new System.Drawing.Size(70, 53);
-            this.btnAyuda.TabIndex = 4;
-            this.btnAyuda.UseVisualStyleBackColor = false;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAgregar.BackgroundImage = global::UNAN.Properties.Resources.add_64px;
-            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Location = new System.Drawing.Point(828, 0);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(70, 53);
-            this.btnAgregar.TabIndex = 5;
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-=======
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
->>>>>>> 810aee2172a94f2a55422d597bd50b818fe6f7ad
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.BackgroundImage = global::UNAN.Properties.Resources.help_32px;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(828, 0);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(70, 53);
+            this.button2.TabIndex = 4;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // UCProfes
             // 
@@ -658,6 +600,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnGuardar;
@@ -675,11 +618,7 @@
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-<<<<<<< HEAD
-        private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnAyuda;
-=======
         private System.Windows.Forms.Timer timer1;
->>>>>>> 810aee2172a94f2a55422d597bd50b818fe6f7ad
+        private System.Windows.Forms.Button button2;
     }
 }

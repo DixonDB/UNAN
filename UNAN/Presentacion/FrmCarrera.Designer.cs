@@ -31,19 +31,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbModalidad = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.txtCarrera = new System.Windows.Forms.TextBox();
             this.txtCodCarrera = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.pbAyuda = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAyuda)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,11 +65,12 @@
             // 
             // cbModalidad
             // 
+            this.cbModalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbModalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbModalidad.FormattingEnabled = true;
             this.cbModalidad.Location = new System.Drawing.Point(225, 147);
             this.cbModalidad.Name = "cbModalidad";
-            this.cbModalidad.Size = new System.Drawing.Size(99, 28);
+            this.cbModalidad.Size = new System.Drawing.Size(113, 28);
             this.cbModalidad.TabIndex = 5;
             // 
             // label4
@@ -82,12 +83,27 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Ingrese la Modalidad:";
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Image = global::UNAN.Properties.Resources.Check;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(197, 199);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(127, 37);
+            this.btnAdd.TabIndex = 3;
+            this.btnAdd.Text = "Agregar";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // txtCarrera
             // 
             this.txtCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCarrera.Location = new System.Drawing.Point(197, 101);
             this.txtCarrera.Name = "txtCarrera";
-            this.txtCarrera.Size = new System.Drawing.Size(226, 26);
+            this.txtCarrera.Size = new System.Drawing.Size(200, 26);
             this.txtCarrera.TabIndex = 2;
             // 
             // txtCodCarrera
@@ -95,7 +111,7 @@
             this.txtCodCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodCarrera.Location = new System.Drawing.Point(197, 49);
             this.txtCodCarrera.Name = "txtCodCarrera";
-            this.txtCodCarrera.Size = new System.Drawing.Size(200, 26);
+            this.txtCodCarrera.Size = new System.Drawing.Size(159, 26);
             this.txtCodCarrera.TabIndex = 1;
             // 
             // label3
@@ -120,7 +136,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.pbAyuda);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btnCerrar);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -128,31 +144,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(434, 32);
             this.panel2.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Carrera";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Image = global::UNAN.Properties.Resources.Check;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(197, 199);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(127, 37);
-            this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "Agregar";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnCerrar
             // 
@@ -166,16 +157,26 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // pbAyuda
+            // label1
             // 
-            this.pbAyuda.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pbAyuda.Image = global::UNAN.Properties.Resources.help_32px;
-            this.pbAyuda.Location = new System.Drawing.Point(372, 0);
-            this.pbAyuda.Name = "pbAyuda";
-            this.pbAyuda.Size = new System.Drawing.Size(32, 32);
-            this.pbAyuda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbAyuda.TabIndex = 3;
-            this.pbAyuda.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Carrera";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Image = global::UNAN.Properties.Resources.help_32px;
+            this.pictureBox1.Location = new System.Drawing.Point(372, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmCarrera
             // 
@@ -197,7 +198,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAyuda)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,6 +216,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.ComboBox cbModalidad;
-        private System.Windows.Forms.PictureBox pbAyuda;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
