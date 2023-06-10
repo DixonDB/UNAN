@@ -37,43 +37,49 @@ namespace UNAN
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.lblReloj = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.btnRestaurarBD = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lblUser = new System.Windows.Forms.Label();
-            this.pbUser = new System.Windows.Forms.PictureBox();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.reloj = new System.Windows.Forms.Timer(this.components);
             this.panel17 = new System.Windows.Forms.Panel();
             this.btnTitulo = new System.Windows.Forms.Button();
             this.dlg = new System.Windows.Forms.OpenFileDialog();
+            this.button7 = new System.Windows.Forms.Button();
+            this.btnRestaurarBD = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pbUser = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.pn12.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             this.panel18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel19.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -101,6 +107,8 @@ namespace UNAN
             // 
             // pn12
             // 
+            this.pn12.Controls.Add(this.label3);
+            this.pn12.Controls.Add(this.panel19);
             this.pn12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn12.Location = new System.Drawing.Point(0, 0);
             this.pn12.Margin = new System.Windows.Forms.Padding(2);
@@ -169,21 +177,6 @@ namespace UNAN
             this.lblReloj.TabIndex = 23;
             this.lblReloj.Text = "------";
             // 
-            // button7
-            // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Image = global::UNAN.Properties.Resources.Atras;
-            this.button7.Location = new System.Drawing.Point(921, 5);
-            this.button7.Margin = new System.Windows.Forms.Padding(2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(142, 64);
-            this.button7.TabIndex = 20;
-            this.button7.Text = "Salir";
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // panel16
             // 
             this.panel16.Dock = System.Windows.Forms.DockStyle.Left;
@@ -192,21 +185,6 @@ namespace UNAN
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(8, 64);
             this.panel16.TabIndex = 19;
-            // 
-            // btnRestaurarBD
-            // 
-            this.btnRestaurarBD.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnRestaurarBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestaurarBD.Image = global::UNAN.Properties.Resources.data_backup;
-            this.btnRestaurarBD.Location = new System.Drawing.Point(771, 5);
-            this.btnRestaurarBD.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRestaurarBD.Name = "btnRestaurarBD";
-            this.btnRestaurarBD.Size = new System.Drawing.Size(142, 64);
-            this.btnRestaurarBD.TabIndex = 18;
-            this.btnRestaurarBD.Text = "Restaurar BD";
-            this.btnRestaurarBD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRestaurarBD.UseVisualStyleBackColor = true;
-            this.btnRestaurarBD.Click += new System.EventHandler(this.btnRestaurarBD_Click);
             // 
             // panel15
             // 
@@ -217,20 +195,6 @@ namespace UNAN
             this.panel15.Size = new System.Drawing.Size(8, 64);
             this.panel15.TabIndex = 17;
             // 
-            // button5
-            // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Image = global::UNAN.Properties.Resources.Asistencia;
-            this.button5.Location = new System.Drawing.Point(621, 5);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(142, 64);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "Asistencia";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
             // panel14
             // 
             this.panel14.Dock = System.Windows.Forms.DockStyle.Left;
@@ -239,20 +203,6 @@ namespace UNAN
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(11, 64);
             this.panel14.TabIndex = 15;
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = global::UNAN.Properties.Resources.Avance;
-            this.button4.Location = new System.Drawing.Point(468, 5);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(142, 64);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Avance Programatico";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // panel13
             // 
@@ -263,21 +213,6 @@ namespace UNAN
             this.panel13.Size = new System.Drawing.Size(10, 64);
             this.panel13.TabIndex = 13;
             // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::UNAN.Properties.Resources.user_30px;
-            this.button3.Location = new System.Drawing.Point(316, 5);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(142, 64);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Usuarios";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // panel12
             // 
             this.panel12.Dock = System.Windows.Forms.DockStyle.Left;
@@ -287,21 +222,6 @@ namespace UNAN
             this.panel12.Size = new System.Drawing.Size(14, 64);
             this.panel12.TabIndex = 11;
             // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::UNAN.Properties.Resources.Plan;
-            this.button2.Location = new System.Drawing.Point(160, 5);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(142, 64);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Plan de estudios";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // panel11
             // 
             this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
@@ -310,21 +230,6 @@ namespace UNAN
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(10, 64);
             this.panel11.TabIndex = 9;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::UNAN.Properties.Resources.personal;
-            this.button1.Location = new System.Drawing.Point(8, 5);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 64);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Profesores";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel8
             // 
@@ -391,18 +296,6 @@ namespace UNAN
             this.lblUser.Text = "User Name";
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pbUser
-            // 
-            this.pbUser.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pbUser.Image = global::UNAN.Properties.Resources.usuario;
-            this.pbUser.Location = new System.Drawing.Point(0, 0);
-            this.pbUser.Margin = new System.Windows.Forms.Padding(2);
-            this.pbUser.Name = "pbUser";
-            this.pbUser.Size = new System.Drawing.Size(98, 75);
-            this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbUser.TabIndex = 3;
-            this.pbUser.TabStop = false;
-            // 
             // panel18
             // 
             this.panel18.Controls.Add(this.pictureBox1);
@@ -412,18 +305,6 @@ namespace UNAN
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(106, 75);
             this.panel18.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::UNAN.Properties.Resources.Logo_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(106, 75);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // reloj
             // 
@@ -457,6 +338,174 @@ namespace UNAN
             // 
             this.dlg.FileName = "openFileDialog1";
             // 
+            // button7
+            // 
+            this.button7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Image = global::UNAN.Properties.Resources.Atras;
+            this.button7.Location = new System.Drawing.Point(921, 5);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(142, 64);
+            this.button7.TabIndex = 20;
+            this.button7.Text = "Salir";
+            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // btnRestaurarBD
+            // 
+            this.btnRestaurarBD.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnRestaurarBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestaurarBD.Image = global::UNAN.Properties.Resources.data_backup;
+            this.btnRestaurarBD.Location = new System.Drawing.Point(771, 5);
+            this.btnRestaurarBD.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRestaurarBD.Name = "btnRestaurarBD";
+            this.btnRestaurarBD.Size = new System.Drawing.Size(142, 64);
+            this.btnRestaurarBD.TabIndex = 18;
+            this.btnRestaurarBD.Text = "Restaurar BD";
+            this.btnRestaurarBD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRestaurarBD.UseVisualStyleBackColor = true;
+            this.btnRestaurarBD.Click += new System.EventHandler(this.btnRestaurarBD_Click);
+            // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Image = global::UNAN.Properties.Resources.Asistencia;
+            this.button5.Location = new System.Drawing.Point(621, 5);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(142, 64);
+            this.button5.TabIndex = 16;
+            this.button5.Text = "Asistencia";
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Image = global::UNAN.Properties.Resources.Avance;
+            this.button4.Location = new System.Drawing.Point(468, 5);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(142, 64);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "Avance Programatico";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Image = global::UNAN.Properties.Resources.user_30px;
+            this.button3.Location = new System.Drawing.Point(316, 5);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(142, 64);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Usuarios";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::UNAN.Properties.Resources.Plan;
+            this.button2.Location = new System.Drawing.Point(160, 5);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(142, 64);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Plan de estudios";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::UNAN.Properties.Resources.personal;
+            this.button1.Location = new System.Drawing.Point(8, 5);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(142, 64);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Profesores";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pbUser
+            // 
+            this.pbUser.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pbUser.Image = global::UNAN.Properties.Resources.usuario;
+            this.pbUser.Location = new System.Drawing.Point(0, 0);
+            this.pbUser.Margin = new System.Windows.Forms.Padding(2);
+            this.pbUser.Name = "pbUser";
+            this.pbUser.Size = new System.Drawing.Size(98, 75);
+            this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbUser.TabIndex = 3;
+            this.pbUser.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::UNAN.Properties.Resources.Logo_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(106, 75);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel19.Controls.Add(this.panel20);
+            this.panel19.Controls.Add(this.panel21);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel19.Location = new System.Drawing.Point(0, 0);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(1010, 45);
+            this.panel19.TabIndex = 7;
+            // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.Color.Yellow;
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel20.Location = new System.Drawing.Point(0, 16);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(1010, 17);
+            this.panel20.TabIndex = 1;
+            // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.Color.Red;
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel21.Location = new System.Drawing.Point(0, 0);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(1010, 16);
+            this.panel21.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 80F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(0, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(1010, 239);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Bienvenidos";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -472,6 +521,7 @@ namespace UNAN
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.pn12.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
@@ -479,10 +529,11 @@ namespace UNAN
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
             this.panel18.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel19.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -521,6 +572,10 @@ namespace UNAN
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Button btnTitulo;
         private System.Windows.Forms.OpenFileDialog dlg;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Panel panel21;
     }
 }
 

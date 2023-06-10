@@ -38,7 +38,7 @@ namespace UNAN.Presentacion
         {
             txtNombreApellidos.Clear();
             txtIdentificacion.Clear();
-            txtCorreo.Clear();
+            txtCelular.Clear();
             txtCorreo.Clear();
         }
         private void DiseñarDtvProfes()
@@ -183,7 +183,6 @@ namespace UNAN.Presentacion
                 PanelPaginado.Visible = false;
                 panelRegitroP.Visible = true;
                 panelRegitroP.Dock = DockStyle.Fill;
-                dataPersonal.Visible = false;
                 btnGuardar.Visible = true;                
                 btnGuardar.Visible = false;
                 btnActualizar.Visible = true;
@@ -210,12 +209,6 @@ namespace UNAN.Presentacion
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            panelRegitroP.Visible = false;
-            PanelPaginado.Visible = true;
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             DiseñarDtvProfes();
@@ -240,6 +233,12 @@ namespace UNAN.Presentacion
                 MostrarProfessores();
                 panelRegitroP.Visible = false;
             }
+        }
+
+        private void btnVolverPersonal_Click(object sender, EventArgs e)
+        {
+            panelRegitroP.Visible = false;
+            PanelPaginado.Visible = true;
         }
     }
 }

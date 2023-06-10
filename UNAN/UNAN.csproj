@@ -74,6 +74,12 @@
     <Compile Include="Presentacion\frmGrupo.Designer.cs">
       <DependentUpon>frmGrupo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\UCAsistencia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentacion\UCAsistencia.Designer.cs">
+      <DependentUpon>UCAsistencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\UCProfes.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmGrupo.resx">
       <DependentUpon>frmGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\UCAsistencia.resx">
+      <DependentUpon>UCAsistencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\UCProfes.resx">
       <DependentUpon>UCProfes.cs</DependentUpon>
