@@ -57,7 +57,7 @@ namespace UNAN.FrmPlanDidactico
             Mostrarcod();
             mod.MostrarModalidades(cbModalidad);
         }
-        public void Mostrarcod()
+        private void Mostrarcod()
         {
             DCarreras funcion = new DCarreras();
             funcion.MostrarCodigoC(cbCarrera.Text, lblCod);

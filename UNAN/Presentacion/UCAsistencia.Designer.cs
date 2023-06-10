@@ -233,6 +233,7 @@
             // 
             // cbGrupo
             // 
+            this.cbGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGrupo.FormattingEnabled = true;
             this.cbGrupo.Location = new System.Drawing.Point(533, 15);
@@ -251,12 +252,14 @@
             // 
             // cbCarrera
             // 
+            this.cbCarrera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCarrera.FormattingEnabled = true;
             this.cbCarrera.Location = new System.Drawing.Point(773, 18);
             this.cbCarrera.Name = "cbCarrera";
             this.cbCarrera.Size = new System.Drawing.Size(247, 28);
             this.cbCarrera.TabIndex = 10;
+            this.cbCarrera.SelectedIndexChanged += new System.EventHandler(this.cbCarrera_SelectedIndexChanged);
             // 
             // cbModalidad
             // 
