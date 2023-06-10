@@ -93,6 +93,16 @@ namespace UNAN.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Addteam {
+            get {
+                object obj = ResourceManager.GetObject("Addteam", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Asistencia {
             get {
                 object obj = ResourceManager.GetObject("Asistencia", resourceCulture);
@@ -166,6 +176,16 @@ namespace UNAN.Properties {
         internal static System.Drawing.Bitmap data_backup {
             get {
                 object obj = ResourceManager.GetObject("data_backup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap help_32px {
+            get {
+                object obj = ResourceManager.GetObject("help_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

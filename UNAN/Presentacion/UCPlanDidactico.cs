@@ -17,6 +17,7 @@ namespace UNAN.FrmPlanDidactico
         //Un DataSet es un objeto que almacena n número de DataTables, estas tablas puedes estar conectadas dentro del dataset.
         private DataSet dtsTablas = new DataSet();
         DCarreras carreras = new DCarreras();
+        DModalidades mod=new DModalidades();
         public UCPlanDidactico()
         {
             InitializeComponent();
@@ -53,6 +54,7 @@ namespace UNAN.FrmPlanDidactico
         private void UCPlanDidactico_Load(object sender, EventArgs e)
         {
             carreras.MostrarCarrera(cbCarrera);
+            mod.MostrarModalidades(cbModalidad);
             Mostrarcod();
             lblCod.Visible = false;
         }
@@ -133,6 +135,14 @@ namespace UNAN.FrmPlanDidactico
         {
             Mostrarcod();
             lblCod.Visible = true;
+        }
+
+        private void btnAddGrupo_Click(object sender, EventArgs e)
+        {
+            FrmGrupo FG = new FrmGrupo();
+            FG.ShowDialog();
+            carreras.MostrarCarrera(cbCarrera);
+            mod.MostrarModalidades(cbModalidad);
         }
     }
 }
