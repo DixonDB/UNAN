@@ -119,12 +119,31 @@ namespace UNAN.Datos
             }
             finally { Conexion.cerrar(); }
         }
+        public void BuscarProfesorIdentidad(ref DataTable dt, string buscador)
+        {
+            try
+            {
+                Conexion.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("BuscarProfesorIdentidad", Conexion.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@Buscador", buscador);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+            finally
+            {
+                Conexion.cerrar();
+            }
+        }
         public void ContarProfesores(ref int Contador)
         {
             try
             {
                 Conexion.abrir();
-                SqlCommand cmd = new SqlCommand("select Count(IdProfesor) from Profesores", Conexion.conectar);
+                SqlCommand cmd = new SqlCommand("select Count(IdProfesores) from Profesores", Conexion.conectar);
                 Contador = Convert.ToInt32(cmd.ExecuteScalar());
             }
             catch (Exception)

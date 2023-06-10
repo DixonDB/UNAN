@@ -240,5 +240,73 @@ namespace UNAN.Presentacion
             panelRegitroP.Visible = false;
             PanelPaginado.Visible = true;
         }
+
+        private void btn_atras_Click(object sender, EventArgs e)
+        {
+            desde -= 10;
+            hasta -= 10;
+            MostrarProfessores();
+            Contar();
+            if (Contador > hasta)
+            {
+                btn_Sig.Visible = true;
+                btn_atras.Visible = true;
+            }
+            else
+            {
+                btn_Sig.Visible = false;
+                btn_atras.Visible = true;
+            }
+            if (desde == 1)
+            {
+                ReiniciarPaginado();
+            }
+            Paginar();
+        }
+
+        private void btn_Sig_Click(object sender, EventArgs e)
+        {
+
+            desde += 10;
+            hasta += 10;
+            MostrarProfessores();
+            Contar();
+            if (Contador > hasta)
+            {
+                btn_Sig.Visible = true;
+                btn_atras.Visible = true;
+            }
+            else
+            {
+                btn_Sig.Visible = false;
+                btn_atras.Visible = true;
+            }
+            Paginar();
+        }
+
+        private void btn_Ultima_Click(object sender, EventArgs e)
+        {
+            hasta = totalPaginas * items_por_pagina;
+            desde = hasta - 9;
+            MostrarProfessores();
+            Contar();
+            if (Contador > hasta)
+            {
+                btn_Sig.Visible = true;
+                btn_atras.Visible = true;
+            }
+            else
+            {
+                btn_Sig.Visible = false;
+                btn_atras.Visible = true;
+            }
+            Paginar();
+        }
+
+        private void btn_Primera_Click(object sender, EventArgs e)
+        {
+            ReiniciarPaginado();
+            MostrarProfessores();
+        }
     }
 }
