@@ -15,5 +15,10 @@ namespace UNAN.Presentacion
         {
             InitializeComponent();
         }
+
+        private void UCAsistencia_Load(object sender, EventArgs e)
+        {
+            lblFecha.Text = DateTime.Now.ToShortDateString();
+        }
     }
 }

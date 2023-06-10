@@ -26,14 +26,6 @@ namespace UNAN
         string Base_De_datos = "Asistencia";
         string Servidor = @".\";
         string ruta;
-        private void button2_Click(object sender, EventArgs e)
-        {
-            pn12.Controls.Clear();
-            UCPlanDidactico plan = new UCPlanDidactico();
-            plan.Dock = DockStyle.Fill;
-            pn12.Controls.Add(plan);
-            btnTitulo.Text = "Plan Didactico Semestral";
-        }
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -49,14 +41,6 @@ namespace UNAN
             btnTitulo.Text = "Usuarios";
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            pn12.Controls.Clear();
-            UCProfes P = new UCProfes();
-            P.Dock = DockStyle.Fill;
-            pn12.Controls.Add(P);
-            btnTitulo.Text = "Personal";
-        }
 
         private void reloj_Tick(object sender, EventArgs e)
         {
@@ -116,6 +100,33 @@ namespace UNAN
                 }
             }
 
+        }
+
+        private void btnAsistencia_Click(object sender, EventArgs e)
+        {
+            pn12.Controls.Clear();
+            UCAsistencia P = new UCAsistencia();
+            P.Dock = DockStyle.Fill;
+            pn12.Controls.Add(P);
+            btnTitulo.Text = "Asistencia";
+        }
+
+        private void btnProfesores_Click(object sender, EventArgs e)
+        {
+            pn12.Controls.Clear();
+            UCProfes P = new UCProfes();
+            P.Dock = DockStyle.Fill;
+            pn12.Controls.Add(P);
+            btnTitulo.Text = "Personal";
+        }
+
+        private void btnPlanEst_Click(object sender, EventArgs e)
+        {
+            pn12.Controls.Clear();
+            UCPlanDidactico plan = new UCPlanDidactico();
+            plan.Dock = DockStyle.Fill;
+            pn12.Controls.Add(plan);
+            btnTitulo.Text = "Plan Didactico Semestral";
         }
     }
 }

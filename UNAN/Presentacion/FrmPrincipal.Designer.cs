@@ -33,53 +33,53 @@ namespace UNAN
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pn12 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.lblReloj = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.btnRestaurarBD = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.btnAsistencia = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.btnAvanceProg = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.btnPlanEst = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.btnProfesores = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.lblUser = new System.Windows.Forms.Label();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.reloj = new System.Windows.Forms.Timer(this.components);
             this.panel17 = new System.Windows.Forms.Panel();
             this.btnTitulo = new System.Windows.Forms.Button();
-            this.dlg = new System.Windows.Forms.OpenFileDialog();
-            this.button7 = new System.Windows.Forms.Button();
-            this.btnRestaurarBD = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.lblUser = new System.Windows.Forms.Label();
             this.pbUser = new System.Windows.Forms.PictureBox();
+            this.panel18 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.reloj = new System.Windows.Forms.Timer(this.components);
+            this.dlg = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.pn12.SuspendLayout();
+            this.panel19.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel18.SuspendLayout();
             this.panel17.SuspendLayout();
+            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
+            this.panel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel19.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -116,6 +116,47 @@ namespace UNAN
             this.pn12.Size = new System.Drawing.Size(1010, 284);
             this.pn12.TabIndex = 5;
             // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 80F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(0, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(1010, 239);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Bienvenidos";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel19.Controls.Add(this.panel20);
+            this.panel19.Controls.Add(this.panel21);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel19.Location = new System.Drawing.Point(0, 0);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(1010, 45);
+            this.panel19.TabIndex = 7;
+            // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.Color.Yellow;
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel20.Location = new System.Drawing.Point(0, 16);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(1010, 17);
+            this.panel20.TabIndex = 1;
+            // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.Color.Red;
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel21.Location = new System.Drawing.Point(0, 0);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(1010, 16);
+            this.panel21.TabIndex = 0;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel5);
@@ -130,19 +171,19 @@ namespace UNAN
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel5.Controls.Add(this.panel10);
-            this.panel5.Controls.Add(this.button7);
+            this.panel5.Controls.Add(this.btnSalir);
             this.panel5.Controls.Add(this.panel16);
             this.panel5.Controls.Add(this.btnRestaurarBD);
             this.panel5.Controls.Add(this.panel15);
-            this.panel5.Controls.Add(this.button5);
+            this.panel5.Controls.Add(this.btnAsistencia);
             this.panel5.Controls.Add(this.panel14);
-            this.panel5.Controls.Add(this.button4);
+            this.panel5.Controls.Add(this.btnAvanceProg);
             this.panel5.Controls.Add(this.panel13);
             this.panel5.Controls.Add(this.button3);
             this.panel5.Controls.Add(this.panel12);
-            this.panel5.Controls.Add(this.button2);
+            this.panel5.Controls.Add(this.btnPlanEst);
             this.panel5.Controls.Add(this.panel11);
-            this.panel5.Controls.Add(this.button1);
+            this.panel5.Controls.Add(this.btnProfesores);
             this.panel5.Controls.Add(this.panel8);
             this.panel5.Controls.Add(this.panel9);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -177,6 +218,21 @@ namespace UNAN
             this.lblReloj.TabIndex = 23;
             this.lblReloj.Text = "------";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Image = global::UNAN.Properties.Resources.Atras;
+            this.btnSalir.Location = new System.Drawing.Point(921, 5);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(142, 64);
+            this.btnSalir.TabIndex = 20;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.button7_Click);
+            // 
             // panel16
             // 
             this.panel16.Dock = System.Windows.Forms.DockStyle.Left;
@@ -185,6 +241,21 @@ namespace UNAN
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(8, 64);
             this.panel16.TabIndex = 19;
+            // 
+            // btnRestaurarBD
+            // 
+            this.btnRestaurarBD.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnRestaurarBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestaurarBD.Image = global::UNAN.Properties.Resources.data_backup;
+            this.btnRestaurarBD.Location = new System.Drawing.Point(771, 5);
+            this.btnRestaurarBD.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRestaurarBD.Name = "btnRestaurarBD";
+            this.btnRestaurarBD.Size = new System.Drawing.Size(142, 64);
+            this.btnRestaurarBD.TabIndex = 18;
+            this.btnRestaurarBD.Text = "Restaurar BD";
+            this.btnRestaurarBD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRestaurarBD.UseVisualStyleBackColor = true;
+            this.btnRestaurarBD.Click += new System.EventHandler(this.btnRestaurarBD_Click);
             // 
             // panel15
             // 
@@ -195,6 +266,21 @@ namespace UNAN
             this.panel15.Size = new System.Drawing.Size(8, 64);
             this.panel15.TabIndex = 17;
             // 
+            // btnAsistencia
+            // 
+            this.btnAsistencia.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAsistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAsistencia.Image = global::UNAN.Properties.Resources.Asistencia;
+            this.btnAsistencia.Location = new System.Drawing.Point(621, 5);
+            this.btnAsistencia.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAsistencia.Name = "btnAsistencia";
+            this.btnAsistencia.Size = new System.Drawing.Size(142, 64);
+            this.btnAsistencia.TabIndex = 16;
+            this.btnAsistencia.Text = "Asistencia";
+            this.btnAsistencia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAsistencia.UseVisualStyleBackColor = true;
+            this.btnAsistencia.Click += new System.EventHandler(this.btnAsistencia_Click);
+            // 
             // panel14
             // 
             this.panel14.Dock = System.Windows.Forms.DockStyle.Left;
@@ -203,6 +289,20 @@ namespace UNAN
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(11, 64);
             this.panel14.TabIndex = 15;
+            // 
+            // btnAvanceProg
+            // 
+            this.btnAvanceProg.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAvanceProg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAvanceProg.Image = global::UNAN.Properties.Resources.Avance;
+            this.btnAvanceProg.Location = new System.Drawing.Point(468, 5);
+            this.btnAvanceProg.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAvanceProg.Name = "btnAvanceProg";
+            this.btnAvanceProg.Size = new System.Drawing.Size(142, 64);
+            this.btnAvanceProg.TabIndex = 14;
+            this.btnAvanceProg.Text = "Avance Programatico";
+            this.btnAvanceProg.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAvanceProg.UseVisualStyleBackColor = true;
             // 
             // panel13
             // 
@@ -213,6 +313,21 @@ namespace UNAN
             this.panel13.Size = new System.Drawing.Size(10, 64);
             this.panel13.TabIndex = 13;
             // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Image = global::UNAN.Properties.Resources.user_30px;
+            this.button3.Location = new System.Drawing.Point(316, 5);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(142, 64);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Usuarios";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // panel12
             // 
             this.panel12.Dock = System.Windows.Forms.DockStyle.Left;
@@ -222,6 +337,21 @@ namespace UNAN
             this.panel12.Size = new System.Drawing.Size(14, 64);
             this.panel12.TabIndex = 11;
             // 
+            // btnPlanEst
+            // 
+            this.btnPlanEst.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPlanEst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlanEst.Image = global::UNAN.Properties.Resources.Plan;
+            this.btnPlanEst.Location = new System.Drawing.Point(160, 5);
+            this.btnPlanEst.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPlanEst.Name = "btnPlanEst";
+            this.btnPlanEst.Size = new System.Drawing.Size(142, 64);
+            this.btnPlanEst.TabIndex = 10;
+            this.btnPlanEst.Text = "Plan de estudios";
+            this.btnPlanEst.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPlanEst.UseVisualStyleBackColor = true;
+            this.btnPlanEst.Click += new System.EventHandler(this.btnPlanEst_Click);
+            // 
             // panel11
             // 
             this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
@@ -230,6 +360,21 @@ namespace UNAN
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(10, 64);
             this.panel11.TabIndex = 9;
+            // 
+            // btnProfesores
+            // 
+            this.btnProfesores.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnProfesores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfesores.Image = global::UNAN.Properties.Resources.personal;
+            this.btnProfesores.Location = new System.Drawing.Point(8, 5);
+            this.btnProfesores.Margin = new System.Windows.Forms.Padding(2);
+            this.btnProfesores.Name = "btnProfesores";
+            this.btnProfesores.Size = new System.Drawing.Size(142, 64);
+            this.btnProfesores.TabIndex = 8;
+            this.btnProfesores.Text = "Profesores";
+            this.btnProfesores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProfesores.UseVisualStyleBackColor = true;
+            this.btnProfesores.Click += new System.EventHandler(this.btnProfesores_Click);
             // 
             // panel8
             // 
@@ -272,44 +417,6 @@ namespace UNAN
             this.panel3.Size = new System.Drawing.Size(1010, 75);
             this.panel3.TabIndex = 1;
             // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel7.Controls.Add(this.lblUser);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel7.Location = new System.Drawing.Point(98, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(104, 75);
-            this.panel7.TabIndex = 4;
-            // 
-            // lblUser
-            // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(0, 0);
-            this.lblUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(88, 17);
-            this.lblUser.TabIndex = 0;
-            this.lblUser.Text = "User Name";
-            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel18
-            // 
-            this.panel18.Controls.Add(this.pictureBox1);
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel18.Location = new System.Drawing.Point(904, 0);
-            this.panel18.Margin = new System.Windows.Forms.Padding(2);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(106, 75);
-            this.panel18.TabIndex = 2;
-            // 
-            // reloj
-            // 
-            this.reloj.Tick += new System.EventHandler(this.reloj_Tick);
-            // 
             // panel17
             // 
             this.panel17.Controls.Add(this.btnTitulo);
@@ -334,112 +441,29 @@ namespace UNAN
             this.btnTitulo.Text = "Sistema Control de Asistencia Docentes Horarios";
             this.btnTitulo.UseVisualStyleBackColor = false;
             // 
-            // dlg
+            // panel7
             // 
-            this.dlg.FileName = "openFileDialog1";
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel7.Controls.Add(this.lblUser);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel7.Location = new System.Drawing.Point(98, 0);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(104, 75);
+            this.panel7.TabIndex = 4;
             // 
-            // button7
+            // lblUser
             // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Image = global::UNAN.Properties.Resources.Atras;
-            this.button7.Location = new System.Drawing.Point(921, 5);
-            this.button7.Margin = new System.Windows.Forms.Padding(2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(142, 64);
-            this.button7.TabIndex = 20;
-            this.button7.Text = "Salir";
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // btnRestaurarBD
-            // 
-            this.btnRestaurarBD.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnRestaurarBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestaurarBD.Image = global::UNAN.Properties.Resources.data_backup;
-            this.btnRestaurarBD.Location = new System.Drawing.Point(771, 5);
-            this.btnRestaurarBD.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRestaurarBD.Name = "btnRestaurarBD";
-            this.btnRestaurarBD.Size = new System.Drawing.Size(142, 64);
-            this.btnRestaurarBD.TabIndex = 18;
-            this.btnRestaurarBD.Text = "Restaurar BD";
-            this.btnRestaurarBD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRestaurarBD.UseVisualStyleBackColor = true;
-            this.btnRestaurarBD.Click += new System.EventHandler(this.btnRestaurarBD_Click);
-            // 
-            // button5
-            // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Image = global::UNAN.Properties.Resources.Asistencia;
-            this.button5.Location = new System.Drawing.Point(621, 5);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(142, 64);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "Asistencia";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = global::UNAN.Properties.Resources.Avance;
-            this.button4.Location = new System.Drawing.Point(468, 5);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(142, 64);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Avance Programatico";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::UNAN.Properties.Resources.user_30px;
-            this.button3.Location = new System.Drawing.Point(316, 5);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(142, 64);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Usuarios";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::UNAN.Properties.Resources.Plan;
-            this.button2.Location = new System.Drawing.Point(160, 5);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(142, 64);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Plan de estudios";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::UNAN.Properties.Resources.personal;
-            this.button1.Location = new System.Drawing.Point(8, 5);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 64);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Profesores";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.lblUser.AutoSize = true;
+            this.lblUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.Location = new System.Drawing.Point(0, 0);
+            this.lblUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(88, 17);
+            this.lblUser.TabIndex = 0;
+            this.lblUser.Text = "User Name";
+            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pbUser
             // 
@@ -453,6 +477,16 @@ namespace UNAN
             this.pbUser.TabIndex = 3;
             this.pbUser.TabStop = false;
             // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.pictureBox1);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel18.Location = new System.Drawing.Point(904, 0);
+            this.panel18.Margin = new System.Windows.Forms.Padding(2);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(106, 75);
+            this.panel18.TabIndex = 2;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -465,46 +499,13 @@ namespace UNAN
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // panel19
+            // reloj
             // 
-            this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.panel19.Controls.Add(this.panel20);
-            this.panel19.Controls.Add(this.panel21);
-            this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel19.Location = new System.Drawing.Point(0, 0);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(1010, 45);
-            this.panel19.TabIndex = 7;
+            this.reloj.Tick += new System.EventHandler(this.reloj_Tick);
             // 
-            // panel20
+            // dlg
             // 
-            this.panel20.BackColor = System.Drawing.Color.Yellow;
-            this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel20.Location = new System.Drawing.Point(0, 16);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(1010, 17);
-            this.panel20.TabIndex = 1;
-            // 
-            // panel21
-            // 
-            this.panel21.BackColor = System.Drawing.Color.Red;
-            this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel21.Location = new System.Drawing.Point(0, 0);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(1010, 16);
-            this.panel21.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 80F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(0, 45);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1010, 239);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Bienvenidos";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.dlg.FileName = "openFileDialog1";
             // 
             // frmMenu
             // 
@@ -522,18 +523,18 @@ namespace UNAN
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.pn12.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.panel18.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
+            this.panel18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel19.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -548,19 +549,19 @@ namespace UNAN
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label lblReloj;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Button btnRestaurarBD;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnAsistencia;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAvanceProg;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnPlanEst;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnProfesores;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel7;
