@@ -23,7 +23,7 @@ namespace UNAN
         }
         public int Idusuario;
         public string LoginV;
-        string Base_De_datos = "Asistencia";
+        string Base_De_datos = "UNAN";
         string Servidor = @".\";
         string ruta;
 
@@ -105,7 +105,7 @@ namespace UNAN
         private void btnAsistencia_Click(object sender, EventArgs e)
         {
             pn12.Controls.Clear();
-            UCAsistencia P = new UCAsistencia();
+            UCControlAsistencia P = new UCControlAsistencia();
             P.Dock = DockStyle.Fill;
             pn12.Controls.Add(P);
             btnTitulo.Text = "Asistencia";

@@ -61,8 +61,10 @@
     <Compile Include="Datos\DProfesores.cs" />
     <Compile Include="Logica\Bases.cs" />
     <Compile Include="Logica\Desencryptacion.cs" />
+    <Compile Include="Logica\Encrip.cs" />
     <Compile Include="Logica\Encryptacion.cs" />
     <Compile Include="Logica\LCarreras.cs" />
+    <Compile Include="Logica\LModalidad.cs" />
     <Compile Include="Logica\Lmodulos.cs" />
     <Compile Include="Logica\Lpermisos.cs" />
     <Compile Include="Logica\LProfesores.cs" />
@@ -89,6 +91,12 @@
     </Compile>
     <Compile Include="Presentacion\UCAsistencia.Designer.cs">
       <DependentUpon>UCAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\UCControlAsistencia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentacion\UCControlAsistencia.Designer.cs">
+      <DependentUpon>UCControlAsistencia.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\UCProfes.cs">
       <SubType>UserControl</SubType>
@@ -127,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\UCAsistencia.resx">
       <DependentUpon>UCAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\UCControlAsistencia.resx">
+      <DependentUpon>UCControlAsistencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\UCProfes.resx">
       <DependentUpon>UCProfes.cs</DependentUpon>

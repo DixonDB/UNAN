@@ -7,18 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using UNAN.Datos;
-using UNAN.Logica;
 
 namespace UNAN.Presentacion
 {
-    public partial class UCAsistencia : UserControl
+    public partial class UCControlAsistencia : UserControl
     {
-        public UCAsistencia()
+        public UCControlAsistencia()
         {
             InitializeComponent();
         }
 
-        private void UCAsistencia_Load(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            pnFormAsistencia.Visible = true;
+            pnFormAsistencia.Dock= DockStyle.Fill;
+            PanelPaginado.Visible = false;
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            pnFormAsistencia.Visible= false;
+            PanelPaginado.Visible = true;
+        }
+
+        private void UCControlAsistencia_Load(object sender, EventArgs e)
         {
             lblFecha.Text = DateTime.Now.ToShortDateString();
             MostrarDatos();
@@ -26,7 +38,7 @@ namespace UNAN.Presentacion
         private void MostrarDatos()
         {
             DCarreras carreras = new DCarreras();
-            DModalidades mod= new DModalidades();
+            DModalidades mod = new DModalidades();
             carreras.MostrarCarrera(cbCarrera);
             carreras.MostrarCodigoC(cbCarrera.Text, lblCod);
             mod.MostrarModalidades(cbModalidad);
@@ -34,7 +46,7 @@ namespace UNAN.Presentacion
 
         private void cbCarrera_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DCarreras carreras=new DCarreras();
+            DCarreras carreras = new DCarreras();
             carreras.MostrarCodigoC(cbCarrera.Text, lblCod);
         }
     }

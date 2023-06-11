@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using UNAN.Datos;
+using UNAN.Logica;
 
 namespace UNAN.Presentacion
 {
@@ -28,6 +29,31 @@ namespace UNAN.Presentacion
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtGrupo.Text))
+            {
+                InsertarGrupo();
+            }
+            else
+            {
+                MessageBox.Show("Ingresa el grupo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void InsertarGrupo()
+        {
+            LModalidad parametros= new LModalidad();
+            DModalidades funcion= new DModalidades();
+            parametros.Grupo=txtGrupo.Text;
+            parametros.IdModalidad = Convert.ToInt32(cbModalidad.SelectedValue);
+            if (funcion.InsertarGrupo(parametros)==true)
+            {
+                MessageBox.Show("Grupo Insertado con Exito", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.Close();
+            }
         }
     }
 }

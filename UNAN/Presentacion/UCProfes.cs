@@ -68,7 +68,7 @@ namespace UNAN.Presentacion
             parametros.CelularP = int.Parse(txtCelular.Text);
             parametros.CarnetP = txtIdentificacion.Text;
             parametros.Usuario= txtUsuario.Text;
-            parametros.Password = txtContraseña.Text;
+            parametros.Password = Encrip.Encriptar(Encrip.Encriptar(txtContraseña.Text));
             MemoryStream ms = new MemoryStream();
             Icono.Image.Save(ms, Icono.Image.RawFormat);
             parametros.Icono = ms.GetBuffer();
@@ -274,7 +274,7 @@ namespace UNAN.Presentacion
                 txtCelular.Text = dataProfesores.SelectedCells[5].Value.ToString();
                 txtIdentificacion.Text= dataProfesores.SelectedCells[6].Value.ToString();
                 txtUsuario.Text = dataProfesores.SelectedCells[7].Value.ToString();
-                txtContraseña.Text= dataProfesores.SelectedCells[8].Value.ToString();
+                txtContraseña.Text = Encrip.DesEncriptar(Encrip.DesEncriptar(dataProfesores.SelectedCells[8].Value.ToString()));
                 Icono.BackgroundImage = null;
                 byte[] b = (byte[])(dataProfesores.SelectedCells[9].Value);
                 MemoryStream ms = new MemoryStream(b);
@@ -331,7 +331,7 @@ namespace UNAN.Presentacion
             parametros.CelularP =Convert.ToInt32( txtCelular.Text);
             parametros.CarnetP = txtIdentificacion.Text;
             parametros.Usuario= txtUsuario.Text;
-            parametros.Password = txtContraseña.Text;
+            parametros.Password =Encrip.Encriptar(Encrip.Encriptar(txtContraseña.Text));
             MemoryStream ms = new MemoryStream();
             Icono.Image.Save(ms, Icono.Image.RawFormat);
             parametros.Icono = ms.GetBuffer();
