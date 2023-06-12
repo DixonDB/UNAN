@@ -53,6 +53,7 @@
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnFormAsistencia = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.pnHrSalida = new System.Windows.Forms.Panel();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
@@ -85,7 +86,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtHrEntrada = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.PanelPaginado.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -420,6 +420,20 @@
             this.panel4.Size = new System.Drawing.Size(1219, 55);
             this.panel4.TabIndex = 11;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnVolver.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.Location = new System.Drawing.Point(714, 6);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(100, 33);
+            this.btnVolver.TabIndex = 7;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -612,6 +626,7 @@
             this.cbModalidad.Name = "cbModalidad";
             this.cbModalidad.Size = new System.Drawing.Size(110, 26);
             this.cbModalidad.TabIndex = 48;
+            this.cbModalidad.SelectedIndexChanged += new System.EventHandler(this.cbModalidad_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -797,20 +812,6 @@
             this.label1.Size = new System.Drawing.Size(167, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Hora de entrada:";
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnVolver.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(714, 6);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(100, 33);
-            this.btnVolver.TabIndex = 7;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // UCControlAsistencia
             // 

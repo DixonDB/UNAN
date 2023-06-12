@@ -48,12 +48,12 @@ namespace UNAN.FrmPlanDidactico
         {
             FrmCarrera carrera = new FrmCarrera();
             carrera.ShowDialog();
-            carreras.MostrarCarrera(cbCarrera);
+            carreras.MostrarCarrera(cbCarrera,cbModalidad.Text);
         }
 
         private void UCPlanDidactico_Load(object sender, EventArgs e)
         {
-            carreras.MostrarCarrera(cbCarrera);
+            carreras.MostrarCarrera(cbCarrera, cbModalidad.Text);
             Mostrarcod();
             mod.MostrarModalidades(cbModalidad);
             mod.MostrarGrupos(cbGrupo);
@@ -148,6 +148,11 @@ namespace UNAN.FrmPlanDidactico
         private void cbCarrera_SelectedIndexChanged(object sender, EventArgs e)
         {
             Mostrarcod();
+        }
+
+        private void cbModalidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            carreras.MostrarCarrera(cbCarrera, cbModalidad.Text);
         }
     }
 }

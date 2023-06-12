@@ -23,7 +23,7 @@ namespace UNAN.Presentacion
         private void frmGrupo_Load(object sender, EventArgs e)
         {
             mod.MostrarModalidades(cbModalidad);
-            cr.MostrarCarrera(cbCarrera);
+            cr.MostrarCarrera(cbCarrera, cbModalidad.Text);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

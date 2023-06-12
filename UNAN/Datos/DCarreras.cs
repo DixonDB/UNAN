@@ -40,12 +40,13 @@ namespace UNAN.Datos
 			}
 		}
 
-		public void MostrarCarrera(ComboBox combo)
+		public void MostrarCarrera(ComboBox combo,string modalidad)
 		{
 			Conexion.abrir();
 			SqlCommand da = new SqlCommand("MostrarCarrera", Conexion.conectar);
 			da.CommandType= CommandType.StoredProcedure;
-			SqlDataAdapter cb = new SqlDataAdapter(da);
+            da.Parameters.AddWithValue("@Mod", modalidad);
+            SqlDataAdapter cb = new SqlDataAdapter(da);
 			DataTable dt = new DataTable();
 			cb.Fill(dt);
 			combo.ValueMember = "IdCarreras";

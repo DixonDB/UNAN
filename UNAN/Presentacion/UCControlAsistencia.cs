@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using UNAN.Datos;
+using UNAN.Logica;
 
 namespace UNAN.Presentacion
 {
     public partial class UCControlAsistencia : UserControl
     {
+        DCarreras carreras = new DCarreras();
         public UCControlAsistencia()
         {
             InitializeComponent();
@@ -37,17 +39,21 @@ namespace UNAN.Presentacion
         }
         private void MostrarDatos()
         {
-            DCarreras carreras = new DCarreras();
             DModalidades mod = new DModalidades();
-            carreras.MostrarCarrera(cbCarrera);
+            carreras.MostrarCarrera(cbCarrera, cbModalidad.Text);
             carreras.MostrarCodigoC(cbCarrera.Text, lblCod);
             mod.MostrarModalidades(cbModalidad);
         }
 
         private void cbCarrera_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DCarreras carreras = new DCarreras();
             carreras.MostrarCodigoC(cbCarrera.Text, lblCod);
+        }
+
+        private void cbModalidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            carreras.MostrarCarrera(cbCarrera, cbModalidad.Text);
+
         }
     }
 }
