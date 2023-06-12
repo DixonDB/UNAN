@@ -10,6 +10,9 @@ using UNAN.Logica;
 using UNAN.Datos;
 using System.IO;
 using System.Xml.Linq;
+using System.Net.Mail;
+using System.Text.RegularExpressions;
+using System.Runtime.Remoting.Channels;
 
 namespace UNAN.Presentacion
 {
@@ -456,5 +459,22 @@ namespace UNAN.Presentacion
             MostrarProfessores();
             panelRegitroP.Visible = false;
         }
+
+        private void ValidarEmail(object sender,EventArgs e)
+        {
+            ErrorProvider errorProvider = new ErrorProvider();
+            TextBox txt= sender as TextBox;
+            if (txt.Text!=string.Empty&& Regex.IsMatch(txt.Text,
+                @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                errorProvider.Clear();
+            }
+            else
+            {
+                errorProvider.SetError(txtCorreo, "Correo no valido");
+                txt.Focus();
+            }
+        }
+
     }
 }
