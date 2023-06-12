@@ -14,6 +14,7 @@ namespace UNAN.Presentacion
     public partial class UCControlAsistencia : UserControl
     {
         DCarreras carreras = new DCarreras();
+        DModalidades mod = new DModalidades();
         public UCControlAsistencia()
         {
             InitializeComponent();
@@ -39,7 +40,6 @@ namespace UNAN.Presentacion
         }
         private void MostrarDatos()
         {
-            DModalidades mod = new DModalidades();
             carreras.MostrarCarrera(cbCarrera, cbModalidad.Text);
             carreras.MostrarCodigoC(cbCarrera.Text, lblCod);
             mod.MostrarModalidades(cbModalidad);
@@ -48,6 +48,7 @@ namespace UNAN.Presentacion
         private void cbCarrera_SelectedIndexChanged(object sender, EventArgs e)
         {
             carreras.MostrarCodigoC(cbCarrera.Text, lblCod);
+            mod.MostrarGrupos(cbGrupo, cbCarrera.Text);
         }
 
         private void cbModalidad_SelectedIndexChanged(object sender, EventArgs e)

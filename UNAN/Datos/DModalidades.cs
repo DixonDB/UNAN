@@ -47,11 +47,12 @@ namespace UNAN.Datos
                 Conexion.cerrar();
             }
         }
-        public void MostrarGrupos(ComboBox combo)
+        public void MostrarGrupos(ComboBox combo,string carrera)
         {
             Conexion.abrir();
             SqlCommand da = new SqlCommand("MostrarGrupo", Conexion.conectar);
             da.CommandType = CommandType.StoredProcedure;
+            da.Parameters.AddWithValue("@carrera", carrera);
             SqlDataAdapter cb = new SqlDataAdapter(da);
             DataTable dt = new DataTable();
             cb.Fill(dt);
