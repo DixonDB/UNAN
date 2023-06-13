@@ -35,7 +35,8 @@ namespace UNAN.Presentacion
         {
             frmMenu fr = new frmMenu();
             fr.ShowDialog();
-            this.Close();
+            Login lg = new Login();
+            lg.Close();
         }
     }
 }
