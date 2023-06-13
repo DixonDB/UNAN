@@ -82,6 +82,7 @@
             this.cbModalidad.Name = "cbModalidad";
             this.cbModalidad.Size = new System.Drawing.Size(87, 28);
             this.cbModalidad.TabIndex = 5;
+            this.cbModalidad.SelectedIndexChanged += new System.EventHandler(this.cbModalidad_SelectedIndexChanged);
             // 
             // label4
             // 

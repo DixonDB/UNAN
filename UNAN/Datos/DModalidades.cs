@@ -33,13 +33,13 @@ namespace UNAN.Datos
                 SqlCommand cmd = new SqlCommand("InsertarGrupo", Conexion.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@NombreGrupo", parametro.Grupo);
-                cmd.Parameters.AddWithValue("@IdModalidad", parametro.IdModalidad);
+                cmd.Parameters.AddWithValue("@IdCarreras", parametro.IdCarrera);
                 cmd.ExecuteNonQuery();
                 return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,ex.StackTrace);
                 return false;
             }
             finally

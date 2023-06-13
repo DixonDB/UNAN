@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using UNAN.Datos;
+using UNAN.FrmPlanDidactico;
 using UNAN.Logica;
 
 namespace UNAN.Presentacion
@@ -22,8 +23,11 @@ namespace UNAN.Presentacion
 
         private void frmGrupo_Load(object sender, EventArgs e)
         {
+            UCPlanDidactico up=new UCPlanDidactico();
             mod.MostrarModalidades(cbModalidad);
             cr.MostrarCarrera(cbCarrera, cbModalidad.Text);
+            cbCarrera.Text = up.cbCarrera.Text;
+            cbModalidad.Text=up.cbModalidad.Text;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -48,12 +52,17 @@ namespace UNAN.Presentacion
             LModalidad parametros= new LModalidad();
             DModalidades funcion= new DModalidades();
             parametros.Grupo=txtGrupo.Text;
-            parametros.IdModalidad = Convert.ToInt32(cbModalidad.SelectedValue);
+            parametros.IdCarrera = Convert.ToInt32(cbCarrera.SelectedValue);
             if (funcion.InsertarGrupo(parametros)==true)
             {
                 MessageBox.Show("Grupo Insertado con Exito", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.Close();
             }
+        }
+
+        private void cbModalidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cr.MostrarCarrera(cbCarrera, cbModalidad.Text);
         }
     }
 }

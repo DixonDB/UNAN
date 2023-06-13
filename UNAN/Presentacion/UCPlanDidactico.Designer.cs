@@ -835,11 +835,9 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtSemInicio;
         private System.Windows.Forms.Button btnAddGrupo;
-        private System.Windows.Forms.ComboBox cbModalidad;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label lblCod;
         private System.Windows.Forms.Button btnCarrera;
-        private System.Windows.Forms.ComboBox cbCarrera;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox cbSemestre;
         private System.Windows.Forms.Label label6;
@@ -852,5 +850,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAyuda;
+        public System.Windows.Forms.ComboBox cbModalidad;
+        public System.Windows.Forms.ComboBox cbCarrera;
     }
 }
