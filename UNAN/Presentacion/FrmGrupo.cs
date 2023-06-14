@@ -44,18 +44,20 @@ namespace UNAN.Presentacion
             else
             {
                 MessageBox.Show("Ingresa el grupo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtGrupo.Focus();
             }
         }
 
         private void InsertarGrupo()
         {
+            UCPlanDidactico uc=new UCPlanDidactico();
             LModalidad parametros= new LModalidad();
             DModalidades funcion= new DModalidades();
             parametros.Grupo=txtGrupo.Text;
             parametros.IdCarrera = Convert.ToInt32(cbCarrera.SelectedValue);
             if (funcion.InsertarGrupo(parametros)==true)
             {
-                MessageBox.Show("Grupo Insertado con Exito", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Grupo Insertado con exito", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
         }

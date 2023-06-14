@@ -34,12 +34,27 @@ namespace UNAN.Datos
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@NombreGrupo", parametro.Grupo);
                 cmd.Parameters.AddWithValue("@IdCarreras", parametro.IdCarrera);
+
+                SqlParameter mensajeParam = new SqlParameter("@Mensaje", SqlDbType.VarChar, 100);
+                mensajeParam.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(mensajeParam);
+
                 cmd.ExecuteNonQuery();
-                return true;
+
+                string mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
+                if (!string.IsNullOrEmpty(mensaje))
+                {
+                    MessageBox.Show(mensaje, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message,ex.StackTrace);
+                MessageBox.Show(ex.Message);
                 return false;
             }
             finally
@@ -47,6 +62,7 @@ namespace UNAN.Datos
                 Conexion.cerrar();
             }
         }
+
         public void MostrarGrupos(ComboBox combo,string carrera)
         {
             Conexion.abrir();

@@ -841,7 +841,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox cbSemestre;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbGrupo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDocente;
         private System.Windows.Forms.TextBox txtAAcademico;
@@ -852,5 +851,6 @@
         private System.Windows.Forms.Button btnAyuda;
         public System.Windows.Forms.ComboBox cbModalidad;
         public System.Windows.Forms.ComboBox cbCarrera;
+        public System.Windows.Forms.ComboBox cbGrupo;
     }
 }
