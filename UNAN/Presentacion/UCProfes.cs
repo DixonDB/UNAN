@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using UNAN.Logica;
-using UNAN.Datos;
 using System.IO;
-using System.Xml.Linq;
-using System.Net.Mail;
 using System.Text.RegularExpressions;
-using System.Runtime.Remoting.Channels;
+using System.Windows.Forms;
+using UNAN.Datos;
+using UNAN.Logica;
 
 namespace UNAN.Presentacion
 {
@@ -472,7 +465,6 @@ namespace UNAN.Presentacion
             else
             {
                 errorProvider.SetError(txtCorreo, "Correo no valido");
-                txt.Focus();
             }
         }
 

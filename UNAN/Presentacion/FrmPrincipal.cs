@@ -8,7 +8,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using UNAN.Control_Usuario;
 using UNAN.Datos;
 using UNAN.FrmPlanDidactico;
 using UNAN.Presentacion;

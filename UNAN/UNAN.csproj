@@ -252,5 +252,11 @@
   <ItemGroup>
     <None Include="Resources\analitica.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoKFD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo2.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
