@@ -34,11 +34,7 @@ namespace UNAN
 
         private void button3_Click(object sender, EventArgs e)
         {
-            pn12.Controls.Clear();
-            Usuarios plan = new Usuarios();
-            plan.Dock = DockStyle.Fill;
-            pn12.Controls.Add(plan);
-            btnTitulo.Text = "Usuarios";
+            
         }
 
 

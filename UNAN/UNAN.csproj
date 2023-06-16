@@ -80,11 +80,11 @@
     <Compile Include="Presentacion\frmGrupo.Designer.cs">
       <DependentUpon>frmGrupo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Login.cs">
+    <Compile Include="Presentacion\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Presentacion\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\UCControlAsistencia.cs">
       <SubType>UserControl</SubType>
@@ -97,12 +97,6 @@
     </Compile>
     <Compile Include="Presentacion\UCProfes.Designer.cs">
       <DependentUpon>UCProfes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Usuarios.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Usuarios.Designer.cs">
-      <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -124,17 +118,14 @@
     <EmbeddedResource Include="Presentacion\frmGrupo.resx">
       <DependentUpon>frmGrupo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\UCControlAsistencia.resx">
       <DependentUpon>UCControlAsistencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\UCProfes.resx">
       <DependentUpon>UCProfes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Usuarios.resx">
-      <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
@@ -251,6 +242,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bloquear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zyro-image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\documentos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analitica.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

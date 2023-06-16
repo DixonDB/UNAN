@@ -9,34 +9,23 @@ using System.Windows.Forms;
 
 namespace UNAN.Presentacion
 {
-    public partial class Login : Form
+    public partial class FrmLogin : Form
     {
-        public Login()
+        public FrmLogin()
         {
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnIniciarsesion_Click(object sender, EventArgs e)
         {
             frmMenu fr = new frmMenu();
             fr.ShowDialog();
             this.Dispose();
-            //this.Close();
         }
     }
 }

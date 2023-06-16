@@ -103,6 +103,16 @@ namespace UNAN.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap analitica {
+            get {
+                object obj = ResourceManager.GetObject("analitica", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Asistencia {
             get {
                 object obj = ResourceManager.GetObject("Asistencia", resourceCulture);
@@ -186,6 +196,16 @@ namespace UNAN.Properties {
         internal static System.Drawing.Bitmap data_backup {
             get {
                 object obj = ResourceManager.GetObject("data_backup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap documentos {
+            get {
+                object obj = ResourceManager.GetObject("documentos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -346,6 +366,16 @@ namespace UNAN.Properties {
         internal static System.Drawing.Bitmap volver {
             get {
                 object obj = ResourceManager.GetObject("volver", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zyro_image {
+            get {
+                object obj = ResourceManager.GetObject("zyro-image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

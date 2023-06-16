@@ -41,19 +41,12 @@ namespace UNAN
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.lblReloj = new System.Windows.Forms.Label();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.btnRestaurarBD = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.btnAsistencia = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.btnAvanceProg = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.btnPlanEst = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.btnProfesores = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -62,11 +55,18 @@ namespace UNAN
             this.btnTitulo = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lblUser = new System.Windows.Forms.Label();
-            this.pbUser = new System.Windows.Forms.PictureBox();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.reloj = new System.Windows.Forms.Timer(this.components);
             this.dlg = new System.Windows.Forms.OpenFileDialog();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnRestaurarBD = new System.Windows.Forms.Button();
+            this.btnAsistencia = new System.Windows.Forms.Button();
+            this.btnAvanceProg = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
+            this.btnPlanEst = new System.Windows.Forms.Button();
+            this.btnProfesores = new System.Windows.Forms.Button();
+            this.pbUser = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.pn12.SuspendLayout();
@@ -77,8 +77,8 @@ namespace UNAN
             this.panel3.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             this.panel18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,7 +179,7 @@ namespace UNAN
             this.panel5.Controls.Add(this.panel14);
             this.panel5.Controls.Add(this.btnAvanceProg);
             this.panel5.Controls.Add(this.panel13);
-            this.panel5.Controls.Add(this.button3);
+            this.panel5.Controls.Add(this.btnReportes);
             this.panel5.Controls.Add(this.panel12);
             this.panel5.Controls.Add(this.btnPlanEst);
             this.panel5.Controls.Add(this.panel11);
@@ -218,21 +218,6 @@ namespace UNAN
             this.lblReloj.TabIndex = 23;
             this.lblReloj.Text = "------";
             // 
-            // btnSalir
-            // 
-            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Image = global::UNAN.Properties.Resources.Atras;
-            this.btnSalir.Location = new System.Drawing.Point(921, 5);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(142, 64);
-            this.btnSalir.TabIndex = 20;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.button7_Click);
-            // 
             // panel16
             // 
             this.panel16.Dock = System.Windows.Forms.DockStyle.Left;
@@ -241,21 +226,6 @@ namespace UNAN
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(8, 64);
             this.panel16.TabIndex = 19;
-            // 
-            // btnRestaurarBD
-            // 
-            this.btnRestaurarBD.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnRestaurarBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestaurarBD.Image = global::UNAN.Properties.Resources.data_backup;
-            this.btnRestaurarBD.Location = new System.Drawing.Point(771, 5);
-            this.btnRestaurarBD.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRestaurarBD.Name = "btnRestaurarBD";
-            this.btnRestaurarBD.Size = new System.Drawing.Size(142, 64);
-            this.btnRestaurarBD.TabIndex = 18;
-            this.btnRestaurarBD.Text = "Restaurar BD";
-            this.btnRestaurarBD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRestaurarBD.UseVisualStyleBackColor = true;
-            this.btnRestaurarBD.Click += new System.EventHandler(this.btnRestaurarBD_Click);
             // 
             // panel15
             // 
@@ -266,21 +236,6 @@ namespace UNAN
             this.panel15.Size = new System.Drawing.Size(8, 64);
             this.panel15.TabIndex = 17;
             // 
-            // btnAsistencia
-            // 
-            this.btnAsistencia.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAsistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAsistencia.Image = global::UNAN.Properties.Resources.Asistencia;
-            this.btnAsistencia.Location = new System.Drawing.Point(621, 5);
-            this.btnAsistencia.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAsistencia.Name = "btnAsistencia";
-            this.btnAsistencia.Size = new System.Drawing.Size(142, 64);
-            this.btnAsistencia.TabIndex = 16;
-            this.btnAsistencia.Text = "Asistencia";
-            this.btnAsistencia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAsistencia.UseVisualStyleBackColor = true;
-            this.btnAsistencia.Click += new System.EventHandler(this.btnAsistencia_Click);
-            // 
             // panel14
             // 
             this.panel14.Dock = System.Windows.Forms.DockStyle.Left;
@@ -289,20 +244,6 @@ namespace UNAN
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(11, 64);
             this.panel14.TabIndex = 15;
-            // 
-            // btnAvanceProg
-            // 
-            this.btnAvanceProg.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAvanceProg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAvanceProg.Image = global::UNAN.Properties.Resources.Avance;
-            this.btnAvanceProg.Location = new System.Drawing.Point(468, 5);
-            this.btnAvanceProg.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAvanceProg.Name = "btnAvanceProg";
-            this.btnAvanceProg.Size = new System.Drawing.Size(142, 64);
-            this.btnAvanceProg.TabIndex = 14;
-            this.btnAvanceProg.Text = "Avance Programatico";
-            this.btnAvanceProg.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAvanceProg.UseVisualStyleBackColor = true;
             // 
             // panel13
             // 
@@ -313,21 +254,6 @@ namespace UNAN
             this.panel13.Size = new System.Drawing.Size(10, 64);
             this.panel13.TabIndex = 13;
             // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::UNAN.Properties.Resources.user_30px;
-            this.button3.Location = new System.Drawing.Point(316, 5);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(142, 64);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Usuarios";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // panel12
             // 
             this.panel12.Dock = System.Windows.Forms.DockStyle.Left;
@@ -337,21 +263,6 @@ namespace UNAN
             this.panel12.Size = new System.Drawing.Size(14, 64);
             this.panel12.TabIndex = 11;
             // 
-            // btnPlanEst
-            // 
-            this.btnPlanEst.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnPlanEst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlanEst.Image = global::UNAN.Properties.Resources.Plan;
-            this.btnPlanEst.Location = new System.Drawing.Point(160, 5);
-            this.btnPlanEst.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPlanEst.Name = "btnPlanEst";
-            this.btnPlanEst.Size = new System.Drawing.Size(142, 64);
-            this.btnPlanEst.TabIndex = 10;
-            this.btnPlanEst.Text = "Plan de estudios";
-            this.btnPlanEst.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPlanEst.UseVisualStyleBackColor = true;
-            this.btnPlanEst.Click += new System.EventHandler(this.btnPlanEst_Click);
-            // 
             // panel11
             // 
             this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
@@ -360,21 +271,6 @@ namespace UNAN
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(10, 64);
             this.panel11.TabIndex = 9;
-            // 
-            // btnProfesores
-            // 
-            this.btnProfesores.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnProfesores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfesores.Image = global::UNAN.Properties.Resources.personal;
-            this.btnProfesores.Location = new System.Drawing.Point(8, 5);
-            this.btnProfesores.Margin = new System.Windows.Forms.Padding(2);
-            this.btnProfesores.Name = "btnProfesores";
-            this.btnProfesores.Size = new System.Drawing.Size(142, 64);
-            this.btnProfesores.TabIndex = 8;
-            this.btnProfesores.Text = "Profesores";
-            this.btnProfesores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnProfesores.UseVisualStyleBackColor = true;
-            this.btnProfesores.Click += new System.EventHandler(this.btnProfesores_Click);
             // 
             // panel8
             // 
@@ -465,6 +361,129 @@ namespace UNAN
             this.lblUser.Text = "User Name";
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.pictureBox1);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel18.Location = new System.Drawing.Point(904, 0);
+            this.panel18.Margin = new System.Windows.Forms.Padding(2);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(106, 75);
+            this.panel18.TabIndex = 2;
+            // 
+            // reloj
+            // 
+            this.reloj.Tick += new System.EventHandler(this.reloj_Tick);
+            // 
+            // dlg
+            // 
+            this.dlg.FileName = "openFileDialog1";
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Image = global::UNAN.Properties.Resources.Atras;
+            this.btnSalir.Location = new System.Drawing.Point(921, 5);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(142, 64);
+            this.btnSalir.TabIndex = 20;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // btnRestaurarBD
+            // 
+            this.btnRestaurarBD.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnRestaurarBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestaurarBD.Image = global::UNAN.Properties.Resources.data_backup;
+            this.btnRestaurarBD.Location = new System.Drawing.Point(771, 5);
+            this.btnRestaurarBD.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRestaurarBD.Name = "btnRestaurarBD";
+            this.btnRestaurarBD.Size = new System.Drawing.Size(142, 64);
+            this.btnRestaurarBD.TabIndex = 18;
+            this.btnRestaurarBD.Text = "Restaurar BD";
+            this.btnRestaurarBD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRestaurarBD.UseVisualStyleBackColor = true;
+            this.btnRestaurarBD.Click += new System.EventHandler(this.btnRestaurarBD_Click);
+            // 
+            // btnAsistencia
+            // 
+            this.btnAsistencia.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAsistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAsistencia.Image = global::UNAN.Properties.Resources.Asistencia;
+            this.btnAsistencia.Location = new System.Drawing.Point(621, 5);
+            this.btnAsistencia.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAsistencia.Name = "btnAsistencia";
+            this.btnAsistencia.Size = new System.Drawing.Size(142, 64);
+            this.btnAsistencia.TabIndex = 16;
+            this.btnAsistencia.Text = "Asistencia";
+            this.btnAsistencia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAsistencia.UseVisualStyleBackColor = true;
+            this.btnAsistencia.Click += new System.EventHandler(this.btnAsistencia_Click);
+            // 
+            // btnAvanceProg
+            // 
+            this.btnAvanceProg.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAvanceProg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAvanceProg.Image = global::UNAN.Properties.Resources.Avance;
+            this.btnAvanceProg.Location = new System.Drawing.Point(468, 5);
+            this.btnAvanceProg.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAvanceProg.Name = "btnAvanceProg";
+            this.btnAvanceProg.Size = new System.Drawing.Size(142, 64);
+            this.btnAvanceProg.TabIndex = 14;
+            this.btnAvanceProg.Text = "Avance Programatico";
+            this.btnAvanceProg.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAvanceProg.UseVisualStyleBackColor = true;
+            // 
+            // btnReportes
+            // 
+            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.Image = global::UNAN.Properties.Resources.analitica;
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.Location = new System.Drawing.Point(316, 5);
+            this.btnReportes.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(142, 64);
+            this.btnReportes.TabIndex = 12;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnPlanEst
+            // 
+            this.btnPlanEst.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPlanEst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlanEst.Image = global::UNAN.Properties.Resources.Plan;
+            this.btnPlanEst.Location = new System.Drawing.Point(160, 5);
+            this.btnPlanEst.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPlanEst.Name = "btnPlanEst";
+            this.btnPlanEst.Size = new System.Drawing.Size(142, 64);
+            this.btnPlanEst.TabIndex = 10;
+            this.btnPlanEst.Text = "Plan de Didactico";
+            this.btnPlanEst.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPlanEst.UseVisualStyleBackColor = true;
+            this.btnPlanEst.Click += new System.EventHandler(this.btnPlanEst_Click);
+            // 
+            // btnProfesores
+            // 
+            this.btnProfesores.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnProfesores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfesores.Image = global::UNAN.Properties.Resources.personal;
+            this.btnProfesores.Location = new System.Drawing.Point(8, 5);
+            this.btnProfesores.Margin = new System.Windows.Forms.Padding(2);
+            this.btnProfesores.Name = "btnProfesores";
+            this.btnProfesores.Size = new System.Drawing.Size(142, 64);
+            this.btnProfesores.TabIndex = 8;
+            this.btnProfesores.Text = "Profesores";
+            this.btnProfesores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProfesores.UseVisualStyleBackColor = true;
+            this.btnProfesores.Click += new System.EventHandler(this.btnProfesores_Click);
+            // 
             // pbUser
             // 
             this.pbUser.Dock = System.Windows.Forms.DockStyle.Left;
@@ -477,16 +496,6 @@ namespace UNAN
             this.pbUser.TabIndex = 3;
             this.pbUser.TabStop = false;
             // 
-            // panel18
-            // 
-            this.panel18.Controls.Add(this.pictureBox1);
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel18.Location = new System.Drawing.Point(904, 0);
-            this.panel18.Margin = new System.Windows.Forms.Padding(2);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(106, 75);
-            this.panel18.TabIndex = 2;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -498,14 +507,6 @@ namespace UNAN
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // reloj
-            // 
-            this.reloj.Tick += new System.EventHandler(this.reloj_Tick);
-            // 
-            // dlg
-            // 
-            this.dlg.FileName = "openFileDialog1";
             // 
             // frmMenu
             // 
@@ -532,8 +533,8 @@ namespace UNAN
             this.panel17.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
             this.panel18.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -557,7 +558,7 @@ namespace UNAN
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Button btnAvanceProg;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button btnPlanEst;
         private System.Windows.Forms.Panel panel11;
