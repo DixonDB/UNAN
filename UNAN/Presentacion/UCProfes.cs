@@ -218,11 +218,7 @@ namespace UNAN.Presentacion
                 ObtenerEstado();
                 if (Estado == "ELIMINADO")
                 {
-                    DialogResult resultado = MessageBox.Show("Este Usuario se Elimino. ¿Desea Volver a Habilitarlo?", "Restauracion de registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (resultado == DialogResult.OK)
-                    {
-                        RestaurarP();
-                    }
+                RestaurarP();
                 }
                 else
                 {

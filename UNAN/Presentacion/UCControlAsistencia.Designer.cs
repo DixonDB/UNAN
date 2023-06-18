@@ -601,7 +601,7 @@
             this.cbCarrera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCarrera.FormattingEnabled = true;
-            this.cbCarrera.Location = new System.Drawing.Point(773, 23);
+            this.cbCarrera.Location = new System.Drawing.Point(554, 23);
             this.cbCarrera.Name = "cbCarrera";
             this.cbCarrera.Size = new System.Drawing.Size(247, 28);
             this.cbCarrera.TabIndex = 10;
@@ -610,7 +610,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(671, 23);
+            this.label5.Location = new System.Drawing.Point(452, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 24);
             this.label5.TabIndex = 9;
@@ -666,7 +666,7 @@
             this.cbGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGrupo.FormattingEnabled = true;
-            this.cbGrupo.Location = new System.Drawing.Point(533, 20);
+            this.cbGrupo.Location = new System.Drawing.Point(1019, 20);
             this.cbGrupo.Name = "cbGrupo";
             this.cbGrupo.Size = new System.Drawing.Size(121, 28);
             this.cbGrupo.TabIndex = 8;
@@ -675,7 +675,7 @@
             // 
             this.lblCod.AutoSize = true;
             this.lblCod.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCod.Location = new System.Drawing.Point(1037, 27);
+            this.lblCod.Location = new System.Drawing.Point(818, 27);
             this.lblCod.Name = "lblCod";
             this.lblCod.Size = new System.Drawing.Size(72, 18);
             this.lblCod.TabIndex = 46;
@@ -695,7 +695,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(442, 23);
+            this.label4.Location = new System.Drawing.Point(928, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 24);
             this.label4.TabIndex = 7;
