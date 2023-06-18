@@ -53,7 +53,7 @@ namespace UNAN.Presentacion
             Bases.DiseñoDtvEliminar(ref dataProfesores);
             PanelPaginado.Visible = true;
             dataProfesores.Columns[2].Visible = false;
-            dataProfesores.Columns[9].Visible = false;
+            dataProfesores.Columns[8].Visible = false;
         }
         private void InsertarProfesores()
         {

@@ -33,7 +33,12 @@ namespace UNAN
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+            //Control de botones
+            btnAsistencia.Enabled = true;
+            btnProfesores.Enabled = true;
+            btnReportes.Enabled = false;
+            btnPlanEst.Enabled = true;
+            btnAvanceProg.Enabled = true;
         }
 
 
@@ -104,6 +109,12 @@ namespace UNAN
             P.Dock = DockStyle.Fill;
             pn12.Controls.Add(P);
             btnTitulo.Text = "Asistencia";
+            //Control de botones
+            btnAsistencia.Enabled = false;
+            btnProfesores.Enabled = true;
+            btnReportes.Enabled = true;
+            btnPlanEst.Enabled = true;
+            btnAvanceProg.Enabled = true;
         }
 
         private void btnProfesores_Click(object sender, EventArgs e)
@@ -113,6 +124,12 @@ namespace UNAN
             P.Dock = DockStyle.Fill;
             pn12.Controls.Add(P);
             btnTitulo.Text = "Personal";
+            //Control de botones
+            btnAsistencia.Enabled=true;
+            btnProfesores.Enabled = false;
+            btnReportes.Enabled = true;
+            btnPlanEst.Enabled = true;
+            btnAvanceProg.Enabled=true;
         }
 
         private void btnPlanEst_Click(object sender, EventArgs e)
@@ -122,6 +139,22 @@ namespace UNAN
             plan.Dock = DockStyle.Fill;
             pn12.Controls.Add(plan);
             btnTitulo.Text = "Plan Didactico Semestral";
+            //Control de botones
+            btnAsistencia.Enabled = true;
+            btnProfesores.Enabled = true;
+            btnReportes.Enabled = true;
+            btnPlanEst.Enabled = false;
+            btnAvanceProg.Enabled = true;
+        }
+
+        private void btnAvanceProg_Click(object sender, EventArgs e)
+        {
+            //Control de botones
+            btnAsistencia.Enabled = true;
+            btnProfesores.Enabled = true;
+            btnReportes.Enabled = true;
+            btnPlanEst.Enabled = true;
+            btnAvanceProg.Enabled = false;
         }
     }
 }

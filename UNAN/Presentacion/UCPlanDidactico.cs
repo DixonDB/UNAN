@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Security.Policy;
 using System.Windows.Forms;
 using UNAN.Datos;
+using UNAN.Logica;
 using UNAN.Presentacion;
 
 namespace UNAN.FrmPlanDidactico
@@ -57,22 +58,17 @@ namespace UNAN.FrmPlanDidactico
             Mostrarcod();
             mod.MostrarModalidades(cbModalidad);
             mod.MostrarGrupos(cbGrupo,cbCarrera.Text);
+            Diseñodt();
         }
         private void Mostrarcod()
         {
             DCarreras funcion = new DCarreras();
             funcion.MostrarCodigoC(cbCarrera.Text, lblCod);
         }
-
-
-        public void DiseñoInicial()
+        private void Diseñodt()
         {
-            dtPlan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtPlan.MultiSelect = false;
-            dtPlan.ReadOnly = true;
-            dtPlan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtPlan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dtPlan.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            Bases.DiseñoDtv(ref dtPlan);
+
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
