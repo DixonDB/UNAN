@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtPlan = new System.Windows.Forms.DataGridView();
             this.GBDetalles = new System.Windows.Forms.GroupBox();
-            this.btnAddGrupo = new System.Windows.Forms.Button();
             this.cbModalidad = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.lblCod = new System.Windows.Forms.Label();
-            this.btnCarrera = new System.Windows.Forms.Button();
             this.cbCarrera = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.cbSemestre = new System.Windows.Forms.ComboBox();
@@ -65,10 +63,6 @@
             this.dtFechaFin = new System.Windows.Forms.DateTimePicker();
             this.dtFechaInico = new System.Windows.Forms.DateTimePicker();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnInsertar = new System.Windows.Forms.Button();
-            this.btnSubirPlan = new System.Windows.Forms.Button();
-            this.btnSubir = new System.Windows.Forms.Button();
-            this.btnAyuda = new System.Windows.Forms.Button();
             this.PCargarPlan = new System.Windows.Forms.Panel();
             this.btnCerrarP = new System.Windows.Forms.Button();
             this.btnCargar = new System.Windows.Forms.Button();
@@ -86,6 +80,14 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtSemInicio = new System.Windows.Forms.TextBox();
+            this.btnInsertar = new System.Windows.Forms.Button();
+            this.btnSubirPlan = new System.Windows.Forms.Button();
+            this.btnSubir = new System.Windows.Forms.Button();
+            this.btnAyuda = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddGrupo = new System.Windows.Forms.Button();
+            this.btnCarrera = new System.Windows.Forms.Button();
+            this.lblCodAsig = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtPlan)).BeginInit();
             this.GBDetalles.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -102,25 +104,25 @@
             this.dtPlan.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dtPlan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtPlan.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtPlan.DefaultCellStyle = dataGridViewCellStyle13;
             this.dtPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtPlan.Location = new System.Drawing.Point(0, 451);
             this.dtPlan.Name = "dtPlan";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dtPlan.RowHeadersVisible = false;
             this.dtPlan.RowHeadersWidth = 82;
             this.dtPlan.Size = new System.Drawing.Size(1294, 472);
@@ -129,6 +131,8 @@
             // GBDetalles
             // 
             this.GBDetalles.BackColor = System.Drawing.Color.White;
+            this.GBDetalles.Controls.Add(this.lblCodAsig);
+            this.GBDetalles.Controls.Add(this.button1);
             this.GBDetalles.Controls.Add(this.btnAddGrupo);
             this.GBDetalles.Controls.Add(this.cbModalidad);
             this.GBDetalles.Controls.Add(this.label19);
@@ -153,17 +157,6 @@
             this.GBDetalles.Size = new System.Drawing.Size(1294, 110);
             this.GBDetalles.TabIndex = 1;
             this.GBDetalles.TabStop = false;
-            // 
-            // btnAddGrupo
-            // 
-            this.btnAddGrupo.BackgroundImage = global::UNAN.Properties.Resources.Addteam;
-            this.btnAddGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAddGrupo.Location = new System.Drawing.Point(949, 15);
-            this.btnAddGrupo.Name = "btnAddGrupo";
-            this.btnAddGrupo.Size = new System.Drawing.Size(41, 44);
-            this.btnAddGrupo.TabIndex = 32;
-            this.btnAddGrupo.UseVisualStyleBackColor = true;
-            this.btnAddGrupo.Click += new System.EventHandler(this.btnAddGrupo_Click);
             // 
             // cbModalidad
             // 
@@ -199,17 +192,6 @@
             this.lblCod.TabIndex = 29;
             this.lblCod.Text = "CodigoC";
             // 
-            // btnCarrera
-            // 
-            this.btnCarrera.BackgroundImage = global::UNAN.Properties.Resources.addC;
-            this.btnCarrera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCarrera.Location = new System.Drawing.Point(606, 15);
-            this.btnCarrera.Name = "btnCarrera";
-            this.btnCarrera.Size = new System.Drawing.Size(41, 44);
-            this.btnCarrera.TabIndex = 28;
-            this.btnCarrera.UseVisualStyleBackColor = true;
-            this.btnCarrera.Click += new System.EventHandler(this.btnCarrera_Click);
-            // 
             // cbCarrera
             // 
             this.cbCarrera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -240,13 +222,11 @@
             this.cbSemestre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSemestre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSemestre.FormattingEnabled = true;
-            this.cbSemestre.Items.AddRange(new object[] {
-            "l",
-            "ll"});
             this.cbSemestre.Location = new System.Drawing.Point(1119, 23);
             this.cbSemestre.Name = "cbSemestre";
             this.cbSemestre.Size = new System.Drawing.Size(64, 26);
             this.cbSemestre.TabIndex = 25;
+            this.cbSemestre.SelectedIndexChanged += new System.EventHandler(this.cbSemestre_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -266,16 +246,11 @@
             this.cbGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGrupo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGrupo.FormattingEnabled = true;
-            this.cbGrupo.Items.AddRange(new object[] {
-            "SIV1",
-            "SIV2",
-            "SIV3",
-            "SIV4",
-            "SIV5"});
             this.cbGrupo.Location = new System.Drawing.Point(826, 23);
             this.cbGrupo.Name = "cbGrupo";
             this.cbGrupo.Size = new System.Drawing.Size(104, 26);
             this.cbGrupo.TabIndex = 24;
+            this.cbGrupo.SelectedIndexChanged += new System.EventHandler(this.cbGrupo_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -293,7 +268,7 @@
             // 
             this.txtDocente.BackColor = System.Drawing.Color.White;
             this.txtDocente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocente.Location = new System.Drawing.Point(530, 67);
+            this.txtDocente.Location = new System.Drawing.Point(700, 67);
             this.txtDocente.Name = "txtDocente";
             this.txtDocente.Size = new System.Drawing.Size(260, 26);
             this.txtDocente.TabIndex = 21;
@@ -302,7 +277,7 @@
             // 
             this.txtAAcademico.BackColor = System.Drawing.Color.White;
             this.txtAAcademico.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAAcademico.Location = new System.Drawing.Point(993, 70);
+            this.txtAAcademico.Location = new System.Drawing.Point(1163, 70);
             this.txtAAcademico.Name = "txtAAcademico";
             this.txtAAcademico.Size = new System.Drawing.Size(100, 26);
             this.txtAAcademico.TabIndex = 20;
@@ -314,16 +289,11 @@
             this.cbAsignaturas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAsignaturas.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAsignaturas.FormattingEnabled = true;
-            this.cbAsignaturas.Items.AddRange(new object[] {
-            "Estructura l",
-            "Estructura ll",
-            "Prog Alg",
-            "Inf Bas",
-            "Fund Prog"});
             this.cbAsignaturas.Location = new System.Drawing.Point(148, 67);
             this.cbAsignaturas.Name = "cbAsignaturas";
             this.cbAsignaturas.Size = new System.Drawing.Size(260, 26);
             this.cbAsignaturas.TabIndex = 18;
+            this.cbAsignaturas.SelectedIndexChanged += new System.EventHandler(this.cbAsignaturas_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -331,7 +301,7 @@
             this.label5.BackColor = System.Drawing.Color.Gainsboro;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(427, 67);
+            this.label5.Location = new System.Drawing.Point(597, 67);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 26);
             this.label5.TabIndex = 17;
@@ -343,7 +313,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(822, 67);
+            this.label3.Location = new System.Drawing.Point(992, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(162, 26);
             this.label3.TabIndex = 19;
@@ -397,7 +367,6 @@
             this.txtSemFin.Name = "txtSemFin";
             this.txtSemFin.Size = new System.Drawing.Size(58, 26);
             this.txtSemFin.TabIndex = 0;
-            this.txtSemFin.TextChanged += new System.EventHandler(this.txtSemFin_TextChanged);
             // 
             // txtObj
             // 
@@ -513,70 +482,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(656, 50);
             this.flowLayoutPanel1.TabIndex = 6;
-            // 
-            // btnInsertar
-            // 
-            this.btnInsertar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnInsertar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInsertar.FlatAppearance.BorderSize = 0;
-            this.btnInsertar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertar.ForeColor = System.Drawing.Color.Black;
-            this.btnInsertar.Image = global::UNAN.Properties.Resources.Add_32x;
-            this.btnInsertar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInsertar.Location = new System.Drawing.Point(3, 3);
-            this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(121, 39);
-            this.btnInsertar.TabIndex = 5;
-            this.btnInsertar.Text = "Insertar";
-            this.btnInsertar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInsertar.UseVisualStyleBackColor = false;
-            // 
-            // btnSubirPlan
-            // 
-            this.btnSubirPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSubirPlan.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubirPlan.ForeColor = System.Drawing.Color.Black;
-            this.btnSubirPlan.Image = global::UNAN.Properties.Resources.save32px;
-            this.btnSubirPlan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubirPlan.Location = new System.Drawing.Point(130, 3);
-            this.btnSubirPlan.Name = "btnSubirPlan";
-            this.btnSubirPlan.Size = new System.Drawing.Size(178, 39);
-            this.btnSubirPlan.TabIndex = 6;
-            this.btnSubirPlan.Text = "Guardar Plan Didáctico";
-            this.btnSubirPlan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSubirPlan.UseVisualStyleBackColor = false;
-            // 
-            // btnSubir
-            // 
-            this.btnSubir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSubir.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubir.ForeColor = System.Drawing.Color.Black;
-            this.btnSubir.Image = global::UNAN.Properties.Resources.up_32px;
-            this.btnSubir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubir.Location = new System.Drawing.Point(314, 3);
-            this.btnSubir.Name = "btnSubir";
-            this.btnSubir.Size = new System.Drawing.Size(226, 39);
-            this.btnSubir.TabIndex = 5;
-            this.btnSubir.Text = "Subir Plan Didáctico";
-            this.btnSubir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSubir.UseVisualStyleBackColor = false;
-            this.btnSubir.Click += new System.EventHandler(this.btnSubir_Click);
-            // 
-            // btnAyuda
-            // 
-            this.btnAyuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnAyuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAyuda.Font = new System.Drawing.Font("Arial", 14.25F);
-            this.btnAyuda.Image = global::UNAN.Properties.Resources.help_32px;
-            this.btnAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAyuda.Location = new System.Drawing.Point(546, 3);
-            this.btnAyuda.Name = "btnAyuda";
-            this.btnAyuda.Size = new System.Drawing.Size(101, 39);
-            this.btnAyuda.TabIndex = 8;
-            this.btnAyuda.Text = "Ayuda";
-            this.btnAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAyuda.UseVisualStyleBackColor = false;
             // 
             // PCargarPlan
             // 
@@ -699,7 +604,6 @@
             this.gbDatos.Size = new System.Drawing.Size(1294, 296);
             this.gbDatos.TabIndex = 2;
             this.gbDatos.TabStop = false;
-            this.gbDatos.Enter += new System.EventHandler(this.gbDatos_Enter);
             // 
             // label14
             // 
@@ -789,6 +693,113 @@
             this.txtSemInicio.Size = new System.Drawing.Size(59, 26);
             this.txtSemInicio.TabIndex = 0;
             // 
+            // btnInsertar
+            // 
+            this.btnInsertar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnInsertar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInsertar.FlatAppearance.BorderSize = 0;
+            this.btnInsertar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsertar.ForeColor = System.Drawing.Color.Black;
+            this.btnInsertar.Image = global::UNAN.Properties.Resources.Add_32x;
+            this.btnInsertar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInsertar.Location = new System.Drawing.Point(3, 3);
+            this.btnInsertar.Name = "btnInsertar";
+            this.btnInsertar.Size = new System.Drawing.Size(121, 39);
+            this.btnInsertar.TabIndex = 5;
+            this.btnInsertar.Text = "Insertar";
+            this.btnInsertar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInsertar.UseVisualStyleBackColor = false;
+            // 
+            // btnSubirPlan
+            // 
+            this.btnSubirPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSubirPlan.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubirPlan.ForeColor = System.Drawing.Color.Black;
+            this.btnSubirPlan.Image = global::UNAN.Properties.Resources.save32px;
+            this.btnSubirPlan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubirPlan.Location = new System.Drawing.Point(130, 3);
+            this.btnSubirPlan.Name = "btnSubirPlan";
+            this.btnSubirPlan.Size = new System.Drawing.Size(178, 39);
+            this.btnSubirPlan.TabIndex = 6;
+            this.btnSubirPlan.Text = "Guardar Plan Didáctico";
+            this.btnSubirPlan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSubirPlan.UseVisualStyleBackColor = false;
+            // 
+            // btnSubir
+            // 
+            this.btnSubir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSubir.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubir.ForeColor = System.Drawing.Color.Black;
+            this.btnSubir.Image = global::UNAN.Properties.Resources.up_32px;
+            this.btnSubir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubir.Location = new System.Drawing.Point(314, 3);
+            this.btnSubir.Name = "btnSubir";
+            this.btnSubir.Size = new System.Drawing.Size(226, 39);
+            this.btnSubir.TabIndex = 5;
+            this.btnSubir.Text = "Subir Plan Didáctico";
+            this.btnSubir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSubir.UseVisualStyleBackColor = false;
+            this.btnSubir.Click += new System.EventHandler(this.btnSubir_Click);
+            // 
+            // btnAyuda
+            // 
+            this.btnAyuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAyuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAyuda.Font = new System.Drawing.Font("Arial", 14.25F);
+            this.btnAyuda.Image = global::UNAN.Properties.Resources.help_32px;
+            this.btnAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAyuda.Location = new System.Drawing.Point(546, 3);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(101, 39);
+            this.btnAyuda.TabIndex = 8;
+            this.btnAyuda.Text = "Ayuda";
+            this.btnAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAyuda.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::UNAN.Properties.Resources.classroom;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(414, 57);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(41, 44);
+            this.button1.TabIndex = 33;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnAddGrupo
+            // 
+            this.btnAddGrupo.BackgroundImage = global::UNAN.Properties.Resources.Addteam;
+            this.btnAddGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddGrupo.Location = new System.Drawing.Point(949, 15);
+            this.btnAddGrupo.Name = "btnAddGrupo";
+            this.btnAddGrupo.Size = new System.Drawing.Size(41, 44);
+            this.btnAddGrupo.TabIndex = 32;
+            this.btnAddGrupo.UseVisualStyleBackColor = true;
+            this.btnAddGrupo.Click += new System.EventHandler(this.btnAddGrupo_Click);
+            // 
+            // btnCarrera
+            // 
+            this.btnCarrera.BackgroundImage = global::UNAN.Properties.Resources.addC;
+            this.btnCarrera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCarrera.Location = new System.Drawing.Point(606, 15);
+            this.btnCarrera.Name = "btnCarrera";
+            this.btnCarrera.Size = new System.Drawing.Size(41, 44);
+            this.btnCarrera.TabIndex = 28;
+            this.btnCarrera.UseVisualStyleBackColor = true;
+            this.btnCarrera.Click += new System.EventHandler(this.btnCarrera_Click);
+            // 
+            // lblCodAsig
+            // 
+            this.lblCodAsig.AutoSize = true;
+            this.lblCodAsig.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodAsig.Location = new System.Drawing.Point(469, 70);
+            this.lblCodAsig.Name = "lblCodAsig";
+            this.lblCodAsig.Size = new System.Drawing.Size(71, 18);
+            this.lblCodAsig.TabIndex = 34;
+            this.lblCodAsig.Text = "CodigoA";
+            // 
             // UCPlanDidactico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -871,5 +882,7 @@
         public System.Windows.Forms.ComboBox cbModalidad;
         public System.Windows.Forms.ComboBox cbCarrera;
         public System.Windows.Forms.ComboBox cbGrupo;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblCodAsig;
     }
 }

@@ -19,18 +19,10 @@ namespace UNAN.FrmPlanDidactico
         private DataSet dtsTablas = new DataSet();
         DCarreras carreras = new DCarreras();
         DModalidades mod=new DModalidades();
+        DAsignatura asig = new DAsignatura();
         public UCPlanDidactico()
         {
             InitializeComponent();
-        }
-
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void gbDatos_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSubir_Click(object sender, EventArgs e)
@@ -38,11 +30,6 @@ namespace UNAN.FrmPlanDidactico
             PCargarPlan.Visible = true;
             PCargarPlan.Size = new Size(511, 178);
             PCargarPlan.Location = new Point(282, 25);
-        }
-
-        private void txtSemFin_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnCarrera_Click(object sender, EventArgs e)
@@ -59,6 +46,7 @@ namespace UNAN.FrmPlanDidactico
             mod.MostrarModalidades(cbModalidad);
             mod.MostrarGrupos(cbGrupo,cbCarrera.Text);
             Diseñodt();
+            mod.MostrarSemestre(cbSemestre);
         }
         private void Mostrarcod()
         {
@@ -145,11 +133,40 @@ namespace UNAN.FrmPlanDidactico
         {
             Mostrarcod();
             mod.MostrarGrupos(cbGrupo, cbCarrera.Text);
+            asig.MostrarAsignatura(cbAsignaturas, cbSemestre.Text, cbCarrera.Text, cbGrupo.Text);
+            asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
         }
 
         private void cbModalidad_SelectedIndexChanged(object sender, EventArgs e)
         {
             carreras.MostrarCarrera(cbCarrera, cbModalidad.Text);
+            asig.MostrarAsignatura(cbAsignaturas, cbSemestre.Text, cbCarrera.Text, cbGrupo.Text);
+            asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
+            mod.MostrarGrupos(cbGrupo, cbCarrera.Text);
+            Mostrarcod();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmAsignatura asig = new FrmAsignatura();
+            asig.ShowDialog();
+        }
+
+        private void cbSemestre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            asig.MostrarAsignatura(cbAsignaturas, cbSemestre.Text, cbCarrera.Text,cbGrupo.Text);
+            asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
+        }
+
+        private void cbAsignaturas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
+        }
+
+        private void cbGrupo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            asig.MostrarAsignatura(cbAsignaturas, cbSemestre.Text, cbCarrera.Text, cbGrupo.Text);
+            asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
         }
     }
 }

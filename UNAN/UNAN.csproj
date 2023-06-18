@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\Conexion.cs" />
+    <Compile Include="Datos\DAsignatura.cs" />
     <Compile Include="Datos\DCarreras.cs" />
     <Compile Include="Datos\DModalidades.cs" />
     <Compile Include="Datos\DModulos.cs" />
@@ -63,11 +64,18 @@
     <Compile Include="Logica\Desencryptacion.cs" />
     <Compile Include="Logica\Encrip.cs" />
     <Compile Include="Logica\Encryptacion.cs" />
+    <Compile Include="Logica\LAsignatura.cs" />
     <Compile Include="Logica\LCarreras.cs" />
     <Compile Include="Logica\LModalidad.cs" />
     <Compile Include="Logica\Lmodulos.cs" />
     <Compile Include="Logica\Lpermisos.cs" />
     <Compile Include="Logica\LProfesores.cs" />
+    <Compile Include="Presentacion\FrmAsignatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmAsignatura.Designer.cs">
+      <DependentUpon>FrmAsignatura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\FrmCarrera.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +120,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentacion\FrmAsignatura.resx">
+      <DependentUpon>FrmAsignatura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmCarrera.resx">
       <DependentUpon>FrmCarrera.cs</DependentUpon>
     </EmbeddedResource>

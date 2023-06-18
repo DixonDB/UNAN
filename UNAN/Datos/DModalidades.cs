@@ -76,5 +76,17 @@ namespace UNAN.Datos
             combo.DisplayMember = "Grupo";
             combo.DataSource = dt;
         }
+        public void MostrarSemestre(ComboBox combo)
+        {
+            Conexion.abrir();
+            SqlCommand da = new SqlCommand("MostrarSemestre", Conexion.conectar);
+            da.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter cb = new SqlDataAdapter(da);
+            DataTable dt = new DataTable();
+            cb.Fill(dt);
+            combo.ValueMember = "IdSemestre";
+            combo.DisplayMember = "Semestre";
+            combo.DataSource = dt;
+        }
     }
 }

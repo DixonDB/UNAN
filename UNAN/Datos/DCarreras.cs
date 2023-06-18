@@ -72,7 +72,7 @@ namespace UNAN.Datos
                 }
                 else
                 {
-                    codi.Text = "No se encontró el código";
+                    codi.Text = "--";
                 }
             }
             catch (Exception ex)
