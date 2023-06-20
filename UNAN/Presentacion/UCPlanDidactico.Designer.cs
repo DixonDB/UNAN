@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtPlan = new System.Windows.Forms.DataGridView();
             this.GBDetalles = new System.Windows.Forms.GroupBox();
             this.lblCodAsig = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddAsig = new System.Windows.Forms.Button();
             this.btnAddGrupo = new System.Windows.Forms.Button();
             this.cbModalidad = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -88,12 +88,14 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtSemInicio = new System.Windows.Forms.TextBox();
+            this.pnBotones = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dtPlan)).BeginInit();
             this.GBDetalles.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.PCargarPlan.SuspendLayout();
             this.gbDatos.SuspendLayout();
+            this.pnBotones.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtPlan
@@ -104,35 +106,35 @@
             this.dtPlan.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dtPlan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtPlan.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtPlan.DefaultCellStyle = dataGridViewCellStyle5;
             this.dtPlan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtPlan.Location = new System.Drawing.Point(0, 451);
+            this.dtPlan.Location = new System.Drawing.Point(0, 445);
             this.dtPlan.Name = "dtPlan";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dtPlan.RowHeadersVisible = false;
             this.dtPlan.RowHeadersWidth = 82;
-            this.dtPlan.Size = new System.Drawing.Size(1294, 472);
+            this.dtPlan.Size = new System.Drawing.Size(1294, 478);
             this.dtPlan.TabIndex = 3;
             // 
             // GBDetalles
             // 
             this.GBDetalles.BackColor = System.Drawing.Color.White;
             this.GBDetalles.Controls.Add(this.lblCodAsig);
-            this.GBDetalles.Controls.Add(this.button1);
+            this.GBDetalles.Controls.Add(this.btnAddAsig);
             this.GBDetalles.Controls.Add(this.btnAddGrupo);
             this.GBDetalles.Controls.Add(this.cbModalidad);
             this.GBDetalles.Controls.Add(this.label19);
@@ -168,16 +170,16 @@
             this.lblCodAsig.TabIndex = 34;
             this.lblCodAsig.Text = "CodigoA";
             // 
-            // button1
+            // btnAddAsig
             // 
-            this.button1.BackgroundImage = global::UNAN.Properties.Resources.classroom;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(414, 57);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(41, 44);
-            this.button1.TabIndex = 33;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAddAsig.BackgroundImage = global::UNAN.Properties.Resources.classroom;
+            this.btnAddAsig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddAsig.Location = new System.Drawing.Point(414, 57);
+            this.btnAddAsig.Name = "btnAddAsig";
+            this.btnAddAsig.Size = new System.Drawing.Size(41, 44);
+            this.btnAddAsig.TabIndex = 33;
+            this.btnAddAsig.UseVisualStyleBackColor = true;
+            this.btnAddAsig.Click += new System.EventHandler(this.btnAddAsig_Click);
             // 
             // btnAddGrupo
             // 
@@ -312,6 +314,7 @@
             // txtDocente
             // 
             this.txtDocente.BackColor = System.Drawing.Color.White;
+            this.txtDocente.Enabled = false;
             this.txtDocente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDocente.Location = new System.Drawing.Point(700, 67);
             this.txtDocente.Name = "txtDocente";
@@ -500,7 +503,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(225, 24);
             this.label13.TabIndex = 1;
-            this.label13.Text = "Estrategia de Evaluacion:";
+            this.label13.Text = "Estrategia de Evaluación:";
             // 
             // dtFechaFin
             // 
@@ -520,11 +523,12 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.Controls.Add(this.btnInsertar);
             this.flowLayoutPanel1.Controls.Add(this.btnSubirPlan);
             this.flowLayoutPanel1.Controls.Add(this.btnSubir);
             this.flowLayoutPanel1.Controls.Add(this.btnAyuda);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(279, 238);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(322, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(656, 50);
             this.flowLayoutPanel1.TabIndex = 6;
@@ -561,6 +565,7 @@
             this.btnSubirPlan.Text = "Guardar Plan Didáctico";
             this.btnSubirPlan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSubirPlan.UseVisualStyleBackColor = false;
+            this.btnSubirPlan.Click += new System.EventHandler(this.btnSubirPlan_Click);
             // 
             // btnSubir
             // 
@@ -604,7 +609,7 @@
             this.PCargarPlan.Controls.Add(this.txtRuta);
             this.PCargarPlan.Controls.Add(this.label1);
             this.PCargarPlan.Controls.Add(this.label18);
-            this.PCargarPlan.Location = new System.Drawing.Point(969, 238);
+            this.PCargarPlan.Location = new System.Drawing.Point(1171, 184);
             this.PCargarPlan.Name = "PCargarPlan";
             this.PCargarPlan.Size = new System.Drawing.Size(68, 48);
             this.PCargarPlan.TabIndex = 7;
@@ -685,9 +690,8 @@
             // gbDatos
             // 
             this.gbDatos.BackColor = System.Drawing.Color.White;
-            this.gbDatos.Controls.Add(this.PCargarPlan);
-            this.gbDatos.Controls.Add(this.flowLayoutPanel1);
             this.gbDatos.Controls.Add(this.label14);
+            this.gbDatos.Controls.Add(this.PCargarPlan);
             this.gbDatos.Controls.Add(this.txtPorcentaje);
             this.gbDatos.Controls.Add(this.dtFechaInico);
             this.gbDatos.Controls.Add(this.dtFechaFin);
@@ -711,7 +715,7 @@
             this.gbDatos.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDatos.Location = new System.Drawing.Point(0, 155);
             this.gbDatos.Name = "gbDatos";
-            this.gbDatos.Size = new System.Drawing.Size(1294, 296);
+            this.gbDatos.Size = new System.Drawing.Size(1294, 238);
             this.gbDatos.TabIndex = 2;
             this.gbDatos.TabStop = false;
             // 
@@ -744,7 +748,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(195, 24);
             this.label12.TabIndex = 1;
-            this.label12.Text = "Forma de Evaluacion:";
+            this.label12.Text = "Forma de Evaluación:";
             // 
             // label11
             // 
@@ -803,11 +807,21 @@
             this.txtSemInicio.Size = new System.Drawing.Size(59, 26);
             this.txtSemInicio.TabIndex = 0;
             // 
+            // pnBotones
+            // 
+            this.pnBotones.Controls.Add(this.flowLayoutPanel1);
+            this.pnBotones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnBotones.Location = new System.Drawing.Point(0, 393);
+            this.pnBotones.Name = "pnBotones";
+            this.pnBotones.Size = new System.Drawing.Size(1294, 52);
+            this.pnBotones.TabIndex = 8;
+            // 
             // UCPlanDidactico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dtPlan);
+            this.Controls.Add(this.pnBotones);
             this.Controls.Add(this.gbDatos);
             this.Controls.Add(this.GBDetalles);
             this.Controls.Add(this.panel1);
@@ -823,6 +837,7 @@
             this.PCargarPlan.PerformLayout();
             this.gbDatos.ResumeLayout(false);
             this.gbDatos.PerformLayout();
+            this.pnBotones.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -885,7 +900,8 @@
         public System.Windows.Forms.ComboBox cbModalidad;
         public System.Windows.Forms.ComboBox cbCarrera;
         public System.Windows.Forms.ComboBox cbGrupo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddAsig;
         private System.Windows.Forms.Label lblCodAsig;
+        private System.Windows.Forms.Panel pnBotones;
     }
 }

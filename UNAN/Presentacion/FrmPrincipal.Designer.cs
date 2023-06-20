@@ -567,7 +567,6 @@ namespace UNAN
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.PictureBox pbUser;
         private System.Windows.Forms.Timer reloj;
         private System.Windows.Forms.Panel panel4;
@@ -579,6 +578,7 @@ namespace UNAN
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Panel panel21;
+        public System.Windows.Forms.Label lblUser;
     }
 }
 

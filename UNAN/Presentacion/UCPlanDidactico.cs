@@ -1,11 +1,8 @@
 ﻿using ExcelDataReader;
 using System;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Security.Cryptography;
-using System.Security.Policy;
 using System.Windows.Forms;
 using UNAN.Datos;
 using UNAN.Logica;
@@ -20,6 +17,7 @@ namespace UNAN.FrmPlanDidactico
         DCarreras carreras = new DCarreras();
         DModalidades mod=new DModalidades();
         DAsignatura asig = new DAsignatura();
+        frmMenu pri=new frmMenu();
         public UCPlanDidactico()
         {
             InitializeComponent();
@@ -44,9 +42,10 @@ namespace UNAN.FrmPlanDidactico
             carreras.MostrarCarrera(cbCarrera, cbModalidad.Text);
             Mostrarcod();
             mod.MostrarModalidades(cbModalidad);
-            mod.MostrarGrupos(cbGrupo,cbCarrera.Text);
+            mod.MostrarGrupos(cbGrupo, cbCarrera.Text);
             Diseñodt();
             mod.MostrarSemestre(cbSemestre);
+            txtDocente.Text = pri.lblUser.Text;
         }
         private void Mostrarcod()
         {
@@ -106,6 +105,7 @@ namespace UNAN.FrmPlanDidactico
             PCargarPlan.Visible = false;
             PCargarPlan.Size = new Size(77, 48);
             PCargarPlan.Location = new Point(960, 238);
+            gbDatos.Dock = DockStyle.None;
         }
 
         private void btnCerrarP_Click(object sender, EventArgs e)
@@ -146,12 +146,6 @@ namespace UNAN.FrmPlanDidactico
             Mostrarcod();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FrmAsignatura asig = new FrmAsignatura();
-            asig.ShowDialog();
-        }
-
         private void cbSemestre_SelectedIndexChanged(object sender, EventArgs e)
         {
             asig.MostrarAsignatura(cbAsignaturas, cbSemestre.Text, cbCarrera.Text,cbGrupo.Text);
@@ -167,6 +161,17 @@ namespace UNAN.FrmPlanDidactico
         {
             asig.MostrarAsignatura(cbAsignaturas, cbSemestre.Text, cbCarrera.Text, cbGrupo.Text);
             asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
+        }
+
+        private void btnSubirPlan_Click(object sender, EventArgs e)
+        {
+            gbDatos.Dock=DockStyle.Top;
+        }
+
+        private void btnAddAsig_Click(object sender, EventArgs e)
+        {
+            FrmAsignatura asig = new FrmAsignatura();
+            asig.ShowDialog();
         }
     }
 }

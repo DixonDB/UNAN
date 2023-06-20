@@ -574,12 +574,6 @@
             this.cbActividad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbActividad.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbActividad.FormattingEnabled = true;
-            this.cbActividad.Items.AddRange(new object[] {
-            "Estructura l",
-            "Estructura ll",
-            "Prog Alg",
-            "Inf Bas",
-            "Fund Prog"});
             this.cbActividad.Location = new System.Drawing.Point(1097, 77);
             this.cbActividad.Name = "cbActividad";
             this.cbActividad.Size = new System.Drawing.Size(260, 26);
@@ -592,12 +586,6 @@
             this.cbContenido.BackColor = System.Drawing.Color.White;
             this.cbContenido.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbContenido.FormattingEnabled = true;
-            this.cbContenido.Items.AddRange(new object[] {
-            "Estructura l",
-            "Estructura ll",
-            "Prog Alg",
-            "Inf Bas",
-            "Fund Prog"});
             this.cbContenido.Location = new System.Drawing.Point(682, 77);
             this.cbContenido.Name = "cbContenido";
             this.cbContenido.Size = new System.Drawing.Size(260, 26);
@@ -721,12 +709,6 @@
             this.cbAsignaturas.BackColor = System.Drawing.Color.White;
             this.cbAsignaturas.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAsignaturas.FormattingEnabled = true;
-            this.cbAsignaturas.Items.AddRange(new object[] {
-            "Estructura l",
-            "Estructura ll",
-            "Prog Alg",
-            "Inf Bas",
-            "Fund Prog"});
             this.cbAsignaturas.Location = new System.Drawing.Point(158, 76);
             this.cbAsignaturas.Name = "cbAsignaturas";
             this.cbAsignaturas.Size = new System.Drawing.Size(260, 26);
