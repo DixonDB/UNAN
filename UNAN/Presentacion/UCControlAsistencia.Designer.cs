@@ -86,6 +86,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtHrEntrada = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbSemestre = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblCodAsig = new System.Windows.Forms.Label();
             this.PanelPaginado.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -405,7 +408,7 @@
             this.pnFormAsistencia.Controls.Add(this.pnHrEntrada);
             this.pnFormAsistencia.Location = new System.Drawing.Point(31, 92);
             this.pnFormAsistencia.Name = "pnFormAsistencia";
-            this.pnFormAsistencia.Size = new System.Drawing.Size(1219, 434);
+            this.pnFormAsistencia.Size = new System.Drawing.Size(1267, 434);
             this.pnFormAsistencia.TabIndex = 15;
             this.pnFormAsistencia.Visible = false;
             // 
@@ -417,7 +420,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 379);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1219, 55);
+            this.panel4.Size = new System.Drawing.Size(1267, 55);
             this.panel4.TabIndex = 11;
             // 
             // btnVolver
@@ -459,7 +462,7 @@
             this.pnHrSalida.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnHrSalida.Location = new System.Drawing.Point(0, 253);
             this.pnHrSalida.Name = "pnHrSalida";
-            this.pnHrSalida.Size = new System.Drawing.Size(1219, 120);
+            this.pnHrSalida.Size = new System.Drawing.Size(1267, 120);
             this.pnHrSalida.TabIndex = 10;
             // 
             // txtObservaciones
@@ -526,7 +529,10 @@
             // pnBloques
             // 
             this.pnBloques.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnBloques.Controls.Add(this.lblCodAsig);
+            this.pnBloques.Controls.Add(this.cbSemestre);
             this.pnBloques.Controls.Add(this.btnAddBloque);
+            this.pnBloques.Controls.Add(this.label12);
             this.pnBloques.Controls.Add(this.cbActividad);
             this.pnBloques.Controls.Add(this.cbContenido);
             this.pnBloques.Controls.Add(this.cbCarrera);
@@ -546,7 +552,7 @@
             this.pnBloques.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnBloques.Location = new System.Drawing.Point(0, 80);
             this.pnBloques.Name = "pnBloques";
-            this.pnBloques.Size = new System.Drawing.Size(1219, 173);
+            this.pnBloques.Size = new System.Drawing.Size(1267, 173);
             this.pnBloques.TabIndex = 9;
             // 
             // btnAddBloque
@@ -574,7 +580,7 @@
             "Prog Alg",
             "Inf Bas",
             "Fund Prog"});
-            this.cbActividad.Location = new System.Drawing.Point(1058, 77);
+            this.cbActividad.Location = new System.Drawing.Point(1097, 77);
             this.cbActividad.Name = "cbActividad";
             this.cbActividad.Size = new System.Drawing.Size(260, 26);
             this.cbActividad.TabIndex = 50;
@@ -592,7 +598,7 @@
             "Prog Alg",
             "Inf Bas",
             "Fund Prog"});
-            this.cbContenido.Location = new System.Drawing.Point(627, 77);
+            this.cbContenido.Location = new System.Drawing.Point(682, 77);
             this.cbContenido.Name = "cbContenido";
             this.cbContenido.Size = new System.Drawing.Size(260, 26);
             this.cbContenido.TabIndex = 49;
@@ -604,7 +610,7 @@
             this.cbCarrera.BackColor = System.Drawing.Color.White;
             this.cbCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCarrera.FormattingEnabled = true;
-            this.cbCarrera.Location = new System.Drawing.Point(554, 23);
+            this.cbCarrera.Location = new System.Drawing.Point(521, 23);
             this.cbCarrera.Name = "cbCarrera";
             this.cbCarrera.Size = new System.Drawing.Size(247, 28);
             this.cbCarrera.TabIndex = 10;
@@ -613,7 +619,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(452, 23);
+            this.label5.Location = new System.Drawing.Point(420, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 24);
             this.label5.TabIndex = 9;
@@ -626,7 +632,7 @@
             this.cbModalidad.BackColor = System.Drawing.Color.White;
             this.cbModalidad.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbModalidad.FormattingEnabled = true;
-            this.cbModalidad.Location = new System.Drawing.Point(315, 24);
+            this.cbModalidad.Location = new System.Drawing.Point(294, 24);
             this.cbModalidad.Name = "cbModalidad";
             this.cbModalidad.Size = new System.Drawing.Size(110, 26);
             this.cbModalidad.TabIndex = 48;
@@ -637,7 +643,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.SystemColors.Control;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(35, 76);
+            this.label10.Location = new System.Drawing.Point(16, 76);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(115, 24);
             this.label10.TabIndex = 33;
@@ -648,7 +654,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.SystemColors.Control;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(922, 76);
+            this.label6.Location = new System.Drawing.Point(969, 76);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 24);
             this.label6.TabIndex = 40;
@@ -659,7 +665,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.SystemColors.Control;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(480, 76);
+            this.label8.Location = new System.Drawing.Point(543, 76);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(112, 24);
             this.label8.TabIndex = 34;
@@ -672,16 +678,17 @@
             this.cbGrupo.BackColor = System.Drawing.Color.White;
             this.cbGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGrupo.FormattingEnabled = true;
-            this.cbGrupo.Location = new System.Drawing.Point(1019, 20);
+            this.cbGrupo.Location = new System.Drawing.Point(962, 20);
             this.cbGrupo.Name = "cbGrupo";
             this.cbGrupo.Size = new System.Drawing.Size(121, 28);
             this.cbGrupo.TabIndex = 8;
+            this.cbGrupo.SelectedIndexChanged += new System.EventHandler(this.cbGrupo_SelectedIndexChanged);
             // 
             // lblCod
             // 
             this.lblCod.AutoSize = true;
             this.lblCod.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCod.Location = new System.Drawing.Point(818, 27);
+            this.lblCod.Location = new System.Drawing.Point(784, 27);
             this.lblCod.Name = "lblCod";
             this.lblCod.Size = new System.Drawing.Size(72, 18);
             this.lblCod.TabIndex = 46;
@@ -692,7 +699,7 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.SystemColors.Control;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.label19.Location = new System.Drawing.Point(185, 23);
+            this.label19.Location = new System.Drawing.Point(165, 23);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(113, 24);
             this.label19.TabIndex = 47;
@@ -701,7 +708,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(928, 23);
+            this.label4.Location = new System.Drawing.Point(872, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 24);
             this.label4.TabIndex = 7;
@@ -720,15 +727,16 @@
             "Prog Alg",
             "Inf Bas",
             "Fund Prog"});
-            this.cbAsignaturas.Location = new System.Drawing.Point(185, 76);
+            this.cbAsignaturas.Location = new System.Drawing.Point(158, 76);
             this.cbAsignaturas.Name = "cbAsignaturas";
             this.cbAsignaturas.Size = new System.Drawing.Size(260, 26);
             this.cbAsignaturas.TabIndex = 35;
+            this.cbAsignaturas.SelectedIndexChanged += new System.EventHandler(this.cbAsignaturas_SelectedIndexChanged);
             // 
             // lblbloque
             // 
             this.lblbloque.AutoSize = true;
-            this.lblbloque.Location = new System.Drawing.Point(147, 23);
+            this.lblbloque.Location = new System.Drawing.Point(128, 23);
             this.lblbloque.Name = "lblbloque";
             this.lblbloque.Size = new System.Drawing.Size(21, 24);
             this.lblbloque.TabIndex = 6;
@@ -738,7 +746,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 23);
+            this.label3.Location = new System.Drawing.Point(13, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 24);
             this.label3.TabIndex = 5;
@@ -756,7 +764,7 @@
             this.pnHrEntrada.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnHrEntrada.Location = new System.Drawing.Point(0, 0);
             this.pnHrEntrada.Name = "pnHrEntrada";
-            this.pnHrEntrada.Size = new System.Drawing.Size(1219, 80);
+            this.pnHrEntrada.Size = new System.Drawing.Size(1267, 80);
             this.pnHrEntrada.TabIndex = 8;
             // 
             // btnAceptar
@@ -819,6 +827,38 @@
             this.label1.Size = new System.Drawing.Size(167, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Hora de entrada:";
+            // 
+            // cbSemestre
+            // 
+            this.cbSemestre.BackColor = System.Drawing.Color.White;
+            this.cbSemestre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSemestre.FormattingEnabled = true;
+            this.cbSemestre.Location = new System.Drawing.Point(1221, 19);
+            this.cbSemestre.Name = "cbSemestre";
+            this.cbSemestre.Size = new System.Drawing.Size(64, 26);
+            this.cbSemestre.TabIndex = 53;
+            this.cbSemestre.SelectedIndexChanged += new System.EventHandler(this.cbSemestre_SelectedIndexChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(1099, 19);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(106, 24);
+            this.label12.TabIndex = 52;
+            this.label12.Text = "Semestre:";
+            // 
+            // lblCodAsig
+            // 
+            this.lblCodAsig.AutoSize = true;
+            this.lblCodAsig.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodAsig.Location = new System.Drawing.Point(445, 80);
+            this.lblCodAsig.Name = "lblCodAsig";
+            this.lblCodAsig.Size = new System.Drawing.Size(71, 18);
+            this.lblCodAsig.TabIndex = 54;
+            this.lblCodAsig.Text = "CodigoA";
             // 
             // UCControlAsistencia
             // 
@@ -911,5 +951,8 @@
         private System.Windows.Forms.DateTimePicker dtHrEntrada;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.ComboBox cbSemestre;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblCodAsig;
     }
 }
