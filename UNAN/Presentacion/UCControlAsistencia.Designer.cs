@@ -581,8 +581,9 @@
             // 
             // cbContenido
             // 
-            this.cbContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.cbContenido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbContenido.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbContenido.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbContenido.BackColor = System.Drawing.Color.White;
             this.cbContenido.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbContenido.FormattingEnabled = true;
             this.cbContenido.Items.AddRange(new object[] {
@@ -598,7 +599,9 @@
             // 
             // cbCarrera
             // 
-            this.cbCarrera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCarrera.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbCarrera.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbCarrera.BackColor = System.Drawing.Color.White;
             this.cbCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCarrera.FormattingEnabled = true;
             this.cbCarrera.Location = new System.Drawing.Point(554, 23);
@@ -618,8 +621,9 @@
             // 
             // cbModalidad
             // 
-            this.cbModalidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.cbModalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbModalidad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbModalidad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbModalidad.BackColor = System.Drawing.Color.White;
             this.cbModalidad.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbModalidad.FormattingEnabled = true;
             this.cbModalidad.Location = new System.Drawing.Point(315, 24);
@@ -663,7 +667,9 @@
             // 
             // cbGrupo
             // 
-            this.cbGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGrupo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbGrupo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbGrupo.BackColor = System.Drawing.Color.White;
             this.cbGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGrupo.FormattingEnabled = true;
             this.cbGrupo.Location = new System.Drawing.Point(1019, 20);
@@ -703,8 +709,9 @@
             // 
             // cbAsignaturas
             // 
-            this.cbAsignaturas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.cbAsignaturas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAsignaturas.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbAsignaturas.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbAsignaturas.BackColor = System.Drawing.Color.White;
             this.cbAsignaturas.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAsignaturas.FormattingEnabled = true;
             this.cbAsignaturas.Items.AddRange(new object[] {

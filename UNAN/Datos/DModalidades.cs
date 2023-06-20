@@ -15,15 +15,32 @@ namespace UNAN.Datos
     {
         public void MostrarModalidades(ComboBox combo)
         {
-            Conexion.abrir();
-            SqlCommand da = new SqlCommand("MostrarModalidad", Conexion.conectar);
-            da.CommandType = CommandType.StoredProcedure;
-            SqlDataAdapter cb = new SqlDataAdapter(da);
-            DataTable dt = new DataTable();
-            cb.Fill(dt);
-            combo.ValueMember = "IdModalidad";
-            combo.DisplayMember = "Modalidad";
-            combo.DataSource = dt;
+            try
+            {
+                AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
+                Conexion.abrir();
+                SqlCommand da = new SqlCommand("MostrarModalidad", Conexion.conectar);
+                da.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter cb = new SqlDataAdapter(da);
+                DataTable dt = new DataTable();
+                cb.Fill(dt);
+                combo.ValueMember = "IdModalidad";
+                combo.DisplayMember = "Modalidad";
+                combo.DataSource = dt;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    lista.Add(dt.Rows[i]["Modalidad"].ToString());
+                }
+                combo.AutoCompleteCustomSource = lista;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Conexion.cerrar();
+            }
         }
         public bool InsertarGrupo(LModalidad parametro)
         {
@@ -65,28 +82,52 @@ namespace UNAN.Datos
 
         public void MostrarGrupos(ComboBox combo,string carrera)
         {
-            Conexion.abrir();
-            SqlCommand da = new SqlCommand("MostrarGrupo", Conexion.conectar);
-            da.CommandType = CommandType.StoredProcedure;
-            da.Parameters.AddWithValue("@carrera", carrera);
-            SqlDataAdapter cb = new SqlDataAdapter(da);
-            DataTable dt = new DataTable();
-            cb.Fill(dt);
-            combo.ValueMember = "IdGrupo";
-            combo.DisplayMember = "Grupo";
-            combo.DataSource = dt;
+            try
+            {
+                AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
+                Conexion.abrir();
+                SqlCommand da = new SqlCommand("MostrarGrupo", Conexion.conectar);
+                da.CommandType = CommandType.StoredProcedure;
+                da.Parameters.AddWithValue("@carrera", carrera);
+                SqlDataAdapter cb = new SqlDataAdapter(da);
+                DataTable dt = new DataTable();
+                cb.Fill(dt);
+                combo.ValueMember = "IdGrupo";
+                combo.DisplayMember = "Grupo";
+                combo.DataSource = dt;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    lista.Add(dt.Rows[i]["Grupo"].ToString());
+                }
+                combo.AutoCompleteCustomSource = lista;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Conexion.cerrar();
+            }
         }
         public void MostrarSemestre(ComboBox combo)
         {
-            Conexion.abrir();
-            SqlCommand da = new SqlCommand("MostrarSemestre", Conexion.conectar);
-            da.CommandType = CommandType.StoredProcedure;
-            SqlDataAdapter cb = new SqlDataAdapter(da);
-            DataTable dt = new DataTable();
-            cb.Fill(dt);
-            combo.ValueMember = "IdSemestre";
-            combo.DisplayMember = "Semestre";
-            combo.DataSource = dt;
+            try
+            {
+                Conexion.abrir();
+                SqlCommand da = new SqlCommand("MostrarSemestre", Conexion.conectar);
+                da.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter cb = new SqlDataAdapter(da);
+                DataTable dt = new DataTable();
+                cb.Fill(dt);
+                combo.ValueMember = "IdSemestre";
+                combo.DisplayMember = "Semestre";
+                combo.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.StackTrace);
+            }
         }
     }
 }

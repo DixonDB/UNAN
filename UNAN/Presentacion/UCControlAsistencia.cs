@@ -18,6 +18,7 @@ namespace UNAN.Presentacion
         public UCControlAsistencia()
         {
             InitializeComponent();
+            Crear();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -55,6 +56,12 @@ namespace UNAN.Presentacion
         {
             carreras.MostrarCarrera(cbCarrera, cbModalidad.Text);
 
+        }
+        public void Crear()
+        {
+            dtHrEntrada.CustomFormat = "hh:mm:ss";
+            dtHrEntrada.Format = DateTimePickerFormat.Custom;
+            dtHrEntrada.ShowUpDown = false;
         }
     }
 }

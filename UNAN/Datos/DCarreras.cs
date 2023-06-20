@@ -42,17 +42,33 @@ namespace UNAN.Datos
 
 		public void MostrarCarrera(ComboBox combo,string modalidad)
 		{
-			Conexion.abrir();
-			SqlCommand da = new SqlCommand("MostrarCarrera", Conexion.conectar);
-			da.CommandType= CommandType.StoredProcedure;
-            da.Parameters.AddWithValue("@Mod", modalidad);
-            SqlDataAdapter cb = new SqlDataAdapter(da);
-			DataTable dt = new DataTable();
-			cb.Fill(dt);
-			combo.ValueMember = "IdCarreras";
-			combo.DisplayMember = "NombreC";
-			combo.DataSource = dt;
-
+            try
+            {
+                AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
+                Conexion.abrir();
+                SqlCommand da = new SqlCommand("MostrarCarrera", Conexion.conectar);
+                da.CommandType = CommandType.StoredProcedure;
+                da.Parameters.AddWithValue("@Mod", modalidad);
+                SqlDataAdapter cb = new SqlDataAdapter(da);
+                DataTable dt = new DataTable();
+                cb.Fill(dt);
+                combo.ValueMember = "IdCarreras";
+                combo.DisplayMember = "NombreC";
+                combo.DataSource = dt;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    lista.Add(dt.Rows[i]["NombreC"].ToString());
+                }
+                combo.AutoCompleteCustomSource= lista;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Conexion.cerrar();
+            }
         }
 
         public void MostrarCodigoC(string carr, Label codi)

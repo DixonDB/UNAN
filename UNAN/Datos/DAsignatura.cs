@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using UNAN.Logica;
+using System.Collections;
 
 namespace UNAN.Datos
 {
@@ -38,18 +39,35 @@ namespace UNAN.Datos
         }
         public void MostrarAsignatura(ComboBox combo, string semestre,string carrera,string grupo)
         {
-            Conexion.abrir();
-            SqlCommand da = new SqlCommand("MostrarAsignaturas", Conexion.conectar);
-            da.CommandType = CommandType.StoredProcedure;
-            da.Parameters.AddWithValue("@Carrera", carrera);
-            da.Parameters.AddWithValue("@Semestre", semestre);
-            da.Parameters.AddWithValue("@Grupo", grupo);
-            SqlDataAdapter cb = new SqlDataAdapter(da);
-            DataTable dt = new DataTable();
-            cb.Fill(dt);
-            combo.ValueMember = "IdAsignaturas";
-            combo.DisplayMember = "NombreA";
-            combo.DataSource = dt;
+            try
+            {
+                AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
+                Conexion.abrir();
+                SqlCommand da = new SqlCommand("MostrarAsignaturas", Conexion.conectar);
+                da.CommandType = CommandType.StoredProcedure;
+                da.Parameters.AddWithValue("@Carrera", carrera);
+                da.Parameters.AddWithValue("@Semestre", semestre);
+                da.Parameters.AddWithValue("@Grupo", grupo);
+                SqlDataAdapter cb = new SqlDataAdapter(da);
+                DataTable dt = new DataTable();
+                cb.Fill(dt);
+                combo.ValueMember = "IdAsignaturas";
+                combo.DisplayMember = "NombreA";
+                combo.DataSource = dt;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    lista.Add(dt.Rows[i]["NombreA"].ToString());
+                }
+                combo.AutoCompleteCustomSource = lista;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Conexion.cerrar();
+            }
 
         }
         public void MostrarCodigoA(string asig, Label codi)
