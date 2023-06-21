@@ -54,7 +54,7 @@ namespace UNAN.Presentacion
             PanelPaginado.Visible = true;
             dataProfesores.Columns[2].Visible = false;
             dataProfesores.Columns[8].Visible = false;
-            dataProfesores.Columns[9].Visible = false;
+            //dataProfesores.Columns[9].Visible = false;
         }
         private void InsertarProfesores()
         {
@@ -64,7 +64,7 @@ namespace UNAN.Presentacion
             parametros.CorreoP = txtCorreo.Text;
             parametros.CelularP = int.Parse(txtCelular.Text);
             parametros.CarnetP = txtIdentificacion.Text;
-            parametros.Usuario= txtUsuario.Text;
+            parametros.Usuario = txtUsuario.Text;
             parametros.Password = Encrip.Encriptar(Encrip.Encriptar(txtContraseña.Text));
             MemoryStream ms = new MemoryStream();
             Icono.Image.Save(ms, Icono.Image.RawFormat);
@@ -89,8 +89,8 @@ namespace UNAN.Presentacion
         private void MostrarPermisos()
         {
             DataTable dt = new DataTable();
-            DPermisos funcion= new DPermisos();
-            Lpermisos parametros= new Lpermisos();
+            DPermisos funcion = new DPermisos();
+            Lpermisos parametros = new Lpermisos();
             foreach (DataRow rowPermisos in dt.Rows)
             {
                 int idmoduloPermisos = Convert.ToInt32(rowPermisos["IdModulo"]);
@@ -175,8 +175,8 @@ namespace UNAN.Presentacion
                                         MessageBox.Show("Ingresa un Icono Para agregar este Profesor");
                                     }
                                 }
-                               
-                            }                          
+
+                            }
                         }
                     }
                 }
@@ -208,18 +208,18 @@ namespace UNAN.Presentacion
             if (e.ColumnIndex == dataProfesores.Columns["Eliminar"].Index)
             {
                 DialogResult result = MessageBox.Show("¿Solo se Cambiara el Estado para que no pueda acceder, Desea Continuar?", "Eliminando registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if(result== DialogResult.OK)
+                if (result == DialogResult.OK)
                 {
                     EliminarProfes();
                 }
-                
+
             }
             if (e.ColumnIndex == dataProfesores.Columns["Editar"].Index)
             {
                 ObtenerEstado();
                 if (Estado == "ELIMINADO")
                 {
-                RestaurarP();
+                    RestaurarP();
                 }
                 else
                 {
@@ -247,9 +247,7 @@ namespace UNAN.Presentacion
         }
         private void ObtenerEstado()
         {
-           
-                Estado = dataProfesores.SelectedCells[10].Value.ToString();
-            
+            Estado = dataProfesores.SelectedCells[10].Value.ToString();
         }
         private void Obtenerdatos()
         {
@@ -263,9 +261,9 @@ namespace UNAN.Presentacion
             else
             {
                 txtNombreApellidos.Text = dataProfesores.SelectedCells[3].Value.ToString();
-                txtCorreo.Text= dataProfesores.SelectedCells[4].Value.ToString();
+                txtCorreo.Text = dataProfesores.SelectedCells[4].Value.ToString();
                 txtCelular.Text = dataProfesores.SelectedCells[5].Value.ToString();
-                txtIdentificacion.Text= dataProfesores.SelectedCells[6].Value.ToString();
+                txtIdentificacion.Text = dataProfesores.SelectedCells[6].Value.ToString();
                 txtUsuario.Text = dataProfesores.SelectedCells[7].Value.ToString();
                 txtContraseña.Text = Encrip.DesEncriptar(Encrip.DesEncriptar(dataProfesores.SelectedCells[8].Value.ToString()));
                 Icono.BackgroundImage = null;
@@ -275,7 +273,7 @@ namespace UNAN.Presentacion
                 PanelPaginado.Visible = false;
                 panelRegitroP.Visible = true;
                 panelRegitroP.Dock = DockStyle.Fill;
-                btnGuardar.Visible = true;                
+                btnGuardar.Visible = true;
                 btnGuardar.Visible = false;
                 btnActualizar.Visible = true;
                 lblanuncioIcono.Visible = false;
@@ -316,19 +314,19 @@ namespace UNAN.Presentacion
         }
         private void EditarProfesores()
         {
-            LProfesores parametros= new LProfesores();
-            DProfesores funcion= new DProfesores();
-            parametros.IdProfesores= Idprofesor;
+            LProfesores parametros = new LProfesores();
+            DProfesores funcion = new DProfesores();
+            parametros.IdProfesores = Idprofesor;
             parametros.NombreApellido = txtNombreApellidos.Text;
             parametros.CorreoP = txtCorreo.Text;
-            parametros.CelularP =Convert.ToInt32( txtCelular.Text);
+            parametros.CelularP = Convert.ToInt32(txtCelular.Text);
             parametros.CarnetP = txtIdentificacion.Text;
-            parametros.Usuario= txtUsuario.Text;
-            parametros.Password =Encrip.Encriptar(Encrip.Encriptar(txtContraseña.Text));
+            parametros.Usuario = txtUsuario.Text;
+            parametros.Password = Encrip.Encriptar(Encrip.Encriptar(txtContraseña.Text));
             MemoryStream ms = new MemoryStream();
             Icono.Image.Save(ms, Icono.Image.RawFormat);
             parametros.Icono = ms.GetBuffer();
-            if (funcion.EditarProfesores(parametros)==true)
+            if (funcion.EditarProfesores(parametros) == true)
             {
                 MostrarProfessores();
                 panelRegitroP.Visible = false;
@@ -435,12 +433,12 @@ namespace UNAN.Presentacion
         {
             foreach (DataGridViewRow row in datalistadoModulos.Rows)
             {
-                int Idmodulo= Convert.ToInt32(row.Cells["IdModulo"].Value);
+                int Idmodulo = Convert.ToInt32(row.Cells["IdModulo"].Value);
                 bool marcado = Convert.ToBoolean(row.Cells["Marcar"].Value);
-                if (marcado== true)
+                if (marcado == true)
                 {
-                    Lpermisos parametros= new Lpermisos();
-                    DPermisos funcion= new DPermisos();
+                    Lpermisos parametros = new Lpermisos();
+                    DPermisos funcion = new DPermisos();
                     parametros.IdModulo = Idmodulo;
                     parametros.IdProfesor = Idprofesor;
                     funcion.Insertar_Permisos(parametros);
@@ -450,11 +448,11 @@ namespace UNAN.Presentacion
             panelRegitroP.Visible = false;
         }
 
-        private void ValidarEmail(object sender,EventArgs e)
+        private void ValidarEmail(object sender, EventArgs e)
         {
             ErrorProvider errorProvider = new ErrorProvider();
-            TextBox txt= sender as TextBox;
-            if (txt.Text!=string.Empty&& Regex.IsMatch(txt.Text,
+            TextBox txt = sender as TextBox;
+            if (txt.Text != string.Empty && Regex.IsMatch(txt.Text,
                 @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
             {
                 errorProvider.Clear();

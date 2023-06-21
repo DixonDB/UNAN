@@ -173,5 +173,10 @@ namespace UNAN.FrmPlanDidactico
             FrmAsignatura asig = new FrmAsignatura();
             asig.ShowDialog();
         }
+
+        private void gbDatos_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
