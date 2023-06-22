@@ -82,6 +82,12 @@
     <Compile Include="Presentacion\FrmCarrera.Designer.cs">
       <DependentUpon>FrmCarrera.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\FrmFormaEstrag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmFormaEstrag.Designer.cs">
+      <DependentUpon>FrmFormaEstrag.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\frmGrupo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmCarrera.resx">
       <DependentUpon>FrmCarrera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmFormaEstrag.resx">
+      <DependentUpon>FrmFormaEstrag.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmGrupo.resx">
       <DependentUpon>frmGrupo.cs</DependentUpon>

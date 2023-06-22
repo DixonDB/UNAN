@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtPlan = new System.Windows.Forms.DataGridView();
             this.GBDetalles = new System.Windows.Forms.GroupBox();
             this.lblCodAsig = new System.Windows.Forms.Label();
@@ -70,6 +70,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.gbDatos = new System.Windows.Forms.GroupBox();
+            this.cbEstrEvaluacion = new System.Windows.Forms.ComboBox();
+            this.cbFormaEvaluacion = new System.Windows.Forms.ComboBox();
+            this.cbEnseApren = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtPorcentaje = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -79,16 +82,13 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtSemInicio = new System.Windows.Forms.TextBox();
             this.pnBotones = new System.Windows.Forms.Panel();
-            this.cbEnseApren = new System.Windows.Forms.ComboBox();
-            this.cbFormaEvaluacion = new System.Windows.Forms.ComboBox();
-            this.cbEstrEvaluacion = new System.Windows.Forms.ComboBox();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnSubirPlan = new System.Windows.Forms.Button();
             this.btnSubir = new System.Windows.Forms.Button();
             this.btnAyuda = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEE = new System.Windows.Forms.Button();
+            this.btnFE = new System.Windows.Forms.Button();
+            this.btnEEA = new System.Windows.Forms.Button();
             this.btnAddAsig = new System.Windows.Forms.Button();
             this.btnAddGrupo = new System.Windows.Forms.Button();
             this.btnCarrera = new System.Windows.Forms.Button();
@@ -109,25 +109,25 @@
             this.dtPlan.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dtPlan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtPlan.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtPlan.DefaultCellStyle = dataGridViewCellStyle5;
             this.dtPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtPlan.Location = new System.Drawing.Point(0, 445);
             this.dtPlan.Name = "dtPlan";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dtPlan.RowHeadersVisible = false;
             this.dtPlan.RowHeadersWidth = 82;
             this.dtPlan.Size = new System.Drawing.Size(1294, 478);
@@ -571,9 +571,9 @@
             // gbDatos
             // 
             this.gbDatos.BackColor = System.Drawing.Color.White;
-            this.gbDatos.Controls.Add(this.button3);
-            this.gbDatos.Controls.Add(this.button2);
-            this.gbDatos.Controls.Add(this.button1);
+            this.gbDatos.Controls.Add(this.btnEE);
+            this.gbDatos.Controls.Add(this.btnFE);
+            this.gbDatos.Controls.Add(this.btnEEA);
             this.gbDatos.Controls.Add(this.cbEstrEvaluacion);
             this.gbDatos.Controls.Add(this.cbFormaEvaluacion);
             this.gbDatos.Controls.Add(this.cbEnseApren);
@@ -602,7 +602,42 @@
             this.gbDatos.Size = new System.Drawing.Size(1294, 238);
             this.gbDatos.TabIndex = 2;
             this.gbDatos.TabStop = false;
-            this.gbDatos.Enter += new System.EventHandler(this.gbDatos_Enter);
+            // 
+            // cbEstrEvaluacion
+            // 
+            this.cbEstrEvaluacion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbEstrEvaluacion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbEstrEvaluacion.BackColor = System.Drawing.Color.White;
+            this.cbEstrEvaluacion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEstrEvaluacion.FormattingEnabled = true;
+            this.cbEstrEvaluacion.Location = new System.Drawing.Point(745, 201);
+            this.cbEstrEvaluacion.Name = "cbEstrEvaluacion";
+            this.cbEstrEvaluacion.Size = new System.Drawing.Size(240, 26);
+            this.cbEstrEvaluacion.TabIndex = 30;
+            // 
+            // cbFormaEvaluacion
+            // 
+            this.cbFormaEvaluacion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbFormaEvaluacion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbFormaEvaluacion.BackColor = System.Drawing.Color.White;
+            this.cbFormaEvaluacion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFormaEvaluacion.FormattingEnabled = true;
+            this.cbFormaEvaluacion.Location = new System.Drawing.Point(405, 203);
+            this.cbFormaEvaluacion.Name = "cbFormaEvaluacion";
+            this.cbFormaEvaluacion.Size = new System.Drawing.Size(240, 26);
+            this.cbFormaEvaluacion.TabIndex = 29;
+            // 
+            // cbEnseApren
+            // 
+            this.cbEnseApren.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbEnseApren.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbEnseApren.BackColor = System.Drawing.Color.White;
+            this.cbEnseApren.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEnseApren.FormattingEnabled = true;
+            this.cbEnseApren.Location = new System.Drawing.Point(9, 203);
+            this.cbEnseApren.Name = "cbEnseApren";
+            this.cbEnseApren.Size = new System.Drawing.Size(240, 26);
+            this.cbEnseApren.TabIndex = 28;
             // 
             // label14
             // 
@@ -701,42 +736,6 @@
             this.pnBotones.Size = new System.Drawing.Size(1294, 52);
             this.pnBotones.TabIndex = 8;
             // 
-            // cbEnseApren
-            // 
-            this.cbEnseApren.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbEnseApren.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbEnseApren.BackColor = System.Drawing.Color.White;
-            this.cbEnseApren.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEnseApren.FormattingEnabled = true;
-            this.cbEnseApren.Location = new System.Drawing.Point(9, 203);
-            this.cbEnseApren.Name = "cbEnseApren";
-            this.cbEnseApren.Size = new System.Drawing.Size(240, 26);
-            this.cbEnseApren.TabIndex = 28;
-            // 
-            // cbFormaEvaluacion
-            // 
-            this.cbFormaEvaluacion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbFormaEvaluacion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbFormaEvaluacion.BackColor = System.Drawing.Color.White;
-            this.cbFormaEvaluacion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFormaEvaluacion.FormattingEnabled = true;
-            this.cbFormaEvaluacion.Location = new System.Drawing.Point(405, 203);
-            this.cbFormaEvaluacion.Name = "cbFormaEvaluacion";
-            this.cbFormaEvaluacion.Size = new System.Drawing.Size(240, 26);
-            this.cbFormaEvaluacion.TabIndex = 29;
-            // 
-            // cbEstrEvaluacion
-            // 
-            this.cbEstrEvaluacion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbEstrEvaluacion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbEstrEvaluacion.BackColor = System.Drawing.Color.White;
-            this.cbEstrEvaluacion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEstrEvaluacion.FormattingEnabled = true;
-            this.cbEstrEvaluacion.Location = new System.Drawing.Point(745, 201);
-            this.cbEstrEvaluacion.Name = "cbEstrEvaluacion";
-            this.cbEstrEvaluacion.Size = new System.Drawing.Size(240, 26);
-            this.cbEstrEvaluacion.TabIndex = 30;
-            // 
             // btnInsertar
             // 
             this.btnInsertar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -802,37 +801,40 @@
             this.btnAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAyuda.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnEE
             // 
-            this.button3.BackColor = System.Drawing.Color.Gray;
-            this.button3.BackgroundImage = global::UNAN.Properties.Resources.EstrEva;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(992, 191);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(41, 44);
-            this.button3.TabIndex = 36;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnEE.BackColor = System.Drawing.Color.Gray;
+            this.btnEE.BackgroundImage = global::UNAN.Properties.Resources.EstrEva;
+            this.btnEE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEE.Location = new System.Drawing.Point(992, 191);
+            this.btnEE.Name = "btnEE";
+            this.btnEE.Size = new System.Drawing.Size(41, 44);
+            this.btnEE.TabIndex = 36;
+            this.btnEE.UseVisualStyleBackColor = false;
+            this.btnEE.Click += new System.EventHandler(this.btnEE_Click);
             // 
-            // button2
+            // btnFE
             // 
-            this.button2.BackgroundImage = global::UNAN.Properties.Resources.Evaluation;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(656, 191);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(41, 44);
-            this.button2.TabIndex = 35;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnFE.BackgroundImage = global::UNAN.Properties.Resources.Evaluation;
+            this.btnFE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFE.Location = new System.Drawing.Point(656, 191);
+            this.btnFE.Name = "btnFE";
+            this.btnFE.Size = new System.Drawing.Size(41, 44);
+            this.btnFE.TabIndex = 35;
+            this.btnFE.UseVisualStyleBackColor = true;
+            this.btnFE.Click += new System.EventHandler(this.btnFE_Click);
             // 
-            // button1
+            // btnEEA
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button1.BackgroundImage = global::UNAN.Properties.Resources.Estrategia;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(264, 191);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(41, 40);
-            this.button1.TabIndex = 34;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnEEA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnEEA.BackgroundImage = global::UNAN.Properties.Resources.Estrategia;
+            this.btnEEA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEEA.Location = new System.Drawing.Point(264, 191);
+            this.btnEEA.Name = "btnEEA";
+            this.btnEEA.Size = new System.Drawing.Size(41, 40);
+            this.btnEEA.TabIndex = 34;
+            this.btnEEA.UseVisualStyleBackColor = false;
+            this.btnEEA.Click += new System.EventHandler(this.btnEEA_Click);
             // 
             // btnAddAsig
             // 
@@ -954,8 +956,8 @@
         public System.Windows.Forms.ComboBox cbEstrEvaluacion;
         public System.Windows.Forms.ComboBox cbFormaEvaluacion;
         public System.Windows.Forms.ComboBox cbEnseApren;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnEEA;
+        private System.Windows.Forms.Button btnEE;
+        private System.Windows.Forms.Button btnFE;
     }
 }

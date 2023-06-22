@@ -174,9 +174,30 @@ namespace UNAN.FrmPlanDidactico
             asig.ShowDialog();
         }
 
-        private void gbDatos_Enter(object sender, EventArgs e)
+        private void btnEEA_Click(object sender, EventArgs e)
         {
+            FrmFormaEstrag fr = new FrmFormaEstrag();
+            fr.PnEstraEnseApren.Visible=true;
+            fr.PnEstraEnseApren.Dock=DockStyle.Fill;
+            fr.ShowDialog();
+        }
 
+        private void btnFE_Click(object sender, EventArgs e)
+        {
+            FrmFormaEstrag fr = new FrmFormaEstrag();
+            fr.lblTitulo.Text = "Forma de Evaluación";
+            fr.pnForEva.Visible = true;
+            fr.pnForEva.Dock = DockStyle.Fill;
+            fr.ShowDialog();
+        }
+
+        private void btnEE_Click(object sender, EventArgs e)
+        {
+            FrmFormaEstrag fr = new FrmFormaEstrag();
+            fr.lblTitulo.Text = "Estrategia de Evaluación";
+            fr.pnEstraEva.Visible = true;
+            fr.pnEstraEva.Dock = DockStyle.Fill;
+            fr.ShowDialog();
         }
     }
 }
