@@ -33,18 +33,18 @@
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.PnEstraEnseApren = new System.Windows.Forms.Panel();
-            this.pnForEva = new System.Windows.Forms.Panel();
-            this.pnEstraEva = new System.Windows.Forms.Panel();
-            this.pnPrincipal = new System.Windows.Forms.Panel();
+            this.btnEstrEnseApre = new System.Windows.Forms.Button();
             this.txtEstrEnseApre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnEstrEnseApre = new System.Windows.Forms.Button();
+            this.pnForEva = new System.Windows.Forms.Panel();
             this.btnForEva = new System.Windows.Forms.Button();
             this.txtForEva = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pnEstraEva = new System.Windows.Forms.Panel();
             this.btnEstrEva = new System.Windows.Forms.Button();
             this.txtEstrEva = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.pnPrincipal = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -86,6 +86,7 @@
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.btnCerrar.TabIndex = 1;
             this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // lblTitulo
             // 
@@ -108,38 +109,19 @@
             this.PnEstraEnseApren.TabIndex = 2;
             this.PnEstraEnseApren.Visible = false;
             // 
-            // pnForEva
+            // btnEstrEnseApre
             // 
-            this.pnForEva.Controls.Add(this.btnForEva);
-            this.pnForEva.Controls.Add(this.txtForEva);
-            this.pnForEva.Controls.Add(this.label1);
-            this.pnForEva.Location = new System.Drawing.Point(317, 150);
-            this.pnForEva.Name = "pnForEva";
-            this.pnForEva.Size = new System.Drawing.Size(301, 213);
-            this.pnForEva.TabIndex = 3;
-            this.pnForEva.Visible = false;
-            // 
-            // pnEstraEva
-            // 
-            this.pnEstraEva.Controls.Add(this.btnEstrEva);
-            this.pnEstraEva.Controls.Add(this.txtEstrEva);
-            this.pnEstraEva.Controls.Add(this.label3);
-            this.pnEstraEva.Location = new System.Drawing.Point(567, 112);
-            this.pnEstraEva.Name = "pnEstraEva";
-            this.pnEstraEva.Size = new System.Drawing.Size(301, 213);
-            this.pnEstraEva.TabIndex = 3;
-            this.pnEstraEva.Visible = false;
-            // 
-            // pnPrincipal
-            // 
-            this.pnPrincipal.Controls.Add(this.pnEstraEva);
-            this.pnPrincipal.Controls.Add(this.pnForEva);
-            this.pnPrincipal.Controls.Add(this.PnEstraEnseApren);
-            this.pnPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnPrincipal.Location = new System.Drawing.Point(0, 0);
-            this.pnPrincipal.Name = "pnPrincipal";
-            this.pnPrincipal.Size = new System.Drawing.Size(436, 258);
-            this.pnPrincipal.TabIndex = 4;
+            this.btnEstrEnseApre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstrEnseApre.Image = global::UNAN.Properties.Resources.Check;
+            this.btnEstrEnseApre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstrEnseApre.Location = new System.Drawing.Point(77, 157);
+            this.btnEstrEnseApre.Name = "btnEstrEnseApre";
+            this.btnEstrEnseApre.Size = new System.Drawing.Size(127, 37);
+            this.btnEstrEnseApre.TabIndex = 4;
+            this.btnEstrEnseApre.Text = "Agregar";
+            this.btnEstrEnseApre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEstrEnseApre.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEstrEnseApre.UseVisualStyleBackColor = true;
             // 
             // txtEstrEnseApre
             // 
@@ -160,19 +142,16 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Ingrese Estrategia de Enseñanza - Aprendizaje:";
             // 
-            // btnEstrEnseApre
+            // pnForEva
             // 
-            this.btnEstrEnseApre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstrEnseApre.Image = global::UNAN.Properties.Resources.Check;
-            this.btnEstrEnseApre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstrEnseApre.Location = new System.Drawing.Point(77, 157);
-            this.btnEstrEnseApre.Name = "btnEstrEnseApre";
-            this.btnEstrEnseApre.Size = new System.Drawing.Size(127, 37);
-            this.btnEstrEnseApre.TabIndex = 4;
-            this.btnEstrEnseApre.Text = "Agregar";
-            this.btnEstrEnseApre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEstrEnseApre.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEstrEnseApre.UseVisualStyleBackColor = true;
+            this.pnForEva.Controls.Add(this.btnForEva);
+            this.pnForEva.Controls.Add(this.txtForEva);
+            this.pnForEva.Controls.Add(this.label1);
+            this.pnForEva.Location = new System.Drawing.Point(317, 150);
+            this.pnForEva.Name = "pnForEva";
+            this.pnForEva.Size = new System.Drawing.Size(301, 213);
+            this.pnForEva.TabIndex = 3;
+            this.pnForEva.Visible = false;
             // 
             // btnForEva
             // 
@@ -207,6 +186,17 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Ingrese Forma de Evaluación:";
             // 
+            // pnEstraEva
+            // 
+            this.pnEstraEva.Controls.Add(this.btnEstrEva);
+            this.pnEstraEva.Controls.Add(this.txtEstrEva);
+            this.pnEstraEva.Controls.Add(this.label3);
+            this.pnEstraEva.Location = new System.Drawing.Point(567, 112);
+            this.pnEstraEva.Name = "pnEstraEva";
+            this.pnEstraEva.Size = new System.Drawing.Size(301, 213);
+            this.pnEstraEva.TabIndex = 3;
+            this.pnEstraEva.Visible = false;
+            // 
             // btnEstrEva
             // 
             this.btnEstrEva.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -239,6 +229,17 @@
             this.label3.Size = new System.Drawing.Size(323, 24);
             this.label3.TabIndex = 6;
             this.label3.Text = "Ingrese Estrategia de Evaluación:";
+            // 
+            // pnPrincipal
+            // 
+            this.pnPrincipal.Controls.Add(this.pnEstraEva);
+            this.pnPrincipal.Controls.Add(this.pnForEva);
+            this.pnPrincipal.Controls.Add(this.PnEstraEnseApren);
+            this.pnPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.pnPrincipal.Name = "pnPrincipal";
+            this.pnPrincipal.Size = new System.Drawing.Size(436, 258);
+            this.pnPrincipal.TabIndex = 4;
             // 
             // FrmFormaEstrag
             // 

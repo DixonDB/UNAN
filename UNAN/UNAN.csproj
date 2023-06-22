@@ -56,10 +56,12 @@
     <Compile Include="Datos\Conexion.cs" />
     <Compile Include="Datos\DAsignatura.cs" />
     <Compile Include="Datos\DCarreras.cs" />
+    <Compile Include="Datos\DCorreoSoporte.cs" />
     <Compile Include="Datos\DModalidades.cs" />
     <Compile Include="Datos\DModulos.cs" />
     <Compile Include="Datos\DPermisos.cs" />
     <Compile Include="Datos\DProfesores.cs" />
+    <Compile Include="Datos\DRecuperacion.cs" />
     <Compile Include="Logica\Bases.cs" />
     <Compile Include="Logica\Desencryptacion.cs" />
     <Compile Include="Logica\Encrip.cs" />
@@ -99,6 +101,12 @@
     </Compile>
     <Compile Include="Presentacion\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmRestablecer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmRestablecer.Designer.cs">
+      <DependentUpon>FrmRestablecer.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\UCControlAsistencia.cs">
       <SubType>UserControl</SubType>
@@ -140,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmRestablecer.resx">
+      <DependentUpon>FrmRestablecer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\UCControlAsistencia.resx">
       <DependentUpon>UCControlAsistencia.cs</DependentUpon>
@@ -286,6 +297,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Evaluation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock_500px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

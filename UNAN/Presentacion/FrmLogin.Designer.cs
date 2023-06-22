@@ -42,6 +42,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnRestablecer = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -102,6 +103,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.btnRestablecer);
             this.groupBox1.Controls.Add(this.pictureBox3);
             this.groupBox1.Controls.Add(this.pictureBox5);
             this.groupBox1.Controls.Add(this.btnIniciarsesion);
@@ -123,7 +125,7 @@
             this.btnIniciarsesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(150)))), ((int)(((byte)(232)))));
             this.btnIniciarsesion.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarsesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIniciarsesion.Location = new System.Drawing.Point(54, 137);
+            this.btnIniciarsesion.Location = new System.Drawing.Point(58, 137);
             this.btnIniciarsesion.Margin = new System.Windows.Forms.Padding(2);
             this.btnIniciarsesion.Name = "btnIniciarsesion";
             this.btnIniciarsesion.Size = new System.Drawing.Size(170, 35);
@@ -146,7 +148,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Candara Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(54, 110);
+            this.textBox2.Location = new System.Drawing.Point(54, 108);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
@@ -223,6 +225,20 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(510, 15);
             this.panel5.TabIndex = 7;
+            // 
+            // btnRestablecer
+            // 
+            this.btnRestablecer.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.btnRestablecer.FlatAppearance.BorderSize = 0;
+            this.btnRestablecer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestablecer.ForeColor = System.Drawing.Color.Blue;
+            this.btnRestablecer.Location = new System.Drawing.Point(54, 177);
+            this.btnRestablecer.Name = "btnRestablecer";
+            this.btnRestablecer.Size = new System.Drawing.Size(172, 31);
+            this.btnRestablecer.TabIndex = 10;
+            this.btnRestablecer.Text = "¿Olvidó su Contraseña?";
+            this.btnRestablecer.UseVisualStyleBackColor = true;
+            this.btnRestablecer.Click += new System.EventHandler(this.btnRestablecer_Click);
             // 
             // pictureBox2
             // 
@@ -344,5 +360,6 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnRestablecer;
     }
 }

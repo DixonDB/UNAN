@@ -27,5 +27,12 @@ namespace UNAN.Presentacion
             fr.ShowDialog();
             this.Dispose();
         }
+
+        private void btnRestablecer_Click(object sender, EventArgs e)
+        {
+            FrmRestablecer res= new FrmRestablecer();
+            res.Show();
+            this.Hide();
+        }
     }
 }
