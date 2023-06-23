@@ -273,6 +273,26 @@ namespace UNAN.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IMG20230622145022 {
+            get {
+                object obj = ResourceManager.GetObject("IMG20230622145022", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IMG202306221450221 {
+            get {
+                object obj = ResourceManager.GetObject("IMG202306221450221", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lapiz {
             get {
                 object obj = ResourceManager.GetObject("lapiz", resourceCulture);
@@ -366,6 +386,16 @@ namespace UNAN.Properties {
         internal static System.Drawing.Bitmap save32px {
             get {
                 object obj = ResourceManager.GetObject("save32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap send_30px {
+            get {
+                object obj = ResourceManager.GetObject("send_30px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

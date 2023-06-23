@@ -32,6 +32,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRestablecer = new System.Windows.Forms.Button();
             this.btnIniciarsesion = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnRestablecer = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -95,7 +95,7 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.panel5);
-            this.panel2.Location = new System.Drawing.Point(138, 109);
+            this.panel2.Location = new System.Drawing.Point(153, 160);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(510, 253);
             this.panel2.TabIndex = 9;
@@ -119,6 +119,22 @@
             this.groupBox1.Size = new System.Drawing.Size(276, 228);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
+            // 
+            // btnRestablecer
+            // 
+            this.btnRestablecer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestablecer.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.btnRestablecer.FlatAppearance.BorderSize = 0;
+            this.btnRestablecer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestablecer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestablecer.ForeColor = System.Drawing.Color.Blue;
+            this.btnRestablecer.Location = new System.Drawing.Point(54, 177);
+            this.btnRestablecer.Name = "btnRestablecer";
+            this.btnRestablecer.Size = new System.Drawing.Size(172, 31);
+            this.btnRestablecer.TabIndex = 10;
+            this.btnRestablecer.Text = "¿Olvidó su Contraseña?";
+            this.btnRestablecer.UseVisualStyleBackColor = true;
+            this.btnRestablecer.Click += new System.EventHandler(this.btnRestablecer_Click);
             // 
             // btnIniciarsesion
             // 
@@ -226,20 +242,6 @@
             this.panel5.Size = new System.Drawing.Size(510, 15);
             this.panel5.TabIndex = 7;
             // 
-            // btnRestablecer
-            // 
-            this.btnRestablecer.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.btnRestablecer.FlatAppearance.BorderSize = 0;
-            this.btnRestablecer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestablecer.ForeColor = System.Drawing.Color.Blue;
-            this.btnRestablecer.Location = new System.Drawing.Point(54, 177);
-            this.btnRestablecer.Name = "btnRestablecer";
-            this.btnRestablecer.Size = new System.Drawing.Size(172, 31);
-            this.btnRestablecer.TabIndex = 10;
-            this.btnRestablecer.Text = "¿Olvidó su Contraseña?";
-            this.btnRestablecer.UseVisualStyleBackColor = true;
-            this.btnRestablecer.Click += new System.EventHandler(this.btnRestablecer_Click);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::UNAN.Properties.Resources.logo2;
@@ -287,7 +289,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::UNAN.Properties.Resources.zyro_image;
+            this.pictureBox1.Image = global::UNAN.Properties.Resources.IMG202306221450221;
             this.pictureBox1.Location = new System.Drawing.Point(0, 37);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(800, 413);

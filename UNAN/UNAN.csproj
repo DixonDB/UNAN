@@ -301,5 +301,14 @@
   <ItemGroup>
     <None Include="Resources\lock_500px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG20230622145022.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG202306221450221.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

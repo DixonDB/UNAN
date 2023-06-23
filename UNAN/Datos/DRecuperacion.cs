@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
@@ -57,16 +58,16 @@ namespace UNAN.Datos
         {
             try
             {
-                Conexion.abrir();
-                //SqlCommand cmd = new SqlCommand("Correo", Conexion.conectar);
-                SqlCommand cmd = new SqlCommand();
+                //SqlCommand cmd = new SqlCommand();
                 //cmd.CommandText = "select * from Profesores where Usuario=@Usuario or CorreoP=@CorreoP";
-                string con = "select * from Profesores where Usuario=@Usuario or CorreoP=@CorreoP";
-                cmd = new SqlCommand(con, Conexion.conectar);
-                cmd.Parameters.AddWithValue("@Usuario", usuarioSolicitado);
-                cmd.Parameters.AddWithValue("@CorreoP", usuarioSolicitado);
-                cmd.CommandType = System.Data.CommandType.Text;
+                //string con = "select * from Profesores where Usuario=@Usuario or CorreoP=@CorreoP";
+                //cmd = new SqlCommand(con, Conexion.conectar);
+                Conexion.abrir();
+                SqlCommand cmd = new SqlCommand("Correo", Conexion.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Dato", usuarioSolicitado);
                 SqlDataReader reader = cmd.ExecuteReader();
+                cmd.CommandType = CommandType.Text;
                 if (reader.Read() == true)
                 {
                     string nombreUsuario = reader.GetString(5);
@@ -88,9 +89,9 @@ namespace UNAN.Datos
                     return "Lo sentimos, no tiene una cuenta con ese correo o nombre del usuario";
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return "ERROR, Algo anda mal";
+                return "ERROR, Algo anda mal " + ex.Message;
             }
             finally
             {
