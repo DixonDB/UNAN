@@ -19,9 +19,9 @@ namespace UNAN.Presentacion
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Dispose();
             FrmLogin login = new FrmLogin();
             login.Show();
+            Dispose();
         }
 
         public string RecuperarPass(string pass)

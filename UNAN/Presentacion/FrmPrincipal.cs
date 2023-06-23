@@ -26,21 +26,6 @@ namespace UNAN
         string Servidor = @".\";
         string ruta;
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            //Control de botones
-            btnAsistencia.Enabled = true;
-            btnProfesores.Enabled = true;
-            btnReportes.Enabled = false;
-            btnPlanEst.Enabled = true;
-            btnAvanceProg.Enabled = true;
-        }
-
 
         private void reloj_Tick(object sender, EventArgs e)
         {
@@ -155,6 +140,21 @@ namespace UNAN
             btnReportes.Enabled = true;
             btnPlanEst.Enabled = true;
             btnAvanceProg.Enabled = false;
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            //Control de botones
+            btnAsistencia.Enabled = true;
+            btnProfesores.Enabled = true;
+            btnReportes.Enabled = false;
+            btnPlanEst.Enabled = true;
+            btnAvanceProg.Enabled = true;
         }
     }
 }
