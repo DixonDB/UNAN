@@ -138,7 +138,7 @@ namespace UNAN
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Application.ExitThread();
         }
 
         private void btnReportes_Click(object sender, EventArgs e)

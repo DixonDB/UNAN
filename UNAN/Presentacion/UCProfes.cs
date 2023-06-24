@@ -2,6 +2,8 @@
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using UNAN.Datos;
@@ -35,6 +37,9 @@ namespace UNAN.Presentacion
             this.Limpiar();
             PanelPaginado.Visible = false;
             MostrarModulos();
+            string contraseñaGenerada = GenerarContraseñaAleatoria();
+            txtContraseña.Text = contraseñaGenerada;
+            ActualizarVisibilidadEtiquetas(contraseñaGenerada); ;
         }
         private void Limpiar()
         {
@@ -466,47 +471,120 @@ namespace UNAN.Presentacion
             }
         }
 
-        private bool AlgoritmoPassSegura(string contra)
+        private void txtContraseña_TextChanged(object sender, EventArgs e)
         {
-            bool mayuscula=false,minuscula=false,numero=false,caracespecial=false;
-            for (int i = 0; i < contra.Length; i++)
+            string contra = txtContraseña.Text;
+            ActualizarVisibilidadEtiquetas(contra);
+
+            // Verificar si la contraseña cumple con los criterios
+            bool cumpleCriterios = ContraseñaCumpleCriterios(contra) && contra.Length >= 8;
+
+            // Cambiar el color del Label según si cumple los criterios
+            label15.ForeColor = cumpleCriterios ? Color.Green : Color.Red;
+
+            // Habilitar o deshabilitar el botón btnGuardar
+            btnGuardar.Enabled = cumpleCriterios;
+            btnActualizar.Enabled=cumpleCriterios;
+        }
+
+        private void ActualizarVisibilidadEtiquetas(string contra)
+        {
+            bool mayuscula = false, minuscula = false, numero = false, caracespecial = false;
+
+            foreach (char c in contra)
             {
-                if (char.IsUpper(contra,i))
+                if (char.IsUpper(c))
                 {
                     mayuscula = true;
                 }
-                else if (char.IsLower(contra,i))
+                else if (char.IsLower(c))
                 {
                     minuscula = true;
                 }
-                else if (char.IsDigit(contra,i))
+                else if (char.IsDigit(c))
                 {
                     numero = true;
                 }
-                else
+                else if (SpecialCharacters.Contains(c))
                 {
                     caracespecial = true;
                 }
             }
-            if (mayuscula && minuscula && numero && caracespecial && contra.Length >= 8)
-            {
-                return true;
-            }
-            return false;
+
+            lblMayu.Visible = !mayuscula;
+            lblMin.Visible = !minuscula;
+            lblNum.Visible = !numero;
+            lblCarEsp.Visible = !caracespecial;
         }
 
-        private void txtContraseña_TextChanged(object sender, EventArgs e)
+        private static readonly Random random = new Random();
+        private const string UpperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        private const string LowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
+        private const string Numbers = "0123456789";
+        private const string SpecialCharacters = "!@#$%^&*()";
+
+        private string GenerarContraseñaAleatoria()
         {
-            if (AlgoritmoPassSegura(txtContraseña.Text))
+            int longitud = 8; // Longitud mínima de la contraseña
+            string caracteres = UpperCaseLetters + LowerCaseLetters + Numbers + SpecialCharacters;
+
+            // Asegurarse de que la contraseña cumpla con los criterios mínimos
+            while (true)
             {
-                btnGuardar.Enabled = true;
-                btnActualizar.Enabled = true;
+                StringBuilder contraseña = new StringBuilder();
+                contraseña.Append(RandomCharacter(UpperCaseLetters));
+                contraseña.Append(RandomCharacter(LowerCaseLetters));
+                contraseña.Append(RandomCharacter(Numbers));
+                contraseña.Append(RandomCharacter(SpecialCharacters));
+
+                // Generar caracteres aleatorios adicionales
+                for (int i = 4; i < longitud; i++)
+                {
+                    contraseña.Append(RandomCharacter(caracteres));
+                }
+
+                // Mezclar los caracteres aleatoriamente
+                contraseña = new StringBuilder(new string(contraseña.ToString().ToCharArray().OrderBy(c => random.Next()).ToArray()));
+
+                // Comprobar si la contraseña cumple con los criterios
+                if (ContraseñaCumpleCriterios(contraseña.ToString()))
+                {
+                    return contraseña.ToString();
+                }
             }
-            else
+        }
+
+        private char RandomCharacter(string caracteres)
+        {
+            int indice = random.Next(0, caracteres.Length);
+            return caracteres[indice];
+        }
+
+        private bool ContraseñaCumpleCriterios(string contraseña)
+        {
+            bool mayuscula = false, minuscula = false, numero = false, caracespecial = false;
+
+            foreach (char c in contraseña)
             {
-                btnGuardar.Enabled = false;
-                btnActualizar.Enabled=false;
+                if (char.IsUpper(c))
+                {
+                    mayuscula = true;
+                }
+                else if (char.IsLower(c))
+                {
+                    minuscula = true;
+                }
+                else if (char.IsDigit(c))
+                {
+                    numero = true;
+                }
+                else if (SpecialCharacters.Contains(c))
+                {
+                    caracespecial = true;
+                }
             }
+
+            return mayuscula && minuscula && numero && caracespecial;
         }
     }
 }
