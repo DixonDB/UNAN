@@ -13,12 +13,19 @@ namespace UNAN.Presentacion
 {
     public partial class UCProfes : UserControl
     {
+        /// <summary>
+        /// Método que genera c# para inicializar los componentes que estén dentro de él
+        /// En este caso se agregan SetToolTip para mostrar msj de ayuda sobre los campos
+        /// </summary>
         public UCProfes()
         {
             InitializeComponent();
-            this.toolTip1.SetToolTip(this.txtContraseña, "La contraseña debe ser segura, debe contener al menos 8 caracteres, 1 mayuscula, 1 minuscula y un caracter especial");
+            this.toolTip1.SetToolTip(this.txtContraseña, "La contraseña debe ser segura, debe contener al menos 8 caracteres, 1 mayúscula, 1 minúscula y un carácter especial");
             this.toolTip1.SetToolTip(this.txtCorreo, "El correo debe ser institucional ejemplo: nombre@estu.unan.edu.ni");
         }
+        /// <summary>
+        /// Variables globales utilizadas para la paginación de los datos en el DataGrid view
+        /// </summary>
         int desde = 1;
         int hasta = 10;
         int Contador;
@@ -28,6 +35,13 @@ namespace UNAN.Presentacion
         int totalPaginas;
         string usuario;
 
+        /// <summary>
+        /// Evento click del btnAgregar en el cual se muestra el panelRegistroP el cual contiene los campos necesarios para crear un registro de un profesor
+        /// Tambien se llama al método contraseñaGenerada el cual genera una contraseña segura en el txtcontraseña y valida que la contraseña generada sea segura y cumpla
+        /// con ciertos requisitos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             panelRegitroP.Visible = true;
@@ -41,6 +55,9 @@ namespace UNAN.Presentacion
             txtContraseña.Text = contraseñaGenerada;
             ActualizarVisibilidadEtiquetas(contraseñaGenerada); ;
         }
+        /// <summary>
+        /// Método para limpiar el contenido de los textbox que se utilizarán para crear un nuevo registro.
+        /// </summary>
         private void Limpiar()
         {
             txtNombreApellidos.Clear();
@@ -53,6 +70,10 @@ namespace UNAN.Presentacion
             txtContraseña.Clear();
 
         }
+
+        /// <summary>
+        /// Método que sirve para cambiar el diseño al DataGrid view
+        /// </summary>
         private void DiseñarDtvProfes()
         {
             Bases.DiseñoDtv(ref dataProfesores);
@@ -62,6 +83,9 @@ namespace UNAN.Presentacion
             dataProfesores.Columns[8].Visible = false;
             dataProfesores.Columns[9].Visible = false;
         }
+        /// <summary>
+        /// Método para insertar los registros a la base de datos.
+        /// </summary>
         private void InsertarProfesores()
         {
             LProfesores parametros = new LProfesores();
