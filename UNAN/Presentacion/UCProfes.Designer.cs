@@ -52,12 +52,16 @@
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelRegitroP = new System.Windows.Forms.Panel();
+            this.lblCarEsp = new System.Windows.Forms.Label();
+            this.lblNum = new System.Windows.Forms.Label();
+            this.lblMin = new System.Windows.Forms.Label();
+            this.lblMayu = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblIdentificacion = new System.Windows.Forms.Label();
+            this.lblCelular = new System.Windows.Forms.Label();
+            this.lblCorreo = new System.Windows.Forms.Label();
+            this.lblNombreApellidos = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.datalistadoModulos = new System.Windows.Forms.DataGridView();
             this.Marcar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -93,10 +97,6 @@
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.lblMayu = new System.Windows.Forms.Label();
-            this.lblMin = new System.Windows.Forms.Label();
-            this.lblNum = new System.Windows.Forms.Label();
-            this.lblCarEsp = new System.Windows.Forms.Label();
             this.PanelPaginado.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -405,11 +405,11 @@
             this.panelRegitroP.Controls.Add(this.lblMin);
             this.panelRegitroP.Controls.Add(this.lblMayu);
             this.panelRegitroP.Controls.Add(this.label15);
-            this.panelRegitroP.Controls.Add(this.label14);
-            this.panelRegitroP.Controls.Add(this.label13);
-            this.panelRegitroP.Controls.Add(this.label10);
-            this.panelRegitroP.Controls.Add(this.label9);
-            this.panelRegitroP.Controls.Add(this.label8);
+            this.panelRegitroP.Controls.Add(this.lblUsuario);
+            this.panelRegitroP.Controls.Add(this.lblIdentificacion);
+            this.panelRegitroP.Controls.Add(this.lblCelular);
+            this.panelRegitroP.Controls.Add(this.lblCorreo);
+            this.panelRegitroP.Controls.Add(this.lblNombreApellidos);
             this.panelRegitroP.Controls.Add(this.panel12);
             this.panelRegitroP.Controls.Add(this.Label12);
             this.panelRegitroP.Controls.Add(this.Label11);
@@ -444,6 +444,50 @@
             this.panelRegitroP.TabIndex = 9;
             this.panelRegitroP.Visible = false;
             // 
+            // lblCarEsp
+            // 
+            this.lblCarEsp.AutoSize = true;
+            this.lblCarEsp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCarEsp.ForeColor = System.Drawing.Color.DimGray;
+            this.lblCarEsp.Location = new System.Drawing.Point(334, 295);
+            this.lblCarEsp.Name = "lblCarEsp";
+            this.lblCarEsp.Size = new System.Drawing.Size(106, 15);
+            this.lblCarEsp.TabIndex = 644;
+            this.lblCarEsp.Text = "-Caracter especial";
+            // 
+            // lblNum
+            // 
+            this.lblNum.AutoSize = true;
+            this.lblNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNum.ForeColor = System.Drawing.Color.DimGray;
+            this.lblNum.Location = new System.Drawing.Point(334, 269);
+            this.lblNum.Name = "lblNum";
+            this.lblNum.Size = new System.Drawing.Size(56, 15);
+            this.lblNum.TabIndex = 644;
+            this.lblNum.Text = "-Número";
+            // 
+            // lblMin
+            // 
+            this.lblMin.AutoSize = true;
+            this.lblMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMin.ForeColor = System.Drawing.Color.DimGray;
+            this.lblMin.Location = new System.Drawing.Point(245, 295);
+            this.lblMin.Name = "lblMin";
+            this.lblMin.Size = new System.Drawing.Size(68, 15);
+            this.lblMin.TabIndex = 644;
+            this.lblMin.Text = "-Minúscula";
+            // 
+            // lblMayu
+            // 
+            this.lblMayu.AutoSize = true;
+            this.lblMayu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMayu.ForeColor = System.Drawing.Color.DimGray;
+            this.lblMayu.Location = new System.Drawing.Point(245, 269);
+            this.lblMayu.Name = "lblMayu";
+            this.lblMayu.Size = new System.Drawing.Size(70, 15);
+            this.lblMayu.TabIndex = 643;
+            this.lblMayu.Text = "-Mayúscula";
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -455,60 +499,60 @@
             this.label15.TabIndex = 642;
             this.label15.Text = "*";
             // 
-            // label14
+            // lblUsuario
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(507, 185);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(21, 26);
-            this.label14.TabIndex = 641;
-            this.label14.Text = "*";
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.Red;
+            this.lblUsuario.Location = new System.Drawing.Point(507, 185);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(21, 26);
+            this.lblUsuario.TabIndex = 641;
+            this.lblUsuario.Text = "*";
             // 
-            // label13
+            // lblIdentificacion
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(507, 148);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(21, 26);
-            this.label13.TabIndex = 640;
-            this.label13.Text = "*";
+            this.lblIdentificacion.AutoSize = true;
+            this.lblIdentificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdentificacion.ForeColor = System.Drawing.Color.Red;
+            this.lblIdentificacion.Location = new System.Drawing.Point(507, 148);
+            this.lblIdentificacion.Name = "lblIdentificacion";
+            this.lblIdentificacion.Size = new System.Drawing.Size(21, 26);
+            this.lblIdentificacion.TabIndex = 640;
+            this.lblIdentificacion.Text = "*";
             // 
-            // label10
+            // lblCelular
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(507, 111);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(21, 26);
-            this.label10.TabIndex = 639;
-            this.label10.Text = "*";
+            this.lblCelular.AutoSize = true;
+            this.lblCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCelular.ForeColor = System.Drawing.Color.Red;
+            this.lblCelular.Location = new System.Drawing.Point(507, 111);
+            this.lblCelular.Name = "lblCelular";
+            this.lblCelular.Size = new System.Drawing.Size(21, 26);
+            this.lblCelular.TabIndex = 639;
+            this.lblCelular.Text = "*";
             // 
-            // label9
+            // lblCorreo
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(507, 74);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(21, 26);
-            this.label9.TabIndex = 638;
-            this.label9.Text = "*";
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorreo.ForeColor = System.Drawing.Color.Red;
+            this.lblCorreo.Location = new System.Drawing.Point(507, 74);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(21, 26);
+            this.lblCorreo.TabIndex = 638;
+            this.lblCorreo.Text = "*";
             // 
-            // label8
+            // lblNombreApellidos
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(507, 37);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(21, 26);
-            this.label8.TabIndex = 637;
-            this.label8.Text = "*";
+            this.lblNombreApellidos.AutoSize = true;
+            this.lblNombreApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreApellidos.ForeColor = System.Drawing.Color.Red;
+            this.lblNombreApellidos.Location = new System.Drawing.Point(507, 37);
+            this.lblNombreApellidos.Name = "lblNombreApellidos";
+            this.lblNombreApellidos.Size = new System.Drawing.Size(21, 26);
+            this.lblNombreApellidos.TabIndex = 637;
+            this.lblNombreApellidos.Text = "*";
             // 
             // panel12
             // 
@@ -789,7 +833,6 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(254, 19);
             this.txtCorreo.TabIndex = 6;
-            this.txtCorreo.Leave += new System.EventHandler(this.ValidarEmail);
             // 
             // panel4
             // 
@@ -881,50 +924,6 @@
             this.dataGridViewImageColumn3.Image = global::UNAN.Properties.Resources.send_30px;
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             // 
-            // lblMayu
-            // 
-            this.lblMayu.AutoSize = true;
-            this.lblMayu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMayu.ForeColor = System.Drawing.Color.DimGray;
-            this.lblMayu.Location = new System.Drawing.Point(245, 269);
-            this.lblMayu.Name = "lblMayu";
-            this.lblMayu.Size = new System.Drawing.Size(70, 15);
-            this.lblMayu.TabIndex = 643;
-            this.lblMayu.Text = "-Mayúscula";
-            // 
-            // lblMin
-            // 
-            this.lblMin.AutoSize = true;
-            this.lblMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMin.ForeColor = System.Drawing.Color.DimGray;
-            this.lblMin.Location = new System.Drawing.Point(245, 295);
-            this.lblMin.Name = "lblMin";
-            this.lblMin.Size = new System.Drawing.Size(68, 15);
-            this.lblMin.TabIndex = 644;
-            this.lblMin.Text = "-Minúscula";
-            // 
-            // lblNum
-            // 
-            this.lblNum.AutoSize = true;
-            this.lblNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNum.ForeColor = System.Drawing.Color.DimGray;
-            this.lblNum.Location = new System.Drawing.Point(334, 269);
-            this.lblNum.Name = "lblNum";
-            this.lblNum.Size = new System.Drawing.Size(56, 15);
-            this.lblNum.TabIndex = 644;
-            this.lblNum.Text = "-Número";
-            // 
-            // lblCarEsp
-            // 
-            this.lblCarEsp.AutoSize = true;
-            this.lblCarEsp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCarEsp.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCarEsp.Location = new System.Drawing.Point(334, 295);
-            this.lblCarEsp.Name = "lblCarEsp";
-            this.lblCarEsp.Size = new System.Drawing.Size(106, 15);
-            this.lblCarEsp.TabIndex = 644;
-            this.lblCarEsp.Text = "-Caracter especial";
-            // 
             // UCProfes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1015,11 +1014,11 @@
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label lblIdentificacion;
+        private System.Windows.Forms.Label lblCelular;
+        private System.Windows.Forms.Label lblCorreo;
+        private System.Windows.Forms.Label lblNombreApellidos;
         private System.Windows.Forms.Label lblCarEsp;
         private System.Windows.Forms.Label lblNum;
         private System.Windows.Forms.Label lblMin;

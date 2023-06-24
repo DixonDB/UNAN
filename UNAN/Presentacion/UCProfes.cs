@@ -22,6 +22,12 @@ namespace UNAN.Presentacion
             InitializeComponent();
             this.toolTip1.SetToolTip(this.txtContraseña, "La contraseña debe ser segura, debe contener al menos 8 caracteres, 1 mayúscula, 1 minúscula y un carácter especial");
             this.toolTip1.SetToolTip(this.txtCorreo, "El correo debe ser institucional ejemplo: nombre@estu.unan.edu.ni");
+            //Incribiendo todos los eventos  TextChanged de los textbox para ser utilizados en un solo metodo
+            txtIdentificacion.TextChanged += TextBox_TextChanged;
+            txtNombreApellidos.TextChanged += TextBox_TextChanged;
+            txtCelular.TextChanged += TextBox_TextChanged;
+            txtCorreo.TextChanged += TextBox_TextChanged;
+            txtUsuario.TextChanged += TextBox_TextChanged;
         }
         /// <summary>
         /// Variables globales utilizadas para la paginación de los datos en el DataGrid view
@@ -34,6 +40,8 @@ namespace UNAN.Presentacion
         string Estado;
         int totalPaginas;
         string usuario;
+        // Declarar variable para realizar seguimiento de los labels en verde
+        private bool labelsVerdes = false;
 
         /// <summary>
         /// Evento click del btnAgregar en el cual se muestra el panelRegistroP el cual contiene los campos necesarios para crear un registro de un profesor
@@ -183,38 +191,21 @@ namespace UNAN.Presentacion
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtNombreApellidos.Text))
+            if (validar())
             {
-                if (!string.IsNullOrEmpty(txtCorreo.Text))
+                if (lblanuncioIcono.Visible == false)
                 {
-                    if (!string.IsNullOrEmpty(txtCelular.Text))
-                    {
-                        if (!string.IsNullOrEmpty(txtIdentificacion.Text))
-                        {
-                            if (!string.IsNullOrEmpty(txtUsuario.Text))
-                            {
-                                if (!string.IsNullOrEmpty(txtContraseña.Text))
-                                {
-                                    if (lblanuncioIcono.Visible == false)
-                                    {
-                                        InsertarProfesores();
-                                        MostrarProfessores();
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Ingresa un Icono Para agregar este Profesor");
-                                    }
-                                }
-
-                            }
-                        }
-                    }
+                    InsertarProfesores();
+                    MostrarProfessores();
                 }
                 else
                 {
-                    MessageBox.Show("Completa todos los campos");
+                    MessageBox.Show("Ingresa un Icono Para agregar este Profesor");
                 }
-
+            }
+            else
+            {
+                MessageBox.Show("Completa todos los campos");
             }
         }
         private void MostrarProfessores()
@@ -340,7 +331,14 @@ namespace UNAN.Presentacion
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            EditarProfesores();
+            if (validar())
+            {
+                EditarProfesores();
+            }
+            else
+            {
+                MessageBox.Show("Existen campos vacios o datos incorrectos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void EditarProfesores()
         {
@@ -480,21 +478,17 @@ namespace UNAN.Presentacion
 
         //Metodos de validación
 
-        private void ValidarEmail(object sender, EventArgs e)
+        private bool validar()
         {
-            ErrorProvider errorProvider = new ErrorProvider();
-            TextBox txt = sender as TextBox;
-            if (txt.Text != string.Empty && Regex.IsMatch(txt.Text,
-                @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            double entero;
+            if (!double.TryParse(txtCelular.Text, out entero))
             {
-                errorProvider.Clear();
+                return false;
             }
-            else
-            {
-                errorProvider.SetError(txtCorreo, "Correo no valido");
-            }
-        }
+            return !(txtNombreApellidos.Text == "" || txtCorreo.Text == "" || txtIdentificacion.Text == "" ||
+             txtCelular.Text == ""||txtUsuario.Text==""||txtContraseña.Text=="");
 
+        }
         private void txtContraseña_TextChanged(object sender, EventArgs e)
         {
             string contra = txtContraseña.Text;
@@ -505,10 +499,12 @@ namespace UNAN.Presentacion
 
             // Cambiar el color del Label según si cumple los criterios
             label15.ForeColor = cumpleCriterios ? Color.Green : Color.Red;
+            // Actualizar los colores de los labels y validar si todos están en verde
+            labelsVerdes = ValidarLabelsVerdes();
 
             // Habilitar o deshabilitar el botón btnGuardar
-            btnGuardar.Enabled = cumpleCriterios;
-            btnActualizar.Enabled=cumpleCriterios;
+            btnGuardar.Enabled = cumpleCriterios && labelsVerdes;
+            btnActualizar.Enabled = cumpleCriterios && labelsVerdes;
         }
 
         private void ActualizarVisibilidadEtiquetas(string contra)
@@ -607,8 +603,123 @@ namespace UNAN.Presentacion
                     caracespecial = true;
                 }
             }
-
             return mayuscula && minuscula && numero && caracespecial;
         }
+        //-------------------otros metodos--------------
+
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            var textBox = (TextBox)sender;
+
+            if (textBox == txtIdentificacion)
+            {
+                lblIdentificacion.ForeColor = string.IsNullOrEmpty(txtIdentificacion.Text) ? Color.Red : Color.Green;
+
+                // Actualizar los colores de los labels y validar si todos están en verde
+                labelsVerdes = ValidarLabelsVerdes();
+
+                // Habilitar o deshabilitar el botón guardar según el estado de los labels
+                btnGuardar.Enabled = labelsVerdes;
+                btnActualizar.Enabled = labelsVerdes;
+            }
+
+            if (textBox == txtNombreApellidos)
+            {
+                lblNombreApellidos.ForeColor = string.IsNullOrEmpty(txtNombreApellidos.Text) ? Color.Red : Color.Green;
+                txtUsuario.Text = GenerarUsuario(txtNombreApellidos.Text);
+
+                // Actualizar los colores de los labels y validar si todos están en verde
+                labelsVerdes = ValidarLabelsVerdes();
+
+                // Habilitar o deshabilitar el botón guardar según el estado de los labels
+                btnGuardar.Enabled = labelsVerdes;
+                btnActualizar.Enabled = labelsVerdes;
+            }
+
+            if (textBox == txtCelular)
+            {
+                if (int.TryParse(txtCelular.Text, out int celular) && celular.ToString().Length >= 8)
+                {
+                    lblCelular.ForeColor = Color.Green;
+                }
+                else
+                {
+                    lblCelular.ForeColor = Color.Red;
+                }
+                // Actualizar los colores de los labels y validar si todos están en verde
+                labelsVerdes = ValidarLabelsVerdes();
+
+                // Habilitar o deshabilitar el botón guardar según el estado de los labels
+                btnGuardar.Enabled = labelsVerdes;
+                btnActualizar.Enabled= labelsVerdes;
+            }
+
+            if (textBox == txtCorreo)
+            {
+                lblCorreo.ForeColor = EsCorreoValido(txtCorreo.Text) ? Color.Green : Color.Red;
+                // Actualizar los colores de los labels y validar si todos están en verde
+                labelsVerdes = ValidarLabelsVerdes();
+
+                // Habilitar o deshabilitar el botón guardar según el estado de los labels
+                btnGuardar.Enabled = labelsVerdes;
+                btnActualizar.Enabled = labelsVerdes;
+            }
+
+            if (textBox == txtUsuario)
+            {
+                lblUsuario.ForeColor = string.IsNullOrEmpty(txtUsuario.Text) ? Color.Red : Color.Green;
+                // Actualizar los colores de los labels y validar si todos están en verde
+                labelsVerdes = ValidarLabelsVerdes();
+
+                // Habilitar o deshabilitar el botón guardar según el estado de los labels
+                btnGuardar.Enabled = labelsVerdes;
+                btnActualizar.Enabled = labelsVerdes;
+            }
+        }
+
+        // Función para validar si un correo es válido
+        private bool EsCorreoValido(string correo)
+        {
+            // Expresión regular para validar el formato del correo
+            string patronCorreo = @"^[a-zA-Z0-9_.+-]+@(gmail\.com|yahoo\.com|hotmail\.com|estu\.unan\.edu\.ni|\w+\.(com|es|net|org))$";
+
+            // Realizar la validación del formato utilizando la expresión regular
+            bool formatoValido = System.Text.RegularExpressions.Regex.IsMatch(correo, patronCorreo);
+
+            // Retorna el resultado de la validación de formato
+            return formatoValido;
+        }
+
+        private string GenerarUsuario(string nombreApellidos)
+        {
+            // Obtener los nombres y apellidos separados
+            var partes = nombreApellidos.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            // Validar que exista al menos un nombre y un apellido
+            if (partes.Length < 2)
+            {
+                return string.Empty;
+            }
+
+            // Generar el usuario con el primer nombre, un punto y las iniciales del segundo nombre y los apellidos
+            string usuario = partes[0] + ".";
+
+            for (int i = 1; i < partes.Length; i++)
+            {
+                usuario += partes[i][0];
+            }
+
+            return usuario;
+        }
+        // Función para validar si todos los labels están en verde
+        private bool ValidarLabelsVerdes()
+        {
+            return lblNombreApellidos.ForeColor == Color.Green
+                && lblIdentificacion.ForeColor == Color.Green
+                && lblCelular.ForeColor == Color.Green
+                && lblCorreo.ForeColor == Color.Green
+                && lblUsuario.ForeColor == Color.Green;
+        }
+
     }
 }
