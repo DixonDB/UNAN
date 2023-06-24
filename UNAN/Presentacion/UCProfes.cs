@@ -463,5 +463,47 @@ namespace UNAN.Presentacion
             }
         }
 
+        private bool AlgoritmoPassSegura(string contra)
+        {
+            bool mayuscula=false,minuscula=false,numero=false,caracespecial=false;
+            for (int i = 0; i < contra.Length; i++)
+            {
+                if (char.IsUpper(contra,i))
+                {
+                    mayuscula = true;
+                }
+                else if (char.IsLower(contra,i))
+                {
+                    minuscula = true;
+                }
+                else if (char.IsDigit(contra,i))
+                {
+                    numero = true;
+                }
+                else
+                {
+                    caracespecial = true;
+                }
+            }
+            if (mayuscula && minuscula && numero && caracespecial && contra.Length >= 8)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private void txtContraseña_TextChanged(object sender, EventArgs e)
+        {
+            if (AlgoritmoPassSegura(txtContraseña.Text))
+            {
+                btnGuardar.Enabled = true;
+                btnActualizar.Enabled = true;
+            }
+            else
+            {
+                btnGuardar.Enabled = false;
+                btnActualizar.Enabled=false;
+            }
+        }
     }
 }
