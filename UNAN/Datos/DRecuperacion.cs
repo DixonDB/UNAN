@@ -56,10 +56,6 @@ namespace UNAN.Datos
         {
             try
             {
-                //SqlCommand cmd = new SqlCommand();
-                //cmd.CommandText = "select * from Profesores where Usuario=@Usuario or CorreoP=@CorreoP";
-                //string con = "select * from Profesores where Usuario=@Usuario or CorreoP=@CorreoP";
-                //cmd = new SqlCommand(con, Conexion.conectar);
                 Conexion.abrir();
                 SqlCommand cmd = new SqlCommand("Correo", Conexion.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -75,8 +71,12 @@ namespace UNAN.Datos
                     mailservice.enviarCorreo(
                         subject: "KFDAsist: Solicitud de recuperación de Contraseña",
                         body: "Hola, " + nombreUsuario + "\nUsted solicitó recuperar su contraseña.\n" +
-                        "\nsu contraseña actual es: " + Encrip.DesEncriptar(Encrip.DesEncriptar(passUsuario)) +
-                        "\nSin embargo, le pedimos que cambie su contraseña inmediatamente una vez ingrese al sistema...",
+                        "\nSu contraseña actual es: " + Encrip.DesEncriptar(Encrip.DesEncriptar(passUsuario)) +
+                        "\n"+
+                        "\nSin embargo, le pedimos que cambie su contraseña inmediatamente una vez ingrese al sistema..."+
+                        "\n" +
+                        "\nSi no está seguro de si usted o su administrador ha realizado este restablecimiento," +
+                        " debe ponerse en contacto con su administrador inmediatamente",
                         destinatarioCorreo: new List<string> { correoUsuario });
                     return "Hola, " + nombreUsuario + "\nUsted solicitó recuperar su contraseña.\n" +
                         "Por favor revise su correo: " + correoUsuario +

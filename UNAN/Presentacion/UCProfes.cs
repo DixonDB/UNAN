@@ -14,6 +14,8 @@ namespace UNAN.Presentacion
         public UCProfes()
         {
             InitializeComponent();
+            this.toolTip1.SetToolTip(this.txtContraseña, "La contraseña debe ser segura, debe contener al menos 8 caracteres, 1 mayuscula, 1 minuscula y un caracter especial");
+            this.toolTip1.SetToolTip(this.txtCorreo, "El correo debe ser institucional ejemplo: nombre@estu.unan.edu.ni");
         }
         int desde = 1;
         int hasta = 10;
@@ -446,6 +448,8 @@ namespace UNAN.Presentacion
             MostrarProfessores();
             panelRegitroP.Visible = false;
         }
+
+        //Metodos de validación
 
         private void ValidarEmail(object sender, EventArgs e)
         {
