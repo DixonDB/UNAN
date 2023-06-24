@@ -33,7 +33,6 @@ namespace UNAN.Presentacion
             this.Limpiar();
             PanelPaginado.Visible = false;
             MostrarModulos();
-
         }
         private void Limpiar()
         {

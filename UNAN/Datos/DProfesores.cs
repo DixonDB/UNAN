@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using UNAN.Logica;
 using System.Windows.Forms;
+using UNAN.Logica;
 
 namespace UNAN.Datos
 {
