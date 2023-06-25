@@ -152,9 +152,9 @@
             // 
             // lblMsj
             // 
-            this.lblMsj.Location = new System.Drawing.Point(35, 379);
+            this.lblMsj.Location = new System.Drawing.Point(35, 395);
             this.lblMsj.Name = "lblMsj";
-            this.lblMsj.Size = new System.Drawing.Size(724, 119);
+            this.lblMsj.Size = new System.Drawing.Size(724, 103);
             this.lblMsj.TabIndex = 12;
             // 
             // lblProgress

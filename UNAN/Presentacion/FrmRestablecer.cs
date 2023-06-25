@@ -31,6 +31,7 @@ namespace UNAN.Presentacion
         {
             pbrInicio.Visible = true;
             lblProgress.Visible = true;
+            lblProgress.BringToFront();
             timer1.Enabled = true;
             pbrInicio.Value = 0;
             conteo = 0;
@@ -44,6 +45,10 @@ namespace UNAN.Presentacion
             if (conteo >= 50)
             {
                 lblProgress.BackColor = Color.FromArgb(6, 176, 37);
+            }
+            else
+            {
+                lblProgress.BackColor = Color.White;
             }
 
             if (pbrInicio.Value < 100)
