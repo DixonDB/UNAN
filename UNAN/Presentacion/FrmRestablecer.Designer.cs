@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,6 +39,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.lblMsj = new System.Windows.Forms.Label();
+            this.lblProgress = new System.Windows.Forms.Label();
+            this.pbrInicio = new System.Windows.Forms.ProgressBar();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -153,11 +157,37 @@
             this.lblMsj.Size = new System.Drawing.Size(724, 119);
             this.lblMsj.TabIndex = 12;
             // 
+            // lblProgress
+            // 
+            this.lblProgress.AutoSize = true;
+            this.lblProgress.BackColor = System.Drawing.Color.Transparent;
+            this.lblProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProgress.Location = new System.Drawing.Point(384, 364);
+            this.lblProgress.Name = "lblProgress";
+            this.lblProgress.Size = new System.Drawing.Size(15, 13);
+            this.lblProgress.TabIndex = 14;
+            this.lblProgress.Text = "--";
+            this.lblProgress.Visible = false;
+            // 
+            // pbrInicio
+            // 
+            this.pbrInicio.Location = new System.Drawing.Point(272, 358);
+            this.pbrInicio.Name = "pbrInicio";
+            this.pbrInicio.Size = new System.Drawing.Size(254, 23);
+            this.pbrInicio.TabIndex = 13;
+            this.pbrInicio.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FrmRestablecer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 507);
+            this.Controls.Add(this.lblProgress);
+            this.Controls.Add(this.pbrInicio);
             this.Controls.Add(this.lblMsj);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.label2);
@@ -192,5 +222,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.Label lblMsj;
+        private System.Windows.Forms.Label lblProgress;
+        private System.Windows.Forms.ProgressBar pbrInicio;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -29,10 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSalir = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnRestablecer = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.btnIniciarsesion = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -43,21 +48,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnSalir = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,6 +70,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 37);
             this.panel1.TabIndex = 2;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSalir.Image = global::UNAN.Properties.Resources.cancel;
+            this.btnSalir.Location = new System.Drawing.Point(748, 0);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(52, 37);
+            this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSalir.TabIndex = 10;
+            this.btnSalir.TabStop = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // label3
             // 
@@ -99,6 +112,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(510, 253);
             this.panel2.TabIndex = 9;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::UNAN.Properties.Resources.logo2;
+            this.pictureBox2.Location = new System.Drawing.Point(69, 145);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 93);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox6.Image = global::UNAN.Properties.Resources.Logo;
+            this.pictureBox6.Location = new System.Drawing.Point(16, 15);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(218, 69);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 14;
+            this.pictureBox6.TabStop = false;
             // 
             // groupBox1
             // 
@@ -135,6 +170,28 @@
             this.btnRestablecer.Text = "¿Olvidó su Contraseña?";
             this.btnRestablecer.UseVisualStyleBackColor = true;
             this.btnRestablecer.Click += new System.EventHandler(this.btnRestablecer_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::UNAN.Properties.Resources.bloquear;
+            this.pictureBox3.Location = new System.Drawing.Point(16, 108);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(35, 26);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::UNAN.Properties.Resources.usuario1;
+            this.pictureBox5.Location = new System.Drawing.Point(16, 58);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(35, 26);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 8;
+            this.pictureBox5.TabStop = false;
             // 
             // btnIniciarsesion
             // 
@@ -242,50 +299,6 @@
             this.panel5.Size = new System.Drawing.Size(510, 15);
             this.panel5.TabIndex = 7;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::UNAN.Properties.Resources.logo2;
-            this.pictureBox2.Location = new System.Drawing.Point(69, 145);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 93);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox6.Image = global::UNAN.Properties.Resources.Logo;
-            this.pictureBox6.Location = new System.Drawing.Point(16, 15);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(218, 69);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 14;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::UNAN.Properties.Resources.bloquear;
-            this.pictureBox3.Location = new System.Drawing.Point(16, 108);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(35, 26);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::UNAN.Properties.Resources.usuario1;
-            this.pictureBox5.Location = new System.Drawing.Point(16, 58);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(35, 26);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 8;
-            this.pictureBox5.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -296,19 +309,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSalir.Image = global::UNAN.Properties.Resources.cancel;
-            this.btnSalir.Location = new System.Drawing.Point(748, 0);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(52, 37);
-            this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSalir.TabIndex = 10;
-            this.btnSalir.TabStop = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FrmLogin
             // 
@@ -326,16 +326,16 @@
             this.Text = "FrmLogin2";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
             this.ResumeLayout(false);
 
         }
