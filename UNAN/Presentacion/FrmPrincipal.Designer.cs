@@ -33,6 +33,7 @@ namespace UNAN
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pn12 = new System.Windows.Forms.Panel();
+            this.pbrCarga = new System.Windows.Forms.ProgressBar();
             this.label3 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
@@ -67,6 +68,7 @@ namespace UNAN
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.reloj = new System.Windows.Forms.Timer(this.components);
             this.dlg = new System.Windows.Forms.OpenFileDialog();
+            this.progress = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.pn12.SuspendLayout();
@@ -90,7 +92,7 @@ namespace UNAN
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1010, 438);
+            this.panel1.Size = new System.Drawing.Size(956, 429);
             this.panel1.TabIndex = 2;
             // 
             // panel6
@@ -102,19 +104,28 @@ namespace UNAN
             this.panel6.Location = new System.Drawing.Point(0, 75);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1010, 363);
+            this.panel6.Size = new System.Drawing.Size(956, 354);
             this.panel6.TabIndex = 2;
             // 
             // pn12
             // 
+            this.pn12.Controls.Add(this.pbrCarga);
             this.pn12.Controls.Add(this.label3);
             this.pn12.Controls.Add(this.panel19);
             this.pn12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn12.Location = new System.Drawing.Point(0, 0);
             this.pn12.Margin = new System.Windows.Forms.Padding(2);
             this.pn12.Name = "pn12";
-            this.pn12.Size = new System.Drawing.Size(1010, 284);
+            this.pn12.Size = new System.Drawing.Size(956, 275);
             this.pn12.TabIndex = 5;
+            // 
+            // pbrCarga
+            // 
+            this.pbrCarga.Location = new System.Drawing.Point(320, 384);
+            this.pbrCarga.Name = "pbrCarga";
+            this.pbrCarga.Size = new System.Drawing.Size(699, 23);
+            this.pbrCarga.TabIndex = 9;
+            this.pbrCarga.Visible = false;
             // 
             // label3
             // 
@@ -123,7 +134,7 @@ namespace UNAN
             this.label3.ForeColor = System.Drawing.Color.DimGray;
             this.label3.Location = new System.Drawing.Point(0, 45);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1010, 239);
+            this.label3.Size = new System.Drawing.Size(956, 230);
             this.label3.TabIndex = 8;
             this.label3.Text = "Bienvenidos";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -136,7 +147,7 @@ namespace UNAN
             this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel19.Location = new System.Drawing.Point(0, 0);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(1010, 45);
+            this.panel19.Size = new System.Drawing.Size(956, 45);
             this.panel19.TabIndex = 7;
             // 
             // panel20
@@ -145,7 +156,7 @@ namespace UNAN
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel20.Location = new System.Drawing.Point(0, 16);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(1010, 17);
+            this.panel20.Size = new System.Drawing.Size(956, 17);
             this.panel20.TabIndex = 1;
             // 
             // panel21
@@ -154,17 +165,17 @@ namespace UNAN
             this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel21.Location = new System.Drawing.Point(0, 0);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(1010, 16);
+            this.panel21.Size = new System.Drawing.Size(956, 16);
             this.panel21.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 284);
+            this.panel2.Location = new System.Drawing.Point(0, 275);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1010, 69);
+            this.panel2.Size = new System.Drawing.Size(956, 69);
             this.panel2.TabIndex = 2;
             // 
             // panel5
@@ -190,7 +201,7 @@ namespace UNAN
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1010, 69);
+            this.panel5.Size = new System.Drawing.Size(956, 69);
             this.panel5.TabIndex = 2;
             // 
             // panel10
@@ -384,7 +395,7 @@ namespace UNAN
             this.panel8.Location = new System.Drawing.Point(8, 0);
             this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1002, 5);
+            this.panel8.Size = new System.Drawing.Size(948, 5);
             this.panel8.TabIndex = 7;
             // 
             // panel9
@@ -399,10 +410,10 @@ namespace UNAN
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 353);
+            this.panel4.Location = new System.Drawing.Point(0, 344);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1010, 10);
+            this.panel4.Size = new System.Drawing.Size(956, 10);
             this.panel4.TabIndex = 4;
             // 
             // panel3
@@ -416,7 +427,7 @@ namespace UNAN
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1010, 75);
+            this.panel3.Size = new System.Drawing.Size(956, 75);
             this.panel3.TabIndex = 1;
             // 
             // panel17
@@ -425,7 +436,7 @@ namespace UNAN
             this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel17.Location = new System.Drawing.Point(202, 0);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(702, 75);
+            this.panel17.Size = new System.Drawing.Size(648, 75);
             this.panel17.TabIndex = 5;
             // 
             // btnTitulo
@@ -438,7 +449,7 @@ namespace UNAN
             this.btnTitulo.Font = new System.Drawing.Font("Consolas", 13.875F);
             this.btnTitulo.Location = new System.Drawing.Point(0, 0);
             this.btnTitulo.Name = "btnTitulo";
-            this.btnTitulo.Size = new System.Drawing.Size(702, 75);
+            this.btnTitulo.Size = new System.Drawing.Size(648, 75);
             this.btnTitulo.TabIndex = 0;
             this.btnTitulo.Text = "Sistema Control de Asistencia Docentes Horarios";
             this.btnTitulo.UseVisualStyleBackColor = false;
@@ -483,7 +494,7 @@ namespace UNAN
             // 
             this.panel18.Controls.Add(this.pbLogo);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel18.Location = new System.Drawing.Point(904, 0);
+            this.panel18.Location = new System.Drawing.Point(850, 0);
             this.panel18.Margin = new System.Windows.Forms.Padding(2);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(106, 75);
@@ -509,11 +520,15 @@ namespace UNAN
             // 
             this.dlg.FileName = "openFileDialog1";
             // 
+            // progress
+            // 
+            this.progress.Tick += new System.EventHandler(this.progress_Tick);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1010, 438);
+            this.ClientSize = new System.Drawing.Size(956, 429);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -579,6 +594,8 @@ namespace UNAN
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Panel panel21;
         public System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.ProgressBar pbrCarga;
+        private System.Windows.Forms.Timer progress;
     }
 }
 

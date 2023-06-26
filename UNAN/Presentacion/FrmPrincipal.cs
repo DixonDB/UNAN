@@ -1,18 +1,25 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.IO;
+using System.Security.Principal;
+using System.Threading;
 using System.Windows.Forms;
 using UNAN.Datos;
 using UNAN.FrmPlanDidactico;
 using UNAN.Presentacion;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace UNAN
 {
     public partial class frmMenu : Form
     {
+        private int conteo;
         public frmMenu()
         {
             InitializeComponent();
+            conteo = 0;
         }
         public int Idusuario;
         public string LoginV;
@@ -98,17 +105,28 @@ namespace UNAN
 
         private void btnProfesores_Click(object sender, EventArgs e)
         {
+            
+            #region funcionactual
+            
+            //pbrCarga.Visible = true;
+            //progress.Enabled = true;
+            //pbrCarga.Value = 0;
+            //conteo = 0;
+            //original
             pn12.Controls.Clear();
+            progress.Enabled = false;
             UCProfes P = new UCProfes();
             P.Dock = DockStyle.Fill;
             pn12.Controls.Add(P);
             btnTitulo.Text = "Personal";
             //Control de botones
-            btnAsistencia.Enabled=true;
+            btnAsistencia.Enabled = true;
             btnProfesores.Enabled = false;
             btnReportes.Enabled = true;
             btnPlanEst.Enabled = true;
-            btnAvanceProg.Enabled=true;
+            btnAvanceProg.Enabled = true;
+
+            #endregion
         }
 
         private void btnPlanEst_Click(object sender, EventArgs e)
@@ -149,6 +167,34 @@ namespace UNAN
             btnReportes.Enabled = false;
             btnPlanEst.Enabled = true;
             btnAvanceProg.Enabled = true;
+        }
+
+        private void progress_Tick(object sender, EventArgs e)
+        {
+            //conteo += 10;
+            //label3.Text = conteo.ToString() + " %";
+
+
+            //if (pbrCarga.Value < 100)
+            //{
+            //    pbrCarga.Value += 10;
+            //}
+
+            //if (pbrCarga.Value == 100)
+            //{
+            //    pn12.Controls.Clear();
+            //    progress.Enabled = false;
+            //    UCProfes P = new UCProfes();
+            //    P.Dock = DockStyle.Fill;
+            //    pn12.Controls.Add(P);
+            //    btnTitulo.Text = "Personal";
+            //    //Control de botones
+            //    btnAsistencia.Enabled = true;
+            //    btnProfesores.Enabled = false;
+            //    btnReportes.Enabled = true;
+            //    btnPlanEst.Enabled = true;
+            //    btnAvanceProg.Enabled = true;
+            //}
         }
     }
 }

@@ -1,10 +1,14 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
+using System.Security.Principal;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Windows.Forms;
 using UNAN.Datos;
 using UNAN.Logica;
@@ -13,6 +17,7 @@ namespace UNAN.Presentacion
 {
     public partial class UCProfes : UserControl
     {
+        
         /// <summary>
         /// Método que genera c# para inicializar los componentes que estén dentro de él
         /// En este caso se agregan SetToolTip para mostrar msj de ayuda sobre los campos
@@ -720,6 +725,5 @@ namespace UNAN.Presentacion
                 && lblCorreo.ForeColor == Color.Green
                 && lblUsuario.ForeColor == Color.Green;
         }
-
     }
 }
