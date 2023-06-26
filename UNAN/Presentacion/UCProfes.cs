@@ -25,6 +25,7 @@ namespace UNAN.Presentacion
         public UCProfes()
         {
             InitializeComponent();
+            carga();
             this.toolTip1.SetToolTip(this.txtContraseña, "La contraseña debe ser segura, debe contener al menos 8 caracteres, 1 mayúscula, 1 minúscula y un carácter especial");
             this.toolTip1.SetToolTip(this.txtCorreo, "El correo debe ser institucional ejemplo: nombre@estu.unan.edu.ni");
             //Incribiendo todos los eventos  TextChanged de los textbox para ser utilizados en un solo metodo
@@ -224,8 +225,8 @@ namespace UNAN.Presentacion
 
         private void UCProfesores_Load(object sender, EventArgs e)
         {
-            ReiniciarPaginado();
-            MostrarProfessores();
+            //ReiniciarPaginado();
+           // MostrarProfessores();
         }
 
         private void dataPersonal_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -333,7 +334,6 @@ namespace UNAN.Presentacion
             DiseñarDtvProfes();
             timer1.Stop();
         }
-
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             if (validar())
@@ -724,6 +724,39 @@ namespace UNAN.Presentacion
                 && lblCelular.ForeColor == Color.Green
                 && lblCorreo.ForeColor == Color.Green
                 && lblUsuario.ForeColor == Color.Green;
+        }
+
+        private void carga()
+        {
+            if (backgroundWorker1.IsBusy!=true)
+            {
+                pncarga.Dock = DockStyle.Fill;
+                pbrCarga.BringToFront();
+                backgroundWorker1.RunWorkerAsync();
+            }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                Thread.Sleep(250);
+                backgroundWorker1.ReportProgress(i*10);
+            }
+            timer1.Enabled = true;
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            pbrCarga.Value = e.ProgressPercentage;
+            lblCarga.Text = e.ProgressPercentage.ToString() + "%";
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            MostrarProfessores();
+            pncarga.Visible = false;
+            //ReiniciarPaginado();
         }
     }
 }

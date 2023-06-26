@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtPlan = new System.Windows.Forms.DataGridView();
             this.GBDetalles = new System.Windows.Forms.GroupBox();
             this.lblCodAsig = new System.Windows.Forms.Label();
+            this.btnAddAsig = new System.Windows.Forms.Button();
+            this.btnAddGrupo = new System.Windows.Forms.Button();
             this.cbModalidad = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.lblCod = new System.Windows.Forms.Label();
+            this.btnCarrera = new System.Windows.Forms.Button();
             this.cbCarrera = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.cbSemestre = new System.Windows.Forms.ComboBox();
@@ -61,6 +64,10 @@
             this.dtFechaFin = new System.Windows.Forms.DateTimePicker();
             this.dtFechaInico = new System.Windows.Forms.DateTimePicker();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnInsertar = new System.Windows.Forms.Button();
+            this.btnSubirPlan = new System.Windows.Forms.Button();
+            this.btnSubir = new System.Windows.Forms.Button();
+            this.btnAyuda = new System.Windows.Forms.Button();
             this.PCargarPlan = new System.Windows.Forms.Panel();
             this.btnCerrarP = new System.Windows.Forms.Button();
             this.btnCargar = new System.Windows.Forms.Button();
@@ -70,6 +77,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.gbDatos = new System.Windows.Forms.GroupBox();
+            this.btnEE = new System.Windows.Forms.Button();
+            this.btnFE = new System.Windows.Forms.Button();
+            this.btnEEA = new System.Windows.Forms.Button();
             this.cbEstrEvaluacion = new System.Windows.Forms.ComboBox();
             this.cbFormaEvaluacion = new System.Windows.Forms.ComboBox();
             this.cbEnseApren = new System.Windows.Forms.ComboBox();
@@ -82,16 +92,10 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtSemInicio = new System.Windows.Forms.TextBox();
             this.pnBotones = new System.Windows.Forms.Panel();
-            this.btnInsertar = new System.Windows.Forms.Button();
-            this.btnSubirPlan = new System.Windows.Forms.Button();
-            this.btnSubir = new System.Windows.Forms.Button();
-            this.btnAyuda = new System.Windows.Forms.Button();
-            this.btnEE = new System.Windows.Forms.Button();
-            this.btnFE = new System.Windows.Forms.Button();
-            this.btnEEA = new System.Windows.Forms.Button();
-            this.btnAddAsig = new System.Windows.Forms.Button();
-            this.btnAddGrupo = new System.Windows.Forms.Button();
-            this.btnCarrera = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.pncarga = new System.Windows.Forms.Panel();
+            this.pbrCarga = new System.Windows.Forms.ProgressBar();
+            this.lblCarga = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtPlan)).BeginInit();
             this.GBDetalles.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -99,6 +103,7 @@
             this.PCargarPlan.SuspendLayout();
             this.gbDatos.SuspendLayout();
             this.pnBotones.SuspendLayout();
+            this.pncarga.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtPlan
@@ -109,25 +114,25 @@
             this.dtPlan.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dtPlan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtPlan.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtPlan.DefaultCellStyle = dataGridViewCellStyle11;
             this.dtPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtPlan.Location = new System.Drawing.Point(0, 445);
             this.dtPlan.Name = "dtPlan";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dtPlan.RowHeadersVisible = false;
             this.dtPlan.RowHeadersWidth = 82;
             this.dtPlan.Size = new System.Drawing.Size(1294, 478);
@@ -162,6 +167,7 @@
             this.GBDetalles.Size = new System.Drawing.Size(1294, 110);
             this.GBDetalles.TabIndex = 1;
             this.GBDetalles.TabStop = false;
+            this.GBDetalles.Visible = false;
             // 
             // lblCodAsig
             // 
@@ -172,6 +178,28 @@
             this.lblCodAsig.Size = new System.Drawing.Size(71, 18);
             this.lblCodAsig.TabIndex = 34;
             this.lblCodAsig.Text = "CodigoA";
+            // 
+            // btnAddAsig
+            // 
+            this.btnAddAsig.BackgroundImage = global::UNAN.Properties.Resources.classroom;
+            this.btnAddAsig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddAsig.Location = new System.Drawing.Point(414, 57);
+            this.btnAddAsig.Name = "btnAddAsig";
+            this.btnAddAsig.Size = new System.Drawing.Size(41, 44);
+            this.btnAddAsig.TabIndex = 33;
+            this.btnAddAsig.UseVisualStyleBackColor = true;
+            this.btnAddAsig.Click += new System.EventHandler(this.btnAddAsig_Click);
+            // 
+            // btnAddGrupo
+            // 
+            this.btnAddGrupo.BackgroundImage = global::UNAN.Properties.Resources.Addteam;
+            this.btnAddGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddGrupo.Location = new System.Drawing.Point(949, 15);
+            this.btnAddGrupo.Name = "btnAddGrupo";
+            this.btnAddGrupo.Size = new System.Drawing.Size(41, 44);
+            this.btnAddGrupo.TabIndex = 32;
+            this.btnAddGrupo.UseVisualStyleBackColor = true;
+            this.btnAddGrupo.Click += new System.EventHandler(this.btnAddGrupo_Click);
             // 
             // cbModalidad
             // 
@@ -207,6 +235,17 @@
             this.lblCod.Size = new System.Drawing.Size(72, 18);
             this.lblCod.TabIndex = 29;
             this.lblCod.Text = "CodigoC";
+            // 
+            // btnCarrera
+            // 
+            this.btnCarrera.BackgroundImage = global::UNAN.Properties.Resources.addC;
+            this.btnCarrera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCarrera.Location = new System.Drawing.Point(606, 15);
+            this.btnCarrera.Name = "btnCarrera";
+            this.btnCarrera.Size = new System.Drawing.Size(41, 44);
+            this.btnCarrera.TabIndex = 28;
+            this.btnCarrera.UseVisualStyleBackColor = true;
+            this.btnCarrera.Click += new System.EventHandler(this.btnCarrera_Click);
             // 
             // cbCarrera
             // 
@@ -478,6 +517,72 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(656, 50);
             this.flowLayoutPanel1.TabIndex = 6;
+            this.flowLayoutPanel1.Visible = false;
+            // 
+            // btnInsertar
+            // 
+            this.btnInsertar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnInsertar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInsertar.FlatAppearance.BorderSize = 0;
+            this.btnInsertar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsertar.ForeColor = System.Drawing.Color.Black;
+            this.btnInsertar.Image = global::UNAN.Properties.Resources.Add_32x;
+            this.btnInsertar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInsertar.Location = new System.Drawing.Point(3, 3);
+            this.btnInsertar.Name = "btnInsertar";
+            this.btnInsertar.Size = new System.Drawing.Size(121, 39);
+            this.btnInsertar.TabIndex = 5;
+            this.btnInsertar.Text = "Insertar";
+            this.btnInsertar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInsertar.UseVisualStyleBackColor = false;
+            // 
+            // btnSubirPlan
+            // 
+            this.btnSubirPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSubirPlan.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubirPlan.ForeColor = System.Drawing.Color.Black;
+            this.btnSubirPlan.Image = global::UNAN.Properties.Resources.save32px;
+            this.btnSubirPlan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubirPlan.Location = new System.Drawing.Point(130, 3);
+            this.btnSubirPlan.Name = "btnSubirPlan";
+            this.btnSubirPlan.Size = new System.Drawing.Size(178, 39);
+            this.btnSubirPlan.TabIndex = 6;
+            this.btnSubirPlan.Text = "Guardar Plan Didáctico";
+            this.btnSubirPlan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSubirPlan.UseVisualStyleBackColor = false;
+            this.btnSubirPlan.Click += new System.EventHandler(this.btnSubirPlan_Click);
+            // 
+            // btnSubir
+            // 
+            this.btnSubir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSubir.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubir.ForeColor = System.Drawing.Color.Black;
+            this.btnSubir.Image = global::UNAN.Properties.Resources.up_32px;
+            this.btnSubir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubir.Location = new System.Drawing.Point(314, 3);
+            this.btnSubir.Name = "btnSubir";
+            this.btnSubir.Size = new System.Drawing.Size(226, 39);
+            this.btnSubir.TabIndex = 5;
+            this.btnSubir.Text = "Subir Plan Didáctico";
+            this.btnSubir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSubir.UseVisualStyleBackColor = false;
+            this.btnSubir.Click += new System.EventHandler(this.btnSubir_Click);
+            // 
+            // btnAyuda
+            // 
+            this.btnAyuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAyuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAyuda.Font = new System.Drawing.Font("Arial", 14.25F);
+            this.btnAyuda.Image = global::UNAN.Properties.Resources.help_32px;
+            this.btnAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAyuda.Location = new System.Drawing.Point(546, 3);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(101, 39);
+            this.btnAyuda.TabIndex = 8;
+            this.btnAyuda.Text = "Ayuda";
+            this.btnAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAyuda.UseVisualStyleBackColor = false;
             // 
             // PCargarPlan
             // 
@@ -602,6 +707,42 @@
             this.gbDatos.Size = new System.Drawing.Size(1294, 238);
             this.gbDatos.TabIndex = 2;
             this.gbDatos.TabStop = false;
+            this.gbDatos.Visible = false;
+            // 
+            // btnEE
+            // 
+            this.btnEE.BackColor = System.Drawing.Color.Gray;
+            this.btnEE.BackgroundImage = global::UNAN.Properties.Resources.EstrEva;
+            this.btnEE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEE.Location = new System.Drawing.Point(992, 191);
+            this.btnEE.Name = "btnEE";
+            this.btnEE.Size = new System.Drawing.Size(41, 44);
+            this.btnEE.TabIndex = 36;
+            this.btnEE.UseVisualStyleBackColor = false;
+            this.btnEE.Click += new System.EventHandler(this.btnEE_Click);
+            // 
+            // btnFE
+            // 
+            this.btnFE.BackgroundImage = global::UNAN.Properties.Resources.Evaluation;
+            this.btnFE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFE.Location = new System.Drawing.Point(656, 191);
+            this.btnFE.Name = "btnFE";
+            this.btnFE.Size = new System.Drawing.Size(41, 44);
+            this.btnFE.TabIndex = 35;
+            this.btnFE.UseVisualStyleBackColor = true;
+            this.btnFE.Click += new System.EventHandler(this.btnFE_Click);
+            // 
+            // btnEEA
+            // 
+            this.btnEEA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnEEA.BackgroundImage = global::UNAN.Properties.Resources.Estrategia;
+            this.btnEEA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEEA.Location = new System.Drawing.Point(264, 191);
+            this.btnEEA.Name = "btnEEA";
+            this.btnEEA.Size = new System.Drawing.Size(41, 40);
+            this.btnEEA.TabIndex = 34;
+            this.btnEEA.UseVisualStyleBackColor = false;
+            this.btnEEA.Click += new System.EventHandler(this.btnEEA_Click);
             // 
             // cbEstrEvaluacion
             // 
@@ -736,143 +877,46 @@
             this.pnBotones.Size = new System.Drawing.Size(1294, 52);
             this.pnBotones.TabIndex = 8;
             // 
-            // btnInsertar
+            // backgroundWorker1
             // 
-            this.btnInsertar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnInsertar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInsertar.FlatAppearance.BorderSize = 0;
-            this.btnInsertar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertar.ForeColor = System.Drawing.Color.Black;
-            this.btnInsertar.Image = global::UNAN.Properties.Resources.Add_32x;
-            this.btnInsertar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInsertar.Location = new System.Drawing.Point(3, 3);
-            this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(121, 39);
-            this.btnInsertar.TabIndex = 5;
-            this.btnInsertar.Text = "Insertar";
-            this.btnInsertar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInsertar.UseVisualStyleBackColor = false;
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
-            // btnSubirPlan
+            // pncarga
             // 
-            this.btnSubirPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSubirPlan.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubirPlan.ForeColor = System.Drawing.Color.Black;
-            this.btnSubirPlan.Image = global::UNAN.Properties.Resources.save32px;
-            this.btnSubirPlan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubirPlan.Location = new System.Drawing.Point(130, 3);
-            this.btnSubirPlan.Name = "btnSubirPlan";
-            this.btnSubirPlan.Size = new System.Drawing.Size(178, 39);
-            this.btnSubirPlan.TabIndex = 6;
-            this.btnSubirPlan.Text = "Guardar Plan Didáctico";
-            this.btnSubirPlan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSubirPlan.UseVisualStyleBackColor = false;
-            this.btnSubirPlan.Click += new System.EventHandler(this.btnSubirPlan_Click);
+            this.pncarga.Controls.Add(this.pbrCarga);
+            this.pncarga.Controls.Add(this.lblCarga);
+            this.pncarga.Location = new System.Drawing.Point(67, 219);
+            this.pncarga.Name = "pncarga";
+            this.pncarga.Size = new System.Drawing.Size(1161, 485);
+            this.pncarga.TabIndex = 11;
             // 
-            // btnSubir
+            // pbrCarga
             // 
-            this.btnSubir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSubir.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubir.ForeColor = System.Drawing.Color.Black;
-            this.btnSubir.Image = global::UNAN.Properties.Resources.up_32px;
-            this.btnSubir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubir.Location = new System.Drawing.Point(314, 3);
-            this.btnSubir.Name = "btnSubir";
-            this.btnSubir.Size = new System.Drawing.Size(226, 39);
-            this.btnSubir.TabIndex = 5;
-            this.btnSubir.Text = "Subir Plan Didáctico";
-            this.btnSubir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSubir.UseVisualStyleBackColor = false;
-            this.btnSubir.Click += new System.EventHandler(this.btnSubir_Click);
+            this.pbrCarga.Location = new System.Drawing.Point(288, 304);
+            this.pbrCarga.Name = "pbrCarga";
+            this.pbrCarga.Size = new System.Drawing.Size(699, 23);
+            this.pbrCarga.TabIndex = 10;
             // 
-            // btnAyuda
+            // lblCarga
             // 
-            this.btnAyuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnAyuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAyuda.Font = new System.Drawing.Font("Arial", 14.25F);
-            this.btnAyuda.Image = global::UNAN.Properties.Resources.help_32px;
-            this.btnAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAyuda.Location = new System.Drawing.Point(546, 3);
-            this.btnAyuda.Name = "btnAyuda";
-            this.btnAyuda.Size = new System.Drawing.Size(101, 39);
-            this.btnAyuda.TabIndex = 8;
-            this.btnAyuda.Text = "Ayuda";
-            this.btnAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAyuda.UseVisualStyleBackColor = false;
-            // 
-            // btnEE
-            // 
-            this.btnEE.BackColor = System.Drawing.Color.Gray;
-            this.btnEE.BackgroundImage = global::UNAN.Properties.Resources.EstrEva;
-            this.btnEE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEE.Location = new System.Drawing.Point(992, 191);
-            this.btnEE.Name = "btnEE";
-            this.btnEE.Size = new System.Drawing.Size(41, 44);
-            this.btnEE.TabIndex = 36;
-            this.btnEE.UseVisualStyleBackColor = false;
-            this.btnEE.Click += new System.EventHandler(this.btnEE_Click);
-            // 
-            // btnFE
-            // 
-            this.btnFE.BackgroundImage = global::UNAN.Properties.Resources.Evaluation;
-            this.btnFE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFE.Location = new System.Drawing.Point(656, 191);
-            this.btnFE.Name = "btnFE";
-            this.btnFE.Size = new System.Drawing.Size(41, 44);
-            this.btnFE.TabIndex = 35;
-            this.btnFE.UseVisualStyleBackColor = true;
-            this.btnFE.Click += new System.EventHandler(this.btnFE_Click);
-            // 
-            // btnEEA
-            // 
-            this.btnEEA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnEEA.BackgroundImage = global::UNAN.Properties.Resources.Estrategia;
-            this.btnEEA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEEA.Location = new System.Drawing.Point(264, 191);
-            this.btnEEA.Name = "btnEEA";
-            this.btnEEA.Size = new System.Drawing.Size(41, 40);
-            this.btnEEA.TabIndex = 34;
-            this.btnEEA.UseVisualStyleBackColor = false;
-            this.btnEEA.Click += new System.EventHandler(this.btnEEA_Click);
-            // 
-            // btnAddAsig
-            // 
-            this.btnAddAsig.BackgroundImage = global::UNAN.Properties.Resources.classroom;
-            this.btnAddAsig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAddAsig.Location = new System.Drawing.Point(414, 57);
-            this.btnAddAsig.Name = "btnAddAsig";
-            this.btnAddAsig.Size = new System.Drawing.Size(41, 44);
-            this.btnAddAsig.TabIndex = 33;
-            this.btnAddAsig.UseVisualStyleBackColor = true;
-            this.btnAddAsig.Click += new System.EventHandler(this.btnAddAsig_Click);
-            // 
-            // btnAddGrupo
-            // 
-            this.btnAddGrupo.BackgroundImage = global::UNAN.Properties.Resources.Addteam;
-            this.btnAddGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAddGrupo.Location = new System.Drawing.Point(949, 15);
-            this.btnAddGrupo.Name = "btnAddGrupo";
-            this.btnAddGrupo.Size = new System.Drawing.Size(41, 44);
-            this.btnAddGrupo.TabIndex = 32;
-            this.btnAddGrupo.UseVisualStyleBackColor = true;
-            this.btnAddGrupo.Click += new System.EventHandler(this.btnAddGrupo_Click);
-            // 
-            // btnCarrera
-            // 
-            this.btnCarrera.BackgroundImage = global::UNAN.Properties.Resources.addC;
-            this.btnCarrera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCarrera.Location = new System.Drawing.Point(606, 15);
-            this.btnCarrera.Name = "btnCarrera";
-            this.btnCarrera.Size = new System.Drawing.Size(41, 44);
-            this.btnCarrera.TabIndex = 28;
-            this.btnCarrera.UseVisualStyleBackColor = true;
-            this.btnCarrera.Click += new System.EventHandler(this.btnCarrera_Click);
+            this.lblCarga.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 80F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCarga.ForeColor = System.Drawing.Color.Black;
+            this.lblCarga.Location = new System.Drawing.Point(0, 0);
+            this.lblCarga.Name = "lblCarga";
+            this.lblCarga.Size = new System.Drawing.Size(1161, 485);
+            this.lblCarga.TabIndex = 9;
+            this.lblCarga.Text = "Bienvenidos";
+            this.lblCarga.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UCPlanDidactico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pncarga);
             this.Controls.Add(this.dtPlan);
             this.Controls.Add(this.pnBotones);
             this.Controls.Add(this.gbDatos);
@@ -891,6 +935,7 @@
             this.gbDatos.ResumeLayout(false);
             this.gbDatos.PerformLayout();
             this.pnBotones.ResumeLayout(false);
+            this.pncarga.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -959,5 +1004,9 @@
         private System.Windows.Forms.Button btnEEA;
         private System.Windows.Forms.Button btnEE;
         private System.Windows.Forms.Button btnFE;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Panel pncarga;
+        private System.Windows.Forms.ProgressBar pbrCarga;
+        private System.Windows.Forms.Label lblCarga;
     }
 }

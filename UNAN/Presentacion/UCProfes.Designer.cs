@@ -97,6 +97,10 @@
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pncarga = new System.Windows.Forms.Panel();
+            this.lblCarga = new System.Windows.Forms.Label();
+            this.pbrCarga = new System.Windows.Forms.ProgressBar();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.PanelPaginado.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -107,6 +111,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoModulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Icono)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
+            this.pncarga.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelPaginado
@@ -241,7 +246,6 @@
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // panel2
@@ -924,10 +928,46 @@
             this.dataGridViewImageColumn3.Image = global::UNAN.Properties.Resources.send_30px;
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             // 
+            // pncarga
+            // 
+            this.pncarga.Controls.Add(this.pbrCarga);
+            this.pncarga.Controls.Add(this.lblCarga);
+            this.pncarga.Location = new System.Drawing.Point(0, 0);
+            this.pncarga.Name = "pncarga";
+            this.pncarga.Size = new System.Drawing.Size(1161, 485);
+            this.pncarga.TabIndex = 10;
+            // 
+            // lblCarga
+            // 
+            this.lblCarga.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 80F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCarga.ForeColor = System.Drawing.Color.Black;
+            this.lblCarga.Location = new System.Drawing.Point(0, 0);
+            this.lblCarga.Name = "lblCarga";
+            this.lblCarga.Size = new System.Drawing.Size(1161, 485);
+            this.lblCarga.TabIndex = 9;
+            this.lblCarga.Text = "Bienvenidos";
+            this.lblCarga.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pbrCarga
+            // 
+            this.pbrCarga.Location = new System.Drawing.Point(288, 304);
+            this.pbrCarga.Name = "pbrCarga";
+            this.pbrCarga.Size = new System.Drawing.Size(699, 23);
+            this.pbrCarga.TabIndex = 10;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
             // UCProfes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pncarga);
             this.Controls.Add(this.panelRegitroP);
             this.Controls.Add(this.dataProfesores);
             this.Controls.Add(this.panel1);
@@ -950,6 +990,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoModulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Icono)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.pncarga.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1023,5 +1064,9 @@
         private System.Windows.Forms.Label lblNum;
         private System.Windows.Forms.Label lblMin;
         private System.Windows.Forms.Label lblMayu;
+        private System.Windows.Forms.Panel pncarga;
+        private System.Windows.Forms.Label lblCarga;
+        private System.Windows.Forms.ProgressBar pbrCarga;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

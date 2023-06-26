@@ -1,8 +1,10 @@
 ﻿using ExcelDataReader;
 using System;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 using UNAN.Datos;
 using UNAN.Logica;
@@ -21,6 +23,7 @@ namespace UNAN.FrmPlanDidactico
         public UCPlanDidactico()
         {
             InitializeComponent();
+            carga();
         }
 
         private void btnSubir_Click(object sender, EventArgs e)
@@ -198,6 +201,40 @@ namespace UNAN.FrmPlanDidactico
             fr.pnEstraEva.Visible = true;
             fr.pnEstraEva.Dock = DockStyle.Fill;
             fr.ShowDialog();
+        }
+
+        //Vista de progreso
+        private void carga()
+        {
+            if (backgroundWorker1.IsBusy != true)
+            {
+                pncarga.Dock = DockStyle.Fill;
+                backgroundWorker1.RunWorkerAsync();
+            }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                Thread.Sleep(100);
+                backgroundWorker1.ReportProgress(i * 10);
+            }
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            pbrCarga.Value = e.ProgressPercentage;
+            lblCarga.Text = e.ProgressPercentage.ToString() + "%";
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            pncarga.Visible = false;
+            pnBotones.Visible = true;
+            gbDatos.Visible = true;
+            GBDetalles.Visible = true;
+            flowLayoutPanel1.Visible = true;
         }
     }
 }

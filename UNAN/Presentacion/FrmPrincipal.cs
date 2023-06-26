@@ -125,7 +125,6 @@ namespace UNAN
             btnReportes.Enabled = true;
             btnPlanEst.Enabled = true;
             btnAvanceProg.Enabled = true;
-
             #endregion
         }
 
