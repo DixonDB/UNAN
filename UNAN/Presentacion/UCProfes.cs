@@ -25,7 +25,6 @@ namespace UNAN.Presentacion
         public UCProfes()
         {
             InitializeComponent();
-            carga();
             this.toolTip1.SetToolTip(this.txtContraseña, "La contraseña debe ser segura, debe contener al menos 8 caracteres, 1 mayúscula, 1 minúscula y un carácter especial");
             this.toolTip1.SetToolTip(this.txtCorreo, "El correo debe ser institucional ejemplo: nombre@estu.unan.edu.ni");
             //Incribiendo todos los eventos  TextChanged de los textbox para ser utilizados en un solo metodo
@@ -203,6 +202,7 @@ namespace UNAN.Presentacion
                 {
                     InsertarProfesores();
                     MostrarProfessores();
+                    ReiniciarPaginado();
                 }
                 else
                 {
@@ -225,7 +225,8 @@ namespace UNAN.Presentacion
 
         private void UCProfesores_Load(object sender, EventArgs e)
         {
-            //ReiniciarPaginado();
+            carga();
+            ReiniciarPaginado();
            // MostrarProfessores();
         }
 

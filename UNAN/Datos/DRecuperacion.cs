@@ -64,7 +64,7 @@ namespace UNAN.Datos
                 cmd.CommandType = CommandType.Text;
                 if (reader.Read() == true)
                 {
-                    string nombreUsuario = reader.GetString(5);
+                    string nombreUsuario = reader.GetString(1);
                     string correoUsuario = reader.GetString(2);
                     string passUsuario = reader.GetString(6);
                     var mailservice = new DCorreoSoporte();
