@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -64,9 +65,9 @@ namespace UNAN.Presentacion
             this.Limpiar();
             PanelPaginado.Visible = false;
             MostrarModulos();
-            string contraseñaGenerada = GenerarContraseñaAleatoria();
+            string contraseñaGenerada = Validaciones.GenerarContraseñaAleatoria();
             txtContraseña.Text = contraseñaGenerada;
-            ActualizarVisibilidadEtiquetas(contraseñaGenerada); ;
+            Validaciones.ActualizarVisibilidadEtiquetas(contraseñaGenerada, lblMayu, lblMin, lblNum, lblCarEsp);
         }
         /// <summary>
         /// Método para limpiar el contenido de los textbox que se utilizarán para crear un nuevo registro.
@@ -498,120 +499,22 @@ namespace UNAN.Presentacion
         private void txtContraseña_TextChanged(object sender, EventArgs e)
         {
             string contra = txtContraseña.Text;
-            ActualizarVisibilidadEtiquetas(contra);
+            Validaciones.ActualizarVisibilidadEtiquetas(contra, lblMayu, lblMin, lblNum, lblCarEsp);
+            //string contra = txtContraseña.Text;
+            //ActualizarVisibilidadEtiquetas(contra);
 
-            // Verificar si la contraseña cumple con los criterios
-            bool cumpleCriterios = ContraseñaCumpleCriterios(contra) && contra.Length >= 8;
+            //// Verificar si la contraseña cumple con los criterios
+            bool cumpleCriterios = Validaciones.ContraseñaCumpleCriterios(contra) && contra.Length >= 8;
 
-            // Cambiar el color del Label según si cumple los criterios
+            //// Cambiar el color del Label según si cumple los criterios
             label15.ForeColor = cumpleCriterios ? Color.Green : Color.Red;
-            // Actualizar los colores de los labels y validar si todos están en verde
-            labelsVerdes = ValidarLabelsVerdes();
+            //// Actualizar los colores de los labels y validar si todos están en verde
+            labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
 
             // Habilitar o deshabilitar el botón btnGuardar
             btnGuardar.Enabled = cumpleCriterios && labelsVerdes;
             btnActualizar.Enabled = cumpleCriterios && labelsVerdes;
         }
-
-        private void ActualizarVisibilidadEtiquetas(string contra)
-        {
-            bool mayuscula = false, minuscula = false, numero = false, caracespecial = false;
-
-            foreach (char c in contra)
-            {
-                if (char.IsUpper(c))
-                {
-                    mayuscula = true;
-                }
-                else if (char.IsLower(c))
-                {
-                    minuscula = true;
-                }
-                else if (char.IsDigit(c))
-                {
-                    numero = true;
-                }
-                else if (SpecialCharacters.Contains(c))
-                {
-                    caracespecial = true;
-                }
-            }
-
-            lblMayu.Visible = !mayuscula;
-            lblMin.Visible = !minuscula;
-            lblNum.Visible = !numero;
-            lblCarEsp.Visible = !caracespecial;
-        }
-
-        private static readonly Random random = new Random();
-        private const string UpperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        private const string LowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
-        private const string Numbers = "0123456789";
-        private const string SpecialCharacters = "!@#$%^&*()";
-
-        private string GenerarContraseñaAleatoria()
-        {
-            int longitud = 8; // Longitud mínima de la contraseña
-            string caracteres = UpperCaseLetters + LowerCaseLetters + Numbers + SpecialCharacters;
-
-            // Asegurarse de que la contraseña cumpla con los criterios mínimos
-            while (true)
-            {
-                StringBuilder contraseña = new StringBuilder();
-                contraseña.Append(RandomCharacter(UpperCaseLetters));
-                contraseña.Append(RandomCharacter(LowerCaseLetters));
-                contraseña.Append(RandomCharacter(Numbers));
-                contraseña.Append(RandomCharacter(SpecialCharacters));
-
-                // Generar caracteres aleatorios adicionales
-                for (int i = 4; i < longitud; i++)
-                {
-                    contraseña.Append(RandomCharacter(caracteres));
-                }
-
-                // Mezclar los caracteres aleatoriamente
-                contraseña = new StringBuilder(new string(contraseña.ToString().ToCharArray().OrderBy(c => random.Next()).ToArray()));
-
-                // Comprobar si la contraseña cumple con los criterios
-                if (ContraseñaCumpleCriterios(contraseña.ToString()))
-                {
-                    return contraseña.ToString();
-                }
-            }
-        }
-
-        private char RandomCharacter(string caracteres)
-        {
-            int indice = random.Next(0, caracteres.Length);
-            return caracteres[indice];
-        }
-
-        private bool ContraseñaCumpleCriterios(string contraseña)
-        {
-            bool mayuscula = false, minuscula = false, numero = false, caracespecial = false;
-
-            foreach (char c in contraseña)
-            {
-                if (char.IsUpper(c))
-                {
-                    mayuscula = true;
-                }
-                else if (char.IsLower(c))
-                {
-                    minuscula = true;
-                }
-                else if (char.IsDigit(c))
-                {
-                    numero = true;
-                }
-                else if (SpecialCharacters.Contains(c))
-                {
-                    caracespecial = true;
-                }
-            }
-            return mayuscula && minuscula && numero && caracespecial;
-        }
-        //-------------------otros metodos--------------
 
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
@@ -622,7 +525,7 @@ namespace UNAN.Presentacion
                 lblIdentificacion.ForeColor = string.IsNullOrEmpty(txtIdentificacion.Text) ? Color.Red : Color.Green;
 
                 // Actualizar los colores de los labels y validar si todos están en verde
-                labelsVerdes = ValidarLabelsVerdes();
+                labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
 
                 // Habilitar o deshabilitar el botón guardar según el estado de los labels
                 btnGuardar.Enabled = labelsVerdes;
@@ -632,10 +535,10 @@ namespace UNAN.Presentacion
             if (textBox == txtNombreApellidos)
             {
                 lblNombreApellidos.ForeColor = string.IsNullOrEmpty(txtNombreApellidos.Text) ? Color.Red : Color.Green;
-                txtUsuario.Text = GenerarUsuario(txtNombreApellidos.Text);
+                txtUsuario.Text = Validaciones.GenerarUsuario(txtNombreApellidos.Text);
 
                 // Actualizar los colores de los labels y validar si todos están en verde
-                labelsVerdes = ValidarLabelsVerdes();
+                labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
 
                 // Habilitar o deshabilitar el botón guardar según el estado de los labels
                 btnGuardar.Enabled = labelsVerdes;
@@ -653,18 +556,18 @@ namespace UNAN.Presentacion
                     lblCelular.ForeColor = Color.Red;
                 }
                 // Actualizar los colores de los labels y validar si todos están en verde
-                labelsVerdes = ValidarLabelsVerdes();
+                labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
 
                 // Habilitar o deshabilitar el botón guardar según el estado de los labels
                 btnGuardar.Enabled = labelsVerdes;
-                btnActualizar.Enabled= labelsVerdes;
+                btnActualizar.Enabled = labelsVerdes;
             }
 
             if (textBox == txtCorreo)
             {
-                lblCorreo.ForeColor = EsCorreoValido(txtCorreo.Text) ? Color.Green : Color.Red;
+                lblCorreo.ForeColor = Validaciones.EsCorreoValido(txtCorreo.Text) ? Color.Green : Color.Red;
                 // Actualizar los colores de los labels y validar si todos están en verde
-                labelsVerdes = ValidarLabelsVerdes();
+                labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
 
                 // Habilitar o deshabilitar el botón guardar según el estado de los labels
                 btnGuardar.Enabled = labelsVerdes;
@@ -675,56 +578,12 @@ namespace UNAN.Presentacion
             {
                 lblUsuario.ForeColor = string.IsNullOrEmpty(txtUsuario.Text) ? Color.Red : Color.Green;
                 // Actualizar los colores de los labels y validar si todos están en verde
-                labelsVerdes = ValidarLabelsVerdes();
+                labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
 
                 // Habilitar o deshabilitar el botón guardar según el estado de los labels
                 btnGuardar.Enabled = labelsVerdes;
                 btnActualizar.Enabled = labelsVerdes;
             }
-        }
-
-        // Función para validar si un correo es válido
-        private bool EsCorreoValido(string correo)
-        {
-            // Expresión regular para validar el formato del correo
-            string patronCorreo = @"^[a-zA-Z0-9_.+-]+@(gmail\.com|yahoo\.com|hotmail\.com|estu\.unan\.edu\.ni|\w+\.(com|es|net|org))$";
-
-            // Realizar la validación del formato utilizando la expresión regular
-            bool formatoValido = System.Text.RegularExpressions.Regex.IsMatch(correo, patronCorreo);
-
-            // Retorna el resultado de la validación de formato
-            return formatoValido;
-        }
-
-        private string GenerarUsuario(string nombreApellidos)
-        {
-            // Obtener los nombres y apellidos separados
-            var partes = nombreApellidos.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-
-            // Validar que exista al menos un nombre y un apellido
-            if (partes.Length < 2)
-            {
-                return string.Empty;
-            }
-
-            // Generar el usuario con el primer nombre, un punto y las iniciales del segundo nombre y los apellidos
-            string usuario = partes[0] + ".";
-
-            for (int i = 1; i < partes.Length; i++)
-            {
-                usuario += partes[i][0];
-            }
-
-            return usuario;
-        }
-        // Función para validar si todos los labels están en verde
-        private bool ValidarLabelsVerdes()
-        {
-            return lblNombreApellidos.ForeColor == Color.Green
-                && lblIdentificacion.ForeColor == Color.Green
-                && lblCelular.ForeColor == Color.Green
-                && lblCorreo.ForeColor == Color.Green
-                && lblUsuario.ForeColor == Color.Green;
         }
 
         private void carga()
