@@ -195,5 +195,12 @@ namespace UNAN
             //    btnAvanceProg.Enabled = true;
             //}
         }
+
+        private void pbUser_Click(object sender, EventArgs e)
+        {
+            FrmPerfil perfil = new FrmPerfil();
+            perfil.Show();
+            this.Hide();
+        }
     }
 }

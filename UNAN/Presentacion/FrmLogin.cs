@@ -19,8 +19,8 @@ namespace UNAN.Presentacion
         private void btnIniciarsesion_Click(object sender, EventArgs e)
         {
             frmMenu fr = new frmMenu();
-            fr.ShowDialog();
-            this.Dispose();
+            fr.Show();
+            this.Hide();
         }
 
         private void btnRestablecer_Click(object sender, EventArgs e)
