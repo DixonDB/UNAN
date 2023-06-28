@@ -30,6 +30,7 @@ namespace UNAN
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pn12 = new System.Windows.Forms.Panel();
@@ -68,7 +69,7 @@ namespace UNAN
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.reloj = new System.Windows.Forms.Timer(this.components);
             this.dlg = new System.Windows.Forms.OpenFileDialog();
-            this.progress = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.pn12.SuspendLayout();
@@ -82,6 +83,7 @@ namespace UNAN
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             this.panel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -419,6 +421,7 @@ namespace UNAN
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.panel17);
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.pbUser);
@@ -521,9 +524,16 @@ namespace UNAN
             // 
             this.dlg.FileName = "openFileDialog1";
             // 
-            // progress
+            // pictureBox1
             // 
-            this.progress.Tick += new System.EventHandler(this.progress_Tick);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(64, 43);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // frmMenu
             // 
@@ -553,6 +563,7 @@ namespace UNAN
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
             this.panel18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -596,7 +607,7 @@ namespace UNAN
         private System.Windows.Forms.Panel panel21;
         public System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.ProgressBar pbrCarga;
-        private System.Windows.Forms.Timer progress;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

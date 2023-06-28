@@ -114,7 +114,6 @@ namespace UNAN
             //conteo = 0;
             //original
             pn12.Controls.Clear();
-            progress.Enabled = false;
             UCProfes P = new UCProfes();
             P.Dock = DockStyle.Fill;
             pn12.Controls.Add(P);
@@ -168,35 +167,15 @@ namespace UNAN
             btnAvanceProg.Enabled = true;
         }
 
-        private void progress_Tick(object sender, EventArgs e)
-        {
-            //conteo += 10;
-            //label3.Text = conteo.ToString() + " %";
-
-
-            //if (pbrCarga.Value < 100)
-            //{
-            //    pbrCarga.Value += 10;
-            //}
-
-            //if (pbrCarga.Value == 100)
-            //{
-            //    pn12.Controls.Clear();
-            //    progress.Enabled = false;
-            //    UCProfes P = new UCProfes();
-            //    P.Dock = DockStyle.Fill;
-            //    pn12.Controls.Add(P);
-            //    btnTitulo.Text = "Personal";
-            //    //Control de botones
-            //    btnAsistencia.Enabled = true;
-            //    btnProfesores.Enabled = false;
-            //    btnReportes.Enabled = true;
-            //    btnPlanEst.Enabled = true;
-            //    btnAvanceProg.Enabled = true;
-            //}
-        }
 
         private void pbUser_Click(object sender, EventArgs e)
+        {
+            FrmPerfil perfil = new FrmPerfil();
+            perfil.Show();
+            this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             FrmPerfil perfil = new FrmPerfil();
             perfil.Show();

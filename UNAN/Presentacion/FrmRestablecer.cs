@@ -17,7 +17,7 @@ namespace UNAN.Presentacion
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            FrmLogin login = new FrmLogin();
+            Login login = new Login();
             login.Show();
             Dispose();
         }

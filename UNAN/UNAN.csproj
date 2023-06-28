@@ -96,12 +96,6 @@
     <Compile Include="Presentacion\frmGrupo.Designer.cs">
       <DependentUpon>frmGrupo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\FrmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\FrmLogin.Designer.cs">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\FrmPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +107,12 @@
     </Compile>
     <Compile Include="Presentacion\FrmRestablecer.Designer.cs">
       <DependentUpon>FrmRestablecer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\UCControlAsistencia.cs">
       <SubType>UserControl</SubType>
@@ -153,14 +153,14 @@
     <EmbeddedResource Include="Presentacion\frmGrupo.resx">
       <DependentUpon>frmGrupo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\FrmLogin.resx">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmPerfil.resx">
       <DependentUpon>FrmPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmRestablecer.resx">
       <DependentUpon>FrmRestablecer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\UCControlAsistencia.resx">
       <DependentUpon>UCControlAsistencia.cs</DependentUpon>
