@@ -17,8 +17,7 @@ using UNAN.Logica;
 namespace UNAN.Presentacion
 {
     public partial class UCProfes : UserControl
-    {
-        
+    {        
         /// <summary>
         /// Método que genera c# para inicializar los componentes que estén dentro de él
         /// En este caso se agregan SetToolTip para mostrar msj de ayuda sobre los campos
@@ -48,7 +47,6 @@ namespace UNAN.Presentacion
         string usuario;
         // Declarar variable para realizar seguimiento de los labels en verde
         private bool labelsVerdes = false;
-
         /// <summary>
         /// Evento click del btnAgregar en el cual se muestra el panelRegistroP el cual contiene los campos necesarios para crear un registro de un profesor
         /// Tambien se llama al método contraseñaGenerada el cual genera una contraseña segura en el txtcontraseña y valida que la contraseña generada sea segura y cumpla
@@ -84,7 +82,6 @@ namespace UNAN.Presentacion
             txtContraseña.Clear();
 
         }
-
         /// <summary>
         /// Método que sirve para cambiar el diseño al DataGrid view
         /// </summary>
@@ -223,14 +220,12 @@ namespace UNAN.Presentacion
             dataProfesores.DataSource = dt;
             DiseñarDtvProfes();
         }
-
         private void UCProfesores_Load(object sender, EventArgs e)
         {
             carga();
             ReiniciarPaginado();
            // MostrarProfessores();
         }
-
         private void dataPersonal_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             ObtenerEstado();
@@ -330,7 +325,6 @@ namespace UNAN.Presentacion
             }
 
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             DiseñarDtvProfes();
@@ -368,7 +362,6 @@ namespace UNAN.Presentacion
             }
             MessageBox.Show("Se Edito correctamente");
         }
-
         private void btnVolverPersonal_Click(object sender, EventArgs e)
         {
             panelRegitroP.Visible = false;
@@ -482,9 +475,7 @@ namespace UNAN.Presentacion
             MostrarProfessores();
             panelRegitroP.Visible = false;
         }
-
         //Metodos de validación
-
         private bool validar()
         {
             double entero;
@@ -495,8 +486,7 @@ namespace UNAN.Presentacion
             return !(txtNombreApellidos.Text == "" || txtCorreo.Text == "" || txtIdentificacion.Text == "" ||
              txtCelular.Text == ""||txtUsuario.Text==""||txtContraseña.Text=="");
 
-        }
-        private void txtContraseña_TextChanged(object sender, EventArgs e)
+        }        private void txtContraseña_TextChanged(object sender, EventArgs e)
         {
             string contra = txtContraseña.Text;
             Validaciones.ActualizarVisibilidadEtiquetas(contra, lblMayu, lblMin, lblNum, lblCarEsp);
@@ -515,7 +505,6 @@ namespace UNAN.Presentacion
             btnGuardar.Enabled = cumpleCriterios && labelsVerdes;
             btnActualizar.Enabled = cumpleCriterios && labelsVerdes;
         }
-
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             var textBox = (TextBox)sender;
@@ -585,7 +574,6 @@ namespace UNAN.Presentacion
                 btnActualizar.Enabled = labelsVerdes;
             }
         }
-
         private void carga()
         {
             if (backgroundWorker1.IsBusy!=true)
@@ -595,7 +583,6 @@ namespace UNAN.Presentacion
                 backgroundWorker1.RunWorkerAsync();
             }
         }
-
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             for (int i = 1; i <= 10; i++)
@@ -605,13 +592,11 @@ namespace UNAN.Presentacion
             }
             timer1.Enabled = true;
         }
-
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             pbrCarga.Value = e.ProgressPercentage;
             lblCarga.Text = e.ProgressPercentage.ToString() + "%";
         }
-
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             MostrarProfessores();

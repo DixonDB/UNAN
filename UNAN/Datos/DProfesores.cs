@@ -182,13 +182,36 @@ namespace UNAN.Datos
         }
 
         #region Validar Usuarios Para login
+        public DataTable D_Usuarios(LProfesores parametros)
+        {
+            try
+            {
+                Conexion.abrir();
+                SqlCommand cmd = new SqlCommand("Login", Conexion.conectar);
+                cmd.CommandType= CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Usuario", parametros.Usuario);
+                cmd.Parameters.AddWithValue("@Password", parametros.Password);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;  
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { Conexion.cerrar(); }
+            
+                        
+            
+        }
         public void VerificarUsuarios(ref string Indicador)
         {
             try
             {
                 int Iduser;
                 Conexion.abrir();
-                SqlCommand da = new SqlCommand("Select idUsuario From Usuarios", Conexion.conectar);
+                SqlCommand da = new SqlCommand("Select IdProfesor From Profesores", Conexion.conectar);
                 Iduser = Convert.ToInt32(da.ExecuteScalar());
                 Conexion.cerrar();
                 Indicador = "Correcto";

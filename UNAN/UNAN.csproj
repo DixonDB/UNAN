@@ -72,6 +72,7 @@
     <Compile Include="Logica\Lmodulos.cs" />
     <Compile Include="Logica\Lpermisos.cs" />
     <Compile Include="Logica\LProfesores.cs" />
+    <Compile Include="Logica\NProfes.cs" />
     <Compile Include="Presentacion\FrmAsignatura.cs">
       <SubType>Form</SubType>
     </Compile>
