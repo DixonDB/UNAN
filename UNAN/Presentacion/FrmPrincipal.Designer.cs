@@ -442,10 +442,10 @@ namespace UNAN
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(128, 83);
+            this.pictureBox1.Location = new System.Drawing.Point(150, 104);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(68, 62);
+            this.pictureBox1.Size = new System.Drawing.Size(46, 41);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -455,10 +455,10 @@ namespace UNAN
             // 
             this.panel17.Controls.Add(this.btnTitulo);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel17.Location = new System.Drawing.Point(404, 0);
+            this.panel17.Location = new System.Drawing.Point(604, 0);
             this.panel17.Margin = new System.Windows.Forms.Padding(6);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(1296, 144);
+            this.panel17.Size = new System.Drawing.Size(1096, 144);
             this.panel17.TabIndex = 5;
             // 
             // btnTitulo
@@ -472,7 +472,7 @@ namespace UNAN
             this.btnTitulo.Location = new System.Drawing.Point(0, 0);
             this.btnTitulo.Margin = new System.Windows.Forms.Padding(6);
             this.btnTitulo.Name = "btnTitulo";
-            this.btnTitulo.Size = new System.Drawing.Size(1296, 144);
+            this.btnTitulo.Size = new System.Drawing.Size(1096, 144);
             this.btnTitulo.TabIndex = 0;
             this.btnTitulo.Text = "Sistema Control de Asistencia Docentes Horarios";
             this.btnTitulo.UseVisualStyleBackColor = false;
@@ -485,15 +485,17 @@ namespace UNAN
             this.panel7.Location = new System.Drawing.Point(196, 0);
             this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(208, 144);
+            this.panel7.Size = new System.Drawing.Size(408, 144);
             this.panel7.TabIndex = 4;
             // 
             // lblUser
             // 
+            this.lblUser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUser.AutoSize = true;
-            this.lblUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(0, 0);
+            this.lblUser.Location = new System.Drawing.Point(98, 59);
             this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(160, 31);
