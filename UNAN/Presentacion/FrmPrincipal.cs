@@ -36,6 +36,11 @@ namespace UNAN
         private void frmMenu_Load(object sender, EventArgs e)
         {
             reloj.Enabled = true;
+            lblUser.Text = Login.nombreprofe;
+            pbUser.BackgroundImage = null;
+            byte[] b = (byte[])(Login.Icono);
+            MemoryStream ms = new MemoryStream(b);
+            pbUser.Image = Image.FromStream(ms);
         }
 
         private void btnRestaurarBD_Click(object sender, EventArgs e)

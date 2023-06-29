@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using UNAN.Logica;
 using UNAN.Datos;
 using UNAN.Presentacion;
+using System.IO;
 
 namespace UNAN.Presentacion
 {
@@ -19,6 +20,7 @@ namespace UNAN.Presentacion
         NProfes nprofes = new NProfes();
         LProfesores lprofes= new LProfesores();
         public static string nombreprofe;
+        public static byte[] Icono;
         public static int idprofesor;
         frmMenu f = new frmMenu();
 
@@ -30,21 +32,21 @@ namespace UNAN.Presentacion
         {
             DataTable dt = new DataTable();
             lprofes.Usuario= txtusuario.Text;
-            lprofes.Password= txtpassword.Text;
+            lprofes.Password= Encrip.Encriptar(Encrip.Encriptar(txtpassword.Text));
 
             dt = nprofes.Nprofes(lprofes);
             if(dt.Rows.Count > 0 )
             {
                 MessageBox.Show("Bienvenido al sistema " + dt.Rows[0][1].ToString(), "Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Information );
-                nombreprofe= dt.Rows[0][1].ToString();
+                idprofesor = Convert.ToInt32(dt.Rows[0][0]);
+                nombreprofe = dt.Rows[0][1].ToString();
+                Icono = (byte[])dt.Rows[0][2];
 
-          
+
+
                 f.ShowDialog();
 
-                Login lg = new Login();
-                lg.ShowDialog();
-                if (lg.ShowDialog() == DialogResult.OK)
-                    Application.Run(new frmMenu());
+                
 
                 txtusuario.Clear();
                 txtpassword.Clear();

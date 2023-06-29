@@ -284,7 +284,6 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             this.gbFormulario.ResumeLayout(false);
             this.gbFormulario.PerformLayout();
