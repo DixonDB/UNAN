@@ -186,5 +186,12 @@ namespace UNAN
             perfil.Show();
             this.Hide();
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            Login fr =new Login();
+            fr.Show();
+        }
     }
 }

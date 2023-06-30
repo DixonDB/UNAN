@@ -236,5 +236,6 @@ namespace UNAN.FrmPlanDidactico
             GBDetalles.Visible = true;
             flowLayoutPanel1.Visible = true;
         }
+
     }
 }

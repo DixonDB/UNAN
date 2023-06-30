@@ -1,14 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics.Contracts;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Security.Principal;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 using UNAN.Datos;
@@ -90,9 +84,9 @@ namespace UNAN.Presentacion
             Bases.DiseñoDtv(ref dataProfesores);
             Bases.DiseñoDtvEliminar(ref dataProfesores);
             PanelPaginado.Visible = true;
-            dataProfesores.Columns[2].Visible = false;
-            dataProfesores.Columns[8].Visible = false;
+            dataProfesores.Columns[3].Visible = false;
             dataProfesores.Columns[9].Visible = false;
+            dataProfesores.Columns[10].Visible = false;
         }
         /// <summary>
         /// Método para insertar los registros a la base de datos.
@@ -251,10 +245,15 @@ namespace UNAN.Presentacion
                 }
 
             }
+            if (e.ColumnIndex == dataProfesores.Columns["Enviar"].Index)
+            {
+                var result = RecuperarPass(dataProfesores.SelectedCells[8].Value.ToString());
+                MessageBox.Show(result, "Recuperacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         private void EliminarProfes()
         {
-            Idprofesor = Convert.ToInt32(dataProfesores.SelectedCells[2].Value);
+            Idprofesor = Convert.ToInt32(dataProfesores.SelectedCells[3].Value);
             LProfesores parametros = new LProfesores();
             DProfesores funcion = new DProfesores();
             parametros.IdProfesores = Idprofesor;
@@ -265,33 +264,34 @@ namespace UNAN.Presentacion
         }
         private void capturaridprofesor()
         {
-            Idprofesor = Convert.ToInt32(dataProfesores.SelectedCells[2].Value);
-            usuario = dataProfesores.SelectedCells[10].Value.ToString();
+            Idprofesor = Convert.ToInt32(dataProfesores.SelectedCells[3].Value);
+            usuario = dataProfesores.SelectedCells[11].Value.ToString();
 
         }
         private void ObtenerEstado()
         {
-            Estado = dataProfesores.SelectedCells[10].Value.ToString();
+            Idprofesor = Convert.ToInt32(dataProfesores.SelectedCells[3].Value);
+            Estado = dataProfesores.SelectedCells[11].Value.ToString();
         }
         private void Obtenerdatos()
         {
             capturaridprofesor();
-            Idprofesor = Convert.ToInt32(dataProfesores.SelectedCells[2].Value);
-            Estado = dataProfesores.SelectedCells[7].Value.ToString();
+            Idprofesor = Convert.ToInt32(dataProfesores.SelectedCells[3].Value);
+            Estado = dataProfesores.SelectedCells[11].Value.ToString();
             if (Estado == "ELIMINADO")
             {
                 RestaurarP();
             }
             else
             {
-                txtNombreApellidos.Text = dataProfesores.SelectedCells[3].Value.ToString();
-                txtCorreo.Text = dataProfesores.SelectedCells[4].Value.ToString();
-                txtCelular.Text = dataProfesores.SelectedCells[5].Value.ToString();
-                txtIdentificacion.Text = dataProfesores.SelectedCells[6].Value.ToString();
-                txtUsuario.Text = dataProfesores.SelectedCells[7].Value.ToString();
-                txtContraseña.Text = Encrip.DesEncriptar(Encrip.DesEncriptar(dataProfesores.SelectedCells[8].Value.ToString()));
+                txtNombreApellidos.Text = dataProfesores.SelectedCells[4].Value.ToString();
+                txtCorreo.Text = dataProfesores.SelectedCells[5].Value.ToString();
+                txtCelular.Text = dataProfesores.SelectedCells[6].Value.ToString();
+                txtIdentificacion.Text = dataProfesores.SelectedCells[7].Value.ToString();
+                txtUsuario.Text = dataProfesores.SelectedCells[8].Value.ToString();
+                txtContraseña.Text = Encrip.DesEncriptar(Encrip.DesEncriptar(dataProfesores.SelectedCells[9].Value.ToString()));
                 Icono.BackgroundImage = null;
-                byte[] b = (byte[])(dataProfesores.SelectedCells[9].Value);
+                byte[] b = (byte[])(dataProfesores.SelectedCells[10].Value);
                 MemoryStream ms = new MemoryStream(b);
                 Icono.Image = Image.FromStream(ms);
                 PanelPaginado.Visible = false;
@@ -303,6 +303,12 @@ namespace UNAN.Presentacion
                 lblanuncioIcono.Visible = false;
                 MostrarModulos();
                 MostrarPermisos();
+                label6.Visible = false;
+                panel10.Visible = false;
+                txtContraseña.Visible = false;
+                Icono.Enabled = false;
+                label15.Visible = false;
+                label7.Visible = false;
             }
 
         }
@@ -585,7 +591,7 @@ namespace UNAN.Presentacion
         }
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            for (int i = 1; i <= 10; i++)
+            for (int i = 1; i <= 11; i++)
             {
                 Thread.Sleep(250);
                 backgroundWorker1.ReportProgress(i*10);
@@ -602,6 +608,12 @@ namespace UNAN.Presentacion
             MostrarProfessores();
             pncarga.Visible = false;
             //ReiniciarPaginado();
+        }
+
+        //Enviar Correo de recuperacion
+        public string RecuperarPass(string pass)
+        {
+            return new DRecuperacion().recoverPassword(pass);
         }
     }
 }

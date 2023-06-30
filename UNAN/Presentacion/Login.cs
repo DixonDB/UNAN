@@ -37,25 +37,18 @@ namespace UNAN.Presentacion
             dt = nprofes.Nprofes(lprofes);
             if(dt.Rows.Count > 0 )
             {
-                MessageBox.Show("Bienvenido al sistema " + dt.Rows[0][1].ToString(), "Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Information );
+                //MessageBox.Show("Bienvenido al sistema " + dt.Rows[0][1].ToString(), "Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Information );
                 idprofesor = Convert.ToInt32(dt.Rows[0][0]);
                 nombreprofe = dt.Rows[0][1].ToString();
                 Icono = (byte[])dt.Rows[0][2];
-
-
-
-                f.ShowDialog();
-
-                
-
+                f.Show();
+                this.Hide();
                 txtusuario.Clear();
                 txtpassword.Clear();
-                
             }
             else
             {
                 MessageBox.Show("Usuario o Contraseña incorrectos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             }
         }
 
