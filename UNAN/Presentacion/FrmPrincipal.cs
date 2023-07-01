@@ -112,12 +112,6 @@ namespace UNAN
         {
             
             #region funcionactual
-            
-            //pbrCarga.Visible = true;
-            //progress.Enabled = true;
-            //pbrCarga.Value = 0;
-            //conteo = 0;
-            //original
             pn12.Controls.Clear();
             UCProfes P = new UCProfes();
             P.Dock = DockStyle.Fill;

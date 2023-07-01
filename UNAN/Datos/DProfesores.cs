@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Windows.Forms;
 using UNAN.Logica;
 
@@ -266,5 +268,27 @@ namespace UNAN.Datos
             }
         }
         #endregion
+
+        //Mostrar los datos del usuario logueado para editar sus datos
+        public void MostrarDatos(int idprofesor, DataTable dt)
+        {
+            try
+            {
+                Conexion.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("MostrarUsuarioLogueado", Conexion.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@IdUsuario", idprofesor);
+                
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Conexion.cerrar();
+            }
+        }
     }
 }

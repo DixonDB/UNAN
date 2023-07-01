@@ -54,7 +54,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblNombreApellidos = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblanuncioIcono = new System.Windows.Forms.Label();
             this.txtIdentificacion = new System.Windows.Forms.TextBox();
             this.Icono = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -67,6 +66,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.dlg = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.panelRegitroP.SuspendLayout();
@@ -147,7 +147,6 @@
             this.gbDatos.Controls.Add(this.panel6);
             this.gbDatos.Controls.Add(this.lblNombreApellidos);
             this.gbDatos.Controls.Add(this.label6);
-            this.gbDatos.Controls.Add(this.lblanuncioIcono);
             this.gbDatos.Controls.Add(this.txtIdentificacion);
             this.gbDatos.Controls.Add(this.Icono);
             this.gbDatos.Controls.Add(this.label5);
@@ -258,6 +257,7 @@
             this.txtNombreApellidos.Name = "txtNombreApellidos";
             this.txtNombreApellidos.Size = new System.Drawing.Size(254, 19);
             this.txtNombreApellidos.TabIndex = 4;
+            this.txtNombreApellidos.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // label15
             // 
@@ -300,6 +300,7 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(254, 19);
             this.txtCorreo.TabIndex = 6;
+            this.txtCorreo.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // lblIdentificacion
             // 
@@ -342,6 +343,7 @@
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(254, 19);
             this.txtCelular.TabIndex = 8;
+            this.txtCelular.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // lblCorreo
             // 
@@ -384,27 +386,18 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Contraseña:";
             // 
-            // lblanuncioIcono
-            // 
-            this.lblanuncioIcono.BackColor = System.Drawing.Color.Gray;
-            this.lblanuncioIcono.ForeColor = System.Drawing.Color.Black;
-            this.lblanuncioIcono.Location = new System.Drawing.Point(577, 16);
-            this.lblanuncioIcono.Name = "lblanuncioIcono";
-            this.lblanuncioIcono.Size = new System.Drawing.Size(136, 121);
-            this.lblanuncioIcono.TabIndex = 633;
-            this.lblanuncioIcono.Text = "Agregue una foto";
-            this.lblanuncioIcono.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // txtIdentificacion
             // 
             this.txtIdentificacion.BackColor = System.Drawing.SystemColors.Control;
             this.txtIdentificacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdentificacion.Enabled = false;
             this.txtIdentificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdentificacion.Location = new System.Drawing.Point(213, 167);
             this.txtIdentificacion.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdentificacion.Name = "txtIdentificacion";
             this.txtIdentificacion.Size = new System.Drawing.Size(254, 19);
             this.txtIdentificacion.TabIndex = 10;
+            this.txtIdentificacion.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // Icono
             // 
@@ -414,6 +407,7 @@
             this.Icono.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Icono.TabIndex = 617;
             this.Icono.TabStop = false;
+            this.Icono.Click += new System.EventHandler(this.Icono_Click);
             // 
             // label5
             // 
@@ -457,12 +451,14 @@
             // 
             this.txtUsuario.BackColor = System.Drawing.SystemColors.Control;
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsuario.Enabled = false;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(213, 203);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(254, 19);
             this.txtUsuario.TabIndex = 14;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // txtContraseña
             // 
@@ -474,6 +470,7 @@
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(160, 19);
             this.txtContraseña.TabIndex = 16;
+            this.txtContraseña.TextChanged += new System.EventHandler(this.txtContraseña_TextChanged);
             // 
             // panel11
             // 
@@ -528,6 +525,11 @@
             this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Visible = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // dlg
+            // 
+            this.dlg.FileName = "dlg";
             // 
             // FrmPerfil
             // 
@@ -580,7 +582,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label lblNombreApellidos;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblanuncioIcono;
         private System.Windows.Forms.TextBox txtIdentificacion;
         private System.Windows.Forms.PictureBox Icono;
         private System.Windows.Forms.Label label5;
@@ -593,5 +594,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.OpenFileDialog dlg;
     }
 }

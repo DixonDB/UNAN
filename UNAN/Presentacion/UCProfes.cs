@@ -492,7 +492,8 @@ namespace UNAN.Presentacion
             return !(txtNombreApellidos.Text == "" || txtCorreo.Text == "" || txtIdentificacion.Text == "" ||
              txtCelular.Text == ""||txtUsuario.Text==""||txtContraseña.Text=="");
 
-        }        private void txtContraseña_TextChanged(object sender, EventArgs e)
+        }        
+        private void txtContraseña_TextChanged(object sender, EventArgs e)
         {
             string contra = txtContraseña.Text;
             Validaciones.ActualizarVisibilidadEtiquetas(contra, lblMayu, lblMin, lblNum, lblCarEsp);

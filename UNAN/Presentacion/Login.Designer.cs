@@ -85,9 +85,9 @@
             this.gbFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbFormulario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbFormulario.Location = new System.Drawing.Point(466, 37);
-            this.gbFormulario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbFormulario.Margin = new System.Windows.Forms.Padding(2);
             this.gbFormulario.Name = "gbFormulario";
-            this.gbFormulario.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbFormulario.Padding = new System.Windows.Forms.Padding(2);
             this.gbFormulario.Size = new System.Drawing.Size(464, 477);
             this.gbFormulario.TabIndex = 13;
             this.gbFormulario.TabStop = false;
@@ -97,7 +97,7 @@
             this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox6.Image = global::UNAN.Properties.Resources.Logo;
             this.pictureBox6.Location = new System.Drawing.Point(106, 355);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(286, 111);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -158,7 +158,7 @@
             // 
             this.pictureBox3.Image = global::UNAN.Properties.Resources.bloquear;
             this.pictureBox3.Location = new System.Drawing.Point(53, 199);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 38);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -169,7 +169,7 @@
             // 
             this.pictureBox5.Image = global::UNAN.Properties.Resources.usuario1;
             this.pictureBox5.Location = new System.Drawing.Point(53, 132);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(40, 34);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -182,7 +182,7 @@
             this.btnIniciarsesion.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarsesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIniciarsesion.Location = new System.Drawing.Point(160, 257);
-            this.btnIniciarsesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIniciarsesion.Margin = new System.Windows.Forms.Padding(2);
             this.btnIniciarsesion.Name = "btnIniciarsesion";
             this.btnIniciarsesion.Size = new System.Drawing.Size(170, 35);
             this.btnIniciarsesion.TabIndex = 7;
@@ -205,7 +205,7 @@
             // 
             this.txtpassword.Font = new System.Drawing.Font("Candara Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpassword.Location = new System.Drawing.Point(106, 201);
-            this.txtpassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtpassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(283, 27);
@@ -226,7 +226,7 @@
             // 
             this.txtusuario.Font = new System.Drawing.Font("Candara Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtusuario.Location = new System.Drawing.Point(110, 137);
-            this.txtusuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtusuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(282, 27);
             this.txtusuario.TabIndex = 4;
@@ -237,7 +237,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(466, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(464, 37);
             this.panel1.TabIndex = 14;
@@ -247,7 +247,7 @@
             this.btnSalir.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnSalir.Image = global::UNAN.Properties.Resources.cancel;
             this.btnSalir.Location = new System.Drawing.Point(412, 0);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(52, 37);
             this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

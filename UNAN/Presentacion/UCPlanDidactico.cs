@@ -48,7 +48,7 @@ namespace UNAN.FrmPlanDidactico
             mod.MostrarGrupos(cbGrupo, cbCarrera.Text);
             Diseñodt();
             mod.MostrarSemestre(cbSemestre);
-            txtDocente.Text = pri.lblUser.Text;
+            txtDocente.Text = Login.nombreprofe;
         }
         private void Mostrarcod()
         {
