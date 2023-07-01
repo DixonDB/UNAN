@@ -185,6 +185,7 @@ namespace UNAN.Presentacion
             Icono.Image.Save(ms, Icono.Image.RawFormat);
             parametros.Icono = ms.GetBuffer();
             Login.Icono = parametros.Icono;
+            Login.nombreprofe = parametros.NombreApellido;
             if (funcion.EditarProfesores(parametros) == true)
             {
                 MessageBox.Show("Se Edito correctamente");
