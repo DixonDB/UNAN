@@ -190,23 +190,24 @@ namespace UNAN.Datos
             {
                 Conexion.abrir();
                 SqlCommand cmd = new SqlCommand("Login", Conexion.conectar);
-                cmd.CommandType= CommandType.StoredProcedure;
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Usuario", parametros.Usuario);
                 cmd.Parameters.AddWithValue("@Password", parametros.Password);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                return dt;  
+                return dt;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw new Exception(ex.Message);
             }
-            finally { Conexion.cerrar(); }
-            
-                        
-            
+            finally
+            {
+                Conexion.cerrar();
+            }
         }
+
         public void VerificarUsuarios(ref string Indicador)
         {
             try

@@ -31,24 +31,35 @@ namespace UNAN.Presentacion
         private void Logueo()
         {
             DataTable dt = new DataTable();
-            lprofes.Usuario= txtusuario.Text;
-            lprofes.Password= Encrip.Encriptar(Encrip.Encriptar(txtpassword.Text));
+            lprofes.Usuario = txtusuario.Text;
+            lprofes.Password = Encrip.Encriptar(Encrip.Encriptar(txtpassword.Text));
 
-            dt = nprofes.Nprofes(lprofes);
-            if(dt.Rows.Count > 0 )
+            try
             {
-                //MessageBox.Show("Bienvenido al sistema " + dt.Rows[0][1].ToString(), "Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Information );
-                idprofesor = Convert.ToInt32(dt.Rows[0][0]);
-                nombreprofe = dt.Rows[0][1].ToString();
-                Icono = (byte[])dt.Rows[0][2];
-                f.Show();
-                this.Hide();
-                txtusuario.Clear();
-                txtpassword.Clear();
+                dt = nprofes.Nprofes(lprofes);
+
+                if (dt.Rows.Count > 0)
+                {
+                    idprofesor = Convert.ToInt32(dt.Rows[0][0]);
+                    nombreprofe = dt.Rows[0][1].ToString();
+                    Icono = (byte[])dt.Rows[0][2];
+                    f.Show();
+                    this.Hide();
+                    txtusuario.Clear();
+                    txtpassword.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o Contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Usuario o Contraseña incorrectos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Conexion.cerrar();
             }
         }
 
@@ -60,9 +71,6 @@ namespace UNAN.Presentacion
         private void btnIniciarsesion_Click(object sender, EventArgs e)
         {
             Logueo();
-            //frmMenu fr = new frmMenu();
-            //fr.Show();
-            //this.Hide();
         }
 
         private void btnRestablecer_Click(object sender, EventArgs e)
@@ -71,7 +79,6 @@ namespace UNAN.Presentacion
             res.Show();
             this.Hide();
         }
-     
-     
+
     }
 }

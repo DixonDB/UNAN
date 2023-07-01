@@ -62,40 +62,52 @@ namespace UNAN.Datos
                 cmd.Parameters.AddWithValue("@Dato", usuarioSolicitado);
                 SqlDataReader reader = cmd.ExecuteReader();
                 cmd.CommandType = CommandType.Text;
-                if (reader.Read() == true)
+
+                if (reader.HasRows)
                 {
-                    string nombreUsuario = reader.GetString(1);
-                    string correoUsuario = reader.GetString(2);
-                    string passUsuario = reader.GetString(6);
-                    var mailservice = new DCorreoSoporte();
-                    mailservice.enviarCorreo(
-                        subject: "KFDAsist: Solicitud de recuperación de Contraseña",
-                        body: "Hola, " + nombreUsuario + "\nUsted solicitó recuperar su contraseña.\n" +
-                        "\nSu contraseña actual es: " + Encrip.DesEncriptar(Encrip.DesEncriptar(passUsuario)) +
-                        "\n"+
-                        "\nSin embargo, le pedimos que cambie su contraseña inmediatamente una vez ingrese al sistema..."+
-                        "\n" +
-                        "\nSi no está seguro de si usted o su administrador ha realizado este restablecimiento," +
-                        " debe ponerse en contacto con su administrador inmediatamente",
-                        destinatarioCorreo: new List<string> { correoUsuario });
-                    return "Hola, " + nombreUsuario + "\nUsted solicitó recuperar su contraseña.\n" +
-                        "Por favor revise su correo: " + correoUsuario +
-                        "\nSin embargo, le pedimos que cambie su contraseña inmediatamente una vez ingrese al sistema...";
+                    reader.Read();
+                    string estadoUsuario = reader.GetString(reader.GetOrdinal("Estado"));
+                    if (estadoUsuario == "ACTIVO")
+                    {
+                        string nombreUsuario = reader.GetString(1);
+                        string correoUsuario = reader.GetString(2);
+                        string passUsuario = reader.GetString(6);
+
+                        var mailservice = new DCorreoSoporte();
+                        mailservice.enviarCorreo(
+                            subject: "KFDAsist: Solicitud de recuperación de Contraseña",
+                            body: "Hola, " + nombreUsuario + "\nUsted solicitó recuperar su contraseña.\n" +
+                            "\nSu contraseña actual es: " + Encrip.DesEncriptar(Encrip.DesEncriptar(passUsuario)) +
+                            "\n" +
+                            "\nSin embargo, le pedimos que cambie su contraseña inmediatamente una vez ingrese al sistema..." +
+                            "\n" +
+                            "\nSi no está seguro de si usted o su administrador ha realizado este restablecimiento," +
+                            " debe ponerse en contacto con su administrador inmediatamente",
+                            destinatarioCorreo: new List<string> { correoUsuario });
+
+                        return "Hola, " + nombreUsuario + "\nUsted solicitó recuperar su contraseña.\n" +
+                            "Por favor revise su correo: " + correoUsuario +
+                            "\nSin embargo, le pedimos que cambie su contraseña inmediatamente una vez ingrese al sistema...";
+                    }
+                    else
+                    {
+                        return "Este usuario no cuenta con una cuenta activa";
+                    }
                 }
                 else
                 {
-                    return "Lo sentimos, no tiene una cuenta con ese correo o nombre del usuario";
+                    return "Lo sentimos, no tiene una cuenta con ese correo o nombre de usuario";
                 }
             }
             catch (Exception ex)
             {
-                return "ERROR, Algo anda mal " + ex.Message;
+                return "ERROR, Algo anda mal: " + ex.Message;
             }
             finally
             {
                 Conexion.cerrar();
             }
-            
         }
+
     }
 }
