@@ -442,12 +442,26 @@ namespace UNAN.Presentacion
             dlg.InitialDirectory = "";
             dlg.Filter = "Imagenes|*.jpg;*.png";
             dlg.FilterIndex = 2;
-            dlg.Title = "Cargador de imagenes";
+            dlg.Title = "Seleccionar una imagen";
+            dlg.CheckFileExists = true; // Verifica si el archivo seleccionado existe
+            dlg.CheckPathExists = true; // Verifica si la ruta del archivo seleccionado existe
+
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                Icono.BackgroundImage = null;
-                Icono.Image = new Bitmap(dlg.FileName);
-                lblanuncioIcono.Visible = false;
+                // Obtener información del archivo seleccionado
+                FileInfo fileInfo = new FileInfo(dlg.FileName);
+
+                // Verificar el tamaño del archivo (en bytes)
+                if (fileInfo.Length <= 4 * 1024 * 1024) // 4 MB (4 * 1024 * 1024 bytes)
+                {
+                    Icono.BackgroundImage = null;
+                    Icono.Image = new Bitmap(dlg.FileName);
+                    lblanuncioIcono.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("El tamaño de la imagen seleccionada debe ser menor o igual a 4 MB.", "Tamaño de imagen excedido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
         private void Icono_Click(object sender, EventArgs e)
@@ -455,12 +469,26 @@ namespace UNAN.Presentacion
             dlg.InitialDirectory = "";
             dlg.Filter = "Imagenes|*.jpg;*.png";
             dlg.FilterIndex = 2;
-            dlg.Title = "Cargador de imagenes";
+            dlg.Title = "Seleccionar una imagen";
+            dlg.CheckFileExists = true; // Verifica si el archivo seleccionado existe
+            dlg.CheckPathExists = true; // Verifica si la ruta del archivo seleccionado existe
+
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                Icono.BackgroundImage = null;
-                Icono.Image = new Bitmap(dlg.FileName);
-                lblanuncioIcono.Visible = false;
+                // Obtener información del archivo seleccionado
+                FileInfo fileInfo = new FileInfo(dlg.FileName);
+
+                // Verificar el tamaño del archivo (en bytes)
+                if (fileInfo.Length <= 4 * 1024 * 1024) // 4 MB (4 * 1024 * 1024 bytes)
+                {
+                    Icono.BackgroundImage = null;
+                    Icono.Image = new Bitmap(dlg.FileName);
+                    lblanuncioIcono.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("El tamaño de la imagen seleccionada debe ser menor o igual a 4 MB.", "Tamaño de imagen excedido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
         private void InsertarPermisos()
