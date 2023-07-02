@@ -620,7 +620,7 @@ namespace UNAN.Presentacion
         }
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            for (int i = 1; i <= 11; i++)
+            for (int i = 1; i <= 10; i++)
             {
                 Thread.Sleep(250);
                 backgroundWorker1.ReportProgress(i*10);

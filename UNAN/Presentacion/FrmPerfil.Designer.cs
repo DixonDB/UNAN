@@ -251,6 +251,7 @@
             // 
             this.txtNombreApellidos.BackColor = System.Drawing.SystemColors.Control;
             this.txtNombreApellidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombreApellidos.Enabled = false;
             this.txtNombreApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreApellidos.Location = new System.Drawing.Point(213, 52);
             this.txtNombreApellidos.Margin = new System.Windows.Forms.Padding(2);
