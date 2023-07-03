@@ -7,7 +7,7 @@ namespace UNAN.Logica
         static private AES aes = new AES();
         static public string CnString;
         static string dbcnString;
-        static public string appPwdUnique = "Orus369.codigo369";
+        static public string appPwdUnique = "UNAN.Asistencia";
         public static object checkServer()
         {
             XmlDocument doc = new XmlDocument();
@@ -17,5 +17,7 @@ namespace UNAN.Logica
             CnString = (aes.Decrypt(dbcnString, appPwdUnique, int.Parse("256")));
             return CnString;
         }
+
+
     }
 }

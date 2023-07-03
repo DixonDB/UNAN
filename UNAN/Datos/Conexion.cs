@@ -10,8 +10,8 @@ namespace UNAN.Datos
     public class Conexion
     {
         public static string conexion = @"Data source=localhost\MSSQLSERVER01; Initial Catalog=UNAN; Integrated Security = True";
-        //@"Data source=DESKTOP-MHSIP3Q; Initial Catalog=UNAN; Integrated Security = True";
-                                        //Convert.ToString(Logica.Desencryptacion.checkServer());
+        ////@"Data source=DESKTOP-MHSIP3Q; Initial Catalog=UNAN; Integrated Security = True";
+        //Convert.ToString(Logica.Desencryptacion.checkServer());
         public static SqlConnection conectar = new SqlConnection(conexion);
         public static void abrir()
         {

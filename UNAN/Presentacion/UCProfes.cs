@@ -7,6 +7,7 @@ using System.Threading;
 using System.Windows.Forms;
 using UNAN.Datos;
 using UNAN.Logica;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace UNAN.Presentacion
 {
@@ -216,6 +217,10 @@ namespace UNAN.Presentacion
         }
         private void UCProfesores_Load(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtbuscador.Text))
+            {
+                ReiniciarPaginado();
+            }
             carga();
             ReiniciarPaginado();
            // MostrarProfessores();
@@ -643,6 +648,29 @@ namespace UNAN.Presentacion
         public string RecuperarPass(string pass)
         {
             return new DRecuperacion().recoverPassword(pass);
+        }
+
+        private void txtbuscador_TextChanged(object sender, EventArgs e)
+        {
+            
+            Buscador();
+            
+                
+        }
+        private void Buscador()
+        {
+            DataTable dt = new DataTable();
+            DProfesores funcion = new DProfesores();
+            funcion.BuscarProfesores(ref dt, desde, hasta, txtbuscador.Text);
+            dataProfesores.DataSource= dt;
+            DiseñarDtvProfes();
+            
+        }
+
+        private void btnMostrarTodos_Click(object sender, EventArgs e)
+        {
+            ReiniciarPaginado();
+            MostrarProfessores();
         }
     }
 }
