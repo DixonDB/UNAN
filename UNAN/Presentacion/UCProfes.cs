@@ -57,7 +57,6 @@ namespace UNAN.Presentacion
             btnActualizar.Visible = false;
             this.Limpiar();
             PanelPaginado.Visible = false;
-            MostrarModulos();
             string contraseñaGenerada = Validaciones.GenerarContraseñaAleatoria();
             txtContraseña.Text = contraseñaGenerada;
             Validaciones.ActualizarVisibilidadEtiquetas(contraseñaGenerada, lblMayu, lblMin, lblNum, lblCarEsp);
@@ -107,37 +106,10 @@ namespace UNAN.Presentacion
             parametros.Icono = ms.GetBuffer();
             if (funcion.InsertarProfesores(parametros) == true)
             {
-                InsertarPermisos();
                 ObtenerIdProfesor();
                 MostrarProfessores();
                 panelRegitroP.Visible = false;
 
-            }
-        }
-        private void MostrarModulos()
-        {
-            DModulos funcion = new DModulos();
-            DataTable dt = new DataTable();
-            funcion.mostrar_Modulos(ref dt);
-            datalistadoModulos.DataSource = dt;
-            datalistadoModulos.Columns[1].Visible = false;
-        }
-        private void MostrarPermisos()
-        {
-            DataTable dt = new DataTable();
-            DPermisos funcion = new DPermisos();
-            Lpermisos parametros = new Lpermisos();
-            foreach (DataRow rowPermisos in dt.Rows)
-            {
-                int idmoduloPermisos = Convert.ToInt32(rowPermisos["IdModulo"]);
-                foreach (DataGridViewRow rowModulos in datalistadoModulos.Rows)
-                {
-                    int Idmodulo = Convert.ToInt32(rowModulos.Cells["IdModulo"].Value);
-                    if (idmoduloPermisos == Idmodulo)
-                    {
-                        rowModulos.Cells[0].Value = true;
-                    }
-                }
             }
         }
         private void ObtenerIdProfesor()
@@ -217,10 +189,6 @@ namespace UNAN.Presentacion
         }
         private void UCProfesores_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtbuscador.Text))
-            {
-                ReiniciarPaginado();
-            }
             carga();
             ReiniciarPaginado();
            // MostrarProfessores();
@@ -306,8 +274,6 @@ namespace UNAN.Presentacion
                 btnGuardar.Visible = false;
                 btnActualizar.Visible = true;
                 lblanuncioIcono.Visible = false;
-                MostrarModulos();
-                MostrarPermisos();
                 label6.Visible = false;
                 panel10.Visible = false;
                 txtContraseña.Visible = false;
@@ -496,24 +462,6 @@ namespace UNAN.Presentacion
                 }
             }
         }
-        private void InsertarPermisos()
-        {
-            foreach (DataGridViewRow row in datalistadoModulos.Rows)
-            {
-                int Idmodulo = Convert.ToInt32(row.Cells["IdModulo"].Value);
-                bool marcado = Convert.ToBoolean(row.Cells["Marcar"].Value);
-                if (marcado == true)
-                {
-                    Lpermisos parametros = new Lpermisos();
-                    DPermisos funcion = new DPermisos();
-                    parametros.IdModulo = Idmodulo;
-                    parametros.IdProfesor = Idprofesor;
-                    funcion.Insertar_Permisos(parametros);
-                }
-            }
-            MostrarProfessores();
-            panelRegitroP.Visible = false;
-        }
         //Metodos de validación
         private bool validar()
         {
@@ -652,10 +600,7 @@ namespace UNAN.Presentacion
 
         private void txtbuscador_TextChanged(object sender, EventArgs e)
         {
-            
-            Buscador();
-            
-                
+            Buscador();     
         }
         private void Buscador()
         {
