@@ -495,7 +495,7 @@ namespace UNAN.Presentacion
         }
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
-            var textBox = (TextBox)sender;
+            var textBox = (System.Windows.Forms.TextBox)sender;
 
             if (textBox == txtIdentificacion)
             {
