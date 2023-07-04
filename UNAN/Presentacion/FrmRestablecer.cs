@@ -41,7 +41,6 @@ namespace UNAN.Presentacion
         {
             conteo += 10;
             lblProgress.Text = conteo.ToString() + " %";
-
             if (conteo >= 50)
             {
                 lblProgress.BackColor = Color.FromArgb(6, 176, 37);

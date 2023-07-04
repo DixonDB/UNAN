@@ -108,6 +108,63 @@ namespace UNAN.Datos
                 Conexion.cerrar();
             }
         }
+        public string NotificacionCambio(string usuarioSolicitado)
+        {
+            try
+            {
+                Conexion.abrir();
+                SqlCommand cmd = new SqlCommand("Correo", Conexion.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Dato", usuarioSolicitado);
+                SqlDataReader reader = cmd.ExecuteReader();
+                cmd.CommandType = CommandType.Text;
+
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    string estadoUsuario = reader.GetString(reader.GetOrdinal("Estado"));
+                    if (estadoUsuario == "ACTIVO")
+                    {
+                        string nombreUsuario = reader.GetString(1);
+                        string correoUsuario = reader.GetString(2);
+                        string passUsuario = reader.GetString(6);
+
+                        var mailservice = new DCorreoSoporte();
+                        mailservice.enviarCorreo(
+                            subject: "KFDAsist: Notificación de seguridad",
+                            body: "Hola, estimado/a " + nombreUsuario + "\nLos datos de su cuenta en KFDAsist ha cambiado recientemente.\n" +
+                            "\nLe informamos que se ha hecho un cambio en su cuenta, si usted realizó dicho cambio ignore este correo," +
+                            "\nPero si usted no ha realizado ningún cambio en su cuenta," +
+                            "\n" +
+                            "\nLe pedimos que cambie su contraseña inmediatamente una vez ingrese al sistema..." +
+                            "\n" +
+                            "\nSi no está seguro de si usted o su administrador ha realizado este cambio," +
+                            " debe ponerse en contacto con su administrador inmediatamente",
+                            destinatarioCorreo: new List<string> { correoUsuario });
+
+                        return "Hola, " + nombreUsuario + "\nUsted solicitó recuperar su contraseña.\n" +
+                            "Por favor revise su correo: " + correoUsuario +
+                            "\nSin embargo, le pedimos que cambie su contraseña inmediatamente una vez ingrese al sistema...";
+                    }
+                    else
+                    {
+                        return "Este usuario no cuenta con una cuenta activa";
+                    }
+                }
+                else
+                {
+                    return "Lo sentimos, no tiene una cuenta con ese correo o nombre de usuario";
+                }
+            }
+            catch (Exception ex)
+            {
+                return "ERROR, Algo anda mal: " + ex.Message;
+            }
+            finally
+            {
+                Conexion.cerrar();
+            }
+        }
 
     }
 }

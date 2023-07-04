@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panelRegitroP = new System.Windows.Forms.Panel();
+            this.lblProgress = new System.Windows.Forms.Label();
             this.gbDatos = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.lblCarEsp = new System.Windows.Forms.Label();
@@ -66,7 +68,9 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.pbrInicio = new System.Windows.Forms.ProgressBar();
             this.dlg = new System.Windows.Forms.OpenFileDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.panelRegitroP.SuspendLayout();
@@ -114,8 +118,10 @@
             // panelRegitroP
             // 
             this.panelRegitroP.BackColor = System.Drawing.SystemColors.Control;
+            this.panelRegitroP.Controls.Add(this.lblProgress);
             this.panelRegitroP.Controls.Add(this.gbDatos);
             this.panelRegitroP.Controls.Add(this.flowLayoutPanel1);
+            this.panelRegitroP.Controls.Add(this.pbrInicio);
             this.panelRegitroP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRegitroP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelRegitroP.Location = new System.Drawing.Point(0, 37);
@@ -123,6 +129,18 @@
             this.panelRegitroP.Name = "panelRegitroP";
             this.panelRegitroP.Size = new System.Drawing.Size(764, 449);
             this.panelRegitroP.TabIndex = 10;
+            // 
+            // lblProgress
+            // 
+            this.lblProgress.AutoSize = true;
+            this.lblProgress.BackColor = System.Drawing.Color.Transparent;
+            this.lblProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProgress.Location = new System.Drawing.Point(344, 350);
+            this.lblProgress.Name = "lblProgress";
+            this.lblProgress.Size = new System.Drawing.Size(15, 13);
+            this.lblProgress.TabIndex = 647;
+            this.lblProgress.Text = "--";
+            this.lblProgress.Visible = false;
             // 
             // gbDatos
             // 
@@ -251,7 +269,6 @@
             // 
             this.txtNombreApellidos.BackColor = System.Drawing.SystemColors.Control;
             this.txtNombreApellidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombreApellidos.Enabled = false;
             this.txtNombreApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreApellidos.Location = new System.Drawing.Point(213, 52);
             this.txtNombreApellidos.Margin = new System.Windows.Forms.Padding(2);
@@ -391,7 +408,6 @@
             // 
             this.txtIdentificacion.BackColor = System.Drawing.SystemColors.Control;
             this.txtIdentificacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIdentificacion.Enabled = false;
             this.txtIdentificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdentificacion.Location = new System.Drawing.Point(213, 167);
             this.txtIdentificacion.Margin = new System.Windows.Forms.Padding(2);
@@ -452,7 +468,6 @@
             // 
             this.txtUsuario.BackColor = System.Drawing.SystemColors.Control;
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsuario.Enabled = false;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(213, 203);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
@@ -486,7 +501,7 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnEditar);
             this.flowLayoutPanel1.Controls.Add(this.btnActualizar);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(248, 366);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(251, 383);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
@@ -528,9 +543,22 @@
             this.btnActualizar.Visible = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
+            // pbrInicio
+            // 
+            this.pbrInicio.Location = new System.Drawing.Point(232, 346);
+            this.pbrInicio.Name = "pbrInicio";
+            this.pbrInicio.Size = new System.Drawing.Size(254, 23);
+            this.pbrInicio.TabIndex = 646;
+            this.pbrInicio.Visible = false;
+            // 
             // dlg
             // 
             this.dlg.FileName = "dlg";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FrmPerfil
             // 
@@ -547,6 +575,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
             this.panelRegitroP.ResumeLayout(false);
+            this.panelRegitroP.PerformLayout();
             this.gbDatos.ResumeLayout(false);
             this.gbDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Icono)).EndInit();
@@ -596,5 +625,8 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.OpenFileDialog dlg;
+        private System.Windows.Forms.Label lblProgress;
+        private System.Windows.Forms.ProgressBar pbrInicio;
+        private System.Windows.Forms.Timer timer1;
     }
 }

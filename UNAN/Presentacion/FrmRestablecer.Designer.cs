@@ -162,7 +162,7 @@
             this.lblProgress.AutoSize = true;
             this.lblProgress.BackColor = System.Drawing.Color.Transparent;
             this.lblProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProgress.Location = new System.Drawing.Point(384, 364);
+            this.lblProgress.Location = new System.Drawing.Point(370, 363);
             this.lblProgress.Name = "lblProgress";
             this.lblProgress.Size = new System.Drawing.Size(15, 13);
             this.lblProgress.TabIndex = 14;
@@ -171,6 +171,7 @@
             // 
             // pbrInicio
             // 
+            this.pbrInicio.BackColor = System.Drawing.Color.Red;
             this.pbrInicio.Location = new System.Drawing.Point(272, 358);
             this.pbrInicio.Name = "pbrInicio";
             this.pbrInicio.Size = new System.Drawing.Size(254, 23);
@@ -179,6 +180,7 @@
             // 
             // timer1
             // 
+            this.timer1.Interval = 800;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FrmRestablecer

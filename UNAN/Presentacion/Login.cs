@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using UNAN.Logica;
 using UNAN.Datos;
-using UNAN.Presentacion;
-using System.IO;
+using UNAN.Logica;
 
 namespace UNAN.Presentacion
 {
@@ -22,6 +13,7 @@ namespace UNAN.Presentacion
         public static string nombreprofe;
         public static byte[] Icono;
         public static int idprofesor;
+        public static string correo;
         frmMenu f = new frmMenu();
 
         public Login()
@@ -33,7 +25,7 @@ namespace UNAN.Presentacion
             DataTable dt = new DataTable();
             lprofes.Usuario = txtusuario.Text;
             lprofes.Password = Encrip.Encriptar(Encrip.Encriptar(txtpassword.Text));
-
+            
             try
             {
                 dt = nprofes.Nprofes(lprofes);
@@ -43,6 +35,7 @@ namespace UNAN.Presentacion
                     idprofesor = Convert.ToInt32(dt.Rows[0][0]);
                     nombreprofe = dt.Rows[0][1].ToString();
                     Icono = (byte[])dt.Rows[0][2];
+                    correo = dt.Rows[0][5].ToString();
                     f.Show();
                     this.Hide();
                     txtusuario.Clear();

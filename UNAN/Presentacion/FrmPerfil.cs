@@ -16,10 +16,13 @@ namespace UNAN.Presentacion
     {
         private bool labelsVerdes = false;
         int id;
+        private int conteo;
+        string correo = Login.correo;
         public FrmPerfil()
         {
             InitializeComponent();
             MostrarDatos();
+            conteo = 0;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -41,7 +44,6 @@ namespace UNAN.Presentacion
             DProfesores profe = new DProfesores();
             DataTable dt = new DataTable();
             profe.MostrarDatos(id, dt);
-
             if (dt.Rows.Count > 0)
             {
                 DataRow row = dt.Rows[0];
@@ -111,7 +113,7 @@ namespace UNAN.Presentacion
             if (textBox == txtNombreApellidos)
             {
                 lblNombreApellidos.ForeColor = string.IsNullOrEmpty(txtNombreApellidos.Text) ? Color.Red : Color.Green;
-                txtUsuario.Text = Validaciones.GenerarUsuario(txtNombreApellidos.Text);
+                //txtUsuario.Text = Validaciones.GenerarUsuario(txtNombreApellidos.Text);
 
                 // Actualizar los colores de los labels y validar si todos están en verde
                 labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
@@ -162,7 +164,12 @@ namespace UNAN.Presentacion
         {
             if (validar())
             {
-                editarProfes();
+                lblProgress.Visible = true;
+                pbrInicio.Visible = true;
+                lblProgress.BringToFront();
+                timer1.Enabled = true;
+                pbrInicio.Value = 0;
+                conteo = 0;
             }
             else
             {
@@ -219,6 +226,37 @@ namespace UNAN.Presentacion
                 {
                     MessageBox.Show("El tamaño de la imagen seleccionada debe ser menor o igual a 4 MB.", "Tamaño de imagen excedido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+            }
+        }
+        public string CorreoCambio(string correo)
+        {
+            return new DRecuperacion().NotificacionCambio(correo);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            conteo += 10;
+            lblProgress.Text = conteo.ToString() + " %";
+
+            if (conteo >= 50)
+            {
+                lblProgress.BackColor = Color.FromArgb(6, 176, 37);
+            }
+            else
+            {
+                lblProgress.BackColor = Color.White;
+            }
+
+            if (pbrInicio.Value < 100)
+            {
+                pbrInicio.Value += 10;
+            }
+
+            if (pbrInicio.Value == 100)
+            {
+                timer1.Enabled = false;
+                var result = CorreoCambio(correo.ToString());
+                editarProfes();
             }
         }
     }

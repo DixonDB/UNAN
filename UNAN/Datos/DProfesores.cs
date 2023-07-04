@@ -207,47 +207,7 @@ namespace UNAN.Datos
                 Conexion.cerrar();
             }
         }
-
-        public void VerificarUsuarios(ref string Indicador)
-        {
-            try
-            {
-                int Iduser;
-                Conexion.abrir();
-                SqlCommand da = new SqlCommand("Select IdProfesor From Profesores", Conexion.conectar);
-                Iduser = Convert.ToInt32(da.ExecuteScalar());
-                Conexion.cerrar();
-                Indicador = "Correcto";
-            }
-            catch (Exception)
-            {
-
-                Indicador = "Incorrecto";
-            }
-        }
-        public void validarUsuario(LProfesores parametros, ref int id)
-        {
-            try
-            {
-                Conexion.abrir();
-                SqlCommand cmd = new SqlCommand("validar_usuario", Conexion.conectar);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Password", parametros.Password);
-                cmd.Parameters.AddWithValue("@Usuario", parametros.Usuario);
-                id = Convert.ToInt32(cmd.ExecuteScalar());
-
-
-            }
-            catch (Exception ex)
-            {
-                id = 0;
-
-            }
-            finally
-            {
-                Conexion.cerrar();
-            }
-        }
+        
         public void ObtenerIdProfesor(ref int Idprofesor, string Usuario)
         {
             try
