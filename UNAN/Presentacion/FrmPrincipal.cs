@@ -30,7 +30,7 @@ namespace UNAN
 
         private void reloj_Tick(object sender, EventArgs e)
         {
-           lblReloj.Text = DateTime.Now.ToString("hh:mm:ss");
+           lblReloj.Text = DateTime.Now.ToString("hh:mm tt");
         }
 
         private void frmMenu_Load(object sender, EventArgs e)
@@ -41,6 +41,23 @@ namespace UNAN
             byte[] b = (byte[])(Login.Icono);
             MemoryStream ms = new MemoryStream(b);
             pbUser.Image = Image.FromStream(ms);
+            lbltUsuario.Text = Login.Tusuario;
+            Permisos();
+        }
+
+
+        private void Permisos()
+        {
+            if (lbltUsuario.Text == "Administrativo")
+            {
+                btnAsistencia.Enabled = false;
+            }
+            if (lbltUsuario.Text == "Profesor")
+            {
+                btnAsistencia.Enabled = true;
+                btnProfesores.Enabled= false;
+                btnRestaurarBD.Enabled = false;
+            }
         }
 
         private void btnRestaurarBD_Click(object sender, EventArgs e)

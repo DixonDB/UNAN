@@ -55,7 +55,7 @@
             this.Enviar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelRegitroP = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbTUsuario = new System.Windows.Forms.ComboBox();
             this.lblCarEsp = new System.Windows.Forms.Label();
             this.lblNum = new System.Windows.Forms.Label();
             this.lblMin = new System.Windows.Forms.Label();
@@ -442,7 +442,7 @@
             // 
             this.panelRegitroP.BackColor = System.Drawing.SystemColors.Control;
             this.panelRegitroP.Controls.Add(this.label8);
-            this.panelRegitroP.Controls.Add(this.comboBox1);
+            this.panelRegitroP.Controls.Add(this.cbTUsuario);
             this.panelRegitroP.Controls.Add(this.lblCarEsp);
             this.panelRegitroP.Controls.Add(this.lblNum);
             this.panelRegitroP.Controls.Add(this.lblMin);
@@ -494,18 +494,20 @@
             this.label8.TabIndex = 648;
             this.label8.Text = "Tipo de usuario:";
             // 
-            // comboBox1
+            // cbTUsuario
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbTUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTUsuario.FormattingEnabled = true;
+            this.cbTUsuario.Items.AddRange(new object[] {
+            "Administrador",
             "Administrativo",
+            "Secretaria",
             "Profesor",
             "Jefe de Departamento"});
-            this.comboBox1.Location = new System.Drawing.Point(496, 460);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(320, 45);
-            this.comboBox1.TabIndex = 647;
+            this.cbTUsuario.Location = new System.Drawing.Point(496, 460);
+            this.cbTUsuario.Name = "cbTUsuario";
+            this.cbTUsuario.Size = new System.Drawing.Size(320, 45);
+            this.cbTUsuario.TabIndex = 647;
             // 
             // lblCarEsp
             // 
@@ -1077,6 +1079,6 @@
         private System.Windows.Forms.DataGridViewImageColumn Enviar;
         private System.Windows.Forms.Button btnMostrarTodos;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbTUsuario;
     }
 }

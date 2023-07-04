@@ -14,6 +14,7 @@ namespace UNAN.Presentacion
         public static byte[] Icono;
         public static int idprofesor;
         public static string correo;
+        public static string Tusuario;
         frmMenu f = new frmMenu();
 
         public Login()
@@ -36,6 +37,7 @@ namespace UNAN.Presentacion
                     nombreprofe = dt.Rows[0][1].ToString();
                     Icono = (byte[])dt.Rows[0][2];
                     correo = dt.Rows[0][5].ToString();
+                    Tusuario= dt.Rows[0][6].ToString();
                     f.Show();
                     this.Hide();
                     txtusuario.Clear();

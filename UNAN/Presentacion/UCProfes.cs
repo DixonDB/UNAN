@@ -86,7 +86,7 @@ namespace UNAN.Presentacion
             PanelPaginado.Visible = true;
             dataProfesores.Columns[3].Visible = false;
             dataProfesores.Columns[9].Visible = false;
-            dataProfesores.Columns[10].Visible = false;
+            dataProfesores.Columns[11].Visible = false;
         }
         /// <summary>
         /// Método para insertar los registros a la base de datos.
@@ -101,6 +101,7 @@ namespace UNAN.Presentacion
             parametros.CarnetP = txtIdentificacion.Text;
             parametros.Usuario = txtUsuario.Text;
             parametros.Password = Encrip.Encriptar(Encrip.Encriptar(txtContraseña.Text));
+            parametros.TUsuario= cbTUsuario.Text;
             MemoryStream ms = new MemoryStream();
             Icono.Image.Save(ms, Icono.Image.RawFormat);
             parametros.Icono = ms.GetBuffer();
@@ -244,13 +245,13 @@ namespace UNAN.Presentacion
         private void ObtenerEstado()
         {
             Idprofesor = Convert.ToInt32(dataProfesores.SelectedCells[3].Value);
-            Estado = dataProfesores.SelectedCells[11].Value.ToString();
+            Estado = dataProfesores.SelectedCells[12].Value.ToString();
         }
         private void Obtenerdatos()
         {
             capturaridprofesor();
             Idprofesor = Convert.ToInt32(dataProfesores.SelectedCells[3].Value);
-            Estado = dataProfesores.SelectedCells[11].Value.ToString();
+            Estado = dataProfesores.SelectedCells[12].Value.ToString();
             if (Estado == "ELIMINADO")
             {
                 RestaurarP();
@@ -263,8 +264,17 @@ namespace UNAN.Presentacion
                 txtIdentificacion.Text = dataProfesores.SelectedCells[7].Value.ToString();
                 txtUsuario.Text = dataProfesores.SelectedCells[8].Value.ToString();
                 txtContraseña.Text = Encrip.DesEncriptar(Encrip.DesEncriptar(dataProfesores.SelectedCells[9].Value.ToString()));
+                cbTUsuario.Text= dataProfesores.SelectedCells[10].Value.ToString();
+                if (cbTUsuario.Text == "Administrador")
+                {
+                    cbTUsuario.Enabled = false;
+                }
+                else
+                {
+                    cbTUsuario .Enabled = true;
+                }
                 Icono.BackgroundImage = null;
-                byte[] b = (byte[])(dataProfesores.SelectedCells[10].Value);
+                byte[] b = (byte[])(dataProfesores.SelectedCells[11].Value);
                 MemoryStream ms = new MemoryStream(b);
                 Icono.Image = Image.FromStream(ms);
                 PanelPaginado.Visible = false;
@@ -328,7 +338,8 @@ namespace UNAN.Presentacion
             parametros.CelularP = Convert.ToInt32(txtCelular.Text);
             parametros.CarnetP = txtIdentificacion.Text;
             parametros.Usuario = txtUsuario.Text;
-            parametros.Password = Encrip.Encriptar(Encrip.Encriptar(txtContraseña.Text));
+            parametros.Password = Encrip.Encriptar(Encrip.Encriptar(txtContraseña.Text));            
+            parametros.TUsuario = cbTUsuario.Text;
             MemoryStream ms = new MemoryStream();
             Icono.Image.Save(ms, Icono.Image.RawFormat);
             parametros.Icono = ms.GetBuffer();

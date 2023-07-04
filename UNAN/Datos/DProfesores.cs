@@ -23,6 +23,7 @@ namespace UNAN.Datos
                 cmd.Parameters.AddWithValue("@CarnetP", parametros.CarnetP);
                 cmd.Parameters.AddWithValue("@Usuario", parametros.Usuario);
                 cmd.Parameters.AddWithValue("@Password", parametros.Password);
+                cmd.Parameters.AddWithValue("@Tusuario", parametros.TUsuario);
                 cmd.Parameters.AddWithValue("@Icono", parametros.Icono);
                 cmd.ExecuteNonQuery();
                 return true;
@@ -52,6 +53,7 @@ namespace UNAN.Datos
                 cmd.Parameters.AddWithValue("@CarnetP", parametros.CarnetP);
                 cmd.Parameters.AddWithValue("@Usuario", parametros.Usuario);
                 cmd.Parameters.AddWithValue("@Password", parametros.Password);
+                cmd.Parameters.AddWithValue("@Tusuario", parametros.TUsuario);
                 cmd.Parameters.AddWithValue("@Icono", parametros.Icono);
                 cmd.ExecuteNonQuery();
                 return true;

@@ -9,6 +9,7 @@
         public string CarnetP { get; set; }
         public string Usuario { get; set; }
         public string Password { get; set; }
+        public string TUsuario { get; set; }
         public byte[] Icono { get; set; }
         public string Estado { get; set; }
     }
