@@ -57,6 +57,7 @@ namespace UNAN.Presentacion
                 byte[] b = (byte[])(row["Icono"]);
                 MemoryStream ms = new MemoryStream(b);
                 Icono.Image = Image.FromStream(ms);
+                lblTUsuario.Text = row["TUsuario"].ToString();
                 //Si no funciona probar este
                 /*Icono.BackgroundImage = null;
                 byte[] b = (byte[])(Login.Icono);
@@ -191,6 +192,7 @@ namespace UNAN.Presentacion
             MemoryStream ms = new MemoryStream();
             Icono.Image.Save(ms, Icono.Image.RawFormat);
             parametros.Icono = ms.GetBuffer();
+            parametros.TUsuario = lblTUsuario.Text;
             Login.Icono = parametros.Icono;
             Login.nombreprofe = parametros.NombreApellido;
             if (funcion.EditarProfesores(parametros) == true)

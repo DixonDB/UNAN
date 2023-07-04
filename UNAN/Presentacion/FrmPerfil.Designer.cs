@@ -71,6 +71,8 @@
             this.pbrInicio = new System.Windows.Forms.ProgressBar();
             this.dlg = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblTUsuario = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.panelRegitroP.SuspendLayout();
@@ -144,6 +146,8 @@
             // 
             // gbDatos
             // 
+            this.gbDatos.Controls.Add(this.lblTUsuario);
+            this.gbDatos.Controls.Add(this.label9);
             this.gbDatos.Controls.Add(this.label8);
             this.gbDatos.Controls.Add(this.lblCarEsp);
             this.gbDatos.Controls.Add(this.label2);
@@ -560,6 +564,31 @@
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(572, 162);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(121, 20);
+            this.label9.TabIndex = 649;
+            this.label9.Text = "Tipo de usuario:";
+            // 
+            // lblTUsuario
+            // 
+            this.lblTUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblTUsuario.Enabled = false;
+            this.lblTUsuario.FlatAppearance.BorderSize = 0;
+            this.lblTUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTUsuario.ForeColor = System.Drawing.Color.Black;
+            this.lblTUsuario.Location = new System.Drawing.Point(555, 186);
+            this.lblTUsuario.Name = "lblTUsuario";
+            this.lblTUsuario.Size = new System.Drawing.Size(157, 37);
+            this.lblTUsuario.TabIndex = 650;
+            this.lblTUsuario.Text = "--";
+            this.lblTUsuario.UseVisualStyleBackColor = false;
+            // 
             // FrmPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -628,5 +657,7 @@
         private System.Windows.Forms.Label lblProgress;
         private System.Windows.Forms.ProgressBar pbrInicio;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button lblTUsuario;
     }
 }

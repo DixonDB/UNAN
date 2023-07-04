@@ -345,10 +345,10 @@ namespace UNAN.Presentacion
             parametros.Icono = ms.GetBuffer();
             if (funcion.EditarProfesores(parametros) == true)
             {
+                MessageBox.Show("Se Edito correctamente");
                 MostrarProfessores();
                 panelRegitroP.Visible = false;
             }
-            MessageBox.Show("Se Edito correctamente");
         }
         private void btnVolverPersonal_Click(object sender, EventArgs e)
         {

@@ -50,13 +50,13 @@ namespace UNAN
         {
             if (lbltUsuario.Text == "Administrativo")
             {
-                btnAsistencia.Enabled = false;
+                btnAsistencia.Enabled = true;
             }
             if (lbltUsuario.Text == "Profesor")
             {
-                btnAsistencia.Enabled = true;
-                btnProfesores.Enabled= false;
-                btnRestaurarBD.Enabled = false;
+                btnAsistencia.Visible = true;
+                btnProfesores.Visible= false;
+                btnRestaurarBD.Visible = false;
             }
         }
 
