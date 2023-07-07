@@ -19,6 +19,7 @@ namespace UNAN.FrmPlanDidactico
         DCarreras carreras = new DCarreras();
         DModalidades mod=new DModalidades();
         DAsignatura asig = new DAsignatura();
+        DAprendizaje da=new DAprendizaje();
         frmMenu pri=new frmMenu();
         public UCPlanDidactico()
         {
@@ -39,7 +40,16 @@ namespace UNAN.FrmPlanDidactico
             carrera.ShowDialog();
             carreras.MostrarCarrera(cbCarrera,cbModalidad.Text);
         }
+        private void MostrarAprendizaje()
+        {
+            DAprendizaje funcion = new DAprendizaje();
+            funcion.MostrarEstrategiaEvaluacion(cbEstrEvaluacion);
 
+          
+            funcion.MostrarFormaEvaluacion(cbFormaEvaluacion);
+
+            funcion.MostrarEstrategiaAprendizaje(cbEnseApren);
+        }
         private void UCPlanDidactico_Load(object sender, EventArgs e)
         {
             carreras.MostrarCarrera(cbCarrera, cbModalidad.Text);
@@ -49,6 +59,7 @@ namespace UNAN.FrmPlanDidactico
             Diseñodt();
             mod.MostrarSemestre(cbSemestre);
             txtDocente.Text = Login.nombreprofe;
+            MostrarAprendizaje();
         }
         private void Mostrarcod()
         {

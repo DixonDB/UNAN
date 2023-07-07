@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\Conexion.cs" />
+    <Compile Include="Datos\DAprendizaje.cs" />
     <Compile Include="Datos\DAsignatura.cs" />
     <Compile Include="Datos\DCarreras.cs" />
     <Compile Include="Datos\DCorreoSoporte.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Logica\Desencryptacion.cs" />
     <Compile Include="Logica\Encrip.cs" />
     <Compile Include="Logica\Encryptacion.cs" />
+    <Compile Include="Logica\LAprendizaje.cs" />
     <Compile Include="Logica\LAsignatura.cs" />
     <Compile Include="Logica\LCarreras.cs" />
     <Compile Include="Logica\LModalidad.cs" />
