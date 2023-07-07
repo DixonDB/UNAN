@@ -23,6 +23,7 @@ namespace UNAN.Logica
             cabecera.ForeColor = Color.White;
             cabecera.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             Listado.ColumnHeadersDefaultCellStyle = cabecera;
+            Listado.DefaultCellStyle.Font=new Font("Microsoft Sans Serif",10,FontStyle.Regular);
         }
         public static void DiseñoDtvEliminar(ref DataGridView Listado)
         {

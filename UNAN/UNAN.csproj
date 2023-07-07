@@ -196,7 +196,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="UNAN.bak" />
+    <None Include="UNAN2.bak" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\usuario.png" />

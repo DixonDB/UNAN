@@ -84,9 +84,9 @@ namespace UNAN.Presentacion
             Bases.DiseñoDtv(ref dataProfesores);
             Bases.DiseñoDtvEliminar(ref dataProfesores);
             PanelPaginado.Visible = true;
-            dataProfesores.Columns[3].Visible = false;
-            dataProfesores.Columns[9].Visible = false;
-            dataProfesores.Columns[11].Visible = false;
+            dataProfesores.Columns[6].Visible = false;
+            dataProfesores.Columns[12].Visible = false;
+            dataProfesores.Columns[14].Visible = false;
         }
         /// <summary>
         /// Método para insertar los registros a la base de datos.
@@ -221,13 +221,13 @@ namespace UNAN.Presentacion
             }
             if (e.ColumnIndex == dataProfesores.Columns["Enviar"].Index)
             {
-                var result = RecuperarPass(dataProfesores.SelectedCells[8].Value.ToString());
+                var result = RecuperarPass(dataProfesores.SelectedCells[11].Value.ToString());
                 MessageBox.Show(result, "Recuperacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private void EliminarProfes()
         {
-            Idprofesor = Convert.ToInt32(dataProfesores.SelectedCells[3].Value);
+            Idprofesor = Convert.ToInt32(dataProfesores.SelectedCells[6].Value);
             LProfesores parametros = new LProfesores();
             DProfesores funcion = new DProfesores();
             parametros.IdProfesores = Idprofesor;
@@ -238,33 +238,33 @@ namespace UNAN.Presentacion
         }
         private void capturaridprofesor()
         {
-            Idprofesor = Convert.ToInt32(dataProfesores.SelectedCells[3].Value);
-            usuario = dataProfesores.SelectedCells[11].Value.ToString();
+            Idprofesor = Convert.ToInt32(dataProfesores.SelectedCells[6].Value);
+            usuario = dataProfesores.SelectedCells[14].Value.ToString();
 
         }
         private void ObtenerEstado()
         {
-            Idprofesor = Convert.ToInt32(dataProfesores.SelectedCells[3].Value);
-            Estado = dataProfesores.SelectedCells[12].Value.ToString();
+            Idprofesor = Convert.ToInt32(dataProfesores.SelectedCells[6].Value);
+            Estado = dataProfesores.SelectedCells[15].Value.ToString();
         }
         private void Obtenerdatos()
         {
             capturaridprofesor();
-            Idprofesor = Convert.ToInt32(dataProfesores.SelectedCells[3].Value);
-            Estado = dataProfesores.SelectedCells[12].Value.ToString();
+            Idprofesor = Convert.ToInt32(dataProfesores.SelectedCells[6].Value);
+            Estado = dataProfesores.SelectedCells[15].Value.ToString();
             if (Estado == "ELIMINADO")
             {
                 RestaurarP();
             }
             else
             {
-                txtNombreApellidos.Text = dataProfesores.SelectedCells[4].Value.ToString();
-                txtCorreo.Text = dataProfesores.SelectedCells[5].Value.ToString();
-                txtCelular.Text = dataProfesores.SelectedCells[6].Value.ToString();
-                txtIdentificacion.Text = dataProfesores.SelectedCells[7].Value.ToString();
-                txtUsuario.Text = dataProfesores.SelectedCells[8].Value.ToString();
-                txtContraseña.Text = Encrip.DesEncriptar(Encrip.DesEncriptar(dataProfesores.SelectedCells[9].Value.ToString()));
-                cbTUsuario.Text= dataProfesores.SelectedCells[10].Value.ToString();
+                txtNombreApellidos.Text = dataProfesores.SelectedCells[7].Value.ToString();
+                txtCorreo.Text = dataProfesores.SelectedCells[8].Value.ToString();
+                txtCelular.Text = dataProfesores.SelectedCells[9].Value.ToString();
+                txtIdentificacion.Text = dataProfesores.SelectedCells[10].Value.ToString();
+                txtUsuario.Text = dataProfesores.SelectedCells[11].Value.ToString();
+                txtContraseña.Text = Encrip.DesEncriptar(Encrip.DesEncriptar(dataProfesores.SelectedCells[12].Value.ToString()));
+                cbTUsuario.Text= dataProfesores.SelectedCells[13].Value.ToString();
                 if (cbTUsuario.Text == "Administrador")
                 {
                     cbTUsuario.Enabled = false;
@@ -274,7 +274,7 @@ namespace UNAN.Presentacion
                     cbTUsuario .Enabled = true;
                 }
                 Icono.BackgroundImage = null;
-                byte[] b = (byte[])(dataProfesores.SelectedCells[11].Value);
+                byte[] b = (byte[])(dataProfesores.SelectedCells[14].Value);
                 MemoryStream ms = new MemoryStream(b);
                 Icono.Image = Image.FromStream(ms);
                 PanelPaginado.Visible = false;
@@ -611,7 +611,15 @@ namespace UNAN.Presentacion
 
         private void txtbuscador_TextChanged(object sender, EventArgs e)
         {
-            Buscador();     
+            if (txtbuscador.Text=="")
+            {
+                ReiniciarPaginado();
+                MostrarProfessores();
+            }
+            else
+            {
+                Buscador();
+            }
         }
         private void Buscador()
         {
