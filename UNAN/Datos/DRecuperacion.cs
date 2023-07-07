@@ -79,7 +79,7 @@ namespace UNAN.Datos
                             body: "Hola, " + nombreUsuario + "\nUsted solicitó recuperar su contraseña.\n" +
                             "\nSu contraseña actual es: " + Encrip.DesEncriptar(Encrip.DesEncriptar(passUsuario)) +
                             "\n" +
-                            "\nSin embargo, le pedimos que cambie su contraseña inmediatamente una vez ingrese al sistema..." +
+                            "\nSin embargo, le pedimos que cambie su contraseña una vez que ingrese al sistema..." +
                             "\n" +
                             "\nSi no está seguro de si usted o su administrador ha realizado este restablecimiento," +
                             " debe ponerse en contacto con su administrador inmediatamente",
@@ -87,7 +87,7 @@ namespace UNAN.Datos
 
                         return "Hola, " + nombreUsuario + "\nUsted solicitó recuperar su contraseña.\n" +
                             "Por favor revise su correo: " + correoUsuario +
-                            "\nSin embargo, le pedimos que cambie su contraseña inmediatamente una vez ingrese al sistema...";
+                            "\nSin embargo, le pedimos que cambie su contraseña una vez que ingrese al sistema...";
                     }
                     else
                     {
@@ -136,7 +136,7 @@ namespace UNAN.Datos
                             "\nLe informamos que se ha hecho un cambio en su cuenta, si usted realizó dicho cambio ignore este correo," +
                             "\nPero si usted no ha realizado ningún cambio en su cuenta," +
                             "\n" +
-                            "\nLe pedimos que cambie su contraseña inmediatamente una vez ingrese al sistema..." +
+                            "\nle pedimos que cambie su contraseña inmediatamente una vez ingrese al sistema..." +
                             "\n" +
                             "\nSi no está seguro de si usted o su administrador ha realizado este cambio," +
                             " debe ponerse en contacto con su administrador inmediatamente",
