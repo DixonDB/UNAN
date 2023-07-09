@@ -8,11 +8,9 @@ namespace UNAN.Presentacion
     public partial class FrmCarrera : Form
     {
         DModalidades cmd=new DModalidades();
-        int IdModa = 0; 
         public FrmCarrera()
         {
             InitializeComponent();
-            
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

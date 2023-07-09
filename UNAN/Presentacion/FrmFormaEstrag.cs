@@ -8,6 +8,7 @@ namespace UNAN.Presentacion
 {
     public partial class FrmFormaEstrag : Form
     {
+        DAprendizaje funcion = new DAprendizaje();
         public FrmFormaEstrag()
         {
             InitializeComponent();
@@ -31,25 +32,20 @@ namespace UNAN.Presentacion
         }
         private void InsertarEstrategiadeEvaluacion()
         {
-            DAprendizaje funcion = new DAprendizaje();
             LAprendizaje parametros = new LAprendizaje();
             parametros.NombreEsEvaluacion = txtEstrEva.Text;
             if (funcion.InsertarEstrategiaEvaluacion(parametros) == true)
             {
-                UCPlanDidactico pd= new UCPlanDidactico();
                 MessageBox.Show("Estretegía de evaluación insertada con éxito", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
-                funcion.MostrarEstrategiaEvaluacion(pd.cbEnseApren);
             }
         }
         private void InsertarEstrategiadeAprendizaje()
         {
-            DAprendizaje funcion = new DAprendizaje();
             LAprendizaje parametros = new LAprendizaje();
             parametros.NombreEstApren = txtEstrEnseApre.Text;
             if (funcion.InsertarEstrAprea(parametros) == true)
             {
-
                 MessageBox.Show("Estretegía de aprendizaje insertada con éxito", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
@@ -69,12 +65,10 @@ namespace UNAN.Presentacion
         }
         private void InsertarFrmEva()
         {
-            DAprendizaje funcion = new DAprendizaje();
             LAprendizaje parametros = new LAprendizaje();
             parametros.NombreFrmEva = txtForEva.Text;
             if (funcion.InsertarFormaEvaluacion(parametros) == true)
             {
-
                 MessageBox.Show("Forma de evaluación insertada con éxito", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }

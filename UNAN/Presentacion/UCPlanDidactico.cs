@@ -42,16 +42,15 @@ namespace UNAN.FrmPlanDidactico
         }
         private void MostrarAprendizaje()
         {
-            DAprendizaje funcion = new DAprendizaje();
-            funcion.MostrarEstrategiaEvaluacion(cbEstrEvaluacion);
+            da.MostrarEstrategiaEvaluacion(cbEstrEvaluacion);
+            
+            da.MostrarFormaEvaluacion(cbFormaEvaluacion);
 
-          
-            funcion.MostrarFormaEvaluacion(cbFormaEvaluacion);
-
-            funcion.MostrarEstrategiaAprendizaje(cbEnseApren);
+            da.MostrarEstrategiaAprendizaje(cbEnseApren);
         }
         private void UCPlanDidactico_Load(object sender, EventArgs e)
         {
+            MostrarAprendizaje();
             carreras.MostrarCarrera(cbCarrera, cbModalidad.Text);
             Mostrarcod();
             mod.MostrarModalidades(cbModalidad);
@@ -59,7 +58,6 @@ namespace UNAN.FrmPlanDidactico
             Diseñodt();
             mod.MostrarSemestre(cbSemestre);
             txtDocente.Text = Login.nombreprofe;
-            MostrarAprendizaje();
         }
         private void Mostrarcod()
         {
@@ -159,7 +157,6 @@ namespace UNAN.FrmPlanDidactico
             mod.MostrarGrupos(cbGrupo, cbCarrera.Text);
             Mostrarcod();
         }
-
         private void cbSemestre_SelectedIndexChanged(object sender, EventArgs e)
         {
             asig.MostrarAsignatura(cbAsignaturas, cbSemestre.Text, cbCarrera.Text,cbGrupo.Text);
