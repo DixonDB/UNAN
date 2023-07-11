@@ -175,6 +175,11 @@ namespace UNAN
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
+            pn12.Controls.Clear();
+            UCGraficos plan = new UCGraficos();
+            plan.Dock = DockStyle.Fill;
+            pn12.Controls.Add(plan);
+            btnTitulo.Text = "Reportes";
             //Control de botones
             btnAsistencia.Enabled = true;
             btnProfesores.Enabled = true;
