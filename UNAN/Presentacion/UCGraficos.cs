@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using UNAN.Datos;
 
@@ -23,6 +24,7 @@ namespace UNAN.Presentacion
 
         private void UCGraficos_Load(object sender, EventArgs e)
         {
+            carga();
             GraficoUsuarios();
             ObtenerTotalUsuarios();
         }
@@ -84,6 +86,33 @@ namespace UNAN.Presentacion
             }
             return totalUsuarios;
         }
+        private void carga()
+        {
+            if (backgroundWorker1.IsBusy != true)
+            {
+                pncarga.Dock = DockStyle.Fill;
+                backgroundWorker1.RunWorkerAsync();
+            }
+        }
 
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                Thread.Sleep(100);
+                backgroundWorker1.ReportProgress(i * 10);
+            }
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            pbrCarga.Value = e.ProgressPercentage;
+            lblCarga.Text = e.ProgressPercentage.ToString() + "%";
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            pncarga.Visible = false;
+        }
     }
 }

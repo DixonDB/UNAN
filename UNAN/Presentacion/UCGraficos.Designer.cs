@@ -28,59 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title11 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chartUsuariosRol = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
             this.lblCantUsuarios = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pncarga = new System.Windows.Forms.Panel();
+            this.pbrCarga = new System.Windows.Forms.ProgressBar();
+            this.lblCarga = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.chartUsuariosRol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pncarga.SuspendLayout();
             this.SuspendLayout();
             // 
             // chartUsuariosRol
             // 
             this.chartUsuariosRol.BackColor = System.Drawing.Color.DodgerBlue;
             this.chartUsuariosRol.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea5.Area3DStyle.Enable3D = true;
-            chartArea5.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea5.BackColor = System.Drawing.Color.RoyalBlue;
-            chartArea5.Name = "ChartArea1";
-            this.chartUsuariosRol.ChartAreas.Add(chartArea5);
-            legend5.Alignment = System.Drawing.StringAlignment.Center;
-            legend5.BackColor = System.Drawing.Color.DarkTurquoise;
-            legend5.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            legend5.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Unscaled;
-            legend5.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            legend5.DockedToChartArea = "ChartArea1";
-            legend5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend5.IsDockedInsideChartArea = false;
-            legend5.IsTextAutoFit = false;
-            legend5.Name = "Legend1";
-            this.chartUsuariosRol.Legends.Add(legend5);
+            chartArea11.Area3DStyle.Enable3D = true;
+            chartArea11.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea11.BackColor = System.Drawing.Color.RoyalBlue;
+            chartArea11.Name = "ChartArea1";
+            this.chartUsuariosRol.ChartAreas.Add(chartArea11);
+            legend11.Alignment = System.Drawing.StringAlignment.Center;
+            legend11.BackColor = System.Drawing.Color.DarkTurquoise;
+            legend11.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            legend11.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Unscaled;
+            legend11.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            legend11.DockedToChartArea = "ChartArea1";
+            legend11.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend11.IsDockedInsideChartArea = false;
+            legend11.IsTextAutoFit = false;
+            legend11.Name = "Legend1";
+            this.chartUsuariosRol.Legends.Add(legend11);
             this.chartUsuariosRol.Location = new System.Drawing.Point(24, 160);
             this.chartUsuariosRol.Name = "chartUsuariosRol";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series5.IsValueShownAsLabel = true;
-            series5.LabelForeColor = System.Drawing.Color.White;
-            series5.Legend = "Legend1";
-            series5.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Cross;
-            series5.Name = "Series1";
-            this.chartUsuariosRol.Series.Add(series5);
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series11.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series11.IsValueShownAsLabel = true;
+            series11.LabelForeColor = System.Drawing.Color.White;
+            series11.Legend = "Legend1";
+            series11.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Cross;
+            series11.Name = "Series1";
+            this.chartUsuariosRol.Series.Add(series11);
             this.chartUsuariosRol.Size = new System.Drawing.Size(669, 369);
             this.chartUsuariosRol.TabIndex = 0;
             this.chartUsuariosRol.Text = "chart1";
-            title5.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title5.ForeColor = System.Drawing.Color.White;
-            title5.Name = "Title1";
-            title5.Text = "Cantidad de Usuarios por Rol";
-            this.chartUsuariosRol.Titles.Add(title5);
+            title11.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title11.ForeColor = System.Drawing.Color.White;
+            title11.Name = "Title1";
+            title11.Text = "Cantidad de Usuarios por Rol";
+            this.chartUsuariosRol.Titles.Add(title11);
             // 
             // label1
             // 
@@ -126,10 +131,46 @@
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
+            // pncarga
+            // 
+            this.pncarga.Controls.Add(this.pbrCarga);
+            this.pncarga.Controls.Add(this.lblCarga);
+            this.pncarga.Location = new System.Drawing.Point(870, 5);
+            this.pncarga.Name = "pncarga";
+            this.pncarga.Size = new System.Drawing.Size(130, 120);
+            this.pncarga.TabIndex = 13;
+            // 
+            // pbrCarga
+            // 
+            this.pbrCarga.Location = new System.Drawing.Point(288, 355);
+            this.pbrCarga.Name = "pbrCarga";
+            this.pbrCarga.Size = new System.Drawing.Size(699, 23);
+            this.pbrCarga.TabIndex = 10;
+            // 
+            // lblCarga
+            // 
+            this.lblCarga.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 80F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCarga.ForeColor = System.Drawing.Color.Black;
+            this.lblCarga.Location = new System.Drawing.Point(0, 0);
+            this.lblCarga.Name = "lblCarga";
+            this.lblCarga.Size = new System.Drawing.Size(130, 120);
+            this.lblCarga.TabIndex = 9;
+            this.lblCarga.Text = "Bienvenidos";
+            this.lblCarga.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
             // UCGraficos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pncarga);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lblCantUsuarios);
             this.Controls.Add(this.label1);
@@ -141,6 +182,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartUsuariosRol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.pncarga.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,5 +195,9 @@
         private System.Windows.Forms.Label lblCantUsuarios;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel pncarga;
+        private System.Windows.Forms.ProgressBar pbrCarga;
+        private System.Windows.Forms.Label lblCarga;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
