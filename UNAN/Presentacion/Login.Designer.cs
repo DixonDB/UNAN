@@ -75,7 +75,7 @@
             this.panel2.Controls.Add(this.pbImagen);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(530, 514);
             this.panel2.TabIndex = 15;
@@ -84,7 +84,7 @@
             // 
             this.panel3.Controls.Add(this.gbFormulario);
             this.panel3.Location = new System.Drawing.Point(530, 37);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(400, 477);
             this.panel3.TabIndex = 16;
@@ -107,19 +107,18 @@
             this.gbFormulario.Dock = System.Windows.Forms.DockStyle.Right;
             this.gbFormulario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbFormulario.Location = new System.Drawing.Point(0, 0);
-            this.gbFormulario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbFormulario.Margin = new System.Windows.Forms.Padding(2);
             this.gbFormulario.Name = "gbFormulario";
-            this.gbFormulario.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbFormulario.Padding = new System.Windows.Forms.Padding(2);
             this.gbFormulario.Size = new System.Drawing.Size(400, 477);
             this.gbFormulario.TabIndex = 14;
             this.gbFormulario.TabStop = false;
             // 
             // pictureBox6
             // 
-            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox6.Image = global::UNAN.Properties.Resources.Logo;
             this.pictureBox6.Location = new System.Drawing.Point(5, 348);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(160, 111);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -180,7 +179,7 @@
             // 
             this.pictureBox3.Image = global::UNAN.Properties.Resources.bloquear;
             this.pictureBox3.Location = new System.Drawing.Point(33, 188);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 38);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -191,7 +190,7 @@
             // 
             this.pictureBox5.Image = global::UNAN.Properties.Resources.usuario1;
             this.pictureBox5.Location = new System.Drawing.Point(33, 127);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(40, 34);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -204,11 +203,11 @@
             this.btnIniciarsesion.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarsesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIniciarsesion.Location = new System.Drawing.Point(131, 257);
-            this.btnIniciarsesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIniciarsesion.Margin = new System.Windows.Forms.Padding(2);
             this.btnIniciarsesion.Name = "btnIniciarsesion";
             this.btnIniciarsesion.Size = new System.Drawing.Size(170, 35);
             this.btnIniciarsesion.TabIndex = 7;
-            this.btnIniciarsesion.Text = "Iniciar Sesion";
+            this.btnIniciarsesion.Text = "Iniciar Sesión";
             this.btnIniciarsesion.UseVisualStyleBackColor = false;
             this.btnIniciarsesion.Click += new System.EventHandler(this.btnIniciarsesion_Click);
             // 
@@ -227,7 +226,7 @@
             // 
             this.txtpassword.Font = new System.Drawing.Font("Candara Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpassword.Location = new System.Drawing.Point(77, 201);
-            this.txtpassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtpassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(283, 27);
@@ -248,7 +247,7 @@
             // 
             this.txtusuario.Font = new System.Drawing.Font("Candara Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtusuario.Location = new System.Drawing.Point(81, 137);
-            this.txtusuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtusuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(282, 27);
             this.txtusuario.TabIndex = 4;
@@ -258,7 +257,7 @@
             this.btnSalir.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnSalir.Image = global::UNAN.Properties.Resources.cancel;
             this.btnSalir.Location = new System.Drawing.Point(348, 0);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(52, 37);
             this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -271,7 +270,7 @@
             this.panel1.Controls.Add(this.btnSalir);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(530, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 37);
             this.panel1.TabIndex = 14;

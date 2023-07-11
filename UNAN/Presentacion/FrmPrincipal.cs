@@ -126,8 +126,7 @@ namespace UNAN
         }
 
         private void btnProfesores_Click(object sender, EventArgs e)
-        {
-            
+        { 
             #region funcionactual
             pn12.Controls.Clear();
             UCProfes P = new UCProfes();
@@ -149,7 +148,7 @@ namespace UNAN
             UCPlanDidactico plan = new UCPlanDidactico();
             plan.Dock = DockStyle.Fill;
             pn12.Controls.Add(plan);
-            btnTitulo.Text = "Plan Didactico Semestral";
+            btnTitulo.Text = "Plan Didáctico Semestral";
             //Control de botones
             btnAsistencia.Enabled = true;
             btnProfesores.Enabled = true;

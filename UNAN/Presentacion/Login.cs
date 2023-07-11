@@ -74,6 +74,5 @@ namespace UNAN.Presentacion
             res.Show();
             this.Hide();
         }
-
     }
 }

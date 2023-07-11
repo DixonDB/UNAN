@@ -886,7 +886,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(187, 20);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Numero de identificacion:";
+            this.label3.Text = "Número de identificación:";
             // 
             // label2
             // 

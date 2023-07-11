@@ -63,7 +63,10 @@
             this.dtHrSalida = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.pnBloques = new System.Windows.Forms.Panel();
+            this.lblCodAsig = new System.Windows.Forms.Label();
+            this.cbSemestre = new System.Windows.Forms.ComboBox();
             this.btnAddBloque = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             this.cbActividad = new System.Windows.Forms.ComboBox();
             this.cbContenido = new System.Windows.Forms.ComboBox();
             this.cbCarrera = new System.Windows.Forms.ComboBox();
@@ -86,9 +89,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtHrEntrada = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbSemestre = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lblCodAsig = new System.Windows.Forms.Label();
             this.PanelPaginado.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -555,6 +555,27 @@
             this.pnBloques.Size = new System.Drawing.Size(1267, 173);
             this.pnBloques.TabIndex = 9;
             // 
+            // lblCodAsig
+            // 
+            this.lblCodAsig.AutoSize = true;
+            this.lblCodAsig.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodAsig.Location = new System.Drawing.Point(445, 80);
+            this.lblCodAsig.Name = "lblCodAsig";
+            this.lblCodAsig.Size = new System.Drawing.Size(71, 18);
+            this.lblCodAsig.TabIndex = 54;
+            this.lblCodAsig.Text = "CódigoA";
+            // 
+            // cbSemestre
+            // 
+            this.cbSemestre.BackColor = System.Drawing.Color.White;
+            this.cbSemestre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSemestre.FormattingEnabled = true;
+            this.cbSemestre.Location = new System.Drawing.Point(1221, 19);
+            this.cbSemestre.Name = "cbSemestre";
+            this.cbSemestre.Size = new System.Drawing.Size(64, 26);
+            this.cbSemestre.TabIndex = 53;
+            this.cbSemestre.SelectedIndexChanged += new System.EventHandler(this.cbSemestre_SelectedIndexChanged);
+            // 
             // btnAddBloque
             // 
             this.btnAddBloque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -567,6 +588,17 @@
             this.btnAddBloque.TabIndex = 51;
             this.btnAddBloque.Text = "Agregar Bloque";
             this.btnAddBloque.UseVisualStyleBackColor = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(1099, 19);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(106, 24);
+            this.label12.TabIndex = 52;
+            this.label12.Text = "Semestre:";
             // 
             // cbActividad
             // 
@@ -680,7 +712,7 @@
             this.lblCod.Name = "lblCod";
             this.lblCod.Size = new System.Drawing.Size(72, 18);
             this.lblCod.TabIndex = 46;
-            this.lblCod.Text = "CodigoC";
+            this.lblCod.Text = "CódigoC";
             // 
             // label19
             // 
@@ -809,38 +841,6 @@
             this.label1.Size = new System.Drawing.Size(167, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Hora de entrada:";
-            // 
-            // cbSemestre
-            // 
-            this.cbSemestre.BackColor = System.Drawing.Color.White;
-            this.cbSemestre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSemestre.FormattingEnabled = true;
-            this.cbSemestre.Location = new System.Drawing.Point(1221, 19);
-            this.cbSemestre.Name = "cbSemestre";
-            this.cbSemestre.Size = new System.Drawing.Size(64, 26);
-            this.cbSemestre.TabIndex = 53;
-            this.cbSemestre.SelectedIndexChanged += new System.EventHandler(this.cbSemestre_SelectedIndexChanged);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1099, 19);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(106, 24);
-            this.label12.TabIndex = 52;
-            this.label12.Text = "Semestre:";
-            // 
-            // lblCodAsig
-            // 
-            this.lblCodAsig.AutoSize = true;
-            this.lblCodAsig.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodAsig.Location = new System.Drawing.Point(445, 80);
-            this.lblCodAsig.Name = "lblCodAsig";
-            this.lblCodAsig.Size = new System.Drawing.Size(71, 18);
-            this.lblCodAsig.TabIndex = 54;
-            this.lblCodAsig.Text = "CodigoA";
             // 
             // UCControlAsistencia
             // 

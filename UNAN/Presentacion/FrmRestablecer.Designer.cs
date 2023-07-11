@@ -127,11 +127,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(304, 248);
+            this.label2.Location = new System.Drawing.Point(271, 248);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(207, 20);
+            this.label2.Size = new System.Drawing.Size(272, 20);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Ingrese Nombre del Usuario";
+            this.label2.Text = "Ingrese Nombre o Correo del Usuario";
             // 
             // btnEnviar
             // 
@@ -161,8 +161,9 @@
             // 
             this.lblProgress.AutoSize = true;
             this.lblProgress.BackColor = System.Drawing.Color.Transparent;
+            this.lblProgress.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProgress.Location = new System.Drawing.Point(370, 363);
+            this.lblProgress.Location = new System.Drawing.Point(380, 363);
             this.lblProgress.Name = "lblProgress";
             this.lblProgress.Size = new System.Drawing.Size(15, 13);
             this.lblProgress.TabIndex = 14;
@@ -172,7 +173,7 @@
             // pbrInicio
             // 
             this.pbrInicio.BackColor = System.Drawing.Color.Red;
-            this.pbrInicio.Location = new System.Drawing.Point(272, 358);
+            this.pbrInicio.Location = new System.Drawing.Point(280, 358);
             this.pbrInicio.Name = "pbrInicio";
             this.pbrInicio.Size = new System.Drawing.Size(254, 23);
             this.pbrInicio.TabIndex = 13;

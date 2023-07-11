@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbGrupo = new System.Windows.Forms.ComboBox();
             this.cbModalidad = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cbSemestre = new System.Windows.Forms.ComboBox();
@@ -44,8 +46,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbGrupo = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -74,6 +74,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(436, 412);
             this.panel1.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(12, 252);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(173, 24);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Ingrese el Grupo:";
+            // 
+            // cbGrupo
+            // 
+            this.cbGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.cbGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGrupo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbGrupo.FormattingEnabled = true;
+            this.cbGrupo.Items.AddRange(new object[] {
+            "SIV1",
+            "SIV2",
+            "SIV3",
+            "SIV4",
+            "SIV5"});
+            this.cbGrupo.Location = new System.Drawing.Point(197, 253);
+            this.cbGrupo.Name = "cbGrupo";
+            this.cbGrupo.Size = new System.Drawing.Size(104, 26);
+            this.cbGrupo.TabIndex = 26;
             // 
             // cbModalidad
             // 
@@ -186,7 +213,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(179, 24);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Ingrese el codigo:";
+            this.label2.Text = "Ingrese el código:";
             // 
             // panel2
             // 
@@ -231,33 +258,6 @@
             this.label1.Size = new System.Drawing.Size(96, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Asignatura";
-            // 
-            // cbGrupo
-            // 
-            this.cbGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.cbGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbGrupo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbGrupo.FormattingEnabled = true;
-            this.cbGrupo.Items.AddRange(new object[] {
-            "SIV1",
-            "SIV2",
-            "SIV3",
-            "SIV4",
-            "SIV5"});
-            this.cbGrupo.Location = new System.Drawing.Point(197, 253);
-            this.cbGrupo.Name = "cbGrupo";
-            this.cbGrupo.Size = new System.Drawing.Size(104, 26);
-            this.cbGrupo.TabIndex = 26;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 252);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(173, 24);
-            this.label7.TabIndex = 27;
-            this.label7.Text = "Ingrese el Grupo:";
             // 
             // FrmAsignatura
             // 

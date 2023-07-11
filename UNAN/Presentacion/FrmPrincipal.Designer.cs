@@ -95,7 +95,7 @@ namespace UNAN
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1300, 410);
             this.panel1.TabIndex = 2;
@@ -107,7 +107,7 @@ namespace UNAN
             this.panel6.Controls.Add(this.panel4);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 75);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1300, 335);
             this.panel6.TabIndex = 2;
@@ -119,7 +119,7 @@ namespace UNAN
             this.pn12.Controls.Add(this.panel19);
             this.pn12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn12.Location = new System.Drawing.Point(0, 0);
-            this.pn12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pn12.Margin = new System.Windows.Forms.Padding(2);
             this.pn12.Name = "pn12";
             this.pn12.Size = new System.Drawing.Size(1300, 256);
             this.pn12.TabIndex = 5;
@@ -178,7 +178,7 @@ namespace UNAN
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 256);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1300, 69);
             this.panel2.TabIndex = 2;
@@ -206,7 +206,7 @@ namespace UNAN
             this.panel5.Controls.Add(this.panel9);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1300, 69);
             this.panel5.TabIndex = 2;
@@ -217,7 +217,7 @@ namespace UNAN
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Image = global::UNAN.Properties.Resources.Atras;
             this.btnSalir.Location = new System.Drawing.Point(1027, 5);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(129, 64);
             this.btnSalir.TabIndex = 20;
@@ -230,7 +230,7 @@ namespace UNAN
             // 
             this.panel22.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel22.Location = new System.Drawing.Point(1019, 5);
-            this.panel22.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel22.Margin = new System.Windows.Forms.Padding(2);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(8, 64);
             this.panel22.TabIndex = 24;
@@ -240,7 +240,7 @@ namespace UNAN
             this.panel10.Controls.Add(this.lblReloj);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel10.Location = new System.Drawing.Point(1165, 5);
-            this.panel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(135, 64);
             this.panel10.TabIndex = 23;
@@ -266,7 +266,7 @@ namespace UNAN
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.Image = global::UNAN.Properties.Resources.exit_30px;
             this.btnCerrar.Location = new System.Drawing.Point(899, 5);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(120, 64);
             this.btnCerrar.TabIndex = 25;
@@ -279,7 +279,7 @@ namespace UNAN
             // 
             this.panel16.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel16.Location = new System.Drawing.Point(891, 5);
-            this.panel16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel16.Margin = new System.Windows.Forms.Padding(2);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(8, 64);
             this.panel16.TabIndex = 19;
@@ -290,7 +290,7 @@ namespace UNAN
             this.btnRestaurarBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRestaurarBD.Image = global::UNAN.Properties.Resources.data_backup;
             this.btnRestaurarBD.Location = new System.Drawing.Point(749, 5);
-            this.btnRestaurarBD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRestaurarBD.Margin = new System.Windows.Forms.Padding(2);
             this.btnRestaurarBD.Name = "btnRestaurarBD";
             this.btnRestaurarBD.Size = new System.Drawing.Size(142, 64);
             this.btnRestaurarBD.TabIndex = 18;
@@ -303,7 +303,7 @@ namespace UNAN
             // 
             this.panel15.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel15.Location = new System.Drawing.Point(741, 5);
-            this.panel15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel15.Margin = new System.Windows.Forms.Padding(2);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(8, 64);
             this.panel15.TabIndex = 17;
@@ -314,7 +314,7 @@ namespace UNAN
             this.btnAsistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsistencia.Image = global::UNAN.Properties.Resources.Asistencia;
             this.btnAsistencia.Location = new System.Drawing.Point(609, 5);
-            this.btnAsistencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAsistencia.Margin = new System.Windows.Forms.Padding(2);
             this.btnAsistencia.Name = "btnAsistencia";
             this.btnAsistencia.Size = new System.Drawing.Size(132, 64);
             this.btnAsistencia.TabIndex = 16;
@@ -327,7 +327,7 @@ namespace UNAN
             // 
             this.panel14.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel14.Location = new System.Drawing.Point(598, 5);
-            this.panel14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel14.Margin = new System.Windows.Forms.Padding(2);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(11, 64);
             this.panel14.TabIndex = 15;
@@ -338,11 +338,11 @@ namespace UNAN
             this.btnAvanceProg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAvanceProg.Image = global::UNAN.Properties.Resources.Avance;
             this.btnAvanceProg.Location = new System.Drawing.Point(456, 5);
-            this.btnAvanceProg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAvanceProg.Margin = new System.Windows.Forms.Padding(2);
             this.btnAvanceProg.Name = "btnAvanceProg";
             this.btnAvanceProg.Size = new System.Drawing.Size(142, 64);
             this.btnAvanceProg.TabIndex = 14;
-            this.btnAvanceProg.Text = "Avance Programatico";
+            this.btnAvanceProg.Text = "Avance Programático";
             this.btnAvanceProg.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAvanceProg.UseVisualStyleBackColor = true;
             this.btnAvanceProg.Click += new System.EventHandler(this.btnAvanceProg_Click);
@@ -351,7 +351,7 @@ namespace UNAN
             // 
             this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel13.Location = new System.Drawing.Point(446, 5);
-            this.panel13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel13.Margin = new System.Windows.Forms.Padding(2);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(10, 64);
             this.panel13.TabIndex = 13;
@@ -363,7 +363,7 @@ namespace UNAN
             this.btnReportes.Image = global::UNAN.Properties.Resources.analitica;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReportes.Location = new System.Drawing.Point(316, 5);
-            this.btnReportes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReportes.Margin = new System.Windows.Forms.Padding(2);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(130, 64);
             this.btnReportes.TabIndex = 12;
@@ -376,7 +376,7 @@ namespace UNAN
             // 
             this.panel12.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel12.Location = new System.Drawing.Point(302, 5);
-            this.panel12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel12.Margin = new System.Windows.Forms.Padding(2);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(14, 64);
             this.panel12.TabIndex = 11;
@@ -387,11 +387,11 @@ namespace UNAN
             this.btnPlanEst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlanEst.Image = global::UNAN.Properties.Resources.Plan;
             this.btnPlanEst.Location = new System.Drawing.Point(160, 5);
-            this.btnPlanEst.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPlanEst.Margin = new System.Windows.Forms.Padding(2);
             this.btnPlanEst.Name = "btnPlanEst";
             this.btnPlanEst.Size = new System.Drawing.Size(142, 64);
             this.btnPlanEst.TabIndex = 10;
-            this.btnPlanEst.Text = "Plan de Didactico";
+            this.btnPlanEst.Text = "Plan de Didáctico";
             this.btnPlanEst.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPlanEst.UseVisualStyleBackColor = true;
             this.btnPlanEst.Click += new System.EventHandler(this.btnPlanEst_Click);
@@ -400,7 +400,7 @@ namespace UNAN
             // 
             this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel11.Location = new System.Drawing.Point(150, 5);
-            this.panel11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(10, 64);
             this.panel11.TabIndex = 9;
@@ -411,7 +411,7 @@ namespace UNAN
             this.btnProfesores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfesores.Image = global::UNAN.Properties.Resources.personal;
             this.btnProfesores.Location = new System.Drawing.Point(8, 5);
-            this.btnProfesores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProfesores.Margin = new System.Windows.Forms.Padding(2);
             this.btnProfesores.Name = "btnProfesores";
             this.btnProfesores.Size = new System.Drawing.Size(142, 64);
             this.btnProfesores.TabIndex = 8;
@@ -424,7 +424,7 @@ namespace UNAN
             // 
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(8, 0);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1292, 5);
             this.panel8.TabIndex = 7;
@@ -433,7 +433,7 @@ namespace UNAN
             // 
             this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(8, 69);
             this.panel9.TabIndex = 4;
@@ -442,7 +442,7 @@ namespace UNAN
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 325);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1300, 10);
             this.panel4.TabIndex = 4;
@@ -457,7 +457,7 @@ namespace UNAN
             this.panel3.Controls.Add(this.panel18);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1300, 75);
             this.panel3.TabIndex = 1;
@@ -515,7 +515,7 @@ namespace UNAN
             this.panel7.Controls.Add(this.lblUser);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel7.Location = new System.Drawing.Point(98, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(204, 75);
             this.panel7.TabIndex = 4;
@@ -539,7 +539,7 @@ namespace UNAN
             this.pbUser.Dock = System.Windows.Forms.DockStyle.Left;
             this.pbUser.Image = global::UNAN.Properties.Resources.usuario;
             this.pbUser.Location = new System.Drawing.Point(0, 0);
-            this.pbUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbUser.Margin = new System.Windows.Forms.Padding(2);
             this.pbUser.Name = "pbUser";
             this.pbUser.Size = new System.Drawing.Size(98, 75);
             this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -552,7 +552,7 @@ namespace UNAN
             this.panel18.Controls.Add(this.pbLogo);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel18.Location = new System.Drawing.Point(1194, 0);
-            this.panel18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel18.Margin = new System.Windows.Forms.Padding(2);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(106, 75);
             this.panel18.TabIndex = 2;
@@ -562,7 +562,7 @@ namespace UNAN
             this.pbLogo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbLogo.Image = global::UNAN.Properties.Resources.logo2;
             this.pbLogo.Location = new System.Drawing.Point(0, 0);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(106, 75);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
