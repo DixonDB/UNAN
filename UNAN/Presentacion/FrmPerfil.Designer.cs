@@ -298,6 +298,7 @@
             // 
             this.txtNombreApellidos.BackColor = System.Drawing.SystemColors.Control;
             this.txtNombreApellidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombreApellidos.Enabled = false;
             this.txtNombreApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreApellidos.Location = new System.Drawing.Point(213, 52);
             this.txtNombreApellidos.Margin = new System.Windows.Forms.Padding(2);
@@ -437,6 +438,7 @@
             // 
             this.txtIdentificacion.BackColor = System.Drawing.SystemColors.Control;
             this.txtIdentificacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdentificacion.Enabled = false;
             this.txtIdentificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdentificacion.Location = new System.Drawing.Point(213, 167);
             this.txtIdentificacion.Margin = new System.Windows.Forms.Padding(2);
@@ -497,6 +499,7 @@
             // 
             this.txtUsuario.BackColor = System.Drawing.SystemColors.Control;
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsuario.Enabled = false;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(213, 203);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);

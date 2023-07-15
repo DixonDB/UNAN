@@ -42,10 +42,12 @@
             this.lblProgress = new System.Windows.Forms.Label();
             this.pbrInicio = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -140,7 +142,6 @@
             this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnviar.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnEnviar.Image = global::UNAN.Properties.Resources.send_30px;
             this.btnEnviar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEnviar.Location = new System.Drawing.Point(244, 323);
             this.btnEnviar.Name = "btnEnviar";
@@ -161,7 +162,7 @@
             // 
             this.lblProgress.AutoSize = true;
             this.lblProgress.BackColor = System.Drawing.Color.Transparent;
-            this.lblProgress.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblProgress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProgress.Location = new System.Drawing.Point(380, 363);
             this.lblProgress.Name = "lblProgress";
@@ -184,11 +185,23 @@
             this.timer1.Interval = 800;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::UNAN.Properties.Resources.send_30px;
+            this.pictureBox2.Location = new System.Drawing.Point(201, 326);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(35, 26);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
             // FrmRestablecer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 507);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lblProgress);
             this.Controls.Add(this.pbrInicio);
             this.Controls.Add(this.lblMsj);
@@ -208,6 +221,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,5 +242,6 @@
         private System.Windows.Forms.Label lblProgress;
         private System.Windows.Forms.ProgressBar pbrInicio;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

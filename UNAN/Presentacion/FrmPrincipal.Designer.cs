@@ -42,19 +42,14 @@ namespace UNAN
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.panel22 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.lblReloj = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.panel16 = new System.Windows.Forms.Panel();
             this.btnRestaurarBD = new System.Windows.Forms.Button();
-            this.panel15 = new System.Windows.Forms.Panel();
             this.btnAsistencia = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
             this.btnAvanceProg = new System.Windows.Forms.Button();
-            this.panel13 = new System.Windows.Forms.Panel();
             this.btnReportes = new System.Windows.Forms.Button();
-            this.panel12 = new System.Windows.Forms.Panel();
             this.btnPlanEst = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.btnProfesores = new System.Windows.Forms.Button();
@@ -73,6 +68,11 @@ namespace UNAN
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.reloj = new System.Windows.Forms.Timer(this.components);
             this.dlg = new System.Windows.Forms.OpenFileDialog();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.panel22 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.pn12.SuspendLayout();
@@ -188,20 +188,20 @@ namespace UNAN
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel5.Controls.Add(this.btnSalir);
             this.panel5.Controls.Add(this.panel22);
-            this.panel5.Controls.Add(this.panel10);
             this.panel5.Controls.Add(this.btnCerrar);
             this.panel5.Controls.Add(this.panel16);
             this.panel5.Controls.Add(this.btnRestaurarBD);
             this.panel5.Controls.Add(this.panel15);
-            this.panel5.Controls.Add(this.btnAsistencia);
-            this.panel5.Controls.Add(this.panel14);
-            this.panel5.Controls.Add(this.btnAvanceProg);
-            this.panel5.Controls.Add(this.panel13);
             this.panel5.Controls.Add(this.btnReportes);
-            this.panel5.Controls.Add(this.panel12);
+            this.panel5.Controls.Add(this.panel13);
+            this.panel5.Controls.Add(this.btnAvanceProg);
+            this.panel5.Controls.Add(this.panel14);
             this.panel5.Controls.Add(this.btnPlanEst);
+            this.panel5.Controls.Add(this.panel12);
+            this.panel5.Controls.Add(this.btnAsistencia);
             this.panel5.Controls.Add(this.panel11);
             this.panel5.Controls.Add(this.btnProfesores);
+            this.panel5.Controls.Add(this.panel10);
             this.panel5.Controls.Add(this.panel8);
             this.panel5.Controls.Add(this.panel9);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -216,7 +216,7 @@ namespace UNAN
             this.btnSalir.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Image = global::UNAN.Properties.Resources.Atras;
-            this.btnSalir.Location = new System.Drawing.Point(1027, 5);
+            this.btnSalir.Location = new System.Drawing.Point(1035, 5);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(129, 64);
@@ -225,15 +225,6 @@ namespace UNAN
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // panel22
-            // 
-            this.panel22.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel22.Location = new System.Drawing.Point(1019, 5);
-            this.panel22.Margin = new System.Windows.Forms.Padding(2);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(8, 64);
-            this.panel22.TabIndex = 24;
             // 
             // panel10
             // 
@@ -265,7 +256,7 @@ namespace UNAN
             this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.Image = global::UNAN.Properties.Resources.exit_30px;
-            this.btnCerrar.Location = new System.Drawing.Point(899, 5);
+            this.btnCerrar.Location = new System.Drawing.Point(904, 5);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(120, 64);
@@ -275,21 +266,12 @@ namespace UNAN
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // panel16
-            // 
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel16.Location = new System.Drawing.Point(891, 5);
-            this.panel16.Margin = new System.Windows.Forms.Padding(2);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(8, 64);
-            this.panel16.TabIndex = 19;
-            // 
             // btnRestaurarBD
             // 
             this.btnRestaurarBD.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnRestaurarBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRestaurarBD.Image = global::UNAN.Properties.Resources.data_backup;
-            this.btnRestaurarBD.Location = new System.Drawing.Point(749, 5);
+            this.btnRestaurarBD.Location = new System.Drawing.Point(751, 5);
             this.btnRestaurarBD.Margin = new System.Windows.Forms.Padding(2);
             this.btnRestaurarBD.Name = "btnRestaurarBD";
             this.btnRestaurarBD.Size = new System.Drawing.Size(142, 64);
@@ -299,21 +281,12 @@ namespace UNAN
             this.btnRestaurarBD.UseVisualStyleBackColor = true;
             this.btnRestaurarBD.Click += new System.EventHandler(this.btnRestaurarBD_Click);
             // 
-            // panel15
-            // 
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel15.Location = new System.Drawing.Point(741, 5);
-            this.panel15.Margin = new System.Windows.Forms.Padding(2);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(8, 64);
-            this.panel15.TabIndex = 17;
-            // 
             // btnAsistencia
             // 
             this.btnAsistencia.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnAsistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsistencia.Image = global::UNAN.Properties.Resources.Asistencia;
-            this.btnAsistencia.Location = new System.Drawing.Point(609, 5);
+            this.btnAsistencia.Location = new System.Drawing.Point(161, 5);
             this.btnAsistencia.Margin = new System.Windows.Forms.Padding(2);
             this.btnAsistencia.Name = "btnAsistencia";
             this.btnAsistencia.Size = new System.Drawing.Size(132, 64);
@@ -326,7 +299,7 @@ namespace UNAN
             // panel14
             // 
             this.panel14.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel14.Location = new System.Drawing.Point(598, 5);
+            this.panel14.Location = new System.Drawing.Point(446, 5);
             this.panel14.Margin = new System.Windows.Forms.Padding(2);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(11, 64);
@@ -337,7 +310,7 @@ namespace UNAN
             this.btnAvanceProg.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnAvanceProg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAvanceProg.Image = global::UNAN.Properties.Resources.Avance;
-            this.btnAvanceProg.Location = new System.Drawing.Point(456, 5);
+            this.btnAvanceProg.Location = new System.Drawing.Point(457, 5);
             this.btnAvanceProg.Margin = new System.Windows.Forms.Padding(2);
             this.btnAvanceProg.Name = "btnAvanceProg";
             this.btnAvanceProg.Size = new System.Drawing.Size(142, 64);
@@ -347,22 +320,13 @@ namespace UNAN
             this.btnAvanceProg.UseVisualStyleBackColor = true;
             this.btnAvanceProg.Click += new System.EventHandler(this.btnAvanceProg_Click);
             // 
-            // panel13
-            // 
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel13.Location = new System.Drawing.Point(446, 5);
-            this.panel13.Margin = new System.Windows.Forms.Padding(2);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(10, 64);
-            this.panel13.TabIndex = 13;
-            // 
             // btnReportes
             // 
             this.btnReportes.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportes.Image = global::UNAN.Properties.Resources.analitica;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(316, 5);
+            this.btnReportes.Location = new System.Drawing.Point(610, 5);
             this.btnReportes.Margin = new System.Windows.Forms.Padding(2);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(130, 64);
@@ -372,21 +336,12 @@ namespace UNAN
             this.btnReportes.UseVisualStyleBackColor = true;
             this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
-            // panel12
-            // 
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel12.Location = new System.Drawing.Point(302, 5);
-            this.panel12.Margin = new System.Windows.Forms.Padding(2);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(14, 64);
-            this.panel12.TabIndex = 11;
-            // 
             // btnPlanEst
             // 
             this.btnPlanEst.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnPlanEst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlanEst.Image = global::UNAN.Properties.Resources.Plan;
-            this.btnPlanEst.Location = new System.Drawing.Point(160, 5);
+            this.btnPlanEst.Location = new System.Drawing.Point(304, 5);
             this.btnPlanEst.Margin = new System.Windows.Forms.Padding(2);
             this.btnPlanEst.Name = "btnPlanEst";
             this.btnPlanEst.Size = new System.Drawing.Size(142, 64);
@@ -402,7 +357,7 @@ namespace UNAN
             this.panel11.Location = new System.Drawing.Point(150, 5);
             this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(10, 64);
+            this.panel11.Size = new System.Drawing.Size(11, 64);
             this.panel11.TabIndex = 9;
             // 
             // btnProfesores
@@ -577,6 +532,51 @@ namespace UNAN
             // 
             this.dlg.FileName = "openFileDialog1";
             // 
+            // panel12
+            // 
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel12.Location = new System.Drawing.Point(293, 5);
+            this.panel12.Margin = new System.Windows.Forms.Padding(2);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(11, 64);
+            this.panel12.TabIndex = 26;
+            // 
+            // panel13
+            // 
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel13.Location = new System.Drawing.Point(599, 5);
+            this.panel13.Margin = new System.Windows.Forms.Padding(2);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(11, 64);
+            this.panel13.TabIndex = 27;
+            // 
+            // panel15
+            // 
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel15.Location = new System.Drawing.Point(740, 5);
+            this.panel15.Margin = new System.Windows.Forms.Padding(2);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(11, 64);
+            this.panel15.TabIndex = 28;
+            // 
+            // panel16
+            // 
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel16.Location = new System.Drawing.Point(893, 5);
+            this.panel16.Margin = new System.Windows.Forms.Padding(2);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(11, 64);
+            this.panel16.TabIndex = 29;
+            // 
+            // panel22
+            // 
+            this.panel22.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel22.Location = new System.Drawing.Point(1024, 5);
+            this.panel22.Margin = new System.Windows.Forms.Padding(2);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(11, 64);
+            this.panel22.TabIndex = 30;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -621,15 +621,11 @@ namespace UNAN
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label lblReloj;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Button btnRestaurarBD;
-        private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Button btnAsistencia;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Button btnAvanceProg;
-        private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Button btnReportes;
-        private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button btnPlanEst;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button btnProfesores;
@@ -651,8 +647,12 @@ namespace UNAN
         private System.Windows.Forms.ProgressBar pbrCarga;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Panel panel22;
         public System.Windows.Forms.Label lbltUsuario;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Panel panel16;
     }
 }
 

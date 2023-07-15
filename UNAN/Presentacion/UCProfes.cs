@@ -60,6 +60,20 @@ namespace UNAN.Presentacion
             string contraseñaGenerada = Validaciones.GenerarContraseñaAleatoria();
             txtContraseña.Text = contraseñaGenerada;
             Validaciones.ActualizarVisibilidadEtiquetas(contraseñaGenerada, lblMayu, lblMin, lblNum, lblCarEsp);
+            txtContraseña.Visible = true;
+            label6.Visible = true;
+            label7.Visible=true;
+            label15.Visible=true;
+            lblMayu.Visible=true;
+            lblMin.Visible=true;
+            lblNum.Visible=true;
+            lblCarEsp.Visible=true;
+            panel10.Visible = true;
+            txtbuscador.Visible = false;
+            pictureBox1.Visible = false;
+            btnMostrarTodos.Visible = false;
+            panel3.Visible = false;
+            cbTUsuario.Enabled = true;
         }
         /// <summary>
         /// Método para limpiar el contenido de los textbox que se utilizarán para crear un nuevo registro.
@@ -169,6 +183,10 @@ namespace UNAN.Presentacion
                     InsertarProfesores();
                     MostrarProfessores();
                     ReiniciarPaginado();
+                    txtbuscador.Visible = true;
+                    pictureBox1.Visible = true;
+                    btnMostrarTodos.Visible = true;
+                    panel3.Visible = true;
                 }
                 else
                 {
@@ -216,6 +234,11 @@ namespace UNAN.Presentacion
                 else
                 {
                     Obtenerdatos();
+                    txtbuscador.Visible = false;
+                    pictureBox1.Visible = false;
+                    btnMostrarTodos.Visible = false;
+                    panel3.Visible = false;
+                    btnAgregar.Enabled = false;
                 }
 
             }
@@ -322,6 +345,11 @@ namespace UNAN.Presentacion
             if (validar())
             {
                 EditarProfesores();
+                txtbuscador.Visible = true;
+                pictureBox1.Visible = true;
+                btnMostrarTodos.Visible = true;
+                panel3.Visible = true;
+                btnAgregar.Enabled = true;
             }
             else
             {
@@ -354,6 +382,11 @@ namespace UNAN.Presentacion
         {
             panelRegitroP.Visible = false;
             PanelPaginado.Visible = true;
+            txtbuscador.Visible = true;
+            pictureBox1.Visible = true;
+            btnMostrarTodos.Visible = true;
+            panel3.Visible = true;
+            btnAgregar.Enabled = true;
         }
         private void btn_atras_Click(object sender, EventArgs e)
         {
