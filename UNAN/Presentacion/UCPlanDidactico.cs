@@ -245,5 +245,19 @@ namespace UNAN.FrmPlanDidactico
             flowLayoutPanel1.Visible = true;
         }
 
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            pnPlan.Visible = true;
+            pnPlan.Dock = DockStyle.Fill;
+            PanelPaginado.Visible = false;
+            panel4.Visible= false;
+        }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            pnPlan.Visible = false;
+            PanelPaginado.Visible = true;
+            panel4.Visible = true;
+        }
     }
 }

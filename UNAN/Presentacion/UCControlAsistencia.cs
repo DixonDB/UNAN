@@ -19,6 +19,7 @@ namespace UNAN.Presentacion
             pnFormAsistencia.Visible = true;
             pnFormAsistencia.Dock= DockStyle.Fill;
             PanelPaginado.Visible = false;
+            limpiar();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -29,6 +30,7 @@ namespace UNAN.Presentacion
 
         private void UCControlAsistencia_Load(object sender, EventArgs e)
         {
+            hora();
             lblFecha.Text = DateTime.Now.ToShortDateString();
             MostrarDatos();
         }
@@ -78,6 +80,37 @@ namespace UNAN.Presentacion
         private void cbAsignaturas_SelectedIndexChanged(object sender, EventArgs e)
         {
             asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
+        }
+        private void hora()
+        {
+            txtHora.Text = DateTime.Now.ToString("hh");
+            txtmin.Text = DateTime.Now.ToString("mm");
+        }
+        private void Salida()
+        {
+            int bloque = int.Parse(nudBloque.Value.ToString());
+            double tiempo = 1.20;
+            double salida = bloque * tiempo;
+            int hora = int.Parse(txtHora.Text);
+            int minutos = int.Parse(txtmin.Text);
+            DateTime fechaActual = DateTime.Now;
+            DateTime nuevaFecha = new DateTime(fechaActual.Year, fechaActual.Month, fechaActual.Day, hora, minutos, 0);
+            TimeSpan horasLaboradas = TimeSpan.FromHours(salida);
+            DateTime horaConSalida = nuevaFecha.Add(horasLaboradas);
+            txtHoraS.Text=horaConSalida.Hour.ToString();
+            txtMinS.Text=horaConSalida.Minute.ToString();
+        }
+
+        private void nudBloque_Leave(object sender, EventArgs e)
+        {
+            Salida();
+        }
+        private void limpiar()
+        {
+            txtHoraS.Clear();
+            txtMinS.Clear();
+            nudBloque.Value = 0;
+            txtObservaciones.Clear();
         }
     }
 }

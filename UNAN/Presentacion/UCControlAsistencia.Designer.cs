@@ -60,7 +60,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.cbProgreso = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dtHrSalida = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.pnBloques = new System.Windows.Forms.Panel();
             this.lblCodAsig = new System.Windows.Forms.Label();
@@ -87,8 +86,13 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.nudBloque = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtHrEntrada = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtHora = new System.Windows.Forms.TextBox();
+            this.txtmin = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtMinS = new System.Windows.Forms.TextBox();
+            this.txtHoraS = new System.Windows.Forms.TextBox();
             this.PanelPaginado.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -406,7 +410,7 @@
             this.pnFormAsistencia.Controls.Add(this.pnHrSalida);
             this.pnFormAsistencia.Controls.Add(this.pnBloques);
             this.pnFormAsistencia.Controls.Add(this.pnHrEntrada);
-            this.pnFormAsistencia.Location = new System.Drawing.Point(31, 92);
+            this.pnFormAsistencia.Location = new System.Drawing.Point(31, 120);
             this.pnFormAsistencia.Name = "pnFormAsistencia";
             this.pnFormAsistencia.Size = new System.Drawing.Size(1267, 434);
             this.pnFormAsistencia.TabIndex = 15;
@@ -453,11 +457,13 @@
             // pnHrSalida
             // 
             this.pnHrSalida.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnHrSalida.Controls.Add(this.label14);
+            this.pnHrSalida.Controls.Add(this.txtMinS);
+            this.pnHrSalida.Controls.Add(this.txtHoraS);
             this.pnHrSalida.Controls.Add(this.txtObservaciones);
             this.pnHrSalida.Controls.Add(this.label11);
             this.pnHrSalida.Controls.Add(this.cbProgreso);
             this.pnHrSalida.Controls.Add(this.label9);
-            this.pnHrSalida.Controls.Add(this.dtHrSalida);
             this.pnHrSalida.Controls.Add(this.label7);
             this.pnHrSalida.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnHrSalida.Location = new System.Drawing.Point(0, 253);
@@ -505,16 +511,6 @@
             this.label9.Size = new System.Drawing.Size(187, 24);
             this.label9.TabIndex = 49;
             this.label9.Text = "Progreso del tema:";
-            // 
-            // dtHrSalida
-            // 
-            this.dtHrSalida.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtHrSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtHrSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtHrSalida.Location = new System.Drawing.Point(226, 58);
-            this.dtHrSalida.Name = "dtHrSalida";
-            this.dtHrSalida.Size = new System.Drawing.Size(101, 26);
-            this.dtHrSalida.TabIndex = 3;
             // 
             // label7
             // 
@@ -602,8 +598,9 @@
             // 
             // cbActividad
             // 
-            this.cbActividad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.cbActividad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbActividad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbActividad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbActividad.BackColor = System.Drawing.Color.White;
             this.cbActividad.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbActividad.FormattingEnabled = true;
             this.cbActividad.Location = new System.Drawing.Point(1097, 77);
@@ -769,11 +766,13 @@
             // pnHrEntrada
             // 
             this.pnHrEntrada.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnHrEntrada.Controls.Add(this.label13);
+            this.pnHrEntrada.Controls.Add(this.txtmin);
+            this.pnHrEntrada.Controls.Add(this.txtHora);
             this.pnHrEntrada.Controls.Add(this.btnAceptar);
             this.pnHrEntrada.Controls.Add(this.lblFecha);
             this.pnHrEntrada.Controls.Add(this.nudBloque);
             this.pnHrEntrada.Controls.Add(this.label2);
-            this.pnHrEntrada.Controls.Add(this.dtHrEntrada);
             this.pnHrEntrada.Controls.Add(this.label1);
             this.pnHrEntrada.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnHrEntrada.Location = new System.Drawing.Point(0, 0);
@@ -787,7 +786,7 @@
             this.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(958, 20);
+            this.btnAceptar.Location = new System.Drawing.Point(952, 20);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(100, 33);
             this.btnAceptar.TabIndex = 5;
@@ -807,40 +806,87 @@
             // nudBloque
             // 
             this.nudBloque.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudBloque.Location = new System.Drawing.Point(855, 28);
+            this.nudBloque.Location = new System.Drawing.Point(860, 28);
             this.nudBloque.Name = "nudBloque";
             this.nudBloque.Size = new System.Drawing.Size(51, 26);
             this.nudBloque.TabIndex = 3;
+            this.nudBloque.Leave += new System.EventHandler(this.nudBloque_Leave);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(619, 29);
+            this.label2.Location = new System.Drawing.Point(635, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(184, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "Bloques a impartir:";
             // 
-            // dtHrEntrada
-            // 
-            this.dtHrEntrada.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtHrEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtHrEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtHrEntrada.Location = new System.Drawing.Point(466, 28);
-            this.dtHrEntrada.Name = "dtHrEntrada";
-            this.dtHrEntrada.Size = new System.Drawing.Size(101, 26);
-            this.dtHrEntrada.TabIndex = 1;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(247, 29);
+            this.label1.Location = new System.Drawing.Point(180, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Hora de entrada:";
+            // 
+            // txtHora
+            // 
+            this.txtHora.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.txtHora.Location = new System.Drawing.Point(362, 25);
+            this.txtHora.Name = "txtHora";
+            this.txtHora.Size = new System.Drawing.Size(54, 26);
+            this.txtHora.TabIndex = 6;
+            this.txtHora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtmin
+            // 
+            this.txtmin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.txtmin.Location = new System.Drawing.Point(456, 25);
+            this.txtmin.Name = "txtmin";
+            this.txtmin.Size = new System.Drawing.Size(54, 26);
+            this.txtmin.TabIndex = 7;
+            this.txtmin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(428, 27);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(16, 24);
+            this.label13.TabIndex = 8;
+            this.label13.Text = ":";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(261, 58);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(16, 24);
+            this.label14.TabIndex = 55;
+            this.label14.Text = ":";
+            // 
+            // txtMinS
+            // 
+            this.txtMinS.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.txtMinS.Location = new System.Drawing.Point(289, 56);
+            this.txtMinS.Name = "txtMinS";
+            this.txtMinS.Size = new System.Drawing.Size(54, 26);
+            this.txtMinS.TabIndex = 54;
+            this.txtMinS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtHoraS
+            // 
+            this.txtHoraS.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.txtHoraS.Location = new System.Drawing.Point(195, 56);
+            this.txtHoraS.Name = "txtHoraS";
+            this.txtHoraS.Size = new System.Drawing.Size(54, 26);
+            this.txtHoraS.TabIndex = 53;
+            this.txtHoraS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // UCControlAsistencia
             // 
@@ -906,7 +952,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cbProgreso;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dtHrSalida;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel pnBloques;
         private System.Windows.Forms.Button btnAddBloque;
@@ -930,11 +975,16 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.NumericUpDown nudBloque;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dtHrEntrada;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.ComboBox cbSemestre;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblCodAsig;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtmin;
+        private System.Windows.Forms.TextBox txtHora;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtMinS;
+        private System.Windows.Forms.TextBox txtHoraS;
     }
 }
