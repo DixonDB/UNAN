@@ -159,6 +159,11 @@ namespace UNAN
 
         private void btnAvanceProg_Click(object sender, EventArgs e)
         {
+            pn12.Controls.Clear();
+            UCAvanceP avance = new UCAvanceP();
+            avance.Dock = DockStyle.Fill;
+            pn12.Controls.Add(avance);
+            btnTitulo.Text = "Avance Programático";
             //Control de botones
             btnAsistencia.Enabled = true;
             btnProfesores.Enabled = true;

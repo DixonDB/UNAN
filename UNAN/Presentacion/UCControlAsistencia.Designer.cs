@@ -56,6 +56,9 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.pnHrSalida = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtMinS = new System.Windows.Forms.TextBox();
+            this.txtHoraS = new System.Windows.Forms.TextBox();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.cbProgreso = new System.Windows.Forms.ComboBox();
@@ -82,17 +85,18 @@
             this.lblbloque = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pnHrEntrada = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtmin = new System.Windows.Forms.TextBox();
+            this.txtHora = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblFecha = new System.Windows.Forms.Label();
             this.nudBloque = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtHora = new System.Windows.Forms.TextBox();
-            this.txtmin = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtMinS = new System.Windows.Forms.TextBox();
-            this.txtHoraS = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.pncarga = new System.Windows.Forms.Panel();
+            this.pbrCarga = new System.Windows.Forms.ProgressBar();
+            this.lblCarga = new System.Windows.Forms.Label();
             this.PanelPaginado.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -104,6 +108,7 @@
             this.pnBloques.SuspendLayout();
             this.pnHrEntrada.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBloque)).BeginInit();
+            this.pncarga.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelPaginado
@@ -258,7 +263,7 @@
             this.panel2.Controls.Add(this.panel8);
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 53);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1320, 45);
             this.panel2.TabIndex = 11;
@@ -290,7 +295,7 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 45);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1320, 53);
@@ -470,6 +475,34 @@
             this.pnHrSalida.Name = "pnHrSalida";
             this.pnHrSalida.Size = new System.Drawing.Size(1267, 120);
             this.pnHrSalida.TabIndex = 10;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(261, 58);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(16, 24);
+            this.label14.TabIndex = 55;
+            this.label14.Text = ":";
+            // 
+            // txtMinS
+            // 
+            this.txtMinS.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.txtMinS.Location = new System.Drawing.Point(289, 56);
+            this.txtMinS.Name = "txtMinS";
+            this.txtMinS.Size = new System.Drawing.Size(54, 26);
+            this.txtMinS.TabIndex = 54;
+            this.txtMinS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtHoraS
+            // 
+            this.txtHoraS.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.txtHoraS.Location = new System.Drawing.Point(195, 56);
+            this.txtHoraS.Name = "txtHoraS";
+            this.txtHoraS.Size = new System.Drawing.Size(54, 26);
+            this.txtHoraS.TabIndex = 53;
+            this.txtHoraS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtObservaciones
             // 
@@ -780,6 +813,34 @@
             this.pnHrEntrada.Size = new System.Drawing.Size(1267, 80);
             this.pnHrEntrada.TabIndex = 8;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(428, 27);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(16, 24);
+            this.label13.TabIndex = 8;
+            this.label13.Text = ":";
+            // 
+            // txtmin
+            // 
+            this.txtmin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.txtmin.Location = new System.Drawing.Point(456, 25);
+            this.txtmin.Name = "txtmin";
+            this.txtmin.Size = new System.Drawing.Size(54, 26);
+            this.txtmin.TabIndex = 7;
+            this.txtmin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtHora
+            // 
+            this.txtHora.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.txtHora.Location = new System.Drawing.Point(362, 25);
+            this.txtHora.Name = "txtHora";
+            this.txtHora.Size = new System.Drawing.Size(54, 26);
+            this.txtHora.TabIndex = 6;
+            this.txtHora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // btnAceptar
             // 
             this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -832,71 +893,51 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Hora de entrada:";
             // 
-            // txtHora
+            // backgroundWorker1
             // 
-            this.txtHora.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.txtHora.Location = new System.Drawing.Point(362, 25);
-            this.txtHora.Name = "txtHora";
-            this.txtHora.Size = new System.Drawing.Size(54, 26);
-            this.txtHora.TabIndex = 6;
-            this.txtHora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
-            // txtmin
+            // pncarga
             // 
-            this.txtmin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.txtmin.Location = new System.Drawing.Point(456, 25);
-            this.txtmin.Name = "txtmin";
-            this.txtmin.Size = new System.Drawing.Size(54, 26);
-            this.txtmin.TabIndex = 7;
-            this.txtmin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pncarga.Controls.Add(this.pbrCarga);
+            this.pncarga.Controls.Add(this.lblCarga);
+            this.pncarga.Location = new System.Drawing.Point(610, 238);
+            this.pncarga.Name = "pncarga";
+            this.pncarga.Size = new System.Drawing.Size(100, 127);
+            this.pncarga.TabIndex = 20;
             // 
-            // label13
+            // pbrCarga
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(428, 27);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(16, 24);
-            this.label13.TabIndex = 8;
-            this.label13.Text = ":";
+            this.pbrCarga.Location = new System.Drawing.Point(288, 304);
+            this.pbrCarga.Name = "pbrCarga";
+            this.pbrCarga.Size = new System.Drawing.Size(699, 23);
+            this.pbrCarga.TabIndex = 10;
             // 
-            // label14
+            // lblCarga
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(261, 58);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(16, 24);
-            this.label14.TabIndex = 55;
-            this.label14.Text = ":";
-            // 
-            // txtMinS
-            // 
-            this.txtMinS.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.txtMinS.Location = new System.Drawing.Point(289, 56);
-            this.txtMinS.Name = "txtMinS";
-            this.txtMinS.Size = new System.Drawing.Size(54, 26);
-            this.txtMinS.TabIndex = 54;
-            this.txtMinS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtHoraS
-            // 
-            this.txtHoraS.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.txtHoraS.Location = new System.Drawing.Point(195, 56);
-            this.txtHoraS.Name = "txtHoraS";
-            this.txtHoraS.Size = new System.Drawing.Size(54, 26);
-            this.txtHoraS.TabIndex = 53;
-            this.txtHoraS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblCarga.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 80F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCarga.ForeColor = System.Drawing.Color.Black;
+            this.lblCarga.Location = new System.Drawing.Point(0, 0);
+            this.lblCarga.Name = "lblCarga";
+            this.lblCarga.Size = new System.Drawing.Size(100, 127);
+            this.lblCarga.TabIndex = 9;
+            this.lblCarga.Text = "Bienvenidos";
+            this.lblCarga.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UCControlAsistencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pncarga);
             this.Controls.Add(this.pnFormAsistencia);
             this.Controls.Add(this.dataAsistencia);
             this.Controls.Add(this.PanelPaginado);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Name = "UCControlAsistencia";
             this.Size = new System.Drawing.Size(1320, 602);
             this.Load += new System.EventHandler(this.UCControlAsistencia_Load);
@@ -916,6 +957,7 @@
             this.pnHrEntrada.ResumeLayout(false);
             this.pnHrEntrada.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBloque)).EndInit();
+            this.pncarga.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -986,5 +1028,9 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtMinS;
         private System.Windows.Forms.TextBox txtHoraS;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Panel pncarga;
+        private System.Windows.Forms.ProgressBar pbrCarga;
+        private System.Windows.Forms.Label lblCarga;
     }
 }

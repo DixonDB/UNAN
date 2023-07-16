@@ -253,7 +253,7 @@ namespace UNAN.FrmPlanDidactico
             panel4.Visible= false;
         }
 
-        private void btnAyuda_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
             pnPlan.Visible = false;
             PanelPaginado.Visible = true;

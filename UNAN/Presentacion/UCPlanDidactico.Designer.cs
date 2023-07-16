@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,15 +44,9 @@
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnSubirPlan = new System.Windows.Forms.Button();
             this.btnSubir = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.btnAyuda = new System.Windows.Forms.Button();
             this.gbDatos = new System.Windows.Forms.GroupBox();
-            this.btnEE = new System.Windows.Forms.Button();
-            this.btnFE = new System.Windows.Forms.Button();
-            this.btnEEA = new System.Windows.Forms.Button();
-            this.cbEstrEvaluacion = new System.Windows.Forms.ComboBox();
-            this.cbFormaEvaluacion = new System.Windows.Forms.ComboBox();
-            this.cbEnseApren = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.PCargarPlan = new System.Windows.Forms.Panel();
             this.btnCerrarP = new System.Windows.Forms.Button();
             this.btnCargar = new System.Windows.Forms.Button();
@@ -61,6 +55,13 @@
             this.txtRuta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.btnEE = new System.Windows.Forms.Button();
+            this.btnFE = new System.Windows.Forms.Button();
+            this.btnEEA = new System.Windows.Forms.Button();
+            this.cbEstrEvaluacion = new System.Windows.Forms.ComboBox();
+            this.cbFormaEvaluacion = new System.Windows.Forms.ComboBox();
+            this.cbEnseApren = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.txtPorcentaje = new System.Windows.Forms.TextBox();
             this.dtFechaInico = new System.Windows.Forms.DateTimePicker();
             this.dtFechaFin = new System.Windows.Forms.DateTimePicker();
@@ -97,7 +98,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataAsistencia = new System.Windows.Forms.DataGridView();
+            this.dtPlanD = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.PanelPaginado = new System.Windows.Forms.Panel();
@@ -115,7 +116,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pncarga.SuspendLayout();
             this.pnPlan.SuspendLayout();
@@ -125,7 +125,7 @@
             this.gbDatos.SuspendLayout();
             this.PCargarPlan.SuspendLayout();
             this.GBDetalles.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataAsistencia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtPlanD)).BeginInit();
             this.PanelPaginado.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -171,7 +171,7 @@
             // 
             this.pncarga.Controls.Add(this.pbrCarga);
             this.pncarga.Controls.Add(this.lblCarga);
-            this.pncarga.Location = new System.Drawing.Point(1214, 255);
+            this.pncarga.Location = new System.Drawing.Point(943, 228);
             this.pncarga.Name = "pncarga";
             this.pncarga.Size = new System.Drawing.Size(457, 213);
             this.pncarga.TabIndex = 12;
@@ -203,7 +203,7 @@
             this.pnPlan.Controls.Add(this.GBDetalles);
             this.pnPlan.Location = new System.Drawing.Point(95, 126);
             this.pnPlan.Name = "pnPlan";
-            this.pnPlan.Size = new System.Drawing.Size(690, 186);
+            this.pnPlan.Size = new System.Drawing.Size(1059, 476);
             this.pnPlan.TabIndex = 37;
             this.pnPlan.Visible = false;
             // 
@@ -215,28 +215,28 @@
             this.dtPlan.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dtPlan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtPlan.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtPlan.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtPlan.Location = new System.Drawing.Point(0, 400);
             this.dtPlan.Name = "dtPlan";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtPlan.RowHeadersVisible = false;
             this.dtPlan.RowHeadersWidth = 82;
-            this.dtPlan.Size = new System.Drawing.Size(690, 0);
+            this.dtPlan.Size = new System.Drawing.Size(1059, 76);
             this.dtPlan.TabIndex = 11;
             // 
             // pnBotones
@@ -245,7 +245,7 @@
             this.pnBotones.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnBotones.Location = new System.Drawing.Point(0, 348);
             this.pnBotones.Name = "pnBotones";
-            this.pnBotones.Size = new System.Drawing.Size(690, 52);
+            this.pnBotones.Size = new System.Drawing.Size(1059, 52);
             this.pnBotones.TabIndex = 12;
             // 
             // flowLayoutPanel1
@@ -254,11 +254,11 @@
             this.flowLayoutPanel1.Controls.Add(this.btnInsertar);
             this.flowLayoutPanel1.Controls.Add(this.btnSubirPlan);
             this.flowLayoutPanel1.Controls.Add(this.btnSubir);
+            this.flowLayoutPanel1.Controls.Add(this.btnCerrar);
             this.flowLayoutPanel1.Controls.Add(this.btnAyuda);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(212, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(379, 50);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(802, 50);
             this.flowLayoutPanel1.TabIndex = 6;
             this.flowLayoutPanel1.Visible = false;
             // 
@@ -303,7 +303,7 @@
             this.btnSubir.ForeColor = System.Drawing.Color.Black;
             this.btnSubir.Image = global::UNAN.Properties.Resources.up_32px;
             this.btnSubir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubir.Location = new System.Drawing.Point(3, 48);
+            this.btnSubir.Location = new System.Drawing.Point(314, 3);
             this.btnSubir.Name = "btnSubir";
             this.btnSubir.Size = new System.Drawing.Size(226, 39);
             this.btnSubir.TabIndex = 5;
@@ -312,21 +312,36 @@
             this.btnSubir.UseVisualStyleBackColor = false;
             this.btnSubir.Click += new System.EventHandler(this.btnSubir_Click);
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCerrar.Font = new System.Drawing.Font("Arial", 14.25F);
+            this.btnCerrar.Image = global::UNAN.Properties.Resources.Atras;
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrar.Location = new System.Drawing.Point(546, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(135, 39);
+            this.btnCerrar.TabIndex = 8;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // btnAyuda
             // 
             this.btnAyuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnAyuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAyuda.Font = new System.Drawing.Font("Arial", 14.25F);
-            this.btnAyuda.Image = global::UNAN.Properties.Resources.Atras;
+            this.btnAyuda.Image = global::UNAN.Properties.Resources.help_32px;
             this.btnAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAyuda.Location = new System.Drawing.Point(235, 48);
+            this.btnAyuda.Location = new System.Drawing.Point(687, 3);
             this.btnAyuda.Name = "btnAyuda";
-            this.btnAyuda.Size = new System.Drawing.Size(135, 39);
-            this.btnAyuda.TabIndex = 8;
-            this.btnAyuda.Text = "Cerrar";
+            this.btnAyuda.Size = new System.Drawing.Size(101, 39);
+            this.btnAyuda.TabIndex = 9;
+            this.btnAyuda.Text = "Ayuda";
             this.btnAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAyuda.UseVisualStyleBackColor = false;
-            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
             // gbDatos
             // 
@@ -359,92 +374,10 @@
             this.gbDatos.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDatos.Location = new System.Drawing.Point(0, 110);
             this.gbDatos.Name = "gbDatos";
-            this.gbDatos.Size = new System.Drawing.Size(690, 238);
+            this.gbDatos.Size = new System.Drawing.Size(1059, 238);
             this.gbDatos.TabIndex = 10;
             this.gbDatos.TabStop = false;
             this.gbDatos.Visible = false;
-            // 
-            // btnEE
-            // 
-            this.btnEE.BackColor = System.Drawing.Color.Gray;
-            this.btnEE.BackgroundImage = global::UNAN.Properties.Resources.EstrEva;
-            this.btnEE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEE.Location = new System.Drawing.Point(992, 191);
-            this.btnEE.Name = "btnEE";
-            this.btnEE.Size = new System.Drawing.Size(41, 44);
-            this.btnEE.TabIndex = 36;
-            this.btnEE.UseVisualStyleBackColor = false;
-            this.btnEE.Click += new System.EventHandler(this.btnEE_Click);
-            // 
-            // btnFE
-            // 
-            this.btnFE.BackgroundImage = global::UNAN.Properties.Resources.Evaluation;
-            this.btnFE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFE.Location = new System.Drawing.Point(656, 191);
-            this.btnFE.Name = "btnFE";
-            this.btnFE.Size = new System.Drawing.Size(41, 44);
-            this.btnFE.TabIndex = 35;
-            this.btnFE.UseVisualStyleBackColor = true;
-            this.btnFE.Click += new System.EventHandler(this.btnFE_Click);
-            // 
-            // btnEEA
-            // 
-            this.btnEEA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnEEA.BackgroundImage = global::UNAN.Properties.Resources.Estrategia;
-            this.btnEEA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEEA.Location = new System.Drawing.Point(264, 191);
-            this.btnEEA.Name = "btnEEA";
-            this.btnEEA.Size = new System.Drawing.Size(41, 40);
-            this.btnEEA.TabIndex = 34;
-            this.btnEEA.UseVisualStyleBackColor = false;
-            this.btnEEA.Click += new System.EventHandler(this.btnEEA_Click);
-            // 
-            // cbEstrEvaluacion
-            // 
-            this.cbEstrEvaluacion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbEstrEvaluacion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbEstrEvaluacion.BackColor = System.Drawing.Color.White;
-            this.cbEstrEvaluacion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEstrEvaluacion.FormattingEnabled = true;
-            this.cbEstrEvaluacion.Location = new System.Drawing.Point(745, 201);
-            this.cbEstrEvaluacion.Name = "cbEstrEvaluacion";
-            this.cbEstrEvaluacion.Size = new System.Drawing.Size(240, 26);
-            this.cbEstrEvaluacion.TabIndex = 30;
-            // 
-            // cbFormaEvaluacion
-            // 
-            this.cbFormaEvaluacion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbFormaEvaluacion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbFormaEvaluacion.BackColor = System.Drawing.Color.White;
-            this.cbFormaEvaluacion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFormaEvaluacion.FormattingEnabled = true;
-            this.cbFormaEvaluacion.Location = new System.Drawing.Point(405, 203);
-            this.cbFormaEvaluacion.Name = "cbFormaEvaluacion";
-            this.cbFormaEvaluacion.Size = new System.Drawing.Size(240, 26);
-            this.cbFormaEvaluacion.TabIndex = 29;
-            // 
-            // cbEnseApren
-            // 
-            this.cbEnseApren.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbEnseApren.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbEnseApren.BackColor = System.Drawing.Color.White;
-            this.cbEnseApren.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEnseApren.FormattingEnabled = true;
-            this.cbEnseApren.Location = new System.Drawing.Point(9, 203);
-            this.cbEnseApren.Name = "cbEnseApren";
-            this.cbEnseApren.Size = new System.Drawing.Size(240, 26);
-            this.cbEnseApren.TabIndex = 28;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label14.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(1105, 165);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(34, 24);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "%:";
             // 
             // PCargarPlan
             // 
@@ -534,6 +467,88 @@
             this.label18.Size = new System.Drawing.Size(53, 20);
             this.label18.TabIndex = 13;
             this.label18.Text = "Ruta:";
+            // 
+            // btnEE
+            // 
+            this.btnEE.BackColor = System.Drawing.Color.Gray;
+            this.btnEE.BackgroundImage = global::UNAN.Properties.Resources.EstrEva;
+            this.btnEE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEE.Location = new System.Drawing.Point(992, 191);
+            this.btnEE.Name = "btnEE";
+            this.btnEE.Size = new System.Drawing.Size(41, 44);
+            this.btnEE.TabIndex = 36;
+            this.btnEE.UseVisualStyleBackColor = false;
+            this.btnEE.Click += new System.EventHandler(this.btnEE_Click);
+            // 
+            // btnFE
+            // 
+            this.btnFE.BackgroundImage = global::UNAN.Properties.Resources.Evaluation;
+            this.btnFE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFE.Location = new System.Drawing.Point(656, 191);
+            this.btnFE.Name = "btnFE";
+            this.btnFE.Size = new System.Drawing.Size(41, 44);
+            this.btnFE.TabIndex = 35;
+            this.btnFE.UseVisualStyleBackColor = true;
+            this.btnFE.Click += new System.EventHandler(this.btnFE_Click);
+            // 
+            // btnEEA
+            // 
+            this.btnEEA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnEEA.BackgroundImage = global::UNAN.Properties.Resources.Estrategia;
+            this.btnEEA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEEA.Location = new System.Drawing.Point(264, 191);
+            this.btnEEA.Name = "btnEEA";
+            this.btnEEA.Size = new System.Drawing.Size(41, 40);
+            this.btnEEA.TabIndex = 34;
+            this.btnEEA.UseVisualStyleBackColor = false;
+            this.btnEEA.Click += new System.EventHandler(this.btnEEA_Click);
+            // 
+            // cbEstrEvaluacion
+            // 
+            this.cbEstrEvaluacion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbEstrEvaluacion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbEstrEvaluacion.BackColor = System.Drawing.Color.White;
+            this.cbEstrEvaluacion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEstrEvaluacion.FormattingEnabled = true;
+            this.cbEstrEvaluacion.Location = new System.Drawing.Point(745, 201);
+            this.cbEstrEvaluacion.Name = "cbEstrEvaluacion";
+            this.cbEstrEvaluacion.Size = new System.Drawing.Size(240, 26);
+            this.cbEstrEvaluacion.TabIndex = 30;
+            // 
+            // cbFormaEvaluacion
+            // 
+            this.cbFormaEvaluacion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbFormaEvaluacion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbFormaEvaluacion.BackColor = System.Drawing.Color.White;
+            this.cbFormaEvaluacion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFormaEvaluacion.FormattingEnabled = true;
+            this.cbFormaEvaluacion.Location = new System.Drawing.Point(405, 203);
+            this.cbFormaEvaluacion.Name = "cbFormaEvaluacion";
+            this.cbFormaEvaluacion.Size = new System.Drawing.Size(240, 26);
+            this.cbFormaEvaluacion.TabIndex = 29;
+            // 
+            // cbEnseApren
+            // 
+            this.cbEnseApren.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbEnseApren.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbEnseApren.BackColor = System.Drawing.Color.White;
+            this.cbEnseApren.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEnseApren.FormattingEnabled = true;
+            this.cbEnseApren.Location = new System.Drawing.Point(9, 203);
+            this.cbEnseApren.Name = "cbEnseApren";
+            this.cbEnseApren.Size = new System.Drawing.Size(240, 26);
+            this.cbEnseApren.TabIndex = 28;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label14.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(1105, 165);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(34, 24);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "%:";
             // 
             // txtPorcentaje
             // 
@@ -726,7 +741,7 @@
             this.GBDetalles.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GBDetalles.Location = new System.Drawing.Point(0, 0);
             this.GBDetalles.Name = "GBDetalles";
-            this.GBDetalles.Size = new System.Drawing.Size(690, 110);
+            this.GBDetalles.Size = new System.Drawing.Size(1059, 110);
             this.GBDetalles.TabIndex = 9;
             this.GBDetalles.TabStop = false;
             this.GBDetalles.Visible = false;
@@ -952,29 +967,29 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Asignatura:";
             // 
-            // dataAsistencia
+            // dtPlanD
             // 
-            this.dataAsistencia.AllowUserToAddRows = false;
-            this.dataAsistencia.AllowUserToDeleteRows = false;
-            this.dataAsistencia.AllowUserToResizeRows = false;
-            this.dataAsistencia.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataAsistencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataAsistencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataAsistencia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtPlanD.AllowUserToAddRows = false;
+            this.dtPlanD.AllowUserToDeleteRows = false;
+            this.dtPlanD.AllowUserToResizeRows = false;
+            this.dtPlanD.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dtPlanD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtPlanD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtPlanD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar,
             this.Editar});
-            this.dataAsistencia.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataAsistencia.Location = new System.Drawing.Point(0, 98);
-            this.dataAsistencia.Margin = new System.Windows.Forms.Padding(2);
-            this.dataAsistencia.Name = "dataAsistencia";
-            this.dataAsistencia.ReadOnly = true;
-            this.dataAsistencia.RowHeadersWidth = 82;
-            this.dataAsistencia.RowTemplate.Height = 33;
-            this.dataAsistencia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataAsistencia.ShowCellToolTips = false;
-            this.dataAsistencia.ShowEditingIcon = false;
-            this.dataAsistencia.Size = new System.Drawing.Size(1294, 755);
-            this.dataAsistencia.TabIndex = 40;
+            this.dtPlanD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtPlanD.Location = new System.Drawing.Point(0, 98);
+            this.dtPlanD.Margin = new System.Windows.Forms.Padding(2);
+            this.dtPlanD.Name = "dtPlanD";
+            this.dtPlanD.ReadOnly = true;
+            this.dtPlanD.RowHeadersWidth = 82;
+            this.dtPlanD.RowTemplate.Height = 33;
+            this.dtPlanD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtPlanD.ShowCellToolTips = false;
+            this.dtPlanD.ShowEditingIcon = false;
+            this.dtPlanD.Size = new System.Drawing.Size(1294, 755);
+            this.dtPlanD.TabIndex = 40;
             // 
             // Eliminar
             // 
@@ -1201,28 +1216,13 @@
             this.textBox1.Size = new System.Drawing.Size(224, 19);
             this.textBox1.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Font = new System.Drawing.Font("Arial", 14.25F);
-            this.button1.Image = global::UNAN.Properties.Resources.help_32px;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 93);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 39);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Ayuda";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // UCPlanDidactico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnPlan);
             this.Controls.Add(this.pncarga);
-            this.Controls.Add(this.dataAsistencia);
+            this.Controls.Add(this.dtPlanD);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PanelPaginado);
@@ -1241,7 +1241,7 @@
             this.PCargarPlan.PerformLayout();
             this.GBDetalles.ResumeLayout(false);
             this.GBDetalles.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataAsistencia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtPlanD)).EndInit();
             this.PanelPaginado.ResumeLayout(false);
             this.PanelPaginado.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -1266,7 +1266,7 @@
         private System.Windows.Forms.Button btnInsertar;
         private System.Windows.Forms.Button btnSubirPlan;
         private System.Windows.Forms.Button btnSubir;
-        private System.Windows.Forms.Button btnAyuda;
+        private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.GroupBox gbDatos;
         private System.Windows.Forms.Button btnEE;
         private System.Windows.Forms.Button btnFE;
@@ -1319,7 +1319,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataAsistencia;
+        private System.Windows.Forms.DataGridView dtPlanD;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.Panel PanelPaginado;
@@ -1337,6 +1337,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAyuda;
     }
 }
