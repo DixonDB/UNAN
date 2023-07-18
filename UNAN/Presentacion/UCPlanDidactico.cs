@@ -1,7 +1,9 @@
 ﻿using ExcelDataReader;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Threading;
@@ -55,7 +57,7 @@ namespace UNAN.FrmPlanDidactico
             Mostrarcod();
             mod.MostrarModalidades(cbModalidad);
             mod.MostrarGrupos(cbGrupo, cbCarrera.Text);
-            Diseñodt();
+            Bases.DiseñoDtv(ref dtPlan);
             mod.MostrarSemestre(cbSemestre);
             txtDocente.Text = Login.nombreprofe;
         }
@@ -66,8 +68,10 @@ namespace UNAN.FrmPlanDidactico
         }
         private void Diseñodt()
         {
-            Bases.DiseñoDtv(ref dtPlan);
-
+            Bases.DiseñoDtv(ref dtPlanD);
+            PanelPaginado.Visible = true;
+            dtPlanD.Columns["IdPlan"].Visible = false;
+            dtPlanD.Columns[3].Visible = false;
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -238,6 +242,7 @@ namespace UNAN.FrmPlanDidactico
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            MostrarPlanD();
             pncarga.Visible = false;
             pnBotones.Visible = true;
             gbDatos.Visible = true;
@@ -259,5 +264,119 @@ namespace UNAN.FrmPlanDidactico
             PanelPaginado.Visible = true;
             panel4.Visible = true;
         }
+        private void MostrarPlanD()
+        {
+            int idprofesor = Login.idprofesor;
+            DataTable dt = new DataTable();
+            DPlanDidactico funcion= new DPlanDidactico();
+            funcion.MostrarPlanD(ref dt, idprofesor);
+            dtPlanD.DataSource = dt;
+            Diseñodt();
+        }
+
+        //Llenar data de forma manual
+        /// <summary>
+        /// Defino cada control
+        /// </summary>
+        public class DatosRegistro
+        {
+            public DateTime FechaInicio { get; set; }
+            public DateTime FechaFin { get; set; }
+            public int SemanaInicio { get; set; }
+            public int SemanaFin { get; set; }
+            public string Objetivos { get; set; }
+            public string Contenido { get; set; }
+            public string CbEASeleccionado { get; set; }
+            public string CbEESeleccionado { get; set; }
+            public string CbFESeleccionado { get; set; }
+            public string Porcentaje { get; set; }
+        }
+        /// <summary>
+        /// Se define la lista que almacenara los datos
+        /// </summary>
+        List<DatosRegistro> listaRegistros = new List<DatosRegistro>();
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            ConfigurarDataGridView();
+            // Obtener los datos de los controles
+            DateTime fechaInicio = dtFechaInico.Value;
+            DateTime fechaFin = dtFechaFin.Value;
+            int semanaInicio = int.Parse(txtSemInicio.Text);
+            int semanaFin = int.Parse(txtSemFin.Text);
+            string objetivos = txtObj.Text;
+            string contenido = txtCont.Text;
+            string cbEASeleccionado = cbEnseApren.Text;
+            string cbEESeleccionado = cbEstrEvaluacion.Text;
+            string cbFESeleccionado = cbFormaEvaluacion.Text;
+            string porcentaje = txtPorcentaje.Text;
+
+            // Crear un nuevo objeto DatosRegistro
+            DatosRegistro nuevoRegistro = new DatosRegistro()
+            {
+                FechaInicio = fechaInicio,
+                FechaFin = fechaFin,
+                SemanaInicio = semanaInicio,
+                SemanaFin = semanaFin,
+                Objetivos = objetivos,
+                Contenido = contenido,
+                CbEASeleccionado = cbEASeleccionado,
+                CbEESeleccionado = cbEESeleccionado,
+                CbFESeleccionado = cbFESeleccionado,
+                Porcentaje=porcentaje
+            };
+
+            // Agregar el objeto a la lista
+            listaRegistros.Add(nuevoRegistro);
+            MostrarDatosEnDataGridView();
+            // Limpiar los controles
+            LimpiarControles();
+        }
+        private void LimpiarControles()
+        {
+            dtFechaInico.Value = DateTime.Now;
+            dtFechaFin.Value = DateTime.Now;
+            txtSemInicio.Text = string.Empty;
+            txtSemFin.Text = string.Empty;
+            txtObj.Text = string.Empty;
+            txtCont.Text = string.Empty;
+            txtPorcentaje.Text = string.Empty;
+        }
+        private void MostrarDatosEnDataGridView()
+        {
+            //dtPlan.Rows.Clear();
+            foreach (var registro in listaRegistros)
+            {
+                dtPlan.Rows.Add(
+                    registro.FechaInicio.ToShortDateString(),
+                    registro.FechaFin.ToShortDateString(),
+                    registro.SemanaInicio,
+                    registro.SemanaFin,
+                    registro.Objetivos,
+                    registro.Contenido,
+                    registro.CbEASeleccionado,
+                    registro.CbEESeleccionado,
+                    registro.CbFESeleccionado,
+                    registro.Porcentaje
+                );
+            }
+        }
+        private void ConfigurarDataGridView()
+        {
+            // Borramos todas las columnas actuales del DataGridView
+            dtPlan.Columns.Clear();
+
+            // Configuramos las columnas con los encabezados deseados
+            dtPlan.Columns.Add("ColumnFechaInicio", "Fecha Inicio");
+            dtPlan.Columns.Add("ColumnFechaFin", "Fecha Fin");
+            dtPlan.Columns.Add("ColumnSemanaInicio", "Semana Inicio");
+            dtPlan.Columns.Add("ColumnSemanaFin", "Semana Fin");
+            dtPlan.Columns.Add("ColumnObjetivos", "Objetivos");
+            dtPlan.Columns.Add("ColumnContenido", "Contenido");
+            dtPlan.Columns.Add("ColumnEA", "EA");
+            dtPlan.Columns.Add("ColumnEE", "EE");
+            dtPlan.Columns.Add("ColumnFE", "FE");
+            dtPlan.Columns.Add("Porcentaje", "%");
+        }
+
     }
 }

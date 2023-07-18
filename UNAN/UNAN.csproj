@@ -65,6 +65,7 @@
     <Compile Include="Datos\DModalidades.cs" />
     <Compile Include="Datos\DModulos.cs" />
     <Compile Include="Datos\DPermisos.cs" />
+    <Compile Include="Datos\DPlanDidactico.cs" />
     <Compile Include="Datos\DProfesores.cs" />
     <Compile Include="Datos\DRecuperacion.cs" />
     <Compile Include="Logica\Bases.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Logica\LModalidad.cs" />
     <Compile Include="Logica\Lmodulos.cs" />
     <Compile Include="Logica\Lpermisos.cs" />
+    <Compile Include="Logica\LPlanDidactico.cs" />
     <Compile Include="Logica\LProfesores.cs" />
     <Compile Include="Logica\NProfes.cs" />
     <Compile Include="Presentacion\FrmAsignatura.cs">

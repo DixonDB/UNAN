@@ -98,9 +98,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtPlanD = new System.Windows.Forms.DataGridView();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.PanelPaginado = new System.Windows.Forms.Panel();
             this.btn_atras = new System.Windows.Forms.Button();
             this.btn_Sig = new System.Windows.Forms.Button();
@@ -116,6 +113,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dtPlanD = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.pncarga.SuspendLayout();
             this.pnPlan.SuspendLayout();
@@ -125,10 +125,10 @@
             this.gbDatos.SuspendLayout();
             this.PCargarPlan.SuspendLayout();
             this.GBDetalles.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtPlanD)).BeginInit();
             this.PanelPaginado.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtPlanD)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -279,6 +279,7 @@
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnInsertar.UseVisualStyleBackColor = false;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // btnSubirPlan
             // 
@@ -967,50 +968,6 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Asignatura:";
             // 
-            // dtPlanD
-            // 
-            this.dtPlanD.AllowUserToAddRows = false;
-            this.dtPlanD.AllowUserToDeleteRows = false;
-            this.dtPlanD.AllowUserToResizeRows = false;
-            this.dtPlanD.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dtPlanD.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtPlanD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtPlanD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eliminar,
-            this.Editar});
-            this.dtPlanD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtPlanD.Location = new System.Drawing.Point(0, 98);
-            this.dtPlanD.Margin = new System.Windows.Forms.Padding(2);
-            this.dtPlanD.Name = "dtPlanD";
-            this.dtPlanD.ReadOnly = true;
-            this.dtPlanD.RowHeadersWidth = 82;
-            this.dtPlanD.RowTemplate.Height = 33;
-            this.dtPlanD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtPlanD.ShowCellToolTips = false;
-            this.dtPlanD.ShowEditingIcon = false;
-            this.dtPlanD.Size = new System.Drawing.Size(1294, 755);
-            this.dtPlanD.TabIndex = 40;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Image = global::UNAN.Properties.Resources.borrar;
-            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Eliminar.MinimumWidth = 10;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 200;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "";
-            this.Editar.Image = global::UNAN.Properties.Resources.lapiz;
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.MinimumWidth = 10;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Width = 200;
-            // 
             // PanelPaginado
             // 
             this.PanelPaginado.BackColor = System.Drawing.SystemColors.Control;
@@ -1216,6 +1173,50 @@
             this.textBox1.Size = new System.Drawing.Size(224, 19);
             this.textBox1.TabIndex = 0;
             // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "";
+            this.Editar.Image = global::UNAN.Properties.Resources.lapiz;
+            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Editar.MinimumWidth = 10;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Width = 200;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.Image = global::UNAN.Properties.Resources.borrar;
+            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Eliminar.MinimumWidth = 10;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 200;
+            // 
+            // dtPlanD
+            // 
+            this.dtPlanD.AllowUserToAddRows = false;
+            this.dtPlanD.AllowUserToDeleteRows = false;
+            this.dtPlanD.AllowUserToResizeRows = false;
+            this.dtPlanD.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dtPlanD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtPlanD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtPlanD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Eliminar,
+            this.Editar});
+            this.dtPlanD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtPlanD.Location = new System.Drawing.Point(0, 98);
+            this.dtPlanD.Margin = new System.Windows.Forms.Padding(2);
+            this.dtPlanD.Name = "dtPlanD";
+            this.dtPlanD.ReadOnly = true;
+            this.dtPlanD.RowHeadersWidth = 82;
+            this.dtPlanD.RowTemplate.Height = 33;
+            this.dtPlanD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtPlanD.ShowCellToolTips = false;
+            this.dtPlanD.ShowEditingIcon = false;
+            this.dtPlanD.Size = new System.Drawing.Size(1294, 755);
+            this.dtPlanD.TabIndex = 40;
+            // 
             // UCPlanDidactico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1241,12 +1242,12 @@
             this.PCargarPlan.PerformLayout();
             this.GBDetalles.ResumeLayout(false);
             this.GBDetalles.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtPlanD)).EndInit();
             this.PanelPaginado.ResumeLayout(false);
             this.PanelPaginado.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtPlanD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1319,9 +1320,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dtPlanD;
-        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.Panel PanelPaginado;
         internal System.Windows.Forms.Button btn_atras;
         internal System.Windows.Forms.Button btn_Sig;
@@ -1338,5 +1336,8 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnAyuda;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        private System.Windows.Forms.DataGridView dtPlanD;
     }
 }
