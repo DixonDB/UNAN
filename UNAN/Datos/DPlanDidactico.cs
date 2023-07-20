@@ -49,15 +49,21 @@ namespace UNAN.Datos
             int i = 1;
             foreach (var oElement in lst)
             {
+                var fecha = oElement.FechaInicio;
+                var fecha2 = oElement.FechaFin;
+                string textoInvertido = InvertirCadena(fecha);
+                string texto = InvertirCadena(fecha2);
+                oElement.FechaInicio = fecha;
                 dt.Rows.Add(i, oElement.SemanaInicio, oElement.SemanaFin, oElement.FechaInicio, oElement.FechaFin,
-                oElement.Objetivos, oElement.Tema, oElement.EA, oElement.FE, oElement.EE, oElement.Porcentaje, oElement.Estado);
+                oElement.Objetivos, oElement.Tema, oElement.EA, oElement.FE, oElement.EE, oElement.Porcentaje
+                , oElement.Estado);
                 i++;
             }
 
             Conexion.abrir();
             SqlCommand cmd = new SqlCommand("InsertarTemas", Conexion.conectar);
             var parameterlst = new SqlParameter("@lstTemas", SqlDbType.Structured);
-            parameterlst.TypeName = "Temas";
+            parameterlst.TypeName = "Tema";
             parameterlst.Value = dt;
             cmd.CommandType=CommandType.StoredProcedure;
 
@@ -65,6 +71,13 @@ namespace UNAN.Datos
             cmd.Parameters.AddWithValue("@IdAsignatura", IdAsignatura);
             cmd.ExecuteNonQuery();
             Conexion.cerrar();
+        }
+
+        public static string InvertirCadena(string texto)
+        {
+            char[] caracteres = texto.ToCharArray();
+            Array.Reverse(caracteres);
+            return new string(caracteres);
         }
     }
 }

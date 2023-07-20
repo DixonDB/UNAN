@@ -3,14 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 using UNAN.Datos;
 using UNAN.Logica;
 using UNAN.Presentacion;
+using Excel = Microsoft;
 
 namespace UNAN.FrmPlanDidactico
 {
@@ -32,6 +33,7 @@ namespace UNAN.FrmPlanDidactico
 
         private void btnSubir_Click(object sender, EventArgs e)
         {
+            PCargarPlan.BringToFront();
             PCargarPlan.Visible = true;
             PCargarPlan.Size = new Size(511, 178);
             PCargarPlan.Location = new Point(282, 25);
@@ -200,7 +202,7 @@ namespace UNAN.FrmPlanDidactico
                     oConcepto.FE= dr.Cells[7].Value.ToString();
                     oConcepto.EE= dr.Cells[8].Value.ToString();
                     oConcepto.Porcentaje = decimal.Parse(dr.Cells[9].Value.ToString());
-                    oConcepto.Estado= dr.Cells[10].Value.ToString();
+                    //oConcepto.Estado= dr.Cells[10].Value.ToString();
                     lst.Add(oConcepto);
                 }
 
@@ -293,9 +295,9 @@ namespace UNAN.FrmPlanDidactico
             PanelPaginado.Visible = false;
             panel4.Visible= false;
         }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
+            private void btnCerrar_Click(object sender, EventArgs e)
         {
+            dtPlan2.DataSource = dtsTablas.Tables[""];
             pnPlan.Visible = false;
             PanelPaginado.Visible = true;
             panel4.Visible = true;
@@ -312,8 +314,6 @@ namespace UNAN.FrmPlanDidactico
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            var fecha = DateTime.Parse(dtFechaInico.Value.ToString("yyyy-MM-dd"));
-            var fecha2 = DateTime.Parse(dtFechaFin.Value.ToString("yyyy-MM-dd"));
             string SemanaI = (txtSemInicio.Text);
             string SemanaF = (txtSemFin.Text);
             string FechaI = dtFechaInico.Text;
@@ -324,10 +324,11 @@ namespace UNAN.FrmPlanDidactico
             string FE = cbFormaEvaluacion.Text;
             string EE = cbEstrEvaluacion.Text;
             string Porcentaje = (txtPorcentaje.Text);
-            string Estado = "ACTIVO";
+            //string Estado = "ACTIVO";
             dtPlan2.Rows.Add(new object[]
             {
-                SemanaI,SemanaF,FechaI,FechaF,Objetivo,Tema, EA,FE, EE, Porcentaje,Estado
+                SemanaI,SemanaF,FechaI,FechaF,Objetivo,Tema, EA,FE, EE, Porcentaje
+                //,Estado
             });
             LimpiarControles();
         }
