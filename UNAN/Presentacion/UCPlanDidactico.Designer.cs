@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -38,7 +38,18 @@
             this.pbrCarga = new System.Windows.Forms.ProgressBar();
             this.lblCarga = new System.Windows.Forms.Label();
             this.pnPlan = new System.Windows.Forms.Panel();
-            this.dtPlan = new System.Windows.Forms.DataGridView();
+            this.dtPlan2 = new System.Windows.Forms.DataGridView();
+            this.SemanaI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SemanaF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Objetivos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contenidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstrApren = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FormaEvaluacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstrategiaEvaluacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Porcentaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnBotones = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnInsertar = new System.Windows.Forms.Button();
@@ -119,7 +130,7 @@
             this.panel1.SuspendLayout();
             this.pncarga.SuspendLayout();
             this.pnPlan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtPlan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtPlan2)).BeginInit();
             this.pnBotones.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.gbDatos.SuspendLayout();
@@ -197,7 +208,7 @@
             // 
             // pnPlan
             // 
-            this.pnPlan.Controls.Add(this.dtPlan);
+            this.pnPlan.Controls.Add(this.dtPlan2);
             this.pnPlan.Controls.Add(this.pnBotones);
             this.pnPlan.Controls.Add(this.gbDatos);
             this.pnPlan.Controls.Add(this.GBDetalles);
@@ -207,37 +218,105 @@
             this.pnPlan.TabIndex = 37;
             this.pnPlan.Visible = false;
             // 
-            // dtPlan
+            // dtPlan2
             // 
-            this.dtPlan.AllowUserToOrderColumns = true;
-            this.dtPlan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtPlan.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dtPlan.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dtPlan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dtPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtPlan.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dtPlan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtPlan.Location = new System.Drawing.Point(0, 400);
-            this.dtPlan.Name = "dtPlan";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dtPlan.RowHeadersVisible = false;
-            this.dtPlan.RowHeadersWidth = 82;
-            this.dtPlan.Size = new System.Drawing.Size(1059, 76);
-            this.dtPlan.TabIndex = 11;
+            this.dtPlan2.AllowUserToAddRows = false;
+            this.dtPlan2.AllowUserToOrderColumns = true;
+            this.dtPlan2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtPlan2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtPlan2.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dtPlan2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dtPlan2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtPlan2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SemanaI,
+            this.SemanaF,
+            this.FechaI,
+            this.FechaF,
+            this.Objetivos,
+            this.Contenidos,
+            this.EstrApren,
+            this.FormaEvaluacion,
+            this.EstrategiaEvaluacion,
+            this.Porcentaje,
+            this.Estado});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtPlan2.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dtPlan2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtPlan2.Location = new System.Drawing.Point(0, 400);
+            this.dtPlan2.Name = "dtPlan2";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtPlan2.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dtPlan2.RowHeadersVisible = false;
+            this.dtPlan2.RowHeadersWidth = 82;
+            this.dtPlan2.Size = new System.Drawing.Size(1059, 76);
+            this.dtPlan2.TabIndex = 11;
+            // 
+            // SemanaI
+            // 
+            this.SemanaI.HeaderText = "Semana Inicio";
+            this.SemanaI.Name = "SemanaI";
+            // 
+            // SemanaF
+            // 
+            this.SemanaF.HeaderText = "Semana Fin";
+            this.SemanaF.Name = "SemanaF";
+            // 
+            // FechaI
+            // 
+            this.FechaI.HeaderText = "Fecha Inicio";
+            this.FechaI.Name = "FechaI";
+            // 
+            // FechaF
+            // 
+            this.FechaF.HeaderText = "Fecha Fin";
+            this.FechaF.Name = "FechaF";
+            // 
+            // Objetivos
+            // 
+            this.Objetivos.HeaderText = "Objetivos";
+            this.Objetivos.Name = "Objetivos";
+            // 
+            // Contenidos
+            // 
+            this.Contenidos.HeaderText = "Contenidos";
+            this.Contenidos.Name = "Contenidos";
+            // 
+            // EstrApren
+            // 
+            this.EstrApren.HeaderText = "Estrategia Aprendizaje";
+            this.EstrApren.Name = "EstrApren";
+            // 
+            // FormaEvaluacion
+            // 
+            this.FormaEvaluacion.HeaderText = "Forma Evaluacion";
+            this.FormaEvaluacion.Name = "FormaEvaluacion";
+            // 
+            // EstrategiaEvaluacion
+            // 
+            this.EstrategiaEvaluacion.HeaderText = "Estrategia Evaluación";
+            this.EstrategiaEvaluacion.Name = "EstrategiaEvaluacion";
+            // 
+            // Porcentaje
+            // 
+            this.Porcentaje.HeaderText = "%";
+            this.Porcentaje.Name = "Porcentaje";
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
             // 
             // pnBotones
             // 
@@ -557,19 +636,21 @@
             this.txtPorcentaje.Name = "txtPorcentaje";
             this.txtPorcentaje.Size = new System.Drawing.Size(63, 26);
             this.txtPorcentaje.TabIndex = 3;
-            this.txtPorcentaje.Text = "%";
+            this.txtPorcentaje.Text = "0";
             // 
             // dtFechaInico
             // 
-            this.dtFechaInico.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechaInico.Location = new System.Drawing.Point(118, 18);
+            this.dtFechaInico.CustomFormat = "yyyy/MM/dd";
+            this.dtFechaInico.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtFechaInico.Location = new System.Drawing.Point(124, 17);
             this.dtFechaInico.Name = "dtFechaInico";
             this.dtFechaInico.Size = new System.Drawing.Size(109, 26);
             this.dtFechaInico.TabIndex = 2;
             // 
             // dtFechaFin
             // 
-            this.dtFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaFin.CustomFormat = "yyyy/MM/dd";
+            this.dtFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtFechaFin.Location = new System.Drawing.Point(550, 15);
             this.dtFechaFin.Name = "dtFechaFin";
             this.dtFechaFin.Size = new System.Drawing.Size(109, 26);
@@ -1233,7 +1314,7 @@
             this.panel1.ResumeLayout(false);
             this.pncarga.ResumeLayout(false);
             this.pnPlan.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtPlan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtPlan2)).EndInit();
             this.pnBotones.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.gbDatos.ResumeLayout(false);
@@ -1261,7 +1342,7 @@
         private System.Windows.Forms.ProgressBar pbrCarga;
         private System.Windows.Forms.Label lblCarga;
         private System.Windows.Forms.Panel pnPlan;
-        public System.Windows.Forms.DataGridView dtPlan;
+        public System.Windows.Forms.DataGridView dtPlan2;
         private System.Windows.Forms.Panel pnBotones;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnInsertar;
@@ -1339,5 +1420,16 @@
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.DataGridView dtPlanD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SemanaI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SemanaF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Objetivos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contenidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstrApren;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FormaEvaluacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstrategiaEvaluacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Porcentaje;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

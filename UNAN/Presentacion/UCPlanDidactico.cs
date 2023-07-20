@@ -22,6 +22,7 @@ namespace UNAN.FrmPlanDidactico
         DModalidades mod=new DModalidades();
         DAsignatura asig = new DAsignatura();
         DAprendizaje da=new DAprendizaje();
+        LPlanDidactico plan = new LPlanDidactico();
         frmMenu pri=new frmMenu();
         public UCPlanDidactico()
         {
@@ -57,7 +58,7 @@ namespace UNAN.FrmPlanDidactico
             Mostrarcod();
             mod.MostrarModalidades(cbModalidad);
             mod.MostrarGrupos(cbGrupo, cbCarrera.Text);
-            Bases.DiseñoDtv(ref dtPlan);
+            Bases.DiseñoDtv(ref dtPlan2);
             mod.MostrarSemestre(cbSemestre);
             txtDocente.Text = Login.nombreprofe;
         }
@@ -70,8 +71,8 @@ namespace UNAN.FrmPlanDidactico
         {
             Bases.DiseñoDtv(ref dtPlanD);
             PanelPaginado.Visible = true;
-            dtPlanD.Columns["IdPlan"].Visible = false;
-            dtPlanD.Columns[3].Visible = false;
+            //dtPlanD.Columns["IdPlan"].Visible = false;
+            //dtPlanD.Columns[3].Visible = false;
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -81,7 +82,7 @@ namespace UNAN.FrmPlanDidactico
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 cboHojas.Items.Clear();
-                dtPlan.DataSource = null;
+                dtPlan2.DataSource = null;
                 txtRuta.Text = ofd.FileName;
 
                 //FileStream nos permite leer, escribir, abrir y cerrar archivos en un sistema de archivos, como matrices de bytes
@@ -117,7 +118,8 @@ namespace UNAN.FrmPlanDidactico
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            dtPlan.DataSource = dtsTablas.Tables[cboHojas.SelectedIndex];
+            dtPlan2.Columns.Clear();
+            dtPlan2.DataSource = dtsTablas.Tables[cboHojas.SelectedIndex];
             PCargarPlan.Visible = false;
             PCargarPlan.Size = new Size(77, 48);
             PCargarPlan.Location = new Point(960, 238);
@@ -177,10 +179,44 @@ namespace UNAN.FrmPlanDidactico
             asig.MostrarAsignatura(cbAsignaturas, cbSemestre.Text, cbCarrera.Text, cbGrupo.Text);
             asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
         }
-
+        
         private void btnSubirPlan_Click(object sender, EventArgs e)
         {
-            gbDatos.Dock=DockStyle.Top;
+            try
+            {
+                List<LPlanDidactico> lst = new List<LPlanDidactico>();
+
+                //LLenar
+                foreach(DataGridViewRow dr in dtPlan2.Rows)
+                {
+                    LPlanDidactico oConcepto = new LPlanDidactico();
+                    oConcepto.SemanaInicio = int.Parse(dr.Cells[0].Value.ToString());
+                    oConcepto.SemanaFin = int.Parse(dr.Cells[1].Value.ToString());
+                    oConcepto.FechaInicio = (dr.Cells[2].Value.ToString());
+                    oConcepto.FechaFin = (dr.Cells[3].Value.ToString());
+                    oConcepto.Objetivos = dr.Cells[4].Value.ToString();
+                    oConcepto.Tema= dr.Cells[5].Value.ToString();
+                    oConcepto.EA= dr.Cells[6].Value.ToString();
+                    oConcepto.FE= dr.Cells[7].Value.ToString();
+                    oConcepto.EE= dr.Cells[8].Value.ToString();
+                    oConcepto.Porcentaje = decimal.Parse(dr.Cells[9].Value.ToString());
+                    oConcepto.Estado= dr.Cells[10].Value.ToString();
+                    lst.Add(oConcepto);
+                }
+
+                int id = (int)cbAsignaturas.SelectedValue;
+                DPlanDidactico oPlan = new DPlanDidactico();
+                oPlan.Add(id,lst);
+                MessageBox.Show("Registro realizado");
+                pnPlan.Visible = false;
+                PanelPaginado.Visible = true;
+                panel4.Visible = true;
+                dtPlan2.Rows.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnAddAsig_Click(object sender, EventArgs e)
@@ -274,61 +310,25 @@ namespace UNAN.FrmPlanDidactico
             Diseñodt();
         }
 
-        //Llenar data de forma manual
-        /// <summary>
-        /// Defino cada control
-        /// </summary>
-        public class DatosRegistro
-        {
-            public DateTime FechaInicio { get; set; }
-            public DateTime FechaFin { get; set; }
-            public int SemanaInicio { get; set; }
-            public int SemanaFin { get; set; }
-            public string Objetivos { get; set; }
-            public string Contenido { get; set; }
-            public string CbEASeleccionado { get; set; }
-            public string CbEESeleccionado { get; set; }
-            public string CbFESeleccionado { get; set; }
-            public string Porcentaje { get; set; }
-        }
-        /// <summary>
-        /// Se define la lista que almacenara los datos
-        /// </summary>
-        List<DatosRegistro> listaRegistros = new List<DatosRegistro>();
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            ConfigurarDataGridView();
-            // Obtener los datos de los controles
-            DateTime fechaInicio = dtFechaInico.Value;
-            DateTime fechaFin = dtFechaFin.Value;
-            int semanaInicio = int.Parse(txtSemInicio.Text);
-            int semanaFin = int.Parse(txtSemFin.Text);
-            string objetivos = txtObj.Text;
-            string contenido = txtCont.Text;
-            string cbEASeleccionado = cbEnseApren.Text;
-            string cbEESeleccionado = cbEstrEvaluacion.Text;
-            string cbFESeleccionado = cbFormaEvaluacion.Text;
-            string porcentaje = txtPorcentaje.Text;
-
-            // Crear un nuevo objeto DatosRegistro
-            DatosRegistro nuevoRegistro = new DatosRegistro()
+            var fecha = DateTime.Parse(dtFechaInico.Value.ToString("yyyy-MM-dd"));
+            var fecha2 = DateTime.Parse(dtFechaFin.Value.ToString("yyyy-MM-dd"));
+            string SemanaI = (txtSemInicio.Text);
+            string SemanaF = (txtSemFin.Text);
+            string FechaI = dtFechaInico.Text;
+            string FechaF = dtFechaFin.Text;
+            string Objetivo = txtObj.Text;
+            string Tema = txtCont.Text;
+            string EA = cbEnseApren.Text;
+            string FE = cbFormaEvaluacion.Text;
+            string EE = cbEstrEvaluacion.Text;
+            string Porcentaje = (txtPorcentaje.Text);
+            string Estado = "ACTIVO";
+            dtPlan2.Rows.Add(new object[]
             {
-                FechaInicio = fechaInicio,
-                FechaFin = fechaFin,
-                SemanaInicio = semanaInicio,
-                SemanaFin = semanaFin,
-                Objetivos = objetivos,
-                Contenido = contenido,
-                CbEASeleccionado = cbEASeleccionado,
-                CbEESeleccionado = cbEESeleccionado,
-                CbFESeleccionado = cbFESeleccionado,
-                Porcentaje=porcentaje
-            };
-
-            // Agregar el objeto a la lista
-            listaRegistros.Add(nuevoRegistro);
-            MostrarDatosEnDataGridView();
-            // Limpiar los controles
+                SemanaI,SemanaF,FechaI,FechaF,Objetivo,Tema, EA,FE, EE, Porcentaje,Estado
+            });
             LimpiarControles();
         }
         private void LimpiarControles()
@@ -341,42 +341,6 @@ namespace UNAN.FrmPlanDidactico
             txtCont.Text = string.Empty;
             txtPorcentaje.Text = string.Empty;
         }
-        private void MostrarDatosEnDataGridView()
-        {
-            //dtPlan.Rows.Clear();
-            foreach (var registro in listaRegistros)
-            {
-                dtPlan.Rows.Add(
-                    registro.FechaInicio.ToShortDateString(),
-                    registro.FechaFin.ToShortDateString(),
-                    registro.SemanaInicio,
-                    registro.SemanaFin,
-                    registro.Objetivos,
-                    registro.Contenido,
-                    registro.CbEASeleccionado,
-                    registro.CbEESeleccionado,
-                    registro.CbFESeleccionado,
-                    registro.Porcentaje
-                );
-            }
-        }
-        private void ConfigurarDataGridView()
-        {
-            // Borramos todas las columnas actuales del DataGridView
-            dtPlan.Columns.Clear();
-
-            // Configuramos las columnas con los encabezados deseados
-            dtPlan.Columns.Add("ColumnFechaInicio", "Fecha Inicio");
-            dtPlan.Columns.Add("ColumnFechaFin", "Fecha Fin");
-            dtPlan.Columns.Add("ColumnSemanaInicio", "Semana Inicio");
-            dtPlan.Columns.Add("ColumnSemanaFin", "Semana Fin");
-            dtPlan.Columns.Add("ColumnObjetivos", "Objetivos");
-            dtPlan.Columns.Add("ColumnContenido", "Contenido");
-            dtPlan.Columns.Add("ColumnEA", "EA");
-            dtPlan.Columns.Add("ColumnEE", "EE");
-            dtPlan.Columns.Add("ColumnFE", "FE");
-            dtPlan.Columns.Add("Porcentaje", "%");
-        }
-
+        
     }
 }

@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using UNAN.Logica;
 
 namespace UNAN.Datos
 {
@@ -29,23 +30,41 @@ namespace UNAN.Datos
                 Conexion.cerrar();
             }
         }
-        public void Mostrarcamposvacios(ref DataTable dt)
+        public void Add(int IdAsignatura,List<LPlanDidactico> lst)
         {
-            try
+            var dt = new DataTable();
+            dt.Columns.Add("Id");
+            dt.Columns.Add("SemanaI");
+            dt.Columns.Add("SemanaF");
+            dt.Columns.Add("FechaI");
+            dt.Columns.Add("FechaF");
+            dt.Columns.Add("Objetivos");
+            dt.Columns.Add("Tema");
+            dt.Columns.Add("EstrategiaAprendizaje");
+            dt.Columns.Add("FormaEvaluacion");
+            dt.Columns.Add("EstrategiaEvaluacion");
+            dt.Columns.Add("Porcetaje");
+            dt.Columns.Add("Estado");
+
+            int i = 1;
+            foreach (var oElement in lst)
             {
-                Conexion.abrir();
-                SqlDataAdapter da = new SqlDataAdapter("MostrarCamposVacios", Conexion.conectar);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.Fill(dt);
+                dt.Rows.Add(i, oElement.SemanaInicio, oElement.SemanaFin, oElement.FechaInicio, oElement.FechaFin,
+                oElement.Objetivos, oElement.Tema, oElement.EA, oElement.FE, oElement.EE, oElement.Porcentaje, oElement.Estado);
+                i++;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                Conexion.cerrar();
-            }
+
+            Conexion.abrir();
+            SqlCommand cmd = new SqlCommand("InsertarTemas", Conexion.conectar);
+            var parameterlst = new SqlParameter("@lstTemas", SqlDbType.Structured);
+            parameterlst.TypeName = "Temas";
+            parameterlst.Value = dt;
+            cmd.CommandType=CommandType.StoredProcedure;
+
+            cmd.Parameters.Add(parameterlst);
+            cmd.Parameters.AddWithValue("@IdAsignatura", IdAsignatura);
+            cmd.ExecuteNonQuery();
+            Conexion.cerrar();
         }
     }
 }
