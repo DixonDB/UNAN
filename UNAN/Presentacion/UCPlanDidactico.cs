@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using UNAN.Datos;
 using UNAN.Logica;
@@ -16,13 +17,12 @@ namespace UNAN.FrmPlanDidactico
     public partial class UCPlanDidactico : UserControl
     {
         //Un DataSet es un objeto que almacena n número de DataTables, estas tablas puedes estar conectadas dentro del dataset.
-        private DataSet dtsTablas = new DataSet();
+        public DataSet dtsTablas = new DataSet();
         DCarreras carreras = new DCarreras();
         DModalidades mod=new DModalidades();
         DAsignatura asig = new DAsignatura();
         DAprendizaje da=new DAprendizaje();
         LPlanDidactico plan = new LPlanDidactico();
-        frmMenu pri=new frmMenu();
         public UCPlanDidactico()
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace UNAN.FrmPlanDidactico
             PCargarPlan.BringToFront();
             PCargarPlan.Visible = true;
             PCargarPlan.Size = new Size(511, 178);
-            PCargarPlan.Location = new Point(282, 25);
+            PCargarPlan.Location = new Point(this.Width/2- PCargarPlan.Width/2,this.Height/2-PCargarPlan.Height/2);
         }
 
         private void btnCarrera_Click(object sender, EventArgs e)
@@ -71,8 +71,8 @@ namespace UNAN.FrmPlanDidactico
         {
             Bases.DiseñoDtv(ref dtPlanD);
             PanelPaginado.Visible = true;
-            //dtPlanD.Columns["IdPlan"].Visible = false;
-            //dtPlanD.Columns[3].Visible = false;
+            dtPlanD.Columns["IdPlan"].Visible = false;
+            dtPlanD.Columns[7].Visible = false;
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -182,43 +182,7 @@ namespace UNAN.FrmPlanDidactico
         
         private void btnSubirPlan_Click(object sender, EventArgs e)
         {
-            try
-            {
-                List<LPlanDidactico> lst = new List<LPlanDidactico>();
-
-                //LLenar
-                foreach(DataGridViewRow dr in dtPlan2.Rows)
-                {
-                    LPlanDidactico oConcepto = new LPlanDidactico();
-                    oConcepto.SemanaInicio = int.Parse(dr.Cells[0].Value.ToString());
-                    oConcepto.SemanaFin = int.Parse(dr.Cells[1].Value.ToString());
-                    oConcepto.FechaInicio = DateTime.Parse(dr.Cells[2].Value.ToString());
-                    oConcepto.FechaFin = DateTime.Parse(dr.Cells[3].Value.ToString());
-                    oConcepto.Objetivos = dr.Cells[4].Value.ToString();
-                    oConcepto.Tema= dr.Cells[5].Value.ToString();
-                    oConcepto.EA= dr.Cells[6].Value.ToString();
-                    oConcepto.FE= dr.Cells[7].Value.ToString();
-                    oConcepto.EE= dr.Cells[8].Value.ToString();
-                    oConcepto.Porcentaje = decimal.Parse(dr.Cells[9].Value.ToString());
-                    lst.Add(oConcepto);
-                }
-
-                int id = (int)cbAsignaturas.SelectedValue;
-                DPlanDidactico oPlan = new DPlanDidactico();
-                oPlan.InsertaTemas(id,lst);
-                MessageBox.Show("Registro realizado");
-                pnPlan.Visible = false;
-                PanelPaginado.Visible = true;
-                panel4.Visible = true;
-                dtPlan2.DataSource = dtsTablas.Tables[""];
-                gbDatos.Dock = DockStyle.Top;
-                dtPlan2.Rows.Clear();
-                dtPlan2.Columns.Clear();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            InsertarPlanD();
         }
 
         private void btnAddAsig_Click(object sender, EventArgs e)
@@ -294,6 +258,8 @@ namespace UNAN.FrmPlanDidactico
             pnPlan.Dock = DockStyle.Fill;
             PanelPaginado.Visible = false;
             panel4.Visible= false;
+            panel12.Visible=false;
+            panel13.Visible = false;
             ConfigurarDataGridView();
         }
             private void btnCerrar_Click(object sender, EventArgs e)
@@ -302,6 +268,8 @@ namespace UNAN.FrmPlanDidactico
             pnPlan.Visible = false;
             PanelPaginado.Visible = true;
             panel4.Visible = true;
+            panel12.Visible = true;
+            panel13.Visible = true;
         }
         private void MostrarPlanD()
         {
@@ -358,6 +326,66 @@ namespace UNAN.FrmPlanDidactico
             dtPlan2.Columns.Add("EstrategiaEvaluacion", "Estrategia Evaluacion");
             dtPlan2.Columns.Add("FormaEvaluacion", "Forma Evaluacion");
             dtPlan2.Columns.Add("Porcentaje", "%");
+        }
+
+        private void InsertarPlanD()
+        {
+            LPlanDidactico parametros = new LPlanDidactico();
+            parametros.IdAsignatura = (int)cbAsignaturas.SelectedValue;
+            parametros.IdProfe = Login.idprofesor;
+            parametros.IdCarrera = (int)cbCarrera.SelectedValue;
+            parametros.IdModalidad =(int)cbModalidad.SelectedValue;
+            parametros.IdGrupo =(int)cbGrupo.SelectedValue;
+            parametros.IdSemestre =(int)cbSemestre.SelectedValue;
+            DPlanDidactico funcion = new DPlanDidactico();
+            if (funcion.InsertarPlanD(parametros) == true) 
+            {
+                InsertarTemas();
+                MostrarPlanD();
+            }
+        }
+        private void InsertarTemas()
+        {
+            try
+            {
+                List<LPlanDidactico> lst = new List<LPlanDidactico>();
+
+                //LLenar
+                foreach (DataGridViewRow dr in dtPlan2.Rows)
+                {
+                    LPlanDidactico oConcepto = new LPlanDidactico();
+                    oConcepto.SemanaInicio = int.Parse(dr.Cells[0].Value.ToString());
+                    oConcepto.SemanaFin = int.Parse(dr.Cells[1].Value.ToString());
+                    oConcepto.FechaInicio = DateTime.Parse(dr.Cells[2].Value.ToString());
+                    oConcepto.FechaFin = DateTime.Parse(dr.Cells[3].Value.ToString());
+                    oConcepto.Objetivos = dr.Cells[4].Value.ToString();
+                    oConcepto.Tema = dr.Cells[5].Value.ToString();
+                    oConcepto.EA = dr.Cells[6].Value.ToString();
+                    oConcepto.FE = dr.Cells[7].Value.ToString();
+                    oConcepto.EE = dr.Cells[8].Value.ToString();
+                    oConcepto.Porcentaje = decimal.Parse(dr.Cells[9].Value.ToString());
+                    lst.Add(oConcepto);
+                }
+
+                int Idasignatura = (int)cbAsignaturas.SelectedValue;
+                int IdProfe = Login.idprofesor;
+                DPlanDidactico funcion = new DPlanDidactico();
+                funcion.InsertaTemas(Idasignatura, IdProfe, lst);
+                MessageBox.Show("Registro realizado", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                pnPlan.Visible = false;
+                PanelPaginado.Visible = true;
+                panel4.Visible = true;
+                panel12.Visible = true;
+                panel13.Visible = true;
+                dtPlan2.DataSource = dtsTablas.Tables[""];
+                gbDatos.Dock = DockStyle.Top;
+                dtPlan2.Rows.Clear();
+                dtPlan2.Columns.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

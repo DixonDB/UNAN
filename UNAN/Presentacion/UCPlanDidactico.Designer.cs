@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -39,6 +39,16 @@
             this.lblCarga = new System.Windows.Forms.Label();
             this.pnPlan = new System.Windows.Forms.Panel();
             this.dtPlan2 = new System.Windows.Forms.DataGridView();
+            this.SemanaI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SemanaF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Objetivos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contenidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstrApren = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FormaEvaluacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstrategiaEvaluacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Porcentaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnBotones = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnInsertar = new System.Windows.Forms.Button();
@@ -47,14 +57,6 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnAyuda = new System.Windows.Forms.Button();
             this.gbDatos = new System.Windows.Forms.GroupBox();
-            this.PCargarPlan = new System.Windows.Forms.Panel();
-            this.btnCerrarP = new System.Windows.Forms.Button();
-            this.btnCargar = new System.Windows.Forms.Button();
-            this.cboHojas = new System.Windows.Forms.ComboBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtRuta = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.btnEE = new System.Windows.Forms.Button();
             this.btnFE = new System.Windows.Forms.Button();
             this.btnEEA = new System.Windows.Forms.Button();
@@ -98,6 +100,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.PCargarPlan = new System.Windows.Forms.Panel();
+            this.btnCerrarP = new System.Windows.Forms.Button();
+            this.btnCargar = new System.Windows.Forms.Button();
+            this.cboHojas = new System.Windows.Forms.ComboBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtRuta = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.PanelPaginado = new System.Windows.Forms.Panel();
             this.btn_atras = new System.Windows.Forms.Button();
             this.btn_Sig = new System.Windows.Forms.Button();
@@ -113,19 +123,17 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.dtPlanD = new System.Windows.Forms.DataGridView();
-            this.SemanaI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SemanaF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Objetivos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contenidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstrApren = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FormaEvaluacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstrategiaEvaluacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Porcentaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescargarP = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.pncarga.SuspendLayout();
             this.pnPlan.SuspendLayout();
@@ -133,8 +141,8 @@
             this.pnBotones.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.gbDatos.SuspendLayout();
-            this.PCargarPlan.SuspendLayout();
             this.GBDetalles.SuspendLayout();
+            this.PCargarPlan.SuspendLayout();
             this.PanelPaginado.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -211,9 +219,9 @@
             this.pnPlan.Controls.Add(this.pnBotones);
             this.pnPlan.Controls.Add(this.gbDatos);
             this.pnPlan.Controls.Add(this.GBDetalles);
-            this.pnPlan.Location = new System.Drawing.Point(95, 126);
+            this.pnPlan.Location = new System.Drawing.Point(479, 318);
             this.pnPlan.Name = "pnPlan";
-            this.pnPlan.Size = new System.Drawing.Size(1059, 476);
+            this.pnPlan.Size = new System.Drawing.Size(676, 288);
             this.pnPlan.TabIndex = 37;
             this.pnPlan.Visible = false;
             // 
@@ -237,29 +245,79 @@
             this.FormaEvaluacion,
             this.EstrategiaEvaluacion,
             this.Porcentaje});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtPlan2.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtPlan2.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtPlan2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtPlan2.Location = new System.Drawing.Point(0, 400);
             this.dtPlan2.Name = "dtPlan2";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtPlan2.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtPlan2.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtPlan2.RowHeadersVisible = false;
             this.dtPlan2.RowHeadersWidth = 82;
-            this.dtPlan2.Size = new System.Drawing.Size(1059, 76);
+            this.dtPlan2.Size = new System.Drawing.Size(676, 0);
             this.dtPlan2.TabIndex = 11;
+            // 
+            // SemanaI
+            // 
+            this.SemanaI.HeaderText = "Semana Inicio";
+            this.SemanaI.Name = "SemanaI";
+            // 
+            // SemanaF
+            // 
+            this.SemanaF.HeaderText = "Semana Fin";
+            this.SemanaF.Name = "SemanaF";
+            // 
+            // FechaI
+            // 
+            this.FechaI.HeaderText = "Fecha Inicio";
+            this.FechaI.Name = "FechaI";
+            // 
+            // FechaF
+            // 
+            this.FechaF.HeaderText = "Fecha Fin";
+            this.FechaF.Name = "FechaF";
+            // 
+            // Objetivos
+            // 
+            this.Objetivos.HeaderText = "Objetivos";
+            this.Objetivos.Name = "Objetivos";
+            // 
+            // Contenidos
+            // 
+            this.Contenidos.HeaderText = "Contenidos";
+            this.Contenidos.Name = "Contenidos";
+            // 
+            // EstrApren
+            // 
+            this.EstrApren.HeaderText = "Estrategia Aprendizaje";
+            this.EstrApren.Name = "EstrApren";
+            // 
+            // FormaEvaluacion
+            // 
+            this.FormaEvaluacion.HeaderText = "Forma Evaluacion";
+            this.FormaEvaluacion.Name = "FormaEvaluacion";
+            // 
+            // EstrategiaEvaluacion
+            // 
+            this.EstrategiaEvaluacion.HeaderText = "Estrategia Evaluación";
+            this.EstrategiaEvaluacion.Name = "EstrategiaEvaluacion";
+            // 
+            // Porcentaje
+            // 
+            this.Porcentaje.HeaderText = "%";
+            this.Porcentaje.Name = "Porcentaje";
             // 
             // pnBotones
             // 
@@ -267,7 +325,7 @@
             this.pnBotones.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnBotones.Location = new System.Drawing.Point(0, 348);
             this.pnBotones.Name = "pnBotones";
-            this.pnBotones.Size = new System.Drawing.Size(1059, 52);
+            this.pnBotones.Size = new System.Drawing.Size(676, 52);
             this.pnBotones.TabIndex = 12;
             // 
             // flowLayoutPanel1
@@ -280,7 +338,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnAyuda);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(212, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(802, 50);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(419, 50);
             this.flowLayoutPanel1.TabIndex = 6;
             this.flowLayoutPanel1.Visible = false;
             // 
@@ -326,7 +384,7 @@
             this.btnSubir.ForeColor = System.Drawing.Color.Black;
             this.btnSubir.Image = global::UNAN.Properties.Resources.up_32px;
             this.btnSubir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubir.Location = new System.Drawing.Point(314, 3);
+            this.btnSubir.Location = new System.Drawing.Point(3, 48);
             this.btnSubir.Name = "btnSubir";
             this.btnSubir.Size = new System.Drawing.Size(226, 39);
             this.btnSubir.TabIndex = 5;
@@ -342,7 +400,7 @@
             this.btnCerrar.Font = new System.Drawing.Font("Arial", 14.25F);
             this.btnCerrar.Image = global::UNAN.Properties.Resources.Atras;
             this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrar.Location = new System.Drawing.Point(546, 3);
+            this.btnCerrar.Location = new System.Drawing.Point(235, 48);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(135, 39);
             this.btnCerrar.TabIndex = 8;
@@ -358,7 +416,7 @@
             this.btnAyuda.Font = new System.Drawing.Font("Arial", 14.25F);
             this.btnAyuda.Image = global::UNAN.Properties.Resources.help_32px;
             this.btnAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAyuda.Location = new System.Drawing.Point(687, 3);
+            this.btnAyuda.Location = new System.Drawing.Point(3, 93);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Size = new System.Drawing.Size(101, 39);
             this.btnAyuda.TabIndex = 9;
@@ -369,7 +427,6 @@
             // gbDatos
             // 
             this.gbDatos.BackColor = System.Drawing.Color.White;
-            this.gbDatos.Controls.Add(this.PCargarPlan);
             this.gbDatos.Controls.Add(this.btnEE);
             this.gbDatos.Controls.Add(this.btnFE);
             this.gbDatos.Controls.Add(this.btnEEA);
@@ -397,99 +454,10 @@
             this.gbDatos.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDatos.Location = new System.Drawing.Point(0, 110);
             this.gbDatos.Name = "gbDatos";
-            this.gbDatos.Size = new System.Drawing.Size(1059, 238);
+            this.gbDatos.Size = new System.Drawing.Size(676, 238);
             this.gbDatos.TabIndex = 10;
             this.gbDatos.TabStop = false;
             this.gbDatos.Visible = false;
-            // 
-            // PCargarPlan
-            // 
-            this.PCargarPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.PCargarPlan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PCargarPlan.Controls.Add(this.btnCerrarP);
-            this.PCargarPlan.Controls.Add(this.btnCargar);
-            this.PCargarPlan.Controls.Add(this.cboHojas);
-            this.PCargarPlan.Controls.Add(this.btnBuscar);
-            this.PCargarPlan.Controls.Add(this.txtRuta);
-            this.PCargarPlan.Controls.Add(this.label1);
-            this.PCargarPlan.Controls.Add(this.label18);
-            this.PCargarPlan.Location = new System.Drawing.Point(1023, 149);
-            this.PCargarPlan.Name = "PCargarPlan";
-            this.PCargarPlan.Size = new System.Drawing.Size(50, 40);
-            this.PCargarPlan.TabIndex = 7;
-            this.PCargarPlan.Visible = false;
-            // 
-            // btnCerrarP
-            // 
-            this.btnCerrarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarP.Location = new System.Drawing.Point(275, 121);
-            this.btnCerrarP.Name = "btnCerrarP";
-            this.btnCerrarP.Size = new System.Drawing.Size(75, 30);
-            this.btnCerrarP.TabIndex = 18;
-            this.btnCerrarP.Text = "Cerrar";
-            this.btnCerrarP.UseVisualStyleBackColor = true;
-            this.btnCerrarP.Click += new System.EventHandler(this.btnCerrarP_Click);
-            // 
-            // btnCargar
-            // 
-            this.btnCargar.Enabled = false;
-            this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargar.Location = new System.Drawing.Point(412, 84);
-            this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(75, 30);
-            this.btnCargar.TabIndex = 17;
-            this.btnCargar.Text = "Cargar";
-            this.btnCargar.UseVisualStyleBackColor = true;
-            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
-            // 
-            // cboHojas
-            // 
-            this.cboHojas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboHojas.FormattingEnabled = true;
-            this.cboHojas.Location = new System.Drawing.Point(188, 86);
-            this.cboHojas.Name = "cboHojas";
-            this.cboHojas.Size = new System.Drawing.Size(218, 28);
-            this.cboHojas.TabIndex = 16;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(307, 22);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(58, 29);
-            this.btnBuscar.TabIndex = 15;
-            this.btnBuscar.Text = "...";
-            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // txtRuta
-            // 
-            this.txtRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRuta.Location = new System.Drawing.Point(71, 25);
-            this.txtRuta.Name = "txtRuta";
-            this.txtRuta.Size = new System.Drawing.Size(217, 26);
-            this.txtRuta.TabIndex = 14;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 84);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 20);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Hoja Encontradas:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(12, 25);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(53, 20);
-            this.label18.TabIndex = 13;
-            this.label18.Text = "Ruta:";
             // 
             // btnEE
             // 
@@ -766,7 +734,7 @@
             this.GBDetalles.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GBDetalles.Location = new System.Drawing.Point(0, 0);
             this.GBDetalles.Name = "GBDetalles";
-            this.GBDetalles.Size = new System.Drawing.Size(1059, 110);
+            this.GBDetalles.Size = new System.Drawing.Size(676, 110);
             this.GBDetalles.TabIndex = 9;
             this.GBDetalles.TabStop = false;
             this.GBDetalles.Visible = false;
@@ -992,6 +960,95 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Asignatura:";
             // 
+            // PCargarPlan
+            // 
+            this.PCargarPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.PCargarPlan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PCargarPlan.Controls.Add(this.btnCerrarP);
+            this.PCargarPlan.Controls.Add(this.btnCargar);
+            this.PCargarPlan.Controls.Add(this.cboHojas);
+            this.PCargarPlan.Controls.Add(this.btnBuscar);
+            this.PCargarPlan.Controls.Add(this.txtRuta);
+            this.PCargarPlan.Controls.Add(this.label1);
+            this.PCargarPlan.Controls.Add(this.label18);
+            this.PCargarPlan.Location = new System.Drawing.Point(1055, 117);
+            this.PCargarPlan.Name = "PCargarPlan";
+            this.PCargarPlan.Size = new System.Drawing.Size(54, 44);
+            this.PCargarPlan.TabIndex = 7;
+            this.PCargarPlan.Visible = false;
+            // 
+            // btnCerrarP
+            // 
+            this.btnCerrarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarP.Location = new System.Drawing.Point(275, 121);
+            this.btnCerrarP.Name = "btnCerrarP";
+            this.btnCerrarP.Size = new System.Drawing.Size(75, 30);
+            this.btnCerrarP.TabIndex = 18;
+            this.btnCerrarP.Text = "Cerrar";
+            this.btnCerrarP.UseVisualStyleBackColor = true;
+            this.btnCerrarP.Click += new System.EventHandler(this.btnCerrarP_Click);
+            // 
+            // btnCargar
+            // 
+            this.btnCargar.Enabled = false;
+            this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargar.Location = new System.Drawing.Point(412, 84);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(75, 30);
+            this.btnCargar.TabIndex = 17;
+            this.btnCargar.Text = "Cargar";
+            this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            // 
+            // cboHojas
+            // 
+            this.cboHojas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboHojas.FormattingEnabled = true;
+            this.cboHojas.Location = new System.Drawing.Point(188, 86);
+            this.cboHojas.Name = "cboHojas";
+            this.cboHojas.Size = new System.Drawing.Size(218, 28);
+            this.cboHojas.TabIndex = 16;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(307, 22);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(58, 29);
+            this.btnBuscar.TabIndex = 15;
+            this.btnBuscar.Text = "...";
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtRuta
+            // 
+            this.txtRuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRuta.Location = new System.Drawing.Point(71, 25);
+            this.txtRuta.Name = "txtRuta";
+            this.txtRuta.Size = new System.Drawing.Size(217, 26);
+            this.txtRuta.TabIndex = 14;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 84);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(158, 20);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Hoja Encontradas:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(12, 25);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(53, 20);
+            this.label18.TabIndex = 13;
+            this.label18.Text = "Ruta:";
+            // 
             // PanelPaginado
             // 
             this.PanelPaginado.BackColor = System.Drawing.SystemColors.Control;
@@ -1197,15 +1254,73 @@
             this.textBox1.Size = new System.Drawing.Size(224, 19);
             this.textBox1.TabIndex = 0;
             // 
-            // Editar
+            // dtPlanD
             // 
-            this.Editar.HeaderText = "";
-            this.Editar.Image = global::UNAN.Properties.Resources.lapiz;
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.MinimumWidth = 10;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Width = 200;
+            this.dtPlanD.AllowUserToAddRows = false;
+            this.dtPlanD.AllowUserToDeleteRows = false;
+            this.dtPlanD.AllowUserToResizeRows = false;
+            this.dtPlanD.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dtPlanD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtPlanD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtPlanD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Eliminar,
+            this.Column2,
+            this.Editar,
+            this.Column3,
+            this.DescargarP});
+            this.dtPlanD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtPlanD.Location = new System.Drawing.Point(25, 117);
+            this.dtPlanD.Margin = new System.Windows.Forms.Padding(2);
+            this.dtPlanD.Name = "dtPlanD";
+            this.dtPlanD.ReadOnly = true;
+            this.dtPlanD.RowHeadersWidth = 82;
+            this.dtPlanD.RowTemplate.Height = 33;
+            this.dtPlanD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtPlanD.ShowCellToolTips = false;
+            this.dtPlanD.ShowEditingIcon = false;
+            this.dtPlanD.Size = new System.Drawing.Size(1269, 736);
+            this.dtPlanD.TabIndex = 40;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::UNAN.Properties.Resources.borrar;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.MinimumWidth = 10;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 200;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::UNAN.Properties.Resources.lapiz;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.MinimumWidth = 10;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 200;
+            // 
+            // panel13
+            // 
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel13.Location = new System.Drawing.Point(25, 98);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(1269, 19);
+            this.panel13.TabIndex = 42;
+            // 
+            // panel12
+            // 
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel12.Location = new System.Drawing.Point(0, 98);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(25, 755);
+            this.panel12.TabIndex = 41;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Eliminar
             // 
@@ -1217,87 +1332,45 @@
             this.Eliminar.ReadOnly = true;
             this.Eliminar.Width = 200;
             // 
-            // dtPlanD
+            // Column2
             // 
-            this.dtPlanD.AllowUserToAddRows = false;
-            this.dtPlanD.AllowUserToDeleteRows = false;
-            this.dtPlanD.AllowUserToResizeRows = false;
-            this.dtPlanD.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dtPlanD.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtPlanD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtPlanD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eliminar,
-            this.Editar});
-            this.dtPlanD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtPlanD.Location = new System.Drawing.Point(0, 98);
-            this.dtPlanD.Margin = new System.Windows.Forms.Padding(2);
-            this.dtPlanD.Name = "dtPlanD";
-            this.dtPlanD.ReadOnly = true;
-            this.dtPlanD.RowHeadersWidth = 82;
-            this.dtPlanD.RowTemplate.Height = 33;
-            this.dtPlanD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtPlanD.ShowCellToolTips = false;
-            this.dtPlanD.ShowEditingIcon = false;
-            this.dtPlanD.Size = new System.Drawing.Size(1294, 755);
-            this.dtPlanD.TabIndex = 40;
+            this.Column2.HeaderText = "";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
-            // SemanaI
+            // Editar
             // 
-            this.SemanaI.HeaderText = "Semana Inicio";
-            this.SemanaI.Name = "SemanaI";
+            this.Editar.HeaderText = "";
+            this.Editar.Image = global::UNAN.Properties.Resources.lapiz;
+            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Editar.MinimumWidth = 10;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Width = 200;
             // 
-            // SemanaF
+            // Column3
             // 
-            this.SemanaF.HeaderText = "Semana Fin";
-            this.SemanaF.Name = "SemanaF";
+            this.Column3.HeaderText = "";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
-            // FechaI
+            // DescargarP
             // 
-            this.FechaI.HeaderText = "Fecha Inicio";
-            this.FechaI.Name = "FechaI";
-            // 
-            // FechaF
-            // 
-            this.FechaF.HeaderText = "Fecha Fin";
-            this.FechaF.Name = "FechaF";
-            // 
-            // Objetivos
-            // 
-            this.Objetivos.HeaderText = "Objetivos";
-            this.Objetivos.Name = "Objetivos";
-            // 
-            // Contenidos
-            // 
-            this.Contenidos.HeaderText = "Contenidos";
-            this.Contenidos.Name = "Contenidos";
-            // 
-            // EstrApren
-            // 
-            this.EstrApren.HeaderText = "Estrategia Aprendizaje";
-            this.EstrApren.Name = "EstrApren";
-            // 
-            // FormaEvaluacion
-            // 
-            this.FormaEvaluacion.HeaderText = "Forma Evaluacion";
-            this.FormaEvaluacion.Name = "FormaEvaluacion";
-            // 
-            // EstrategiaEvaluacion
-            // 
-            this.EstrategiaEvaluacion.HeaderText = "Estrategia Evaluación";
-            this.EstrategiaEvaluacion.Name = "EstrategiaEvaluacion";
-            // 
-            // Porcentaje
-            // 
-            this.Porcentaje.HeaderText = "%";
-            this.Porcentaje.Name = "Porcentaje";
+            this.DescargarP.HeaderText = "";
+            this.DescargarP.Image = global::UNAN.Properties.Resources.down_30px;
+            this.DescargarP.Name = "DescargarP";
+            this.DescargarP.ReadOnly = true;
             // 
             // UCPlanDidactico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pnPlan);
             this.Controls.Add(this.pncarga);
+            this.Controls.Add(this.pnPlan);
             this.Controls.Add(this.dtPlanD);
+            this.Controls.Add(this.panel13);
+            this.Controls.Add(this.panel12);
+            this.Controls.Add(this.PCargarPlan);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PanelPaginado);
@@ -1312,10 +1385,10 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.gbDatos.ResumeLayout(false);
             this.gbDatos.PerformLayout();
-            this.PCargarPlan.ResumeLayout(false);
-            this.PCargarPlan.PerformLayout();
             this.GBDetalles.ResumeLayout(false);
             this.GBDetalles.PerformLayout();
+            this.PCargarPlan.ResumeLayout(false);
+            this.PCargarPlan.PerformLayout();
             this.PanelPaginado.ResumeLayout(false);
             this.PanelPaginado.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -1342,7 +1415,6 @@
         private System.Windows.Forms.Button btnSubirPlan;
         private System.Windows.Forms.Button btnSubir;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.GroupBox gbDatos;
         private System.Windows.Forms.Button btnEE;
         private System.Windows.Forms.Button btnFE;
         private System.Windows.Forms.Button btnEEA;
@@ -1410,8 +1482,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnAyuda;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
-        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.DataGridView dtPlanD;
         private System.Windows.Forms.DataGridViewTextBoxColumn SemanaI;
         private System.Windows.Forms.DataGridViewTextBoxColumn SemanaF;
@@ -1423,5 +1493,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FormaEvaluacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstrategiaEvaluacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Porcentaje;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        public System.Windows.Forms.GroupBox gbDatos;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewImageColumn DescargarP;
     }
 }
