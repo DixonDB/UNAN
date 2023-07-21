@@ -5,13 +5,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 using UNAN.Datos;
 using UNAN.Logica;
 using UNAN.Presentacion;
-using Excel = Microsoft;
 
 namespace UNAN.FrmPlanDidactico
 {
@@ -194,26 +192,28 @@ namespace UNAN.FrmPlanDidactico
                     LPlanDidactico oConcepto = new LPlanDidactico();
                     oConcepto.SemanaInicio = int.Parse(dr.Cells[0].Value.ToString());
                     oConcepto.SemanaFin = int.Parse(dr.Cells[1].Value.ToString());
-                    oConcepto.FechaInicio = (dr.Cells[2].Value.ToString());
-                    oConcepto.FechaFin = (dr.Cells[3].Value.ToString());
+                    oConcepto.FechaInicio = DateTime.Parse(dr.Cells[2].Value.ToString());
+                    oConcepto.FechaFin = DateTime.Parse(dr.Cells[3].Value.ToString());
                     oConcepto.Objetivos = dr.Cells[4].Value.ToString();
                     oConcepto.Tema= dr.Cells[5].Value.ToString();
                     oConcepto.EA= dr.Cells[6].Value.ToString();
                     oConcepto.FE= dr.Cells[7].Value.ToString();
                     oConcepto.EE= dr.Cells[8].Value.ToString();
                     oConcepto.Porcentaje = decimal.Parse(dr.Cells[9].Value.ToString());
-                    //oConcepto.Estado= dr.Cells[10].Value.ToString();
                     lst.Add(oConcepto);
                 }
 
                 int id = (int)cbAsignaturas.SelectedValue;
                 DPlanDidactico oPlan = new DPlanDidactico();
-                oPlan.Add(id,lst);
+                oPlan.InsertaTemas(id,lst);
                 MessageBox.Show("Registro realizado");
                 pnPlan.Visible = false;
                 PanelPaginado.Visible = true;
                 panel4.Visible = true;
+                dtPlan2.DataSource = dtsTablas.Tables[""];
+                gbDatos.Dock = DockStyle.Top;
                 dtPlan2.Rows.Clear();
+                dtPlan2.Columns.Clear();
             }
             catch (Exception ex)
             {
@@ -294,6 +294,7 @@ namespace UNAN.FrmPlanDidactico
             pnPlan.Dock = DockStyle.Fill;
             PanelPaginado.Visible = false;
             panel4.Visible= false;
+            ConfigurarDataGridView();
         }
             private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -324,7 +325,6 @@ namespace UNAN.FrmPlanDidactico
             string FE = cbFormaEvaluacion.Text;
             string EE = cbEstrEvaluacion.Text;
             string Porcentaje = (txtPorcentaje.Text);
-            //string Estado = "ACTIVO";
             dtPlan2.Rows.Add(new object[]
             {
                 SemanaI,SemanaF,FechaI,FechaF,Objetivo,Tema, EA,FE, EE, Porcentaje
@@ -342,6 +342,22 @@ namespace UNAN.FrmPlanDidactico
             txtCont.Text = string.Empty;
             txtPorcentaje.Text = string.Empty;
         }
-        
+        private void ConfigurarDataGridView()
+        {
+            // Borramos todas las columnas actuales del DataGridView
+            dtPlan2.Columns.Clear();
+
+            // Configuramos las columnas con los encabezados deseados
+            dtPlan2.Columns.Add("SemanaI", "Semana Inicio");
+            dtPlan2.Columns.Add("SemanaF", "Semana Fin");
+            dtPlan2.Columns.Add("FechaI", "Fecha Inicio");
+            dtPlan2.Columns.Add("FechaF", "Fecha Fin");
+            dtPlan2.Columns.Add("Objetivos", "Objetivos");
+            dtPlan2.Columns.Add("Contenido", "Contenido");
+            dtPlan2.Columns.Add("EstrApren", "Estrategia Aprendizaje");
+            dtPlan2.Columns.Add("EstrategiaEvaluacion", "Estrategia Evaluacion");
+            dtPlan2.Columns.Add("FormaEvaluacion", "Forma Evaluacion");
+            dtPlan2.Columns.Add("Porcentaje", "%");
+        }
     }
 }

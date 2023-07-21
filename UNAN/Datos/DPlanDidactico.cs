@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using UNAN.Logica;
 
@@ -30,7 +28,7 @@ namespace UNAN.Datos
                 Conexion.cerrar();
             }
         }
-        public void Add(int IdAsignatura,List<LPlanDidactico> lst)
+        public void InsertaTemas(int IdAsignatura,List<LPlanDidactico> lst)
         {
             var dt = new DataTable();
             dt.Columns.Add("Id");
@@ -49,11 +47,6 @@ namespace UNAN.Datos
             int i = 1;
             foreach (var oElement in lst)
             {
-                var fecha = oElement.FechaInicio;
-                var fecha2 = oElement.FechaFin;
-                string textoInvertido = InvertirCadena(fecha);
-                string texto = InvertirCadena(fecha2);
-                oElement.FechaInicio = fecha;
                 dt.Rows.Add(i, oElement.SemanaInicio, oElement.SemanaFin, oElement.FechaInicio, oElement.FechaFin,
                 oElement.Objetivos, oElement.Tema, oElement.EA, oElement.FE, oElement.EE, oElement.Porcentaje
                 , oElement.Estado);
@@ -63,7 +56,7 @@ namespace UNAN.Datos
             Conexion.abrir();
             SqlCommand cmd = new SqlCommand("InsertarTemas", Conexion.conectar);
             var parameterlst = new SqlParameter("@lstTemas", SqlDbType.Structured);
-            parameterlst.TypeName = "Tema";
+            parameterlst.TypeName = "Temas";
             parameterlst.Value = dt;
             cmd.CommandType=CommandType.StoredProcedure;
 
@@ -71,13 +64,6 @@ namespace UNAN.Datos
             cmd.Parameters.AddWithValue("@IdAsignatura", IdAsignatura);
             cmd.ExecuteNonQuery();
             Conexion.cerrar();
-        }
-
-        public static string InvertirCadena(string texto)
-        {
-            char[] caracteres = texto.ToCharArray();
-            Array.Reverse(caracteres);
-            return new string(caracteres);
         }
     }
 }
