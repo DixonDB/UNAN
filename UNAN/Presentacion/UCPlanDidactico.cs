@@ -16,6 +16,7 @@ namespace UNAN.FrmPlanDidactico
 {
     public partial class UCPlanDidactico : UserControl
     {
+        public int IdPlan { get; private set; }
         //Un DataSet es un objeto que almacena n número de DataTables, estas tablas puedes estar conectadas dentro del dataset.
         public DataSet dtsTablas = new DataSet();
         DCarreras carreras = new DCarreras();
@@ -71,7 +72,7 @@ namespace UNAN.FrmPlanDidactico
         {
             Bases.DiseñoDtv(ref dtPlanD);
             PanelPaginado.Visible = true;
-            dtPlanD.Columns["IdPlan"].Visible = false;
+            dtPlanD.Columns[6].Visible = false;
             dtPlanD.Columns[7].Visible = false;
         }
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -387,5 +388,23 @@ namespace UNAN.FrmPlanDidactico
                 MessageBox.Show(ex.Message);
             }
         }
+        private void dtPlanD_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dtPlanD.Columns["VerPlan"].Index)
+            {
+                PasarIdPlan();                
+            }
+        }
+        /*Con este metodo obtenemos el id del plan que se ha seleccionado y
+        se lo mandamos al formulario donde lo estaremos mostrando*/
+        private void PasarIdPlan()
+        {
+            IdPlan = Convert.ToInt32(dtPlanD.SelectedCells[6].Value);
+            MostrarPlan mp = new MostrarPlan();
+            mp.idplan = IdPlan;
+            mp.ShowDialog();
+        }
+
     }
 }
+

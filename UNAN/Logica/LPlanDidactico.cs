@@ -4,6 +4,7 @@ namespace UNAN.Logica
 {
     public class LPlanDidactico
     {
+        public int IdPlan { get; set; }
         public int IdProfe { get; set; }
         public int IdCarrera { get; set; }
         public int IdModalidad { get; set; }

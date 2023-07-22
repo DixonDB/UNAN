@@ -93,5 +93,26 @@ namespace UNAN.Datos
                 Conexion.cerrar();
             }
         }
+        public void DetallePlan( ref DataTable dt,int idPlan)
+        {
+            {
+                try
+                {
+                    Conexion.abrir();
+                    SqlDataAdapter da = new SqlDataAdapter("MostrarDetallePlan", Conexion.conectar);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@IdPlan", idPlan);
+                    da.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+                finally
+                {
+                    Conexion.cerrar();
+                }
+            }
+        }
     }
 }
