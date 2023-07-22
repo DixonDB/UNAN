@@ -6,7 +6,6 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UNAN.Datos;
 using UNAN.Logica;
@@ -16,7 +15,8 @@ namespace UNAN.FrmPlanDidactico
 {
     public partial class UCPlanDidactico : UserControl
     {
-        public int IdPlan { get; private set; }
+        public static int IdPlan;
+        public static string Asignatura;
         //Un DataSet es un objeto que almacena n número de DataTables, estas tablas puedes estar conectadas dentro del dataset.
         public DataSet dtsTablas = new DataSet();
         DCarreras carreras = new DCarreras();
@@ -75,44 +75,69 @@ namespace UNAN.FrmPlanDidactico
             dtPlanD.Columns[6].Visible = false;
             dtPlanD.Columns[7].Visible = false;
         }
+        private DataSet ReadExcelFile(string filePath)
+        {
+            FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read);
+
+            // Determine the format of the file based on the extension
+            IExcelDataReader reader;
+            if (Path.GetExtension(filePath).Equals(".xls", StringComparison.OrdinalIgnoreCase))
+            {
+                // Reading from a binary Excel file (97-2003 format; .xls)
+                reader = ExcelReaderFactory.CreateBinaryReader(stream);
+            }
+            else if (Path.GetExtension(filePath).Equals(".xlsx", StringComparison.OrdinalIgnoreCase))
+            {
+                // Reading from an OpenXml Excel file (2007 format; .xlsx)
+                reader = ExcelReaderFactory.CreateOpenXmlReader(stream);
+            }
+            else
+            {
+                // Unsupported file format
+                MessageBox.Show("El formato del archivo no es compatible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+
+            // Convert all sheets to a DataSet
+            DataSet result = reader.AsDataSet(new ExcelDataSetConfiguration()
+            {
+                ConfigureDataTable = (tableReader) => new ExcelDataTableConfiguration()
+                {
+                    UseHeaderRow = true
+                }
+            });
+
+            reader.Close();
+            return result;
+        }
+
+        //...
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            //CONFIGURACION DE LA VENTANA PARA BUSCAR EL ARCHIVO
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Excel Worbook|*.xlsx";
+            ofd.Filter = "Excel Workbook|*.xls;*.xlsx"; // Add support for both .xls and .xlsx
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 cboHojas.Items.Clear();
                 dtPlan2.DataSource = null;
                 txtRuta.Text = ofd.FileName;
 
-                //FileStream nos permite leer, escribir, abrir y cerrar archivos en un sistema de archivos, como matrices de bytes
-                FileStream fsSource = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read);
+                // Read Excel file
+                dtsTablas = ReadExcelFile(ofd.FileName);
 
-                //ExcelReaderFactory.CreateBinaryReader = formato XLS
-                //ExcelReaderFactory.CreateOpenXmlReader = formato XLSX
-                //ExcelReaderFactory.CreateReader = XLS o XLSX
-                IExcelDataReader reader = ExcelReaderFactory.CreateReader(fsSource);
-
-                //convierte todas las hojas a un DataSet
-                dtsTablas = reader.AsDataSet(new ExcelDataSetConfiguration()
+                if (dtsTablas != null)
                 {
-                    ConfigureDataTable = (tableReader) => new ExcelDataTableConfiguration()
+                    // Get table names and add them to the combo box
+                    foreach (DataTable tabla in dtsTablas.Tables)
                     {
-                        UseHeaderRow = true
+                        cboHojas.Items.Add(tabla.TableName);
                     }
-                });
-
-                //obtenemos las tablas y añadimos sus nombres en el desplegable de hojas
-                foreach (DataTable tabla in dtsTablas.Tables)
-                {
-                    cboHojas.Items.Add(tabla.TableName);
-                }
-                cboHojas.SelectedIndex = 0;
-                reader.Close();
-                if (txtRuta.Text!="")
-                {
-                    btnCargar.Enabled = true;
+                    cboHojas.SelectedIndex = 0;
+                    if (txtRuta.Text != "")
+                    {
+                        btnCargar.Enabled = true;
+                    }
                 }
             }
         }
@@ -183,7 +208,7 @@ namespace UNAN.FrmPlanDidactico
         
         private void btnSubirPlan_Click(object sender, EventArgs e)
         {
-            InsertarPlanD();
+            InsertarTemas();
         }
 
         private void btnAddAsig_Click(object sender, EventArgs e)
@@ -329,22 +354,6 @@ namespace UNAN.FrmPlanDidactico
             dtPlan2.Columns.Add("Porcentaje", "%");
         }
 
-        private void InsertarPlanD()
-        {
-            LPlanDidactico parametros = new LPlanDidactico();
-            parametros.IdAsignatura = (int)cbAsignaturas.SelectedValue;
-            parametros.IdProfe = Login.idprofesor;
-            parametros.IdCarrera = (int)cbCarrera.SelectedValue;
-            parametros.IdModalidad =(int)cbModalidad.SelectedValue;
-            parametros.IdGrupo =(int)cbGrupo.SelectedValue;
-            parametros.IdSemestre =(int)cbSemestre.SelectedValue;
-            DPlanDidactico funcion = new DPlanDidactico();
-            if (funcion.InsertarPlanD(parametros) == true) 
-            {
-                InsertarTemas();
-                MostrarPlanD();
-            }
-        }
         private void InsertarTemas()
         {
             try
@@ -367,12 +376,17 @@ namespace UNAN.FrmPlanDidactico
                     oConcepto.Porcentaje = decimal.Parse(dr.Cells[9].Value.ToString());
                     lst.Add(oConcepto);
                 }
-
-                int Idasignatura = (int)cbAsignaturas.SelectedValue;
-                int IdProfe = Login.idprofesor;
+                LPlanDidactico parametros = new LPlanDidactico();
+                parametros.IdAsignatura = (int)cbAsignaturas.SelectedValue;
+                parametros.IdProfe = Login.idprofesor;
+                parametros.IdCarrera = (int)cbCarrera.SelectedValue;
+                parametros.IdModalidad = (int)cbModalidad.SelectedValue;
+                parametros.IdGrupo = (int)cbGrupo.SelectedValue;
+                parametros.IdSemestre = (int)cbSemestre.SelectedValue;
                 DPlanDidactico funcion = new DPlanDidactico();
-                funcion.InsertaTemas(Idasignatura, IdProfe, lst);
+                funcion.InsertaTemas(parametros, lst);
                 MessageBox.Show("Registro realizado", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MostrarPlanD();
                 pnPlan.Visible = false;
                 PanelPaginado.Visible = true;
                 panel4.Visible = true;
@@ -399,6 +413,7 @@ namespace UNAN.FrmPlanDidactico
         se lo mandamos al formulario donde lo estaremos mostrando*/
         private void PasarIdPlan()
         {
+            Asignatura = dtPlanD.SelectedCells[9].Value.ToString();
             IdPlan = Convert.ToInt32(dtPlanD.SelectedCells[6].Value);
             MostrarPlan mp = new MostrarPlan();
             mp.idplan = IdPlan;

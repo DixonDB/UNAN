@@ -273,6 +273,16 @@ namespace UNAN.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap export_pdf_48px {
+            get {
+                object obj = ResourceManager.GetObject("export_pdf_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap help_32px {
             get {
                 object obj = ResourceManager.GetObject("help_32px", resourceCulture);
@@ -386,6 +396,16 @@ namespace UNAN.Properties {
         internal static System.Drawing.Bitmap lupa {
             get {
                 object obj = ResourceManager.GetObject("lupa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap microsoft_excel_2019_48px {
+            get {
+                object obj = ResourceManager.GetObject("microsoft_excel_2019_48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -28,7 +28,7 @@ namespace UNAN.Datos
                 Conexion.cerrar();
             }
         }
-        public void InsertaTemas(int IdAsignatura, int IdProfe, List<LPlanDidactico> lst)
+        public void InsertaTemas(LPlanDidactico parametros, List<LPlanDidactico> lst)
         {
             var dt = new DataTable();
             dt.Columns.Add("Id");
@@ -54,45 +54,24 @@ namespace UNAN.Datos
             }
 
             Conexion.abrir();
-            SqlCommand cmd = new SqlCommand("InsertarTemas", Conexion.conectar);
+            SqlCommand cmd = new SqlCommand("InsertarPlanYTemas", Conexion.conectar);
             var parameterlst = new SqlParameter("@lstTemas", SqlDbType.Structured);
             parameterlst.TypeName = "Temas";
             parameterlst.Value = dt;
             cmd.CommandType=CommandType.StoredProcedure;
 
             cmd.Parameters.Add(parameterlst);
-            cmd.Parameters.AddWithValue("@IdAsignatura", IdAsignatura);
-            cmd.Parameters.AddWithValue("@IdProfesor", IdProfe);
+            cmd.Parameters.AddWithValue("@IdProfe", parametros.IdProfe);
+            cmd.Parameters.AddWithValue("@IdCarrera", parametros.IdCarrera);
+            cmd.Parameters.AddWithValue("@IdAsignatura", parametros.IdAsignatura);
+            cmd.Parameters.AddWithValue("@IdModalidad", parametros.IdModalidad);
+            cmd.Parameters.AddWithValue("@IdGrupo", parametros.IdGrupo);
+            cmd.Parameters.AddWithValue("@IdSemestre", parametros.IdSemestre);
             cmd.ExecuteNonQuery();
             Conexion.cerrar();
         }
 
-        public bool InsertarPlanD(LPlanDidactico parametros)
-        {
-            try
-            {
-                Conexion.abrir();
-                SqlCommand cmd = new SqlCommand("InsertarPlanD", Conexion.conectar);
-                cmd.CommandType=CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@IdProfe", parametros.IdProfe);
-                cmd.Parameters.AddWithValue("@IdCarrera", parametros.IdCarrera);
-                cmd.Parameters.AddWithValue("@IdAsignatura", parametros.IdAsignatura);
-                cmd.Parameters.AddWithValue("@IdModalidad", parametros.IdModalidad);
-                cmd.Parameters.AddWithValue("@IdGrupo", parametros.IdGrupo);
-                cmd.Parameters.AddWithValue("@IdSemestre", parametros.IdSemestre);
-                cmd.ExecuteNonQuery();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return false;
-            }
-            finally
-            {
-                Conexion.cerrar();
-            }
-        }
+        
         public void DetallePlan( ref DataTable dt,int idPlan)
         {
             {
