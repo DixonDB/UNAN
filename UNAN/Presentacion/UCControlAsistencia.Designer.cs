@@ -53,8 +53,6 @@
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnFormAsistencia = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.pnHrSalida = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.txtMinS = new System.Windows.Forms.TextBox();
@@ -97,6 +95,8 @@
             this.pncarga = new System.Windows.Forms.Panel();
             this.pbrCarga = new System.Windows.Forms.ProgressBar();
             this.lblCarga = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.PanelPaginado.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -424,40 +424,13 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.btnVolver);
             this.panel4.Controls.Add(this.btnGuardar);
+            this.panel4.Controls.Add(this.btnCerrar);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 379);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1267, 55);
             this.panel4.TabIndex = 11;
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnVolver.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(714, 6);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(100, 33);
-            this.btnVolver.TabIndex = 7;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(578, 6);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(100, 33);
-            this.btnGuardar.TabIndex = 6;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
             // 
             // pnHrSalida
             // 
@@ -588,7 +561,7 @@
             // 
             this.lblCodAsig.AutoSize = true;
             this.lblCodAsig.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodAsig.Location = new System.Drawing.Point(413, 80);
+            this.lblCodAsig.Location = new System.Drawing.Point(385, 80);
             this.lblCodAsig.Name = "lblCodAsig";
             this.lblCodAsig.Size = new System.Drawing.Size(71, 18);
             this.lblCodAsig.TabIndex = 54;
@@ -636,7 +609,7 @@
             this.cbActividad.BackColor = System.Drawing.Color.White;
             this.cbActividad.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbActividad.FormattingEnabled = true;
-            this.cbActividad.Location = new System.Drawing.Point(1147, 77);
+            this.cbActividad.Location = new System.Drawing.Point(1073, 77);
             this.cbActividad.Name = "cbActividad";
             this.cbActividad.Size = new System.Drawing.Size(260, 26);
             this.cbActividad.TabIndex = 50;
@@ -648,10 +621,11 @@
             this.cbContenido.BackColor = System.Drawing.Color.White;
             this.cbContenido.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbContenido.FormattingEnabled = true;
-            this.cbContenido.Location = new System.Drawing.Point(618, 77);
+            this.cbContenido.Location = new System.Drawing.Point(580, 77);
             this.cbContenido.Name = "cbContenido";
             this.cbContenido.Size = new System.Drawing.Size(260, 26);
             this.cbContenido.TabIndex = 49;
+            this.cbContenido.SelectedIndexChanged += new System.EventHandler(this.cbContenido_SelectedIndexChanged);
             // 
             // cbCarrera
             // 
@@ -704,18 +678,18 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.SystemColors.Control;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(889, 76);
+            this.label6.Location = new System.Drawing.Point(851, 76);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(247, 24);
+            this.label6.Size = new System.Drawing.Size(217, 24);
             this.label6.TabIndex = 40;
-            this.label6.Text = "Estrategia de Evaluación:";
+            this.label6.Text = "Estrategia Evaluación:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.SystemColors.Control;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(495, 76);
+            this.label8.Location = new System.Drawing.Point(463, 76);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(112, 24);
             this.label8.TabIndex = 34;
@@ -773,7 +747,7 @@
             this.cbAsignaturas.FormattingEnabled = true;
             this.cbAsignaturas.Location = new System.Drawing.Point(142, 76);
             this.cbAsignaturas.Name = "cbAsignaturas";
-            this.cbAsignaturas.Size = new System.Drawing.Size(260, 26);
+            this.cbAsignaturas.Size = new System.Drawing.Size(228, 26);
             this.cbAsignaturas.TabIndex = 35;
             this.cbAsignaturas.SelectedIndexChanged += new System.EventHandler(this.cbAsignaturas_SelectedIndexChanged);
             // 
@@ -928,6 +902,37 @@
             this.lblCarga.Text = "Bienvenidos";
             this.lblCarga.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnGuardar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.Black;
+            this.btnGuardar.Image = global::UNAN.Properties.Resources.save32px;
+            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.Location = new System.Drawing.Point(536, 6);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(133, 39);
+            this.btnGuardar.TabIndex = 9;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCerrar.Font = new System.Drawing.Font("Arial", 14.25F);
+            this.btnCerrar.Image = global::UNAN.Properties.Resources.Atras;
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrar.Location = new System.Drawing.Point(705, 6);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(135, 39);
+            this.btnCerrar.TabIndex = 10;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // UCControlAsistencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -988,7 +993,6 @@
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.Panel pnFormAsistencia;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Panel pnHrSalida;
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label label11;
@@ -1018,7 +1022,6 @@
         private System.Windows.Forms.NumericUpDown nudBloque;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.ComboBox cbSemestre;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblCodAsig;
@@ -1032,5 +1035,7 @@
         private System.Windows.Forms.Panel pncarga;
         private System.Windows.Forms.ProgressBar pbrCarga;
         private System.Windows.Forms.Label lblCarga;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

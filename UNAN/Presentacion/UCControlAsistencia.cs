@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Threading;
 using System.Windows.Forms;
 using UNAN.Datos;
+using UNAN.Logica;
 
 namespace UNAN.Presentacion
 {
@@ -45,13 +46,23 @@ namespace UNAN.Presentacion
             mod.MostrarGrupos(cbGrupo, cbCarrera.Text);
             mod.MostrarSemestre(cbSemestre);
             mod.MostrarTemas(cbContenido, cbCarrera.Text, cbAsignaturas.Text, cbGrupo.Text, Login.idprofesor, cbSemestre.Text);
+            MostrarEE();
         }
         private void Mostrarcod()
         {
             DCarreras funcion = new DCarreras();
             funcion.MostrarCodigoC(cbCarrera.Text, lblCod);
         }
-
+        private void MostrarEE()
+        {
+            LPlanDidactico plan = new LPlanDidactico();
+            plan.IdCarrera = (int)cbCarrera.SelectedValue; 
+            plan.IdAsignatura= (int)cbAsignaturas.SelectedValue;
+            plan.IdGrupo= (int)cbGrupo.SelectedValue;
+            plan.IdSemestre= (int)cbSemestre.SelectedValue;
+            plan.IdTema= (int)cbContenido.SelectedValue;
+            mod.MostrarEETemas(cbActividad,plan.IdCarrera,plan.IdAsignatura,plan.IdGrupo,Login.idprofesor,plan.IdSemestre, plan.IdTema);
+        }
         private void cbCarrera_SelectedIndexChanged(object sender, EventArgs e)
         {
             Mostrarcod();
@@ -84,6 +95,7 @@ namespace UNAN.Presentacion
         private void cbAsignaturas_SelectedIndexChanged(object sender, EventArgs e)
         {
             asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
+            mod.MostrarTemas(cbContenido, cbCarrera.Text, cbAsignaturas.Text, cbGrupo.Text, Login.idprofesor, cbSemestre.Text);
         }
         private void hora()
         {
@@ -144,6 +156,11 @@ namespace UNAN.Presentacion
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             pncarga.Visible = false;
+        }
+
+        private void cbContenido_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MostrarEE();
         }
     }
 }
