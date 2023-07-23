@@ -124,16 +124,14 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dtPlanD = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VerPlan = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VerPlan = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.pncarga.SuspendLayout();
             this.pnPlan.SuspendLayout();
@@ -1195,7 +1193,7 @@
             this.panel4.Controls.Add(this.textBox1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 45);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1294, 53);
             this.panel4.TabIndex = 39;
@@ -1210,7 +1208,7 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(1154, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(70, 53);
             this.button2.TabIndex = 4;
@@ -1226,7 +1224,7 @@
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Location = new System.Drawing.Point(1224, 0);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(70, 53);
             this.btnAgregar.TabIndex = 3;
@@ -1237,7 +1235,7 @@
             // 
             this.pictureBox1.Image = global::UNAN.Properties.Resources.lupa;
             this.pictureBox1.Location = new System.Drawing.Point(276, 18);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(34, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1248,7 +1246,7 @@
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel5.Location = new System.Drawing.Point(48, 48);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(224, 1);
             this.panel5.TabIndex = 1;
@@ -1259,7 +1257,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(48, 25);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(224, 19);
             this.textBox1.TabIndex = 0;
@@ -1276,12 +1274,10 @@
             this.Column1,
             this.Eliminar,
             this.Column2,
-            this.Editar,
-            this.Column3,
             this.VerPlan});
             this.dtPlanD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtPlanD.Location = new System.Drawing.Point(25, 117);
-            this.dtPlanD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtPlanD.Margin = new System.Windows.Forms.Padding(2);
             this.dtPlanD.Name = "dtPlanD";
             this.dtPlanD.ReadOnly = true;
             this.dtPlanD.RowHeadersWidth = 82;
@@ -1292,59 +1288,6 @@
             this.dtPlanD.Size = new System.Drawing.Size(1269, 736);
             this.dtPlanD.TabIndex = 40;
             this.dtPlanD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtPlanD_CellClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "";
-            this.Column1.MinimumWidth = 10;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 200;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Image = global::UNAN.Properties.Resources.borrar;
-            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Eliminar.MinimumWidth = 10;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 200;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "";
-            this.Column2.MinimumWidth = 10;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 200;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "";
-            this.Editar.Image = global::UNAN.Properties.Resources.lapiz;
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.MinimumWidth = 10;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Width = 200;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "";
-            this.Column3.MinimumWidth = 10;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 200;
-            // 
-            // VerPlan
-            // 
-            this.VerPlan.HeaderText = "";
-            this.VerPlan.Image = global::UNAN.Properties.Resources.down_30px;
-            this.VerPlan.MinimumWidth = 10;
-            this.VerPlan.Name = "VerPlan";
-            this.VerPlan.ReadOnly = true;
-            this.VerPlan.Width = 200;
             // 
             // dataGridViewImageColumn1
             // 
@@ -1379,6 +1322,41 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(25, 755);
             this.panel12.TabIndex = 41;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "";
+            this.Column1.MinimumWidth = 10;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 200;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.Image = global::UNAN.Properties.Resources.borrar;
+            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Eliminar.MinimumWidth = 10;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 200;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "";
+            this.Column2.MinimumWidth = 10;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 200;
+            // 
+            // VerPlan
+            // 
+            this.VerPlan.HeaderText = "";
+            this.VerPlan.Image = global::UNAN.Properties.Resources.down_30px;
+            this.VerPlan.MinimumWidth = 10;
+            this.VerPlan.Name = "VerPlan";
+            this.VerPlan.ReadOnly = true;
+            this.VerPlan.Width = 200;
             // 
             // UCPlanDidactico
             // 
@@ -1520,8 +1498,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewImageColumn VerPlan;
     }
 }

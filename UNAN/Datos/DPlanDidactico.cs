@@ -93,5 +93,63 @@ namespace UNAN.Datos
                 }
             }
         }
+
+        public bool EliminarPlanD(LPlanDidactico parametros)
+        {
+            try
+            {
+                Conexion.abrir();
+                SqlCommand cmd = new SqlCommand("EliminarPlanD", Conexion.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@IdPlan", parametros.IdPlan);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                Conexion.cerrar();
+            }
+        }
+        public void EditarPlanD(LPlanDidactico parametros, List<LPlanDidactico> lst)
+        {
+            var dt = new DataTable();
+            dt.Columns.Add("Id");
+            dt.Columns.Add("SemanaI");
+            dt.Columns.Add("SemanaF");
+            dt.Columns.Add("FechaI");
+            dt.Columns.Add("FechaF");
+            dt.Columns.Add("Objetivos");
+            dt.Columns.Add("Tema");
+            dt.Columns.Add("EstrategiaAprendizaje");
+            dt.Columns.Add("FormaEvaluacion");
+            dt.Columns.Add("EstrategiaEvaluacion");
+            dt.Columns.Add("Porcetaje");
+            dt.Columns.Add("Estado");
+
+            foreach (var oElement in lst)
+            {
+                dt.Rows.Add(oElement.IdTema, oElement.SemanaInicio, oElement.SemanaFin, oElement.FechaInicio, oElement.FechaFin,
+                oElement.Objetivos, oElement.Tema, oElement.EA, oElement.FE, oElement.EE, oElement.Porcentaje
+                , oElement.Estado);
+            }
+
+            Conexion.abrir();
+            SqlCommand cmd = new SqlCommand("EditarPlanD", Conexion.conectar);
+            var parameterlst = new SqlParameter("@lstTemas", SqlDbType.Structured);
+            parameterlst.TypeName = "Temas";
+            parameterlst.Value = dt;
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add(parameterlst);
+            cmd.Parameters.AddWithValue("@IdPlan", parametros.IdPlan);
+            cmd.ExecuteNonQuery();
+            Conexion.cerrar();
+        }
     }
 }

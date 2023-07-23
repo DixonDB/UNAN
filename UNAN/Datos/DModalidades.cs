@@ -124,5 +124,39 @@ namespace UNAN.Datos
                 MessageBox.Show(ex.Message, ex.StackTrace);
             }
         }
+        public void MostrarTemas(ComboBox combo, string carrera, string asig,string grupo,int IdProfe, string semestre)
+        {
+            try
+            {
+                AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
+                Conexion.abrir();
+                SqlCommand da = new SqlCommand("MostrarTemas", Conexion.conectar);
+                da.CommandType = CommandType.StoredProcedure;
+                da.Parameters.AddWithValue("@carrera", carrera);
+                da.Parameters.AddWithValue("@IdProfesor", IdProfe);
+                da.Parameters.AddWithValue("@Asignatura", asig);
+                da.Parameters.AddWithValue("@Grupo", grupo);
+                da.Parameters.AddWithValue("@Semestre", semestre);
+                SqlDataAdapter cb = new SqlDataAdapter(da);
+                DataTable dt = new DataTable();
+                cb.Fill(dt);
+                combo.ValueMember = "IdTema";
+                combo.DisplayMember = "Tema";
+                combo.DataSource = dt;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    lista.Add(dt.Rows[i]["Tema"].ToString());
+                }
+                combo.AutoCompleteCustomSource = lista;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Conexion.cerrar();
+            }
+        }
     }
 }

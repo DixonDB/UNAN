@@ -113,7 +113,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 6);
+            this.label1.Location = new System.Drawing.Point(35, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(186, 20);
             this.label1.TabIndex = 0;
@@ -137,7 +137,7 @@
             this.flBotones.Controls.Add(this.btnCancelar);
             this.flBotones.Location = new System.Drawing.Point(116, 3);
             this.flBotones.Name = "flBotones";
-            this.flBotones.Size = new System.Drawing.Size(396, 66);
+            this.flBotones.Size = new System.Drawing.Size(656, 66);
             this.flBotones.TabIndex = 3;
             // 
             // btnPDF
@@ -182,28 +182,28 @@
             this.btnGuardar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Image = global::UNAN.Properties.Resources.save32px;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(3, 66);
+            this.btnGuardar.Location = new System.Drawing.Point(394, 3);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(104, 57);
+            this.btnGuardar.Size = new System.Drawing.Size(117, 57);
             this.btnGuardar.TabIndex = 3;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Text = "Editar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Visible = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = global::UNAN.Properties.Resources.Atras;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(113, 66);
+            this.btnCancelar.Location = new System.Drawing.Point(517, 3);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(128, 57);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Visible = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // panel13
             // 
@@ -265,16 +265,16 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox btnCerrar;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel PnOpciones;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnPDF;
-        private System.Windows.Forms.Button btnExcel;
+        public System.Windows.Forms.Button btnGuardar;
+        public System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.FlowLayoutPanel flBotones;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button btnPDF;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Button btnExcel;
     }
 }

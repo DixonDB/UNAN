@@ -44,6 +44,7 @@ namespace UNAN.Presentacion
             mod.MostrarModalidades(cbModalidad);
             mod.MostrarGrupos(cbGrupo, cbCarrera.Text);
             mod.MostrarSemestre(cbSemestre);
+            mod.MostrarTemas(cbContenido, cbCarrera.Text, cbAsignaturas.Text, cbGrupo.Text, Login.idprofesor, cbSemestre.Text);
         }
         private void Mostrarcod()
         {

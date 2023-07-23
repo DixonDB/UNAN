@@ -72,8 +72,8 @@ namespace UNAN.FrmPlanDidactico
         {
             Bases.DiseñoDtv(ref dtPlanD);
             PanelPaginado.Visible = true;
-            dtPlanD.Columns[6].Visible = false;
-            dtPlanD.Columns[7].Visible = false;
+            dtPlanD.Columns[4].Visible = false;
+            dtPlanD.Columns[5].Visible = false;
         }
         private DataSet ReadExcelFile(string filePath)
         {
@@ -297,7 +297,7 @@ namespace UNAN.FrmPlanDidactico
             panel12.Visible = true;
             panel13.Visible = true;
         }
-        private void MostrarPlanD()
+        public void MostrarPlanD()
         {
             int idprofesor = Login.idprofesor;
             DataTable dt = new DataTable();
@@ -385,7 +385,7 @@ namespace UNAN.FrmPlanDidactico
                 parametros.IdSemestre = (int)cbSemestre.SelectedValue;
                 DPlanDidactico funcion = new DPlanDidactico();
                 funcion.InsertaTemas(parametros, lst);
-                MessageBox.Show("Registro realizado", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Registro realizado", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MostrarPlanD();
                 pnPlan.Visible = false;
                 PanelPaginado.Visible = true;
@@ -408,18 +408,37 @@ namespace UNAN.FrmPlanDidactico
             {
                 PasarIdPlan();                
             }
+            if (e.ColumnIndex == dtPlanD.Columns["Eliminar"].Index)
+            {
+                DialogResult result = MessageBox.Show("¿Esta seguro de eliminar este Plan Didáctico, Desea Continuar?", "Eliminando registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
+                {
+                    EliminarPlanD();
+                }
+            }
         }
         /*Con este metodo obtenemos el id del plan que se ha seleccionado y
         se lo mandamos al formulario donde lo estaremos mostrando*/
         private void PasarIdPlan()
         {
-            Asignatura = dtPlanD.SelectedCells[9].Value.ToString();
-            IdPlan = Convert.ToInt32(dtPlanD.SelectedCells[6].Value);
+            Asignatura = dtPlanD.SelectedCells[7].Value.ToString();
+            IdPlan = Convert.ToInt32(dtPlanD.SelectedCells[4].Value);
             MostrarPlan mp = new MostrarPlan();
             mp.idplan = IdPlan;
             mp.ShowDialog();
         }
-
+        private void EliminarPlanD()
+        {
+            IdPlan = Convert.ToInt32(dtPlanD.SelectedCells[4].Value);
+            LPlanDidactico parametros = new LPlanDidactico();
+            DPlanDidactico funcion = new DPlanDidactico();
+            parametros.IdPlan = IdPlan;
+            if (funcion.EliminarPlanD(parametros) == true)
+            {
+                MostrarPlanD();
+            }
+        }
+       
     }
 }
 

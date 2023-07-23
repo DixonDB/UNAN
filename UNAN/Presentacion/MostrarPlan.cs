@@ -1,5 +1,6 @@
 ﻿using Microsoft.Office.Interop.Excel;
 using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using UNAN.Datos;
@@ -31,6 +32,7 @@ namespace UNAN.Presentacion
             DPlanDidactico funcion = new DPlanDidactico();
             funcion.DetallePlan(ref dt, idPLAN);
             dtDetallePlan.DataSource = dt;
+            dtDetallePlan.Columns[0].Visible = false;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -39,7 +41,8 @@ namespace UNAN.Presentacion
         }
         private void Centrar_botones()
         {
-            flBotones.Location=new System.Drawing.Point(PnOpciones.Width/2-flBotones.Width/2, PnOpciones.Height/2-flBotones.Height/2);
+            flBotones.Location = new System.Drawing.Point(PnOpciones.Width / 2 - flBotones.Width / 2, PnOpciones.Height / 2 - flBotones.Height / 2);
+            label1.Location = new System.Drawing.Point(panel2.Width / 2 - label1.Width / 2, panel2.Height / 2 - label1.Height / 2);
         }
         private void ExportarDataGridViewExcel(DataGridView grd, string nombreArchivo)
         {
@@ -97,6 +100,56 @@ namespace UNAN.Presentacion
             if (fichero.ShowDialog() == DialogResult.OK)
             {
                 ExportarDataGridViewExcel(dtDetallePlan, fichero.FileName);
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (btnGuardar.Text=="Editar")
+            {
+                btnGuardar.Text = "Actualizar";
+                label1.Text = "Editar Temas";
+            }
+            else
+            {
+                EditarPlanD();
+            }
+        }
+        private void EditarPlanD()
+        {
+            try
+            {
+                List<LPlanDidactico> lst = new List<LPlanDidactico>();
+
+                //LLenar
+                foreach (DataGridViewRow dr in dtDetallePlan.Rows)
+                {
+                    LPlanDidactico oConcepto = new LPlanDidactico();
+                    oConcepto.IdTema = int.Parse(dr.Cells[0].Value.ToString());
+                    oConcepto.SemanaInicio = int.Parse(dr.Cells[1].Value.ToString());
+                    oConcepto.SemanaFin = int.Parse(dr.Cells[2].Value.ToString());
+                    oConcepto.FechaInicio = DateTime.Parse(dr.Cells[3].Value.ToString());
+                    oConcepto.FechaFin = DateTime.Parse(dr.Cells[4].Value.ToString());
+                    oConcepto.Objetivos = dr.Cells[5].Value.ToString();
+                    oConcepto.Tema = dr.Cells[6].Value.ToString();
+                    oConcepto.EA = dr.Cells[7].Value.ToString();
+                    oConcepto.FE = dr.Cells[8].Value.ToString();
+                    oConcepto.EE = dr.Cells[9].Value.ToString();
+                    oConcepto.Porcentaje = decimal.Parse(dr.Cells[10].Value.ToString());
+                    lst.Add(oConcepto);
+                }
+                LPlanDidactico parametros = new LPlanDidactico();
+                parametros.IdPlan = idplan;
+                DPlanDidactico funcion = new DPlanDidactico();
+                funcion.EditarPlanD(parametros, lst);
+                MessageBox.Show("Registro Editado", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnGuardar.Text = "Editar";
+                label1.Text = "Detalle Plan Didáctico";
+                planD.MostrarPlanD();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

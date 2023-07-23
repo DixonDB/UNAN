@@ -588,7 +588,7 @@
             // 
             this.lblCodAsig.AutoSize = true;
             this.lblCodAsig.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodAsig.Location = new System.Drawing.Point(445, 80);
+            this.lblCodAsig.Location = new System.Drawing.Point(413, 80);
             this.lblCodAsig.Name = "lblCodAsig";
             this.lblCodAsig.Size = new System.Drawing.Size(71, 18);
             this.lblCodAsig.TabIndex = 54;
@@ -636,7 +636,7 @@
             this.cbActividad.BackColor = System.Drawing.Color.White;
             this.cbActividad.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbActividad.FormattingEnabled = true;
-            this.cbActividad.Location = new System.Drawing.Point(1097, 77);
+            this.cbActividad.Location = new System.Drawing.Point(1147, 77);
             this.cbActividad.Name = "cbActividad";
             this.cbActividad.Size = new System.Drawing.Size(260, 26);
             this.cbActividad.TabIndex = 50;
@@ -648,7 +648,7 @@
             this.cbContenido.BackColor = System.Drawing.Color.White;
             this.cbContenido.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbContenido.FormattingEnabled = true;
-            this.cbContenido.Location = new System.Drawing.Point(682, 77);
+            this.cbContenido.Location = new System.Drawing.Point(618, 77);
             this.cbContenido.Name = "cbContenido";
             this.cbContenido.Size = new System.Drawing.Size(260, 26);
             this.cbContenido.TabIndex = 49;
@@ -704,18 +704,18 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.SystemColors.Control;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(969, 76);
+            this.label6.Location = new System.Drawing.Point(889, 76);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 24);
+            this.label6.Size = new System.Drawing.Size(247, 24);
             this.label6.TabIndex = 40;
-            this.label6.Text = "Actividad:";
+            this.label6.Text = "Estrategia de Evaluación:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.SystemColors.Control;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(543, 76);
+            this.label8.Location = new System.Drawing.Point(495, 76);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(112, 24);
             this.label8.TabIndex = 34;
@@ -771,7 +771,7 @@
             this.cbAsignaturas.BackColor = System.Drawing.Color.White;
             this.cbAsignaturas.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAsignaturas.FormattingEnabled = true;
-            this.cbAsignaturas.Location = new System.Drawing.Point(158, 76);
+            this.cbAsignaturas.Location = new System.Drawing.Point(142, 76);
             this.cbAsignaturas.Name = "cbAsignaturas";
             this.cbAsignaturas.Size = new System.Drawing.Size(260, 26);
             this.cbAsignaturas.TabIndex = 35;
@@ -904,7 +904,7 @@
             // 
             this.pncarga.Controls.Add(this.pbrCarga);
             this.pncarga.Controls.Add(this.lblCarga);
-            this.pncarga.Location = new System.Drawing.Point(610, 238);
+            this.pncarga.Location = new System.Drawing.Point(1136, 103);
             this.pncarga.Name = "pncarga";
             this.pncarga.Size = new System.Drawing.Size(100, 127);
             this.pncarga.TabIndex = 20;
