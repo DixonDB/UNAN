@@ -102,7 +102,6 @@
             this.pncarga = new System.Windows.Forms.Panel();
             this.pbrCarga = new System.Windows.Forms.ProgressBar();
             this.lblCarga = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.PanelPaginado.SuspendLayout();
@@ -968,13 +967,6 @@
             this.lblCarga.Text = "Bienvenidos";
             this.lblCarga.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.WorkerReportsProgress = true;
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
-            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
-            // 
             // panel12
             // 
             this.panel12.Dock = System.Windows.Forms.DockStyle.Left;
@@ -1088,7 +1080,6 @@
         private System.Windows.Forms.Panel pncarga;
         private System.Windows.Forms.Label lblCarga;
         private System.Windows.Forms.ProgressBar pbrCarga;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnMostrarTodos;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbTUsuario;

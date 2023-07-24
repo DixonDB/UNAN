@@ -16,6 +16,7 @@ namespace UNAN.FrmPlanDidactico
 {
     public partial class UCPlanDidactico : UserControl
     {
+        private int conteo;
         public static int IdPlan;
         public static string Asignatura;
         //Un DataSet es un objeto que almacena n número de DataTables, estas tablas puedes estar conectadas dentro del dataset.
@@ -28,7 +29,7 @@ namespace UNAN.FrmPlanDidactico
         public UCPlanDidactico()
         {
             InitializeComponent();
-            carga();
+            conteo = 0;
         }
 
         private void btnSubir_Click(object sender, EventArgs e)
@@ -53,8 +54,12 @@ namespace UNAN.FrmPlanDidactico
 
             da.MostrarEstrategiaAprendizaje(cbEnseApren);
         }
-        private void UCPlanDidactico_Load(object sender, EventArgs e)
+        private async void UCPlanDidactico_Load(object sender, EventArgs e)
         {
+            pncarga.Dock = DockStyle.Fill;
+            timer1.Enabled = true;
+            await CargarDatos();
+            pncarga.Visible = false;
             MostrarAprendizaje();
             carreras.MostrarCarrera(cbCarrera, cbModalidad.Text);
             Mostrarcod();
@@ -63,6 +68,17 @@ namespace UNAN.FrmPlanDidactico
             Bases.DiseñoDtv(ref dtPlan2);
             mod.MostrarSemestre(cbSemestre);
             txtDocente.Text = Login.nombreprofe;
+        }
+        public async Task CargarDatos()
+        {
+            await Task.Delay(1500);
+            MostrarPlanD();
+            pncarga.Visible = false;
+            pnBotones.Visible = true;
+            gbDatos.Visible = true;
+            GBDetalles.Visible = true;
+            flowLayoutPanel1.Visible = true;
+            await Task.Delay(1000);
         }
         private void Mostrarcod()
         {
@@ -244,41 +260,6 @@ namespace UNAN.FrmPlanDidactico
             fr.ShowDialog();
         }
 
-        //Vista de progreso
-        private void carga()
-        {
-            if (backgroundWorker1.IsBusy != true)
-            {
-                pncarga.Dock = DockStyle.Fill;
-                backgroundWorker1.RunWorkerAsync();
-            }
-        }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            for (int i = 1; i <= 10; i++)
-            {
-                Thread.Sleep(100);
-                backgroundWorker1.ReportProgress(i * 10);
-            }
-        }
-
-        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            pbrCarga.Value = e.ProgressPercentage;
-            lblCarga.Text = e.ProgressPercentage.ToString() + "%";
-        }
-
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            MostrarPlanD();
-            pncarga.Visible = false;
-            pnBotones.Visible = true;
-            gbDatos.Visible = true;
-            GBDetalles.Visible = true;
-            flowLayoutPanel1.Visible = true;
-        }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             pnPlan.Visible = true;
@@ -439,7 +420,20 @@ namespace UNAN.FrmPlanDidactico
                 MostrarPlanD();
             }
         }
-       
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            conteo += 10;
+            lblCarga.Text = conteo.ToString() + " %";
+            if (pbrCarga.Value < 100)
+            {
+                pbrCarga.Value += 10;
+            }
+            if (pbrCarga.Value == 100)
+            {
+                timer1.Enabled = false;
+            }
+        }
     }
 }
 

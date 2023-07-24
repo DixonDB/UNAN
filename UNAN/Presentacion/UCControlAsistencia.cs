@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using UNAN.Datos;
 using UNAN.Logica;
@@ -9,13 +10,14 @@ namespace UNAN.Presentacion
 {
     public partial class UCControlAsistencia : UserControl
     {
+        private int conteo;
         DCarreras carreras = new DCarreras();
         DModalidades mod = new DModalidades();
         DAsignatura asig = new DAsignatura();
         public UCControlAsistencia()
         {
             InitializeComponent();
-            carga();
+            conteo = 0;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -32,11 +34,21 @@ namespace UNAN.Presentacion
             PanelPaginado.Visible = true;
         }
 
-        private void UCControlAsistencia_Load(object sender, EventArgs e)
+        private async void UCControlAsistencia_Load(object sender, EventArgs e)
         {
+            pncarga.Dock = DockStyle.Fill;
+            timer1.Enabled = true;
+            await CargarDatos();
+            pncarga.Visible = false;
             hora();
             lblFecha.Text = DateTime.Now.ToShortDateString();
+        }
+        public async Task CargarDatos()
+        {
+            await Task.Delay(1500);
             MostrarDatos();
+            
+            await Task.Delay(1000);
         }
         private void MostrarDatos()
         {
@@ -129,38 +141,23 @@ namespace UNAN.Presentacion
             txtObservaciones.Clear();
         }
 
-        private void carga()
-        {
-            if (backgroundWorker1.IsBusy != true)
-            {
-                pncarga.Dock = DockStyle.Fill;
-                backgroundWorker1.RunWorkerAsync();
-            }
-        }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            for (int i = 1; i <= 10; i++)
-            {
-                Thread.Sleep(100);
-                backgroundWorker1.ReportProgress(i * 10);
-            }
-        }
-
-        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            pbrCarga.Value = e.ProgressPercentage;
-            lblCarga.Text = e.ProgressPercentage.ToString() + "%";
-        }
-
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            pncarga.Visible = false;
-        }
-
         private void cbContenido_SelectedIndexChanged(object sender, EventArgs e)
         {
             MostrarEE();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            conteo += 10;
+            lblCarga.Text = conteo.ToString() + " %";
+            if (pbrCarga.Value < 100)
+            {
+                pbrCarga.Value += 10;
+            }
+            if (pbrCarga.Value == 100)
+            {
+                timer1.Enabled = false;
+            }
         }
     }
 }

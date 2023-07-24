@@ -75,6 +75,7 @@
             this.dtDetallePlan.Location = new System.Drawing.Point(10, 47);
             this.dtDetallePlan.Margin = new System.Windows.Forms.Padding(2);
             this.dtDetallePlan.Name = "dtDetallePlan";
+            this.dtDetallePlan.ReadOnly = true;
             this.dtDetallePlan.RowHeadersWidth = 82;
             this.dtDetallePlan.RowTemplate.Height = 33;
             this.dtDetallePlan.Size = new System.Drawing.Size(872, 394);
@@ -237,14 +238,14 @@
             // pncarga
             // 
             this.pncarga.Controls.Add(this.pbCarga);
-            this.pncarga.Location = new System.Drawing.Point(707, 261);
+            this.pncarga.Location = new System.Drawing.Point(707, 239);
             this.pncarga.Name = "pncarga";
             this.pncarga.Size = new System.Drawing.Size(65, 53);
             this.pncarga.TabIndex = 16;
             // 
             // pbCarga
             // 
-            this.pbCarga.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pbCarga.BackColor = System.Drawing.Color.Transparent;
             this.pbCarga.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbCarga.Image = ((System.Drawing.Image)(resources.GetObject("pbCarga.Image")));
             this.pbCarga.Location = new System.Drawing.Point(0, 0);

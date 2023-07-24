@@ -4,6 +4,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using UNAN.Datos;
 using UNAN.Logica;
@@ -12,11 +13,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace UNAN.Presentacion
 {
     public partial class UCProfes : UserControl
-    {        
+    {
         /// <summary>
         /// Método que genera c# para inicializar los componentes que estén dentro de él
         /// En este caso se agregan SetToolTip para mostrar msj de ayuda sobre los campos
         /// </summary>
+        private int conteo;
         public UCProfes()
         {
             InitializeComponent();
@@ -28,6 +30,7 @@ namespace UNAN.Presentacion
             txtCelular.TextChanged += TextBox_TextChanged;
             txtCorreo.TextChanged += TextBox_TextChanged;
             txtUsuario.TextChanged += TextBox_TextChanged;
+            conteo = 0;
         }
         /// <summary>
         /// Variables globales utilizadas para la paginación de los datos en el DataGrid view
@@ -206,11 +209,21 @@ namespace UNAN.Presentacion
             dataProfesores.DataSource = dt;
             DiseñarDtvProfes();
         }
-        private void UCProfesores_Load(object sender, EventArgs e)
+        private async void UCProfesores_Load(object sender, EventArgs e)
         {
-            carga();
-            ReiniciarPaginado();
+            //carga();
+            pncarga.Dock = DockStyle.Fill;
+            timer1.Enabled = true;
+            await CargarDatos();
+            pncarga.Visible = false;
            // MostrarProfessores();
+        }
+        public async Task CargarDatos()
+        {
+            await Task.Delay(1500);
+            MostrarProfessores();
+            ReiniciarPaginado();
+            await Task.Delay(1000);
         }
         private void dataPersonal_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -337,8 +350,16 @@ namespace UNAN.Presentacion
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            DiseñarDtvProfes();
-            timer1.Stop();
+            conteo += 10;
+            lblCarga.Text = conteo.ToString() + " %";
+            if (pbrCarga.Value < 100)
+            {
+                pbrCarga.Value += 10;
+            }
+            if (pbrCarga.Value == 100)
+            {
+                timer1.Enabled = false;
+            }
         }
         private void btnActualizar_Click(object sender, EventArgs e)
         {
@@ -605,35 +626,6 @@ namespace UNAN.Presentacion
                 btnGuardar.Enabled = labelsVerdes;
                 btnActualizar.Enabled = labelsVerdes;
             }
-        }
-        private void carga()
-        {
-            if (backgroundWorker1.IsBusy!=true)
-            {
-                pncarga.Dock = DockStyle.Fill;
-                pbrCarga.BringToFront();
-                backgroundWorker1.RunWorkerAsync();
-            }
-        }
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            for (int i = 1; i <= 10; i++)
-            {
-                Thread.Sleep(250);
-                backgroundWorker1.ReportProgress(i*10);
-            }
-            timer1.Enabled = true;
-        }
-        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            pbrCarga.Value = e.ProgressPercentage;
-            lblCarga.Text = e.ProgressPercentage.ToString() + "%";
-        }
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            MostrarProfessores();
-            pncarga.Visible = false;
-            //ReiniciarPaginado();
         }
 
         //Enviar Correo de recuperacion

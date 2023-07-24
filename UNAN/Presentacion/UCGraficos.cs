@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using UNAN.Datos;
 
@@ -17,18 +18,27 @@ namespace UNAN.Presentacion
     {
         ArrayList Usuarios = new ArrayList();
         ArrayList Cant= new ArrayList();
+        private int conteo;
         public UCGraficos()
         {
             InitializeComponent();
+            conteo = 0;
         }
 
-        private void UCGraficos_Load(object sender, EventArgs e)
+        private async void UCGraficos_Load(object sender, EventArgs e)
         {
-            carga();
+            pncarga.Dock = DockStyle.Fill;
+            timer1.Enabled = true;
+            await CargarDatos();
+            await Task.Delay(1000);
+            pncarga.Visible = false;
+        }
+        public async Task CargarDatos()
+        {
+            await Task.Delay(1500);
             GraficoUsuarios();
             ObtenerTotalUsuarios();
         }
-
         private void GraficoUsuarios()
         {
             try
@@ -86,33 +96,19 @@ namespace UNAN.Presentacion
             }
             return totalUsuarios;
         }
-        private void carga()
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            if (backgroundWorker1.IsBusy != true)
+            conteo += 10;
+            lblCarga.Text = conteo.ToString() + " %";
+            if (pbrCarga.Value < 100)
             {
-                pncarga.Dock = DockStyle.Fill;
-                backgroundWorker1.RunWorkerAsync();
+                pbrCarga.Value += 10;
             }
-        }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            for (int i = 1; i <= 10; i++)
+            if (pbrCarga.Value == 100)
             {
-                Thread.Sleep(100);
-                backgroundWorker1.ReportProgress(i * 10);
+                timer1.Enabled = false;
             }
-        }
-
-        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            pbrCarga.Value = e.ProgressPercentage;
-            lblCarga.Text = e.ProgressPercentage.ToString() + "%";
-        }
-
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            pncarga.Visible = false;
         }
     }
 }

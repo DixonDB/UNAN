@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCAvanceP));
             this.pncarga = new System.Windows.Forms.Panel();
             this.pbrCarga = new System.Windows.Forms.ProgressBar();
@@ -92,6 +93,7 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pncarga.SuspendLayout();
             this.pnAvanceP.SuspendLayout();
             this.GbMedidas.SuspendLayout();
@@ -228,9 +230,9 @@
             // Tema
             // 
             this.Tema.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.Tema.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.Tema.DefaultCellStyle = dataGridViewCellStyle2;
             this.Tema.HeaderText = "Tema";
             this.Tema.Name = "Tema";
             // 
@@ -856,6 +858,10 @@
             this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // UCAvanceP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -868,6 +874,7 @@
             this.Controls.Add(this.PanelPaginado);
             this.Name = "UCAvanceP";
             this.Size = new System.Drawing.Size(1320, 602);
+            this.Load += new System.EventHandler(this.UCAvanceP_Load);
             this.pncarga.ResumeLayout(false);
             this.pnAvanceP.ResumeLayout(false);
             this.pnAvanceP.PerformLayout();
@@ -955,5 +962,6 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tema;
+        private System.Windows.Forms.Timer timer1;
     }
 }

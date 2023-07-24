@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UNAN.Datos;
@@ -21,6 +22,7 @@ namespace UNAN.Presentacion
         public int idplan;
         UCPlanDidactico planD=new UCPlanDidactico();
         public string Asig;
+        DataTable dt = new DataTable();
         public MostrarPlan()
         {
             InitializeComponent();
@@ -28,24 +30,22 @@ namespace UNAN.Presentacion
         private async void MostrarPlan_Load(object sender, EventArgs e)
         {
             pncarga.Dock = DockStyle.Fill;
-
-            await CargarDatosAsync(); // Cargar datos de forma asincrónica
-
+            Bases.DiseñoDtv(ref dtDetallePlan);
+            await CargarDatos();
             pncarga.Visible = false; // Ocultar el PictureBox cuando los datos estén cargados
-
-            Centrar_botones();
-        }
-        public void CargarDatos()
-        {
-            int idPLAN = idplan;
-            DataTable dt = new DataTable();
-            DPlanDidactico funcion = new DPlanDidactico();
-            funcion.DetallePlan(ref dt, idPLAN);
             dtDetallePlan.DataSource = dt;
             dtDetallePlan.Columns[0].Visible = false;
 
+            Centrar_botones();
         }
-
+        public async Task CargarDatos()
+        {
+            await Task.Delay(1500);
+            int idPLAN = idplan;
+            DPlanDidactico funcion = new DPlanDidactico();
+            funcion.DetallePlan(ref dt, idPLAN);
+            await Task.Delay(1000);
+        }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Dispose();
@@ -120,10 +120,12 @@ namespace UNAN.Presentacion
             {
                 btnGuardar.Text = "Actualizar";
                 label1.Text = "Editar Temas";
+                dtDetallePlan.ReadOnly= false;
             }
             else
             {
                 EditarPlanD();
+                dtDetallePlan.ReadOnly = true;
             }
         }
         private void EditarPlanD()
@@ -164,25 +166,6 @@ namespace UNAN.Presentacion
             }
         }
 
-        private async Task CargarDatosAsync()
-        {
-            await Task.Delay(100); // Pequeño retraso simulado para mostrar la imagen de carga
-
-            await Task.Run(() =>
-            {
-                int idPLAN = idplan;
-                DataTable dt = new DataTable();
-                DPlanDidactico funcion = new DPlanDidactico();
-                funcion.DetallePlan(ref dt, idplan);
-
-                // Actualizar el control DataGridView desde el subproceso de la interfaz de usuario
-                dtDetallePlan.Invoke((System.Action)(() =>
-                {
-                    dtDetallePlan.DataSource = dt;
-                    dtDetallePlan.Columns[0].Visible = false;
-                    Bases.DiseñoDtv(ref dtDetallePlan);
-                }));
-            });
-        }
+        
     }
 }
