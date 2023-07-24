@@ -1,25 +1,19 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Security.Principal;
-using System.Threading;
 using System.Windows.Forms;
 using UNAN.Datos;
 using UNAN.FrmPlanDidactico;
 using UNAN.Presentacion;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace UNAN
 {
     public partial class frmMenu : Form
     {
-        private int conteo;
         public frmMenu()
         {
             InitializeComponent();
-            conteo = 0;
         }
         public int Idusuario;
         public string LoginV;

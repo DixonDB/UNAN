@@ -9,7 +9,6 @@ namespace UNAN.Datos
     public class DCarreras
     {
 		public string cod;
-        private DataSet dt;
 
         public bool InsertarCarrera(LCarreras parametros)
 		{

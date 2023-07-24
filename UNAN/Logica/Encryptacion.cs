@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
-using System.Text;
+
 
 namespace UNAN.Logica
 {
@@ -89,7 +87,7 @@ namespace UNAN.Logica
                     return String.Concat(Bits);
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return String.Concat(Bits);
             }

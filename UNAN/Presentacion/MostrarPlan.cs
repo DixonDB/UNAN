@@ -1,17 +1,12 @@
 ﻿using Microsoft.Office.Interop.Excel;
-using OfficeOpenXml.FormulaParsing.Excel.Functions.DateTime;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Runtime.InteropServices;
-using System.Security.Cryptography;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UNAN.Datos;
 using UNAN.FrmPlanDidactico;
 using UNAN.Logica;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using DataTable = System.Data.DataTable;
 
 namespace UNAN.Presentacion
