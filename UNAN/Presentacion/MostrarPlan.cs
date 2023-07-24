@@ -1,17 +1,23 @@
 ﻿using Microsoft.Office.Interop.Excel;
+using OfficeOpenXml.FormulaParsing.Excel.Functions.DateTime;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using UNAN.Datos;
 using UNAN.FrmPlanDidactico;
 using UNAN.Logica;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using DataTable = System.Data.DataTable;
 
 namespace UNAN.Presentacion
 {
     public partial class MostrarPlan : Form
     {
+        private int conteo;
         public int idplan;
         UCPlanDidactico planD=new UCPlanDidactico();
         public string Asig;
@@ -19,10 +25,14 @@ namespace UNAN.Presentacion
         {
             InitializeComponent();
         }
-        private void MostrarPlan_Load(object sender, EventArgs e)
+        private async void MostrarPlan_Load(object sender, EventArgs e)
         {
-            Bases.DiseñoDtv(ref dtDetallePlan);
-            CargarDatos();
+            pncarga.Dock = DockStyle.Fill;
+
+            await CargarDatosAsync(); // Cargar datos de forma asincrónica
+
+            pncarga.Visible = false; // Ocultar el PictureBox cuando los datos estén cargados
+
             Centrar_botones();
         }
         public void CargarDatos()
@@ -33,6 +43,7 @@ namespace UNAN.Presentacion
             funcion.DetallePlan(ref dt, idPLAN);
             dtDetallePlan.DataSource = dt;
             dtDetallePlan.Columns[0].Visible = false;
+
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -151,6 +162,27 @@ namespace UNAN.Presentacion
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private async Task CargarDatosAsync()
+        {
+            await Task.Delay(100); // Pequeño retraso simulado para mostrar la imagen de carga
+
+            await Task.Run(() =>
+            {
+                int idPLAN = idplan;
+                DataTable dt = new DataTable();
+                DPlanDidactico funcion = new DPlanDidactico();
+                funcion.DetallePlan(ref dt, idplan);
+
+                // Actualizar el control DataGridView desde el subproceso de la interfaz de usuario
+                dtDetallePlan.Invoke((System.Action)(() =>
+                {
+                    dtDetallePlan.DataSource = dt;
+                    dtDetallePlan.Columns[0].Visible = false;
+                    Bases.DiseñoDtv(ref dtDetallePlan);
+                }));
+            });
         }
     }
 }

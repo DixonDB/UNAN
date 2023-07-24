@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MostrarPlan));
             this.dtDetallePlan = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -44,12 +45,16 @@
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pncarga = new System.Windows.Forms.Panel();
+            this.pbCarga = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtDetallePlan)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.PnOpciones.SuspendLayout();
             this.flBotones.SuspendLayout();
+            this.pncarga.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCarga)).BeginInit();
             this.SuspendLayout();
             // 
             // dtDetallePlan
@@ -229,11 +234,32 @@
             this.panel1.Size = new System.Drawing.Size(10, 394);
             this.panel1.TabIndex = 15;
             // 
+            // pncarga
+            // 
+            this.pncarga.Controls.Add(this.pbCarga);
+            this.pncarga.Location = new System.Drawing.Point(707, 261);
+            this.pncarga.Name = "pncarga";
+            this.pncarga.Size = new System.Drawing.Size(65, 53);
+            this.pncarga.TabIndex = 16;
+            // 
+            // pbCarga
+            // 
+            this.pbCarga.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pbCarga.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbCarga.Image = ((System.Drawing.Image)(resources.GetObject("pbCarga.Image")));
+            this.pbCarga.Location = new System.Drawing.Point(0, 0);
+            this.pbCarga.Name = "pbCarga";
+            this.pbCarga.Size = new System.Drawing.Size(65, 53);
+            this.pbCarga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCarga.TabIndex = 11;
+            this.pbCarga.TabStop = false;
+            // 
             // MostrarPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(892, 510);
+            this.Controls.Add(this.pncarga);
             this.Controls.Add(this.dtDetallePlan);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel13);
@@ -255,6 +281,8 @@
             this.PnOpciones.ResumeLayout(false);
             this.flBotones.ResumeLayout(false);
             this.flBotones.PerformLayout();
+            this.pncarga.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbCarga)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -276,5 +304,7 @@
         public System.Windows.Forms.Button btnPDF;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.Panel pncarga;
+        private System.Windows.Forms.PictureBox pbCarga;
     }
 }
