@@ -10,6 +10,7 @@ namespace UNAN.Presentacion
 {
     public partial class UCControlAsistencia : UserControl
     {
+        int cant, i = 1;
         private int conteo;
         DCarreras carreras = new DCarreras();
         DModalidades mod = new DModalidades();
@@ -25,7 +26,6 @@ namespace UNAN.Presentacion
             pnFormAsistencia.Visible = true;
             pnFormAsistencia.Dock= DockStyle.Fill;
             PanelPaginado.Visible = false;
-            limpiar();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -125,20 +125,11 @@ namespace UNAN.Presentacion
             DateTime nuevaFecha = new DateTime(fechaActual.Year, fechaActual.Month, fechaActual.Day, hora, minutos, 0);
             TimeSpan horasLaboradas = TimeSpan.FromHours(salida);
             DateTime horaConSalida = nuevaFecha.Add(horasLaboradas);
-            txtHoraS.Text=horaConSalida.Hour.ToString();
-            txtMinS.Text=horaConSalida.Minute.ToString();
         }
 
         private void nudBloque_Leave(object sender, EventArgs e)
         {
             Salida();
-        }
-        private void limpiar()
-        {
-            txtHoraS.Clear();
-            txtMinS.Clear();
-            nudBloque.Value = 0;
-            txtObservaciones.Clear();
         }
 
         private void cbContenido_SelectedIndexChanged(object sender, EventArgs e)
@@ -158,6 +149,45 @@ namespace UNAN.Presentacion
             {
                 timer1.Enabled = false;
             }
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            cant = int.Parse(nudBloque.Value.ToString());
+            nudBloque.Enabled = false;
+            txtHora.Enabled = false;
+            txtmin.Enabled = false;
+            pnBloques.Enabled = true;
+        }
+            
+
+        private void btnAddBloque_Click(object sender, EventArgs e)
+        {
+            string Modalidad = (cbModalidad.Text);
+            string Carrera = (cbCarrera.Text);
+            string Grupo = cbGrupo.Text;
+            string Semestre = cbSemestre.Text;
+            string Asignatura = cbAsignaturas.Text;
+            string Tema = cbContenido.Text;
+            string EE = cbActividad.Text;
+            if (i <= cant)
+            {
+                dtAsistEntrada.Rows.Add(new object[]
+                {
+                Modalidad,Carrera,Grupo,Semestre,Asignatura,Tema, EE
+                    //,Estado
+                });
+            }
+            else
+            {
+                pnBloques.Enabled = false;
+            }
+            i++;
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
