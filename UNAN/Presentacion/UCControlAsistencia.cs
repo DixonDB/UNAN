@@ -73,7 +73,7 @@ namespace UNAN.Presentacion
             plan.IdGrupo= (int)cbGrupo.SelectedValue;
             plan.IdSemestre= (int)cbSemestre.SelectedValue;
             plan.IdTema= (int)cbContenido.SelectedValue;
-            mod.MostrarEETemas(cbActividad,plan.IdCarrera,plan.IdAsignatura,plan.IdGrupo,Login.idprofesor,plan.IdSemestre, plan.IdTema);
+            mod.MostrarEE(lblEE,plan.IdCarrera,plan.IdAsignatura,plan.IdGrupo,Login.idprofesor,plan.IdSemestre, plan.IdTema);
         }
         private void cbCarrera_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -169,7 +169,7 @@ namespace UNAN.Presentacion
             string Semestre = cbSemestre.Text;
             string Asignatura = cbAsignaturas.Text;
             string Tema = cbContenido.Text;
-            string EE = cbActividad.Text;
+            string EE = lblEE.Text;
             if (i <= cant)
             {
                 dtAsistEntrada.Rows.Add(new object[]

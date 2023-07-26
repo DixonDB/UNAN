@@ -158,11 +158,12 @@ namespace UNAN.Datos
                 Conexion.cerrar();
             }
         }
-        public void MostrarEETemas(ComboBox combo, int carrera, int asig, int grupo, int IdProfe, int semestre,int Tema)
+        
+        public void MostrarEE(Label EE, int carrera, int asig, int grupo, int IdProfe, int semestre, int Tema)
         {
             try
             {
-                AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
+                Conexion.abrir();
                 Conexion.abrir();
                 SqlCommand da = new SqlCommand("MostrarEEPorTema", Conexion.conectar);
                 da.CommandType = CommandType.StoredProcedure;
@@ -175,19 +176,19 @@ namespace UNAN.Datos
                 SqlDataAdapter cb = new SqlDataAdapter(da);
                 DataTable dt = new DataTable();
                 cb.Fill(dt);
-                //Lo saco de la tabla tema por eso asigno el IdTema
-                combo.ValueMember = "IdTema";
-                combo.DisplayMember = "EstrategiaEvaluacion";
-                combo.DataSource = dt;
-                for (int i = 0; i < dt.Rows.Count; i++)
+
+                if (dt.Rows.Count > 0)
                 {
-                    lista.Add(dt.Rows[i]["EstrategiaEvaluacion"].ToString());
+                    EE.Text = dt.Rows[0]["EstrategiaEvaluacion"].ToString();
                 }
-                combo.AutoCompleteCustomSource = lista;
+                else
+                {
+                    EE.Text = "--";
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
             finally
             {

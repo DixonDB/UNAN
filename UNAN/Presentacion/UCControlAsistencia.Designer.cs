@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelPaginado = new System.Windows.Forms.Panel();
             this.btn_atras = new System.Windows.Forms.Button();
             this.btn_Sig = new System.Windows.Forms.Button();
@@ -66,12 +66,19 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.pnHrSalida = new System.Windows.Forms.Panel();
+            this.dtAsistEntrada = new System.Windows.Forms.DataGridView();
+            this.Modalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Semestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Asignatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contenido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstrategiaEvaluacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnBloques = new System.Windows.Forms.Panel();
             this.lblCodAsig = new System.Windows.Forms.Label();
             this.cbSemestre = new System.Windows.Forms.ComboBox();
             this.btnAddBloque = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.cbActividad = new System.Windows.Forms.ComboBox();
             this.cbContenido = new System.Windows.Forms.ComboBox();
             this.cbCarrera = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -99,14 +106,7 @@
             this.pbrCarga = new System.Windows.Forms.ProgressBar();
             this.lblCarga = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dtAsistEntrada = new System.Windows.Forms.DataGridView();
-            this.Modalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Semestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Asignatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contenido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstrategiaEvaluacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblEE = new System.Windows.Forms.Label();
             this.PanelPaginado.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -115,11 +115,11 @@
             this.pnFormAsistencia.SuspendLayout();
             this.panel4.SuspendLayout();
             this.pnHrSalida.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtAsistEntrada)).BeginInit();
             this.pnBloques.SuspendLayout();
             this.pnHrEntrada.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBloque)).BeginInit();
             this.pncarga.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtAsistEntrada)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelPaginado
@@ -136,7 +136,7 @@
             this.PanelPaginado.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelPaginado.Location = new System.Drawing.Point(0, 532);
             this.PanelPaginado.Name = "PanelPaginado";
-            this.PanelPaginado.Size = new System.Drawing.Size(1320, 70);
+            this.PanelPaginado.Size = new System.Drawing.Size(1381, 70);
             this.PanelPaginado.TabIndex = 10;
             // 
             // btn_atras
@@ -276,7 +276,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1320, 45);
+            this.panel2.Size = new System.Drawing.Size(1381, 45);
             this.panel2.TabIndex = 11;
             // 
             // panel8
@@ -285,7 +285,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 16);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1320, 17);
+            this.panel8.Size = new System.Drawing.Size(1381, 17);
             this.panel8.TabIndex = 1;
             // 
             // panel9
@@ -294,7 +294,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1320, 16);
+            this.panel9.Size = new System.Drawing.Size(1381, 16);
             this.panel9.TabIndex = 0;
             // 
             // panel1
@@ -309,7 +309,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 45);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1320, 53);
+            this.panel1.Size = new System.Drawing.Size(1381, 53);
             this.panel1.TabIndex = 12;
             // 
             // button2
@@ -321,7 +321,7 @@
             this.button2.Dock = System.Windows.Forms.DockStyle.Right;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(1180, 0);
+            this.button2.Location = new System.Drawing.Point(1241, 0);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(70, 53);
@@ -337,7 +337,7 @@
             this.btnAgregar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Location = new System.Drawing.Point(1250, 0);
+            this.btnAgregar.Location = new System.Drawing.Point(1311, 0);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(70, 53);
@@ -397,7 +397,7 @@
             this.dataAsistencia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataAsistencia.ShowCellToolTips = false;
             this.dataAsistencia.ShowEditingIcon = false;
-            this.dataAsistencia.Size = new System.Drawing.Size(1320, 434);
+            this.dataAsistencia.Size = new System.Drawing.Size(1381, 434);
             this.dataAsistencia.TabIndex = 14;
             // 
             // Eliminar
@@ -428,7 +428,7 @@
             this.pnFormAsistencia.Controls.Add(this.pnHrEntrada);
             this.pnFormAsistencia.Location = new System.Drawing.Point(31, 120);
             this.pnFormAsistencia.Name = "pnFormAsistencia";
-            this.pnFormAsistencia.Size = new System.Drawing.Size(1267, 434);
+            this.pnFormAsistencia.Size = new System.Drawing.Size(1387, 434);
             this.pnFormAsistencia.TabIndex = 15;
             this.pnFormAsistencia.Visible = false;
             // 
@@ -440,7 +440,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 418);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1267, 55);
+            this.panel4.Size = new System.Drawing.Size(1387, 55);
             this.panel4.TabIndex = 11;
             // 
             // btnGuardar
@@ -482,17 +482,127 @@
             this.pnHrSalida.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnHrSalida.Location = new System.Drawing.Point(0, 253);
             this.pnHrSalida.Name = "pnHrSalida";
-            this.pnHrSalida.Size = new System.Drawing.Size(1267, 165);
+            this.pnHrSalida.Size = new System.Drawing.Size(1387, 165);
             this.pnHrSalida.TabIndex = 10;
+            // 
+            // dtAsistEntrada
+            // 
+            this.dtAsistEntrada.AllowUserToAddRows = false;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.Gray;
+            this.dtAsistEntrada.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            this.dtAsistEntrada.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtAsistEntrada.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            this.dtAsistEntrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtAsistEntrada.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Modalidad,
+            this.Carrera,
+            this.Grupo,
+            this.Semestre,
+            this.Asignatura,
+            this.Contenido,
+            this.EstrategiaEvaluacion});
+            this.dtAsistEntrada.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtAsistEntrada.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtAsistEntrada.Location = new System.Drawing.Point(0, 0);
+            this.dtAsistEntrada.Name = "dtAsistEntrada";
+            this.dtAsistEntrada.ReadOnly = true;
+            this.dtAsistEntrada.RowHeadersVisible = false;
+            this.dtAsistEntrada.Size = new System.Drawing.Size(1383, 161);
+            this.dtAsistEntrada.TabIndex = 56;
+            // 
+            // Modalidad
+            // 
+            this.Modalidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Modalidad.DefaultCellStyle = dataGridViewCellStyle21;
+            this.Modalidad.HeaderText = "Modalidad";
+            this.Modalidad.Name = "Modalidad";
+            this.Modalidad.ReadOnly = true;
+            // 
+            // Carrera
+            // 
+            this.Carrera.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Carrera.DefaultCellStyle = dataGridViewCellStyle22;
+            this.Carrera.HeaderText = "Carrera";
+            this.Carrera.Name = "Carrera";
+            this.Carrera.ReadOnly = true;
+            // 
+            // Grupo
+            // 
+            this.Grupo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.Grupo.DefaultCellStyle = dataGridViewCellStyle23;
+            this.Grupo.HeaderText = "Grupo";
+            this.Grupo.Name = "Grupo";
+            this.Grupo.ReadOnly = true;
+            // 
+            // Semestre
+            // 
+            this.Semestre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.Semestre.DefaultCellStyle = dataGridViewCellStyle24;
+            this.Semestre.HeaderText = "Semestre";
+            this.Semestre.Name = "Semestre";
+            this.Semestre.ReadOnly = true;
+            // 
+            // Asignatura
+            // 
+            this.Asignatura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.Asignatura.DefaultCellStyle = dataGridViewCellStyle25;
+            this.Asignatura.HeaderText = "Asignatura";
+            this.Asignatura.Name = "Asignatura";
+            this.Asignatura.ReadOnly = true;
+            // 
+            // Contenido
+            // 
+            this.Contenido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.Contenido.DefaultCellStyle = dataGridViewCellStyle26;
+            this.Contenido.HeaderText = "Contenido";
+            this.Contenido.Name = "Contenido";
+            this.Contenido.ReadOnly = true;
+            // 
+            // EstrategiaEvaluacion
+            // 
+            this.EstrategiaEvaluacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.EstrategiaEvaluacion.DefaultCellStyle = dataGridViewCellStyle27;
+            this.EstrategiaEvaluacion.HeaderText = "Estrategia de Evaluación";
+            this.EstrategiaEvaluacion.Name = "EstrategiaEvaluacion";
+            this.EstrategiaEvaluacion.ReadOnly = true;
             // 
             // pnBloques
             // 
             this.pnBloques.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnBloques.Controls.Add(this.lblEE);
             this.pnBloques.Controls.Add(this.lblCodAsig);
             this.pnBloques.Controls.Add(this.cbSemestre);
             this.pnBloques.Controls.Add(this.btnAddBloque);
             this.pnBloques.Controls.Add(this.label12);
-            this.pnBloques.Controls.Add(this.cbActividad);
             this.pnBloques.Controls.Add(this.cbContenido);
             this.pnBloques.Controls.Add(this.cbCarrera);
             this.pnBloques.Controls.Add(this.label5);
@@ -512,7 +622,7 @@
             this.pnBloques.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnBloques.Location = new System.Drawing.Point(0, 80);
             this.pnBloques.Name = "pnBloques";
-            this.pnBloques.Size = new System.Drawing.Size(1267, 173);
+            this.pnBloques.Size = new System.Drawing.Size(1387, 173);
             this.pnBloques.TabIndex = 9;
             // 
             // lblCodAsig
@@ -560,18 +670,6 @@
             this.label12.Size = new System.Drawing.Size(106, 24);
             this.label12.TabIndex = 52;
             this.label12.Text = "Semestre:";
-            // 
-            // cbActividad
-            // 
-            this.cbActividad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbActividad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbActividad.BackColor = System.Drawing.Color.White;
-            this.cbActividad.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbActividad.FormattingEnabled = true;
-            this.cbActividad.Location = new System.Drawing.Point(1073, 77);
-            this.cbActividad.Name = "cbActividad";
-            this.cbActividad.Size = new System.Drawing.Size(260, 26);
-            this.cbActividad.TabIndex = 50;
             // 
             // cbContenido
             // 
@@ -743,7 +841,7 @@
             this.pnHrEntrada.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnHrEntrada.Location = new System.Drawing.Point(0, 0);
             this.pnHrEntrada.Name = "pnHrEntrada";
-            this.pnHrEntrada.Size = new System.Drawing.Size(1267, 80);
+            this.pnHrEntrada.Size = new System.Drawing.Size(1387, 80);
             this.pnHrEntrada.TabIndex = 8;
             // 
             // label13
@@ -859,115 +957,14 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // dtAsistEntrada
+            // lblEE
             // 
-            this.dtAsistEntrada.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
-            this.dtAsistEntrada.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtAsistEntrada.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtAsistEntrada.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dtAsistEntrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtAsistEntrada.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Modalidad,
-            this.Carrera,
-            this.Grupo,
-            this.Semestre,
-            this.Asignatura,
-            this.Contenido,
-            this.EstrategiaEvaluacion});
-            this.dtAsistEntrada.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtAsistEntrada.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dtAsistEntrada.Location = new System.Drawing.Point(0, 0);
-            this.dtAsistEntrada.Name = "dtAsistEntrada";
-            this.dtAsistEntrada.ReadOnly = true;
-            this.dtAsistEntrada.RowHeadersVisible = false;
-            this.dtAsistEntrada.Size = new System.Drawing.Size(1263, 161);
-            this.dtAsistEntrada.TabIndex = 56;
-            // 
-            // Modalidad
-            // 
-            this.Modalidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Modalidad.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Modalidad.HeaderText = "Modalidad";
-            this.Modalidad.Name = "Modalidad";
-            this.Modalidad.ReadOnly = true;
-            // 
-            // Carrera
-            // 
-            this.Carrera.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Carrera.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Carrera.HeaderText = "Carrera";
-            this.Carrera.Name = "Carrera";
-            this.Carrera.ReadOnly = true;
-            // 
-            // Grupo
-            // 
-            this.Grupo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Grupo.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Grupo.HeaderText = "Grupo";
-            this.Grupo.Name = "Grupo";
-            this.Grupo.ReadOnly = true;
-            // 
-            // Semestre
-            // 
-            this.Semestre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Semestre.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Semestre.HeaderText = "Semestre";
-            this.Semestre.Name = "Semestre";
-            this.Semestre.ReadOnly = true;
-            // 
-            // Asignatura
-            // 
-            this.Asignatura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Asignatura.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Asignatura.HeaderText = "Asignatura";
-            this.Asignatura.Name = "Asignatura";
-            this.Asignatura.ReadOnly = true;
-            // 
-            // Contenido
-            // 
-            this.Contenido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Contenido.DefaultCellStyle = dataGridViewCellStyle8;
-            this.Contenido.HeaderText = "Contenido";
-            this.Contenido.Name = "Contenido";
-            this.Contenido.ReadOnly = true;
-            // 
-            // EstrategiaEvaluacion
-            // 
-            this.EstrategiaEvaluacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.EstrategiaEvaluacion.DefaultCellStyle = dataGridViewCellStyle9;
-            this.EstrategiaEvaluacion.HeaderText = "Estrategia de Evaluación";
-            this.EstrategiaEvaluacion.Name = "EstrategiaEvaluacion";
-            this.EstrategiaEvaluacion.ReadOnly = true;
+            this.lblEE.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEE.Location = new System.Drawing.Point(1074, 76);
+            this.lblEE.Name = "lblEE";
+            this.lblEE.Size = new System.Drawing.Size(263, 71);
+            this.lblEE.TabIndex = 55;
+            this.lblEE.Text = "--";
             // 
             // UCControlAsistencia
             // 
@@ -980,7 +977,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "UCControlAsistencia";
-            this.Size = new System.Drawing.Size(1320, 602);
+            this.Size = new System.Drawing.Size(1381, 602);
             this.Load += new System.EventHandler(this.UCControlAsistencia_Load);
             this.PanelPaginado.ResumeLayout(false);
             this.PanelPaginado.PerformLayout();
@@ -992,13 +989,13 @@
             this.pnFormAsistencia.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.pnHrSalida.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtAsistEntrada)).EndInit();
             this.pnBloques.ResumeLayout(false);
             this.pnBloques.PerformLayout();
             this.pnHrEntrada.ResumeLayout(false);
             this.pnHrEntrada.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBloque)).EndInit();
             this.pncarga.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtAsistEntrada)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1032,7 +1029,6 @@
         private System.Windows.Forms.Panel pnHrSalida;
         private System.Windows.Forms.Panel pnBloques;
         private System.Windows.Forms.Button btnAddBloque;
-        private System.Windows.Forms.ComboBox cbActividad;
         private System.Windows.Forms.ComboBox cbContenido;
         private System.Windows.Forms.ComboBox cbCarrera;
         private System.Windows.Forms.Label label5;
@@ -1073,5 +1069,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Asignatura;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contenido;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstrategiaEvaluacion;
+        private System.Windows.Forms.Label lblEE;
     }
 }
