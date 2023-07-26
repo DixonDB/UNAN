@@ -1,11 +1,9 @@
 ﻿using ExcelDataReader;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UNAN.Datos;
@@ -92,70 +90,59 @@ namespace UNAN.FrmPlanDidactico
             dtPlanD.Columns[4].Visible = false;
             dtPlanD.Columns[5].Visible = false;
         }
-        private DataSet ReadExcelFile(string filePath)
-        {
-            FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read);
-
-            // Determine the format of the file based on the extension
-            IExcelDataReader reader;
-            if (Path.GetExtension(filePath).Equals(".xls", StringComparison.OrdinalIgnoreCase))
-            {
-                // Reading from a binary Excel file (97-2003 format; .xls)
-                reader = ExcelReaderFactory.CreateBinaryReader(stream);
-            }
-            else if (Path.GetExtension(filePath).Equals(".xlsx", StringComparison.OrdinalIgnoreCase))
-            {
-                // Reading from an OpenXml Excel file (2007 format; .xlsx)
-                reader = ExcelReaderFactory.CreateOpenXmlReader(stream);
-            }
-            else
-            {
-                // Unsupported file format
-                MessageBox.Show("El formato del archivo no es compatible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-
-            // Convert all sheets to a DataSet
-            DataSet result = reader.AsDataSet(new ExcelDataSetConfiguration()
-            {
-                ConfigureDataTable = (tableReader) => new ExcelDataTableConfiguration()
-                {
-                    UseHeaderRow = true
-                }
-            });
-
-            reader.Close();
-            return result;
-        }
-
-        //...
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Excel Workbook|*.xls;*.xlsx"; // Add support for both .xls and .xlsx
-            if (ofd.ShowDialog() == DialogResult.OK)
+            try
+            {
+            //configuracion de ventana para seleccionar un archivo
+            OpenFileDialog oOpenFileDialog = new OpenFileDialog();
+            oOpenFileDialog.Filter = "Excel Worbook|*.xlsx";
+
+            if (oOpenFileDialog.ShowDialog() == DialogResult.OK)
             {
                 cboHojas.Items.Clear();
                 dtPlan2.DataSource = null;
-                txtRuta.Text = ofd.FileName;
 
-                // Read Excel file
-                dtsTablas = ReadExcelFile(ofd.FileName);
+                txtRuta.Text = oOpenFileDialog.FileName;
 
-                if (dtsTablas != null)
+                //FileStream nos permite leer, escribir, abrir y cerrar archivos en un sistema de archivos, como matrices de bytes
+                FileStream fsSource = new FileStream(oOpenFileDialog.FileName, FileMode.Open, FileAccess.Read);
+
+
+                //ExcelReaderFactory.CreateBinaryReader = formato XLS
+                //ExcelReaderFactory.CreateOpenXmlReader = formato XLSX
+                //ExcelReaderFactory.CreateReader = XLS o XLSX
+                IExcelDataReader reader = ExcelReaderFactory.CreateReader(fsSource);
+
+                //convierte todas las hojas a un DataSet
+                dtsTablas = reader.AsDataSet(new ExcelDataSetConfiguration()
                 {
-                    // Get table names and add them to the combo box
-                    foreach (DataTable tabla in dtsTablas.Tables)
+                    ConfigureDataTable = (tableReader) => new ExcelDataTableConfiguration()
                     {
-                        cboHojas.Items.Add(tabla.TableName);
+                        UseHeaderRow = true
                     }
-                    cboHojas.SelectedIndex = 0;
-                    if (txtRuta.Text != "")
-                    {
-                        btnCargar.Enabled = true;
-                    }
+                });
+
+                //obtenemos las tablas y añadimos sus nombres en el desplegable de hojas
+                foreach (DataTable tabla in dtsTablas.Tables)
+                {
+                    cboHojas.Items.Add(tabla.TableName);
                 }
+                cboHojas.SelectedIndex = 0;
+
+                reader.Close(); 
+                if (txtRuta.Text != "")
+                {
+                    btnCargar.Enabled = true;
+                }
+
+            }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Por favor cierre el archivo de Excel que quiere cargar al sistema " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

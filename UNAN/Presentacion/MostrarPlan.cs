@@ -1,4 +1,5 @@
 ﻿using Microsoft.Office.Interop.Excel;
+using SpreadsheetLight;
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -94,20 +95,66 @@ namespace UNAN.Presentacion
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            SaveFileDialog fichero = new SaveFileDialog();
-            fichero.Filter = "Excel (*.xls)|*.xls";
-
-            // Aquí asignas el valor de tu variable al FileName
-
             string asig = UCPlanDidactico.Asignatura;
-            string nombreArchivo = asig; // Reemplaza "MiArchivo.xls" con el valor de tu variable
-            fichero.FileName = nombreArchivo;
+            ExportarDataExcel(dtDetallePlan, asig);
+        }
 
-            if (fichero.ShowDialog() == DialogResult.OK)
+        private void ExportarDataExcel(DataGridView grd, string nombreArchivo)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
-                ExportarDataGridViewExcel(dtDetallePlan, fichero.FileName);
+                saveFileDialog.Filter = "Archivos de Excel (*.xlsx)|*.xlsx|Todos los archivos (*.*)|*.*";
+                saveFileDialog.FileName = nombreArchivo + ".xlsx";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    SLDocument sl = new SLDocument();
+                    SLStyle style = new SLStyle();
+                    style.Font.FontSize = 20;
+                    style.Font.Bold = true;
+
+                    // Encabezados de columnas
+                    int ic = 1;
+                    foreach (DataGridViewColumn column in grd.Columns)
+                    {
+                        // Omitir la columna "IdTema" en la exportación
+                        if (column.HeaderText != "IdTema")
+                        {
+                            sl.SetCellValue(1, ic, column.HeaderText.ToString());
+                            sl.SetCellStyle(1, ic, style);
+                            ic++;
+                        }
+                    }
+
+                    // Datos del DataGridView (omitir la columna "IdTema")
+                    int IR = 2;
+                    foreach (DataGridViewRow row in grd.Rows)
+                    {
+                        int colIndex = 0;
+                        for (int col = 0; col < grd.Columns.Count; col++)
+                        {
+                            // Omitir la columna "IdTema" en la exportación
+                            if (grd.Columns[col].HeaderText != "IdTema")
+                            {
+                                // Guardar los datos en la celda correcta según la columna actual
+                                sl.SetCellValue(IR, colIndex + 1, row.Cells[col].Value.ToString());
+                                colIndex++;
+                            }
+                        }
+                        IR++;
+                    }
+
+                    // Ajustar el ancho de las columnas automáticamente
+                    sl.AutoFitColumn(1, ic - 2); // Ajustar hasta ic - 2 para omitir la columna "IdTema"
+
+                    // Guardar el archivo
+                    sl.SaveAs(saveFileDialog.FileName);
+
+                    MessageBox.Show("Datos exportados exitosamente a Excel", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
+
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
