@@ -15,10 +15,11 @@ namespace UNAN.Logica
         public DateTime Fecha { get; set; }
         public int Bloque { get; set; }
         public int Idprofe { get; set; }
-        public int IdCarrera { get; set; }
-        public int IdAsignatura { get; set; }
-        public int IdSemestre { get; set; }
-        public int IdGrupo { get; set; }
-        public int IdTema { get; set; }
+        public string Carrera { get; set; }
+        public string Asignatura { get; set; }
+        public string Semestre { get; set; }
+        public string Grupo { get; set; }
+        public string Tema { get; set; }
+        public string Modalidad { get; set; }
     }
 }

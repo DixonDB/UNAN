@@ -170,12 +170,11 @@ namespace UNAN.Presentacion
             string Semestre = cbSemestre.Text;
             string Asignatura = cbAsignaturas.Text;
             string Tema = cbContenido.Text;
-            string EE = lblEE.Text;
             if (i <= cant)
             {
                 dtAsistEntrada.Rows.Add(new object[]
                 {
-                Modalidad,Carrera,Grupo,Semestre,Asignatura,Tema, EE
+                Semestre,Modalidad,Carrera,Grupo,Asignatura,Tema
                     //,Estado
                 });
             }
@@ -201,9 +200,12 @@ namespace UNAN.Presentacion
                 foreach (DataGridViewRow dr in dtAsistEntrada.Rows)
                 {
                     LAsistencia oConcepto = new LAsistencia();
-                    oConcepto.HoraI = DateTime.Parse(dr.Cells[0].Value.ToString());
-                    oConcepto.HoraF = DateTime.Parse(dr.Cells[1].Value.ToString());
-                    oConcepto.Observaciones = dr.Cells[2].Value.ToString();
+                    oConcepto.Semestre = (dr.Cells[0].Value.ToString());
+                    oConcepto.Modalidad = (dr.Cells[1].Value.ToString());
+                    oConcepto.Carrera = dr.Cells[2].Value.ToString();
+                    oConcepto.Grupo = dr.Cells[3].Value.ToString();
+                    oConcepto.Asignatura = dr.Cells[4].Value.ToString();
+                    oConcepto.Tema = dr.Cells[5].Value.ToString();
                     lst.Add(oConcepto);
                 }
                 int hora = int.Parse(txtHora.Text);
@@ -214,12 +216,8 @@ namespace UNAN.Presentacion
                 string horaf = horaI;
                 string observaciones = "--";
                 LAsistencia parametros = new LAsistencia();
-                parametros.IdAsignatura = (int)cbAsignaturas.SelectedValue;
+                parametros.Fecha = DateTime.Parse(lblFecha.Text);
                 parametros.Idprofe = Login.idprofesor;
-                parametros.IdCarrera = (int)cbCarrera.SelectedValue;
-                parametros.IdGrupo = (int)cbGrupo.SelectedValue;
-                parametros.IdSemestre = (int)cbSemestre.SelectedValue;
-                parametros.IdTema = (int)cbContenido.SelectedValue;
                 parametros.HoraI = DateTime.Parse(horaI);
                 parametros.HoraF = DateTime.Parse(horaf);
                 parametros.Observaciones = observaciones;
