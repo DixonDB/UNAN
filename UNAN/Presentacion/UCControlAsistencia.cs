@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading;
 using System.Threading.Tasks;
@@ -187,7 +188,53 @@ namespace UNAN.Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            InsertarAsistencia();
+        }
 
+        private void InsertarAsistencia()
+        {
+            try
+            {
+                List<LAsistencia> lst = new List<LAsistencia>();
+
+                //LLenar
+                foreach (DataGridViewRow dr in dtAsistEntrada.Rows)
+                {
+                    LAsistencia oConcepto = new LAsistencia();
+                    oConcepto.HoraI = DateTime.Parse(dr.Cells[0].Value.ToString());
+                    oConcepto.HoraF = DateTime.Parse(dr.Cells[1].Value.ToString());
+                    oConcepto.Observaciones = dr.Cells[2].Value.ToString();
+                    lst.Add(oConcepto);
+                }
+                int hora = int.Parse(txtHora.Text);
+                int minuto = int.Parse(txtmin.Text);
+                DateTime horaCompleta = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hora, minuto, 0);
+                string horaFormateada = horaCompleta.ToString("HH:mm");
+                string horaI = horaFormateada;
+                string horaf = horaI;
+                string observaciones = "--";
+                LAsistencia parametros = new LAsistencia();
+                parametros.IdAsignatura = (int)cbAsignaturas.SelectedValue;
+                parametros.Idprofe = Login.idprofesor;
+                parametros.IdCarrera = (int)cbCarrera.SelectedValue;
+                parametros.IdGrupo = (int)cbGrupo.SelectedValue;
+                parametros.IdSemestre = (int)cbSemestre.SelectedValue;
+                parametros.IdTema = (int)cbContenido.SelectedValue;
+                parametros.HoraI = DateTime.Parse(horaI);
+                parametros.HoraF = DateTime.Parse(horaf);
+                parametros.Observaciones = observaciones;
+                parametros.Bloque = (int)nudBloque.Value;
+
+                DAsistencia funcion = new DAsistencia();
+                funcion.InsertarAsistencia(parametros, lst);
+                MessageBox.Show("Registro realizado", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                pnFormAsistencia.Visible = false;
+                PanelPaginado.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
