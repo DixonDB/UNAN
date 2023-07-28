@@ -394,6 +394,7 @@ namespace UNAN.FrmPlanDidactico
             IdPlan = Convert.ToInt32(dtPlanD.SelectedCells[4].Value);
             MostrarPlan mp = new MostrarPlan();
             mp.idplan = IdPlan;
+            mp.label1.Text = "Detalle Plan Didáctico " + Asignatura;
             mp.ShowDialog();
         }
         private void EliminarPlanD()

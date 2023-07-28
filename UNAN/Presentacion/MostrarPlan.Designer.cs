@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MostrarPlan));
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtDetallePlan = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -46,7 +46,9 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pncarga = new System.Windows.Forms.Panel();
-            this.pbCarga = new System.Windows.Forms.PictureBox();
+            this.pbrCarga = new System.Windows.Forms.ProgressBar();
+            this.lblCarga = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dtDetallePlan)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,7 +56,6 @@
             this.PnOpciones.SuspendLayout();
             this.flBotones.SuspendLayout();
             this.pncarga.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCarga)).BeginInit();
             this.SuspendLayout();
             // 
             // dtDetallePlan
@@ -63,14 +64,14 @@
             this.dtDetallePlan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtDetallePlan.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtDetallePlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtDetallePlan.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtDetallePlan.DefaultCellStyle = dataGridViewCellStyle8;
             this.dtDetallePlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtDetallePlan.Location = new System.Drawing.Point(10, 47);
             this.dtDetallePlan.Margin = new System.Windows.Forms.Padding(2);
@@ -124,6 +125,7 @@
             this.label1.Size = new System.Drawing.Size(186, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Detalle Plan Didáctico";
+            this.label1.Visible = false;
             // 
             // PnOpciones
             // 
@@ -145,6 +147,7 @@
             this.flBotones.Name = "flBotones";
             this.flBotones.Size = new System.Drawing.Size(656, 66);
             this.flBotones.TabIndex = 3;
+            this.flBotones.Visible = false;
             // 
             // btnPDF
             // 
@@ -161,20 +164,20 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(113, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 20);
+            this.label2.Size = new System.Drawing.Size(105, 54);
             this.label2.TabIndex = 2;
             this.label2.Text = "Descargar Plan Didáctico";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnExcel
             // 
             this.btnExcel.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcel.Image = global::UNAN.Properties.Resources.microsoft_excel_2019_48px;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(284, 3);
+            this.btnExcel.Location = new System.Drawing.Point(224, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(104, 57);
             this.btnExcel.TabIndex = 1;
@@ -188,7 +191,7 @@
             this.btnGuardar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Image = global::UNAN.Properties.Resources.save32px;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(394, 3);
+            this.btnGuardar.Location = new System.Drawing.Point(334, 3);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(117, 57);
             this.btnGuardar.TabIndex = 3;
@@ -202,7 +205,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = global::UNAN.Properties.Resources.Atras;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(517, 3);
+            this.btnCancelar.Location = new System.Drawing.Point(457, 3);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(128, 57);
             this.btnCancelar.TabIndex = 4;
@@ -237,23 +240,35 @@
             // 
             // pncarga
             // 
-            this.pncarga.Controls.Add(this.pbCarga);
-            this.pncarga.Location = new System.Drawing.Point(707, 239);
+            this.pncarga.Controls.Add(this.pbrCarga);
+            this.pncarga.Controls.Add(this.lblCarga);
+            this.pncarga.Location = new System.Drawing.Point(218, 149);
             this.pncarga.Name = "pncarga";
-            this.pncarga.Size = new System.Drawing.Size(65, 53);
+            this.pncarga.Size = new System.Drawing.Size(457, 213);
             this.pncarga.TabIndex = 16;
             // 
-            // pbCarga
+            // pbrCarga
             // 
-            this.pbCarga.BackColor = System.Drawing.Color.Transparent;
-            this.pbCarga.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbCarga.Image = ((System.Drawing.Image)(resources.GetObject("pbCarga.Image")));
-            this.pbCarga.Location = new System.Drawing.Point(0, 0);
-            this.pbCarga.Name = "pbCarga";
-            this.pbCarga.Size = new System.Drawing.Size(65, 53);
-            this.pbCarga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCarga.TabIndex = 11;
-            this.pbCarga.TabStop = false;
+            this.pbrCarga.Location = new System.Drawing.Point(20, 113);
+            this.pbrCarga.Name = "pbrCarga";
+            this.pbrCarga.Size = new System.Drawing.Size(699, 23);
+            this.pbrCarga.TabIndex = 10;
+            // 
+            // lblCarga
+            // 
+            this.lblCarga.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 80F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCarga.ForeColor = System.Drawing.Color.Black;
+            this.lblCarga.Location = new System.Drawing.Point(0, 0);
+            this.lblCarga.Name = "lblCarga";
+            this.lblCarga.Size = new System.Drawing.Size(457, 213);
+            this.lblCarga.TabIndex = 9;
+            this.lblCarga.Text = "Bienvenidos";
+            this.lblCarga.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MostrarPlan
             // 
@@ -281,9 +296,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.PnOpciones.ResumeLayout(false);
             this.flBotones.ResumeLayout(false);
-            this.flBotones.PerformLayout();
             this.pncarga.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbCarga)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -301,11 +314,13 @@
         public System.Windows.Forms.Button btnGuardar;
         public System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.FlowLayoutPanel flBotones;
-        private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button btnPDF;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Button btnExcel;
+        public System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pncarga;
-        private System.Windows.Forms.PictureBox pbCarga;
+        private System.Windows.Forms.ProgressBar pbrCarga;
+        private System.Windows.Forms.Label lblCarga;
+        private System.Windows.Forms.Timer timer1;
     }
 }

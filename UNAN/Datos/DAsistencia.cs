@@ -12,7 +12,7 @@ namespace UNAN.Datos
             var dt = new DataTable();
             dt.Columns.Add("Id");
             dt.Columns.Add("Modalidad");
-            dt.Columns.Add("Carrera");
+            dt.Columns.Add("NombreC");
             dt.Columns.Add("Grupo");
             dt.Columns.Add("Semestre");
             dt.Columns.Add("Asignatura");

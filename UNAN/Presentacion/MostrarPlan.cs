@@ -26,6 +26,7 @@ namespace UNAN.Presentacion
         private async void MostrarPlan_Load(object sender, EventArgs e)
         {
             pncarga.Dock = DockStyle.Fill;
+            timer1.Enabled = true;
             Bases.DiseñoDtv(ref dtDetallePlan);
             await CargarDatos();
             pncarga.Visible = false; // Ocultar el PictureBox cuando los datos estén cargados
@@ -48,6 +49,8 @@ namespace UNAN.Presentacion
         }
         private void Centrar_botones()
         {
+            label1.Visible = true;
+            flBotones.Visible = true;
             flBotones.Location = new System.Drawing.Point(PnOpciones.Width / 2 - flBotones.Width / 2, PnOpciones.Height / 2 - flBotones.Height / 2);
             label1.Location = new System.Drawing.Point(panel2.Width / 2 - label1.Width / 2, panel2.Height / 2 - label1.Height / 2);
         }
@@ -167,6 +170,19 @@ namespace UNAN.Presentacion
             }
         }
 
-        
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            pbrCarga.Location = new System.Drawing.Point(this.Width / 2 - pbrCarga.Width / 2, this.Height / 2 - pbrCarga.Height / 2);
+            conteo += 10;
+            lblCarga.Text = conteo.ToString() + " %";
+            if (pbrCarga.Value < 100)
+            {
+                pbrCarga.Value += 10;
+            }
+            if (pbrCarga.Value == 100)
+            {
+                timer1.Enabled = false;
+            }
+        }
     }
 }

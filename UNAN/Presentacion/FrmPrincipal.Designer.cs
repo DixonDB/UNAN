@@ -342,7 +342,7 @@ namespace UNAN
             this.btnPlanEst.Name = "btnPlanEst";
             this.btnPlanEst.Size = new System.Drawing.Size(142, 64);
             this.btnPlanEst.TabIndex = 2;
-            this.btnPlanEst.Text = "Plan de Didáctico";
+            this.btnPlanEst.Text = "Plan Didáctico";
             this.btnPlanEst.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPlanEst.UseVisualStyleBackColor = true;
             this.btnPlanEst.Click += new System.EventHandler(this.btnPlanEst_Click);
