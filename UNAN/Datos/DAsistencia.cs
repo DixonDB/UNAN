@@ -2,6 +2,8 @@
 using System.Data;
 using System.Data.SqlClient;
 using UNAN.Logica;
+using System.Windows.Forms;
+using System;
 
 namespace UNAN.Datos
 {
@@ -11,12 +13,12 @@ namespace UNAN.Datos
         {
             var dt = new DataTable();
             dt.Columns.Add("Id");
-            dt.Columns.Add("Modalidad");
-            dt.Columns.Add("NombreC");
-            dt.Columns.Add("Grupo");
-            dt.Columns.Add("Semestre");
             dt.Columns.Add("Asignatura");
+            dt.Columns.Add("NombreC");
+            dt.Columns.Add("Semestre");
+            dt.Columns.Add("Grupo");
             dt.Columns.Add("Tema");
+            dt.Columns.Add("Modalidad");
 
             int i = 1;
             foreach (var oElement in lst)
@@ -41,5 +43,25 @@ namespace UNAN.Datos
             cmd.ExecuteNonQuery();
             Conexion.cerrar();
         }
+        public void MostrarAsistencia(ref DataTable dt, int idProfesor)
+        {
+            try
+            {
+                Conexion.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("MostrarDetalleAsistencia", Conexion.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@IdProfesor", idProfesor);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Conexion.cerrar();
+            }
+        }
     }
+
 }

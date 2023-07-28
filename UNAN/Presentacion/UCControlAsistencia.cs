@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,22 +22,20 @@ namespace UNAN.Presentacion
             InitializeComponent();
             conteo = 0;
         }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             pnFormAsistencia.Visible = true;
             pnFormAsistencia.Dock= DockStyle.Fill;
             PanelPaginado.Visible = false;
         }
-
         private void btnVolver_Click(object sender, EventArgs e)
         {
             pnFormAsistencia.Visible= false;
             PanelPaginado.Visible = true;
         }
-
         private async void UCControlAsistencia_Load(object sender, EventArgs e)
         {
+            MostrarAsistencia();
             pncarga.Dock = DockStyle.Fill;
             timer1.Enabled = true;
             await CargarDatos();
@@ -83,7 +82,6 @@ namespace UNAN.Presentacion
             asig.MostrarAsignatura(cbAsignaturas, cbSemestre.Text, cbCarrera.Text, cbGrupo.Text);
             asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
         }
-
         private void cbModalidad_SelectedIndexChanged(object sender, EventArgs e)
         {
             carreras.MostrarCarrera(cbCarrera, cbModalidad.Text);
@@ -92,19 +90,16 @@ namespace UNAN.Presentacion
             mod.MostrarGrupos(cbGrupo, cbCarrera.Text);
             Mostrarcod();
         }
-
         private void cbGrupo_SelectedIndexChanged(object sender, EventArgs e)
         {
             asig.MostrarAsignatura(cbAsignaturas, cbSemestre.Text, cbCarrera.Text, cbGrupo.Text);
             asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
         }
-
         private void cbSemestre_SelectedIndexChanged(object sender, EventArgs e)
         {
             asig.MostrarAsignatura(cbAsignaturas, cbSemestre.Text, cbCarrera.Text, cbGrupo.Text);
             asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
         }
-
         private void cbAsignaturas_SelectedIndexChanged(object sender, EventArgs e)
         {
             asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
@@ -127,17 +122,14 @@ namespace UNAN.Presentacion
             TimeSpan horasLaboradas = TimeSpan.FromHours(salida);
             DateTime horaConSalida = nuevaFecha.Add(horasLaboradas);
         }
-
         private void nudBloque_Leave(object sender, EventArgs e)
         {
             Salida();
         }
-
         private void cbContenido_SelectedIndexChanged(object sender, EventArgs e)
         {
             MostrarEE();
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             conteo += 10;
@@ -151,7 +143,6 @@ namespace UNAN.Presentacion
                 timer1.Enabled = false;
             }
         }
-
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             cant = int.Parse(nudBloque.Value.ToString());
@@ -159,13 +150,11 @@ namespace UNAN.Presentacion
             txtHora.Enabled = false;
             txtmin.Enabled = false;
             pnBloques.Enabled = true;
-        }
-            
-
+        }            
         private void btnAddBloque_Click(object sender, EventArgs e)
         {
-            string Modalidad = (cbModalidad.Text);
             string Carrera = (cbCarrera.Text);
+            string Modalidad = (cbModalidad.Text);            
             string Grupo = cbGrupo.Text;
             string Semestre = cbSemestre.Text;
             string Asignatura = cbAsignaturas.Text;
@@ -174,7 +163,7 @@ namespace UNAN.Presentacion
             {
                 dtAsistEntrada.Rows.Add(new object[]
                 {
-                Semestre,Modalidad,Carrera,Grupo,Asignatura,Tema
+                Semestre,Carrera,Modalidad,Grupo,Asignatura,Tema
                     //,Estado
                 });
             }
@@ -184,12 +173,11 @@ namespace UNAN.Presentacion
             }
             i++;
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             InsertarAsistencia();
+            MostrarAsistencia();
         }
-
         private void InsertarAsistencia()
         {
             try
@@ -233,6 +221,22 @@ namespace UNAN.Presentacion
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        private void MostrarAsistencia()
+        {
+            int idprofesor = Login.idprofesor;
+            DataTable dt = new DataTable();
+            DAsistencia funcion = new DAsistencia();
+            funcion.MostrarAsistencia(ref dt, idprofesor);
+            dataAsistencia.DataSource = dt;
+            Diseñodt();
+        }
+        private void Diseñodt()
+        {
+            Bases.DiseñoDtv(ref dataAsistencia);
+            PanelPaginado.Visible = true;
+            dataAsistencia.Columns[2].Visible = false;
+            dataAsistencia.Columns[3].Visible = false;
         }
     }
 }
