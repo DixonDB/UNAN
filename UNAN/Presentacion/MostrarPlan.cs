@@ -84,7 +84,7 @@ namespace UNAN.Presentacion
                         // Omitir la columna "IdTema" en la exportación
                         if (column.HeaderText != "IdTema")
                         {
-                            sl.SetCellValue(1, ic, column.HeaderText.ToString());
+                           // sl.SetCellValue(1, ic, column.HeaderText.ToString());
                             sl.SetCellStyle(1, ic, style);
                             ic++;
                         }
@@ -101,7 +101,7 @@ namespace UNAN.Presentacion
                             if (grd.Columns[col].HeaderText != "IdTema")
                             {
                                 // Guardar los datos en la celda correcta según la columna actual
-                                sl.SetCellValue(IR, colIndex + 1, row.Cells[col].Value.ToString());
+                               // sl.SetCellValue(IR, colIndex + 1, row.Cells[col].Value.ToString());
                                 colIndex++;
                             }
                         }

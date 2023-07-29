@@ -222,37 +222,6 @@ namespace UNAN.Datos
             }
         }
 
-        public void MostrarEE(Label EE, int Tema)
-        {
-            try
-            {
-                Conexion.abrir();
-                Conexion.abrir();
-                SqlCommand da = new SqlCommand("MostrarEEPorTema", Conexion.conectar);
-                da.CommandType = CommandType.StoredProcedure;
-                da.Parameters.AddWithValue("@IdTema", Tema);
-                SqlDataAdapter cb = new SqlDataAdapter(da);
-                DataTable dt = new DataTable();
-                cb.Fill(dt);
-
-                if (dt.Rows.Count > 0)
-                {
-                    EE.Text = dt.Rows[0]["EstrategiaEvaluacion"].ToString();
-                }
-                else
-                {
-                    EE.Text = "--";
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                Conexion.cerrar();
-            }
-        }
         public void GrupoXProfesor(ComboBox combo, string carrera, int IdProfe)
         {
             try

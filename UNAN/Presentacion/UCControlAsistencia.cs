@@ -62,27 +62,6 @@ namespace UNAN.Presentacion
             DCarreras funcion = new DCarreras();
             funcion.MostrarCodigoC(cbCarrera.Text, lblCod);
         }
-        private void MostrarEE()
-        {
-            try
-            {
-                LPlanDidactico plan = new LPlanDidactico();
-                if (plan.IdTema == 0)
-                {
-                    cbContenido.Text = "";
-                }
-                else
-                {
-                    plan.IdTema = (int)cbContenido.SelectedValue;
-                    asis.MostrarEE(lblEE, plan.IdTema);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
-        }
         private void GrupoXporfesor()
         {
             try
@@ -115,7 +94,6 @@ namespace UNAN.Presentacion
             asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
             GrupoXporfesor();
             Mostrarcod();
-            MostrarEE();
         }
         private void cbGrupo_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -156,7 +134,6 @@ namespace UNAN.Presentacion
         private void cbContenido_SelectedIndexChanged(object sender, EventArgs e)
         {
             int IdTema = (int)cbContenido.SelectedValue;
-            asis.MostrarEE(lblEE, IdTema);
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -183,7 +160,6 @@ namespace UNAN.Presentacion
             asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
             GrupoXporfesor();
             Mostrarcod();
-            MostrarEE();
             btnAceptar.Enabled = false;
         }            
         private void btnAddBloque_Click(object sender, EventArgs e)
