@@ -1,8 +1,7 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Office2010.Word;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UNAN.Datos;
@@ -14,7 +13,7 @@ namespace UNAN.Presentacion
     {
         int cant, i = 1;
         private int conteo;
-        DCarreras carreras = new DCarreras();
+        DAsistencia asis = new DAsistencia();
         DModalidades mod = new DModalidades();
         DAsignatura asig = new DAsignatura();
         public UCControlAsistencia()
@@ -35,8 +34,8 @@ namespace UNAN.Presentacion
         }
         private async void UCControlAsistencia_Load(object sender, EventArgs e)
         {
-            MostrarAsistencia();
             pncarga.Dock = DockStyle.Fill;
+            MostrarDatos();
             timer1.Enabled = true;
             await CargarDatos();
             pncarga.Visible = false;
@@ -46,19 +45,18 @@ namespace UNAN.Presentacion
         public async Task CargarDatos()
         {
             await Task.Delay(1500);
-            MostrarDatos();
+            MostrarAsistencia();
             
             await Task.Delay(1000);
         }
         private void MostrarDatos()
         {
-            carreras.MostrarCarrera(cbCarrera, cbModalidad.Text);
+            asis.ModalidadXProfesor(cbModalidad,Login.idprofesor);
+            asis.MostrarTemas(cbContenido, cbCarrera.Text, cbAsignaturas.Text, cbGrupo.Text, Login.idprofesor, cbSemestre.Text);
+            asis.CarreraXProfesor(cbCarrera, Login.idprofesor,cbModalidad.Text, cbSemestre.Text);
             Mostrarcod();
-            mod.MostrarModalidades(cbModalidad);
             mod.MostrarGrupos(cbGrupo, cbCarrera.Text);
-            mod.MostrarSemestre(cbSemestre);
-            mod.MostrarTemas(cbContenido, cbCarrera.Text, cbAsignaturas.Text, cbGrupo.Text, Login.idprofesor, cbSemestre.Text);
-            MostrarEE();
+            asis.SemestreXProfesor(cbSemestre,Login.idprofesor);
         }
         private void Mostrarcod()
         {
@@ -67,43 +65,75 @@ namespace UNAN.Presentacion
         }
         private void MostrarEE()
         {
-            LPlanDidactico plan = new LPlanDidactico();
-            plan.IdCarrera = (int)cbCarrera.SelectedValue; 
-            plan.IdAsignatura= (int)cbAsignaturas.SelectedValue;
-            plan.IdGrupo= (int)cbGrupo.SelectedValue;
-            plan.IdSemestre= (int)cbSemestre.SelectedValue;
-            plan.IdTema= (int)cbContenido.SelectedValue;
-            mod.MostrarEE(lblEE,plan.IdCarrera,plan.IdAsignatura,plan.IdGrupo,Login.idprofesor,plan.IdSemestre, plan.IdTema);
+            try
+            {
+                LPlanDidactico plan = new LPlanDidactico();
+                if (plan.IdAsignatura == 0)
+                {
+                    cbAsignaturas.Text = "";
+                }
+                else if (plan.IdGrupo == 0)
+                {
+                    cbGrupo.Text = "";
+                }
+                else if (plan.IdSemestre == 0)
+                {
+                    cbSemestre.Text = "";
+                }
+                else if (plan.IdTema == 0)
+                {
+                    cbContenido.Text = "";
+                }
+                else if (plan.IdCarrera == 0)
+                {
+                    cbCarrera.Text = "";
+                }
+                else
+                {
+                    plan.IdCarrera = (int)cbCarrera.SelectedValue;
+                    plan.IdAsignatura = (int)cbAsignaturas.SelectedValue;
+                    plan.IdGrupo = (int)cbGrupo.SelectedValue;
+                    plan.IdSemestre = (int)cbSemestre.SelectedValue;
+                    plan.IdTema = (int)cbContenido.SelectedValue;
+                    asis.MostrarEE(lblEE, plan.IdCarrera, plan.IdAsignatura, plan.IdGrupo, Login.idprofesor, plan.IdSemestre, plan.IdTema);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
         private void cbCarrera_SelectedIndexChanged(object sender, EventArgs e)
         {
             Mostrarcod();
             mod.MostrarGrupos(cbGrupo, cbCarrera.Text);
-            asig.MostrarAsignatura(cbAsignaturas, cbSemestre.Text, cbCarrera.Text, cbGrupo.Text);
+            asis.AsignaturaXProfesor(cbAsignaturas, Login.idprofesor, cbModalidad.Text, cbCarrera.Text, cbSemestre.Text);
             asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
         }
         private void cbModalidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            carreras.MostrarCarrera(cbCarrera, cbModalidad.Text);
-            asig.MostrarAsignatura(cbAsignaturas, cbSemestre.Text, cbCarrera.Text, cbGrupo.Text);
+            asis.CarreraXProfesor(cbCarrera, Login.idprofesor,cbModalidad.Text,cbSemestre.Text);
+            asis.AsignaturaXProfesor(cbAsignaturas, Login.idprofesor, cbModalidad.Text, cbCarrera.Text, cbSemestre.Text);
             asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
             mod.MostrarGrupos(cbGrupo, cbCarrera.Text);
             Mostrarcod();
+            MostrarEE();
         }
         private void cbGrupo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            asig.MostrarAsignatura(cbAsignaturas, cbSemestre.Text, cbCarrera.Text, cbGrupo.Text);
+            asis.AsignaturaXProfesor(cbAsignaturas, Login.idprofesor, cbModalidad.Text, cbCarrera.Text, cbSemestre.Text);
             asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
         }
         private void cbSemestre_SelectedIndexChanged(object sender, EventArgs e)
         {
-            asig.MostrarAsignatura(cbAsignaturas, cbSemestre.Text, cbCarrera.Text, cbGrupo.Text);
+            asis.AsignaturaXProfesor(cbAsignaturas, Login.idprofesor, cbModalidad.Text, cbCarrera.Text, cbSemestre.Text);
             asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
         }
         private void cbAsignaturas_SelectedIndexChanged(object sender, EventArgs e)
         {
             asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
-            mod.MostrarTemas(cbContenido, cbCarrera.Text, cbAsignaturas.Text, cbGrupo.Text, Login.idprofesor, cbSemestre.Text);
+            asis.MostrarTemas(cbContenido, cbCarrera.Text, cbAsignaturas.Text, cbGrupo.Text, Login.idprofesor, cbSemestre.Text);
         }
         private void hora()
         {
@@ -150,6 +180,13 @@ namespace UNAN.Presentacion
             txtHora.Enabled = false;
             txtmin.Enabled = false;
             pnBloques.Enabled = true;
+            asis.CarreraXProfesor(cbCarrera, Login.idprofesor, cbModalidad.Text, cbSemestre.Text);
+            asis.AsignaturaXProfesor(cbAsignaturas, Login.idprofesor, cbModalidad.Text, cbCarrera.Text, cbSemestre.Text);
+            asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
+            mod.MostrarGrupos(cbGrupo, cbCarrera.Text);
+            Mostrarcod();
+            MostrarEE();
+            btnAceptar.Enabled = false;
         }            
         private void btnAddBloque_Click(object sender, EventArgs e)
         {

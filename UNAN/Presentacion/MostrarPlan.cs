@@ -1,8 +1,10 @@
-﻿using Microsoft.Office.Interop.Excel;
+﻿using DocumentFormat.OpenXml.Wordprocessing;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
 using SpreadsheetLight;
 using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UNAN.Datos;
@@ -82,7 +84,7 @@ namespace UNAN.Presentacion
                         // Omitir la columna "IdTema" en la exportación
                         if (column.HeaderText != "IdTema")
                         {
-                           // sl.SetCellValue(1, ic, column.HeaderText.ToString());
+                            sl.SetCellValue(1, ic, column.HeaderText.ToString());
                             sl.SetCellStyle(1, ic, style);
                             ic++;
                         }
@@ -99,7 +101,7 @@ namespace UNAN.Presentacion
                             if (grd.Columns[col].HeaderText != "IdTema")
                             {
                                 // Guardar los datos en la celda correcta según la columna actual
-                             //   sl.SetCellValue(IR, colIndex + 1, row.Cells[col].Value.ToString());
+                                sl.SetCellValue(IR, colIndex + 1, row.Cells[col].Value.ToString());
                                 colIndex++;
                             }
                         }
@@ -182,6 +184,77 @@ namespace UNAN.Presentacion
             if (pbrCarga.Value == 100)
             {
                 timer1.Enabled = false;
+            }
+        }
+
+        private void btnPDF_Click(object sender, EventArgs e)
+        {
+            if (dtDetallePlan.Rows.Count > 0)
+            {
+                string nombre = UCPlanDidactico.Asignatura;
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "PDF (*.pdf)|*.pdf";
+                sfd.FileName = nombre + ".pdf";
+                bool fileError = false;
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    if (File.Exists(sfd.FileName))
+                    {
+                        try
+                        {
+                            File.Delete(sfd.FileName);
+                        }
+                        catch (IOException ex)
+                        {
+                            fileError = true;
+                            MessageBox.Show("No fue posible guardar los datos en el disco." + ex.Message);
+                        }
+                    }
+                    if (!fileError)
+                    {
+                        try
+                        {
+                            PdfPTable pdfTable = new PdfPTable(dtDetallePlan.Columns.Count);
+                            pdfTable.DefaultCell.Padding = 3;
+                            pdfTable.WidthPercentage = 100;
+                            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+
+                            foreach (DataGridViewColumn column in dtDetallePlan.Columns)
+                            {
+                                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                                pdfTable.AddCell(cell);
+                            }
+
+                            foreach (DataGridViewRow row in dtDetallePlan.Rows)
+                            {
+                                foreach (DataGridViewCell cell in row.Cells)
+                                {
+                                    pdfTable.AddCell(cell.Value.ToString());
+                                }
+                            }
+
+                            using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
+                            {
+                                iTextSharp.text.Document pdfDoc = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4, 10f, 20f, 20f, 10f);
+                                PdfWriter.GetInstance(pdfDoc, stream);
+                                pdfDoc.Open();
+                                pdfDoc.Add(pdfTable);
+                                pdfDoc.Close();
+                                stream.Close();
+                            }
+
+                            MessageBox.Show("Datos exportados con éxito !!!", "Info");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error :" + ex.Message);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay registro para exportar !!!", "Info");
             }
         }
     }
