@@ -222,7 +222,7 @@ namespace UNAN.Datos
             }
         }
 
-        public void MostrarEE(Label EE, int carrera, int asig, int grupo, int IdProfe, int semestre, int Tema)
+        public void MostrarEE(Label EE, int Tema)
         {
             try
             {
@@ -230,12 +230,7 @@ namespace UNAN.Datos
                 Conexion.abrir();
                 SqlCommand da = new SqlCommand("MostrarEEPorTema", Conexion.conectar);
                 da.CommandType = CommandType.StoredProcedure;
-                da.Parameters.AddWithValue("@Carrera", carrera);
-                da.Parameters.AddWithValue("@IdProfesor", IdProfe);
-                da.Parameters.AddWithValue("@Asignatura", asig);
-                da.Parameters.AddWithValue("@Grupo", grupo);
-                da.Parameters.AddWithValue("@Semestre", semestre);
-                da.Parameters.AddWithValue("@Tema", Tema);
+                da.Parameters.AddWithValue("@IdTema", Tema);
                 SqlDataAdapter cb = new SqlDataAdapter(da);
                 DataTable dt = new DataTable();
                 cb.Fill(dt);
@@ -251,7 +246,38 @@ namespace UNAN.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Conexion.cerrar();
+            }
+        }
+        public void GrupoXProfesor(ComboBox combo, string carrera, int IdProfe)
+        {
+            try
+            {
+                AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
+                Conexion.abrir();
+                SqlCommand da = new SqlCommand("GrupoXProfesor", Conexion.conectar);
+                da.CommandType = CommandType.StoredProcedure;
+                da.Parameters.AddWithValue("@carrera", carrera);
+                da.Parameters.AddWithValue("@IdProfesor", IdProfe);
+                SqlDataAdapter cb = new SqlDataAdapter(da);
+                DataTable dt = new DataTable();
+                cb.Fill(dt);
+                combo.ValueMember = "IdGrupo";
+                combo.DisplayMember = "Grupo";
+                combo.DataSource = dt;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    lista.Add(dt.Rows[i]["Grupo"].ToString());
+                }
+                combo.AutoCompleteCustomSource = lista;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en GrupoXProfesor " + ex.Message);
             }
             finally
             {
