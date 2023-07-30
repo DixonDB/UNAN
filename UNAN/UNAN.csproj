@@ -53,6 +53,9 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="SpreadsheetLight, Version=3.4.9.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpreadsheetLight.3.4.9\lib\SpreadsheetLight.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -388,6 +391,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo2.ico" />
+    <None Include="Resources\view_30px.png" />
     <None Include="Resources\microsoft_excel_2019_48px.png" />
     <None Include="Resources\export_pdf_48px.png" />
     <None Include="Resources\down_30px.png" />

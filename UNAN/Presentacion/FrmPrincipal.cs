@@ -207,5 +207,11 @@ namespace UNAN
             Login fr =new Login();
             fr.Show();
         }
+
+        private void pbLogo_Click(object sender, EventArgs e)
+        {
+            FrmAcercade ac = new FrmAcercade();
+            ac.ShowDialog();
+        }
     }
 }

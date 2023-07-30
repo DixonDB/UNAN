@@ -1,7 +1,6 @@
-﻿using DocumentFormat.OpenXml.Wordprocessing;
-using iTextSharp.text.pdf;
-using iTextSharp.text;
+﻿using iTextSharp.text;
 using SpreadsheetLight;
+using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -189,13 +188,95 @@ namespace UNAN.Presentacion
 
         private void btnPDF_Click(object sender, EventArgs e)
         {
-            if (dtDetallePlan.Rows.Count > 0)
+            string asig = UCPlanDidactico.Asignatura;
+            ExportarPdf(dtDetallePlan, asig);
+            //if (dtDetallePlan.Rows.Count > 0)
+            //{
+            //    string nombre = UCPlanDidactico.Asignatura;
+            //    SaveFileDialog sfd = new SaveFileDialog();
+            //    sfd.Filter = "PDF (*.pdf)|*.pdf";
+            //    sfd.FileName = nombre + ".pdf";
+            //    bool fileError = false;
+            //    if (sfd.ShowDialog() == DialogResult.OK)
+            //    {
+            //        if (File.Exists(sfd.FileName))
+            //        {
+            //            try
+            //            {
+            //                File.Delete(sfd.FileName);
+            //            }
+            //            catch (IOException ex)
+            //            {
+            //                fileError = true;
+            //                MessageBox.Show("No fue posible guardar los datos en el disco." + ex.Message);
+            //            }
+            //        }
+            //        if (!fileError)
+            //        {
+            //            try
+            //            {
+            //                PdfPTable pdfTable = new PdfPTable(dtDetallePlan.Columns.Count - 1); // Restamos 1 para omitir la columna "IdTema"
+            //                pdfTable.DefaultCell.Padding = 3;
+            //                pdfTable.WidthPercentage = 100;
+            //                pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+
+            //                foreach (DataGridViewColumn column in dtDetallePlan.Columns)
+            //                {
+            //                    // Omitir la primera columna "IdTema" en la exportación
+            //                    if (column.HeaderText != "IdTema")
+            //                    {
+            //                        PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+            //                        pdfTable.AddCell(cell);
+            //                    }
+            //                }
+
+            //                foreach (DataGridViewRow row in dtDetallePlan.Rows)
+            //                {
+            //                    foreach (DataGridViewCell cell in row.Cells)
+            //                    {
+            //                        // Omitir el valor de la primera columna "IdTema" en la exportación
+            //                        if (dtDetallePlan.Columns[cell.ColumnIndex].HeaderText != "IdTema")
+            //                        {
+            //                            pdfTable.AddCell(cell.Value.ToString());
+            //                        }
+            //                    }
+            //                }
+
+            //                using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
+            //                {
+            //                    iTextSharp.text.Document pdfDoc = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4, 10f, 20f, 20f, 10f);
+            //                    PdfWriter.GetInstance(pdfDoc, stream);
+            //                    pdfDoc.Open();
+            //                    pdfDoc.Add(pdfTable);
+            //                    pdfDoc.Close();
+            //                    stream.Close();
+            //                }
+
+            //                MessageBox.Show("Datos exportados con éxito !!!", "Info");
+            //            }
+            //            catch (Exception ex)
+            //            {
+            //                MessageBox.Show("Error :" + ex.Message);
+            //            }
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("No hay registro para exportar !!!", "Info");
+            //}
+
+        }
+        private void ExportarPdf(DataGridView grd, string nombreArchivo)
+        {
+            if (grd.Rows.Count > 0)
             {
-                string nombre = UCPlanDidactico.Asignatura;
+                // Configuración del diálogo para guardar el archivo PDF
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.Filter = "PDF (*.pdf)|*.pdf";
-                sfd.FileName = nombre + ".pdf";
+                sfd.FileName = nombreArchivo + ".pdf";
                 bool fileError = false;
+
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
                     if (File.Exists(sfd.FileName))
@@ -210,34 +291,39 @@ namespace UNAN.Presentacion
                             MessageBox.Show("No fue posible guardar los datos en el disco." + ex.Message);
                         }
                     }
+
                     if (!fileError)
                     {
                         try
                         {
-                            PdfPTable pdfTable = new PdfPTable(dtDetallePlan.Columns.Count);
-                            pdfTable.DefaultCell.Padding = 3;
-                            pdfTable.WidthPercentage = 100;
-                            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
-
-                            foreach (DataGridViewColumn column in dtDetallePlan.Columns)
-                            {
-                                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-                                pdfTable.AddCell(cell);
-                            }
-
-                            foreach (DataGridViewRow row in dtDetallePlan.Rows)
-                            {
-                                foreach (DataGridViewCell cell in row.Cells)
-                                {
-                                    pdfTable.AddCell(cell.Value.ToString());
-                                }
-                            }
-
                             using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
                             {
-                                iTextSharp.text.Document pdfDoc = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4, 10f, 20f, 20f, 10f);
+                                iTextSharp.text.Document pdfDoc = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4.Rotate(), 10f, 20f, 20f, 10f);
                                 PdfWriter.GetInstance(pdfDoc, stream);
                                 pdfDoc.Open();
+
+                                PdfPTable pdfTable = new PdfPTable(grd.Columns.Count - 1); // Ignorar la primera columna (ID)
+                                pdfTable.DefaultCell.Padding = 3;
+                                pdfTable.WidthPercentage = 100;
+                                pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+
+                                // Encabezado de columnas
+                                for (int col = 1; col < grd.Columns.Count; col++)
+                                {
+                                    PdfPCell cell = new PdfPCell(new Phrase(grd.Columns[col].HeaderText));
+                                    pdfTable.AddCell(cell);
+                                }
+
+                                // Agregar celdas para cada registro
+                                for (int row = 0; row < grd.Rows.Count; row++)
+                                {
+                                    for (int col = 1; col < grd.Columns.Count; col++)
+                                    {
+                                        PdfPCell cell = new PdfPCell(new Phrase(grd.Rows[row].Cells[col].Value.ToString()));
+                                        pdfTable.AddCell(cell);
+                                    }
+                                }
+
                                 pdfDoc.Add(pdfTable);
                                 pdfDoc.Close();
                                 stream.Close();
@@ -257,5 +343,7 @@ namespace UNAN.Presentacion
                 MessageBox.Show("No hay registro para exportar !!!", "Info");
             }
         }
+
+
     }
 }

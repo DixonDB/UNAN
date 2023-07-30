@@ -29,34 +29,7 @@ namespace UNAN.Presentacion
             PanelPaginado.Visible = true;
             panel4.Visible = true;
         }
-        private void carga()
-        {
-            if (backgroundWorker1.IsBusy != true)
-            {
-                pncarga.Dock = DockStyle.Fill;
-                backgroundWorker1.RunWorkerAsync();
-            }
-        }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            for (int i = 1; i <= 10; i++)
-            {
-                Thread.Sleep(100);
-                backgroundWorker1.ReportProgress(i * 10);
-            }
-        }
-
-        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            pbrCarga.Value = e.ProgressPercentage;
-            lblCarga.Text = e.ProgressPercentage.ToString() + "%";
-        }
-
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            pncarga.Visible = false;
-        }
+       
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -78,6 +51,7 @@ namespace UNAN.Presentacion
             timer1.Enabled = true;
             await CargarDatos();
             pncarga.Visible = false;
+            panel4.Visible = true;
         }
         public async Task CargarDatos()
         {

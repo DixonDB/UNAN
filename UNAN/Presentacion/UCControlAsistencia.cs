@@ -33,13 +33,20 @@ namespace UNAN.Presentacion
         }
         private async void UCControlAsistencia_Load(object sender, EventArgs e)
         {
-            pncarga.Dock = DockStyle.Fill;
+            CentrarControles();
             MostrarDatos();
             timer1.Enabled = true;
             await CargarDatos();
             pncarga.Visible = false;
             hora();
             lblFecha.Text = DateTime.Now.ToShortDateString();
+            panel1.Visible = true;
+        }
+        private void CentrarControles()
+        {
+            pncarga.Dock = DockStyle.Fill;
+            pncarga.BringToFront();
+            pbrCarga.Location = new System.Drawing.Point(pncarga.Width / 2 - pbrCarga.Width / 2, pncarga.Height - 150 - pbrCarga.Height / 2);
         }
         public async Task CargarDatos()
         {
@@ -177,12 +184,14 @@ namespace UNAN.Presentacion
                 Semestre,Carrera,Modalidad,Grupo,Asignatura,Tema
                     //,Estado
                 });
+                int j = i+1;
+                lblbloque.Text =Convert.ToString(j);
+                i++;
             }
             else
             {
                 pnBloques.Enabled = false;
             }
-            i++;
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -246,8 +255,11 @@ namespace UNAN.Presentacion
         {
             Bases.DiseñoDtv(ref dataAsistencia);
             PanelPaginado.Visible = true;
-            dataAsistencia.Columns[2].Visible = false;
-            dataAsistencia.Columns[3].Visible = false;
+            dataAsistencia.Columns[5].Visible = false;
+            dataAsistencia.Columns[6].Visible = false;
+            dataAsistencia.Columns["Tema"].Visible = false;
+            dataAsistencia.Columns["Carrera"].Visible = false;
+            dataAsistencia.Columns["Asignatura"].Visible = false;
         }
     }
 }

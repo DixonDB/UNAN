@@ -503,6 +503,16 @@ namespace UNAN.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap view_30px {
+            get {
+                object obj = ResourceManager.GetObject("view_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap volver {
             get {
                 object obj = ResourceManager.GetObject("volver", resourceCulture);

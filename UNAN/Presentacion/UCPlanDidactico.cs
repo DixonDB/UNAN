@@ -70,6 +70,7 @@ namespace UNAN.FrmPlanDidactico
         public async Task CargarDatos()
         {
             await Task.Delay(1500);
+            panel4.Visible = true;
             MostrarPlanD();
             pncarga.Visible = false;
             pnBotones.Visible = true;

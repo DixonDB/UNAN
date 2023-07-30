@@ -124,9 +124,6 @@
   <data name="Estrategia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Estrategia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="data_backup" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\data_backup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,11 +136,17 @@
   <data name="lapiz" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lapiz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="down_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\down_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="help_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\help_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bloquear" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bloquear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="documentos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\documentos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="volver" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\volver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,9 +163,6 @@
   <data name="user_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UnAN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UnAN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Atras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Atras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -178,6 +178,9 @@
   <data name="Logo-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="microsoft_excel_2019_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\microsoft_excel_2019_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="usuario1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\usuario1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,17 +193,20 @@
   <data name="logo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Avance" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Avance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="lupa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lupa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EstrEva" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EstrEva.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="borrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\borrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="IMG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="data_backup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\data_backup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Check" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,9 +223,6 @@
   <data name="send_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\send_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="export_pdf_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\export_pdf_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="classroom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\classroom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -235,8 +238,8 @@
   <data name="up_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\up_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="documentos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\documentos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="export_pdf_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\export_pdf_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Add 32x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add 32x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,16 +247,16 @@
   <data name="Evaluation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Evaluation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="down_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\down_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Avance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Avance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="borrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\borrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UnAN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UnAN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="personal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\personal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="microsoft_excel_2019_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\microsoft_excel_2019_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="view_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\view_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

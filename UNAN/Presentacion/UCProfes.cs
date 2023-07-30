@@ -216,6 +216,7 @@ namespace UNAN.Presentacion
             timer1.Enabled = true;
             await CargarDatos();
             pncarga.Visible = false;
+            panel1.Visible = true;
            // MostrarProfessores();
         }
         public async Task CargarDatos()

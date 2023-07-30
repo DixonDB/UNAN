@@ -293,6 +293,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1161, 53);
             this.panel1.TabIndex = 7;
+            this.panel1.Visible = false;
             // 
             // btnMostrarTodos
             // 
