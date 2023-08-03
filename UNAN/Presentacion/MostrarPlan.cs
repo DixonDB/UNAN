@@ -1,6 +1,4 @@
-﻿using iTextSharp.text;
-using SpreadsheetLight;
-using iTextSharp.text.pdf;
+﻿using SpreadsheetLight;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,6 +8,10 @@ using UNAN.Datos;
 using UNAN.FrmPlanDidactico;
 using UNAN.Logica;
 using DataTable = System.Data.DataTable;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using iText.Kernel.Pdf;
 
 namespace UNAN.Presentacion
 {
@@ -190,88 +192,11 @@ namespace UNAN.Presentacion
         {
             string asig = UCPlanDidactico.Asignatura;
             ExportarPdf(dtDetallePlan, asig);
-            //if (dtDetallePlan.Rows.Count > 0)
-            //{
-            //    string nombre = UCPlanDidactico.Asignatura;
-            //    SaveFileDialog sfd = new SaveFileDialog();
-            //    sfd.Filter = "PDF (*.pdf)|*.pdf";
-            //    sfd.FileName = nombre + ".pdf";
-            //    bool fileError = false;
-            //    if (sfd.ShowDialog() == DialogResult.OK)
-            //    {
-            //        if (File.Exists(sfd.FileName))
-            //        {
-            //            try
-            //            {
-            //                File.Delete(sfd.FileName);
-            //            }
-            //            catch (IOException ex)
-            //            {
-            //                fileError = true;
-            //                MessageBox.Show("No fue posible guardar los datos en el disco." + ex.Message);
-            //            }
-            //        }
-            //        if (!fileError)
-            //        {
-            //            try
-            //            {
-            //                PdfPTable pdfTable = new PdfPTable(dtDetallePlan.Columns.Count - 1); // Restamos 1 para omitir la columna "IdTema"
-            //                pdfTable.DefaultCell.Padding = 3;
-            //                pdfTable.WidthPercentage = 100;
-            //                pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
-
-            //                foreach (DataGridViewColumn column in dtDetallePlan.Columns)
-            //                {
-            //                    // Omitir la primera columna "IdTema" en la exportación
-            //                    if (column.HeaderText != "IdTema")
-            //                    {
-            //                        PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-            //                        pdfTable.AddCell(cell);
-            //                    }
-            //                }
-
-            //                foreach (DataGridViewRow row in dtDetallePlan.Rows)
-            //                {
-            //                    foreach (DataGridViewCell cell in row.Cells)
-            //                    {
-            //                        // Omitir el valor de la primera columna "IdTema" en la exportación
-            //                        if (dtDetallePlan.Columns[cell.ColumnIndex].HeaderText != "IdTema")
-            //                        {
-            //                            pdfTable.AddCell(cell.Value.ToString());
-            //                        }
-            //                    }
-            //                }
-
-            //                using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
-            //                {
-            //                    iTextSharp.text.Document pdfDoc = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4, 10f, 20f, 20f, 10f);
-            //                    PdfWriter.GetInstance(pdfDoc, stream);
-            //                    pdfDoc.Open();
-            //                    pdfDoc.Add(pdfTable);
-            //                    pdfDoc.Close();
-            //                    stream.Close();
-            //                }
-
-            //                MessageBox.Show("Datos exportados con éxito !!!", "Info");
-            //            }
-            //            catch (Exception ex)
-            //            {
-            //                MessageBox.Show("Error :" + ex.Message);
-            //            }
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("No hay registro para exportar !!!", "Info");
-            //}
-
         }
         private void ExportarPdf(DataGridView grd, string nombreArchivo)
         {
             if (grd.Rows.Count > 0)
             {
-                // Configuración del diálogo para guardar el archivo PDF
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.Filter = "PDF (*.pdf)|*.pdf";
                 sfd.FileName = nombreArchivo + ".pdf";
@@ -298,20 +223,23 @@ namespace UNAN.Presentacion
                         {
                             using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
                             {
-                                iTextSharp.text.Document pdfDoc = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4.Rotate(), 10f, 20f, 20f, 10f);
-                                PdfWriter.GetInstance(pdfDoc, stream);
-                                pdfDoc.Open();
+                                PdfWriter pdfWriter = new PdfWriter(stream);
+                                PdfDocument pdfDoc = new PdfDocument(pdfWriter);
+                                Document document = new Document(pdfDoc);
 
-                                PdfPTable pdfTable = new PdfPTable(grd.Columns.Count - 1); // Ignorar la primera columna (ID)
-                                pdfTable.DefaultCell.Padding = 3;
-                                pdfTable.WidthPercentage = 100;
-                                pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+                                // Crear la tabla y ajustar el ancho de las columnas automáticamente
+                                float[] columnWidths = new float[grd.Columns.Count - 1]; // Ignorar la primera columna (ID)
+                                for (int col = 1; col < grd.Columns.Count; col++)
+                                {
+                                    columnWidths[col - 1] = (float)grd.Columns[col].Width;
+                                }
+                                Table pdfTable = new Table(UnitValue.CreatePointArray(columnWidths));
+                                pdfTable.SetWidth(UnitValue.CreatePercentValue(100));
 
                                 // Encabezado de columnas
                                 for (int col = 1; col < grd.Columns.Count; col++)
                                 {
-                                    PdfPCell cell = new PdfPCell(new Phrase(grd.Columns[col].HeaderText));
-                                    pdfTable.AddCell(cell);
+                                    pdfTable.AddCell(new Cell().Add(new Paragraph(grd.Columns[col].HeaderText)));
                                 }
 
                                 // Agregar celdas para cada registro
@@ -319,31 +247,28 @@ namespace UNAN.Presentacion
                                 {
                                     for (int col = 1; col < grd.Columns.Count; col++)
                                     {
-                                        PdfPCell cell = new PdfPCell(new Phrase(grd.Rows[row].Cells[col].Value.ToString()));
-                                        pdfTable.AddCell(cell);
+                                        pdfTable.AddCell(new Cell().Add(new Paragraph(grd.Rows[row].Cells[col].Value.ToString())));
                                     }
                                 }
 
-                                pdfDoc.Add(pdfTable);
-                                pdfDoc.Close();
-                                stream.Close();
-                            }
+                                document.Add(pdfTable);
+                                document.Close();
 
-                            MessageBox.Show("Datos exportados con éxito !!!", "Info");
+                                MessageBox.Show("Datos exportados con éxito !!!", "Info");
+                            }
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Error :" + ex.Message);
+                            MessageBox.Show("Error al generar el PDF: " + ex.Message , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
             }
             else
             {
-                MessageBox.Show("No hay registro para exportar !!!", "Info");
+                MessageBox.Show("No hay registros para exportar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
 
     }
 }
