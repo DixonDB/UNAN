@@ -19,7 +19,7 @@ namespace UNAN.FrmPlanDidactico
         public static string Asignatura;
         //Un DataSet es un objeto que almacena n número de DataTables, estas tablas puedes estar conectadas dentro del dataset.
         public DataSet dtsTablas = new DataSet();
-        DCarreras carreras = new DCarreras();
+        readonly DCarreras carreras = new DCarreras();
         DModalidades mod=new DModalidades();
         DAsignatura asig = new DAsignatura();
         DAprendizaje da=new DAprendizaje();

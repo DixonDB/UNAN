@@ -28,9 +28,11 @@ namespace UNAN.Datos
             }
             Conexion.abrir();
             SqlCommand cmd = new SqlCommand("InsertarAsistencia", Conexion.conectar);
-            var parameterlst = new SqlParameter("@lstNombre", SqlDbType.Structured);
-            parameterlst.TypeName = "AsisNombre";
-            parameterlst.Value = dt;
+            var parameterlst = new SqlParameter("@lstNombre", SqlDbType.Structured)
+            {
+                TypeName = "AsisNombre",
+                Value = dt
+            };
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.Add(parameterlst);
@@ -68,8 +70,10 @@ namespace UNAN.Datos
             {
                 AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
                 Conexion.abrir();
-                SqlCommand da = new SqlCommand("CarreraXProfesor", Conexion.conectar);
-                da.CommandType = CommandType.StoredProcedure;
+                SqlCommand da = new SqlCommand("CarreraXProfesor", Conexion.conectar)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
                 da.Parameters.AddWithValue("@IdProfesor", Idprofe);
                 da.Parameters.AddWithValue("@Modalidad", Modalidad);
                 da.Parameters.AddWithValue("@Semestre", Semestre);
@@ -100,8 +104,10 @@ namespace UNAN.Datos
             {
                 AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
                 Conexion.abrir();
-                SqlCommand da = new SqlCommand("AsignaturaXProfesor", Conexion.conectar);
-                da.CommandType = CommandType.StoredProcedure;
+                SqlCommand da = new SqlCommand("AsignaturaXProfesor", Conexion.conectar)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
                 da.Parameters.AddWithValue("@IdProfesor", Idprofe);
                 da.Parameters.AddWithValue("@Modalidad", Modalidad);
                 da.Parameters.AddWithValue("@Carrera", Carrera);
@@ -133,8 +139,10 @@ namespace UNAN.Datos
             {
                 AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
                 Conexion.abrir();
-                SqlCommand da = new SqlCommand("ModalidadXProfesor", Conexion.conectar);
-                da.CommandType = CommandType.StoredProcedure;
+                SqlCommand da = new SqlCommand("ModalidadXProfesor", Conexion.conectar)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
                 da.Parameters.AddWithValue("@IdProfesor", idprofe);
                 SqlDataAdapter cb = new SqlDataAdapter(da);
                 DataTable dt = new DataTable();
@@ -163,8 +171,10 @@ namespace UNAN.Datos
             {
                 AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
                 Conexion.abrir();
-                SqlCommand da = new SqlCommand("SemestreXProfesor", Conexion.conectar);
-                da.CommandType = CommandType.StoredProcedure;
+                SqlCommand da = new SqlCommand("SemestreXProfesor", Conexion.conectar)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
                 da.Parameters.AddWithValue("@IdProfesor", idprofe);
                 SqlDataAdapter cb = new SqlDataAdapter(da);
                 DataTable dt = new DataTable();
@@ -193,8 +203,10 @@ namespace UNAN.Datos
             {
                 AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
                 Conexion.abrir();
-                SqlCommand da = new SqlCommand("MostrarTemas", Conexion.conectar);
-                da.CommandType = CommandType.StoredProcedure;
+                SqlCommand da = new SqlCommand("MostrarTemas", Conexion.conectar)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
                 da.Parameters.AddWithValue("@carrera", carrera);
                 da.Parameters.AddWithValue("@IdProfesor", IdProfe);
                 da.Parameters.AddWithValue("@Asignatura", asig);
@@ -228,8 +240,10 @@ namespace UNAN.Datos
             {
                 AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
                 Conexion.abrir();
-                SqlCommand da = new SqlCommand("GrupoXProfesor", Conexion.conectar);
-                da.CommandType = CommandType.StoredProcedure;
+                SqlCommand da = new SqlCommand("GrupoXProfesor", Conexion.conectar)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
                 da.Parameters.AddWithValue("@carrera", carrera);
                 da.Parameters.AddWithValue("@IdProfesor", IdProfe);
                 SqlDataAdapter cb = new SqlDataAdapter(da);

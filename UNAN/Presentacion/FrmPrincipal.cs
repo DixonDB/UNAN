@@ -17,17 +17,17 @@ namespace UNAN
         }
         public int Idusuario;
         public string LoginV;
-        string Base_De_datos = "UNAN";
-        string Servidor = @".\";
+        readonly string Base_De_datos = "UNAN";
+        //string Servidor = @".\";
         string ruta;
 
 
-        private void reloj_Tick(object sender, EventArgs e)
+        private void Reloj_Tick(object sender, EventArgs e)
         {
            lblReloj.Text = DateTime.Now.ToString("hh:mm tt");
         }
 
-        private void frmMenu_Load(object sender, EventArgs e)
+        private void FrmMenu_Load(object sender, EventArgs e)
         {
             reloj.Enabled = true;
             lblUser.Text = Login.nombreprofe;
@@ -54,7 +54,7 @@ namespace UNAN
             }
         }
 
-        private void btnRestaurarBD_Click(object sender, EventArgs e)
+        private void BtnRestaurarBD_Click(object sender, EventArgs e)
         {
             RestaurarBd();
         }
@@ -104,11 +104,13 @@ namespace UNAN
 
         }
 
-        private void btnAsistencia_Click(object sender, EventArgs e)
+        private void BtnAsistencia_Click(object sender, EventArgs e)
         {
             pn12.Controls.Clear();
-            UCControlAsistencia P = new UCControlAsistencia();
-            P.Dock = DockStyle.Fill;
+            UCControlAsistencia P = new UCControlAsistencia
+            {
+                Dock = DockStyle.Fill
+            };
             pn12.Controls.Add(P);
             btnTitulo.Text = "Asistencia";
             //Control de botones
@@ -119,12 +121,14 @@ namespace UNAN
             btnAvanceProg.Enabled = true;
         }
 
-        private void btnProfesores_Click(object sender, EventArgs e)
+        private void BtnProfesores_Click(object sender, EventArgs e)
         { 
             #region funcionactual
             pn12.Controls.Clear();
-            UCProfes P = new UCProfes();
-            P.Dock = DockStyle.Fill;
+            UCProfes P = new UCProfes
+            {
+                Dock = DockStyle.Fill
+            };
             pn12.Controls.Add(P);
             btnTitulo.Text = "Personal";
             //Control de botones

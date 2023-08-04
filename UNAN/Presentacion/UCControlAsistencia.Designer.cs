@@ -661,7 +661,7 @@
             this.cbContenido.Name = "cbContenido";
             this.cbContenido.Size = new System.Drawing.Size(260, 26);
             this.cbContenido.TabIndex = 49;
-            this.cbContenido.SelectedIndexChanged += new System.EventHandler(this.cbContenido_SelectedIndexChanged);
+            this.cbContenido.SelectedIndexChanged += new System.EventHandler(this.CbContenido_SelectedIndexChanged);
             // 
             // cbCarrera
             // 

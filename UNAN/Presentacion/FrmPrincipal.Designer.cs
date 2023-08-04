@@ -306,7 +306,7 @@ namespace UNAN
             this.btnRestaurarBD.Text = "Restaurar BD";
             this.btnRestaurarBD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRestaurarBD.UseVisualStyleBackColor = true;
-            this.btnRestaurarBD.Click += new System.EventHandler(this.btnRestaurarBD_Click);
+            this.btnRestaurarBD.Click += new System.EventHandler(this.BtnRestaurarBD_Click);
             // 
             // panel15
             // 
@@ -403,7 +403,7 @@ namespace UNAN
             this.btnAsistencia.Text = "Asistencia";
             this.btnAsistencia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAsistencia.UseVisualStyleBackColor = true;
-            this.btnAsistencia.Click += new System.EventHandler(this.btnAsistencia_Click);
+            this.btnAsistencia.Click += new System.EventHandler(this.BtnAsistencia_Click);
             // 
             // panel11
             // 
@@ -427,7 +427,7 @@ namespace UNAN
             this.btnProfesores.Text = "Profesores";
             this.btnProfesores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProfesores.UseVisualStyleBackColor = true;
-            this.btnProfesores.Click += new System.EventHandler(this.btnProfesores_Click);
+            this.btnProfesores.Click += new System.EventHandler(this.BtnProfesores_Click);
             // 
             // panel8
             // 
@@ -581,7 +581,7 @@ namespace UNAN
             // 
             // reloj
             // 
-            this.reloj.Tick += new System.EventHandler(this.reloj_Tick);
+            this.reloj.Tick += new System.EventHandler(this.Reloj_Tick);
             // 
             // dlg
             // 
@@ -600,7 +600,7 @@ namespace UNAN
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmMenu_Load);
+            this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.pn12.ResumeLayout(false);

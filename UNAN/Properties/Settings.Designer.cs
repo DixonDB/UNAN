@@ -22,5 +22,15 @@ namespace UNAN.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=FELIX\\SQLEXPRESS;Initial Catalog=UNAN;Integrated Security=True")]
+        public string UNANConnectionString {
+            get {
+                return ((string)(this["UNANConnectionString"]));
+            }
+        }
     }
 }

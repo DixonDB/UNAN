@@ -37,7 +37,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.PnOpciones = new System.Windows.Forms.Panel();
             this.flBotones = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnPDF = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -138,7 +137,6 @@
             // 
             // flBotones
             // 
-            this.flBotones.Controls.Add(this.btnPDF);
             this.flBotones.Controls.Add(this.label2);
             this.flBotones.Controls.Add(this.btnExcel);
             this.flBotones.Controls.Add(this.btnGuardar);
@@ -149,24 +147,10 @@
             this.flBotones.TabIndex = 3;
             this.flBotones.Visible = false;
             // 
-            // btnPDF
-            // 
-            this.btnPDF.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPDF.Image = global::UNAN.Properties.Resources.export_pdf_48px;
-            this.btnPDF.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPDF.Location = new System.Drawing.Point(3, 3);
-            this.btnPDF.Name = "btnPDF";
-            this.btnPDF.Size = new System.Drawing.Size(104, 57);
-            this.btnPDF.TabIndex = 0;
-            this.btnPDF.Text = "PDF";
-            this.btnPDF.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPDF.UseVisualStyleBackColor = true;
-            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
-            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(113, 0);
+            this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 54);
             this.label2.TabIndex = 2;
@@ -178,7 +162,7 @@
             this.btnExcel.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcel.Image = global::UNAN.Properties.Resources.microsoft_excel_2019_48px;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(224, 3);
+            this.btnExcel.Location = new System.Drawing.Point(114, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(104, 57);
             this.btnExcel.TabIndex = 1;
@@ -192,7 +176,7 @@
             this.btnGuardar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Image = global::UNAN.Properties.Resources.save32px;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(334, 3);
+            this.btnGuardar.Location = new System.Drawing.Point(224, 3);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(117, 57);
             this.btnGuardar.TabIndex = 3;
@@ -206,7 +190,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = global::UNAN.Properties.Resources.Atras;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(457, 3);
+            this.btnCancelar.Location = new System.Drawing.Point(347, 3);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(128, 57);
             this.btnCancelar.TabIndex = 4;
@@ -315,7 +299,6 @@
         public System.Windows.Forms.Button btnGuardar;
         public System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.FlowLayoutPanel flBotones;
-        public System.Windows.Forms.Button btnPDF;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Button btnExcel;
         public System.Windows.Forms.Label label1;

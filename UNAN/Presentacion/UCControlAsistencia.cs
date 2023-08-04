@@ -138,9 +138,9 @@ namespace UNAN.Presentacion
         {
             Salida();
         }
-        private void cbContenido_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbContenido_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int IdTema = (int)cbContenido.SelectedValue;
+            var IdTema = (int)cbContenido.SelectedValue;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {

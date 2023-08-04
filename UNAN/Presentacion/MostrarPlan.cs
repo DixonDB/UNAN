@@ -8,10 +8,6 @@ using UNAN.Datos;
 using UNAN.FrmPlanDidactico;
 using UNAN.Logica;
 using DataTable = System.Data.DataTable;
-using iText.Layout;
-using iText.Layout.Element;
-using iText.Layout.Properties;
-using iText.Kernel.Pdf;
 
 namespace UNAN.Presentacion
 {
@@ -85,7 +81,7 @@ namespace UNAN.Presentacion
                         // Omitir la columna "IdTema" en la exportación
                         if (column.HeaderText != "IdTema")
                         {
-                           // sl.SetCellValue(1, ic, column.HeaderText.ToString());
+                            sl.SetCellValue(1, ic, column.HeaderText.ToString());
                             sl.SetCellStyle(1, ic, style);
                             ic++;
                         }
@@ -102,7 +98,7 @@ namespace UNAN.Presentacion
                             if (grd.Columns[col].HeaderText != "IdTema")
                             {
                                 // Guardar los datos en la celda correcta según la columna actual
-                               // sl.SetCellValue(IR, colIndex + 1, row.Cells[col].Value.ToString());
+                               sl.SetCellValue(IR, colIndex + 1, row.Cells[col].Value.ToString());
                                 colIndex++;
                             }
                         }
@@ -185,88 +181,6 @@ namespace UNAN.Presentacion
             if (pbrCarga.Value == 100)
             {
                 timer1.Enabled = false;
-            }
-        }
-
-        private void btnPDF_Click(object sender, EventArgs e)
-        {
-            string asig = UCPlanDidactico.Asignatura;
-            ExportarPdf(dtDetallePlan, asig);
-        }
-        private void ExportarPdf(DataGridView grd, string nombreArchivo)
-        {
-            if (grd.Rows.Count > 0)
-            {
-                SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = "PDF (*.pdf)|*.pdf";
-                sfd.FileName = nombreArchivo + ".pdf";
-                bool fileError = false;
-
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    if (File.Exists(sfd.FileName))
-                    {
-                        try
-                        {
-                            File.Delete(sfd.FileName);
-                        }
-                        catch (IOException ex)
-                        {
-                            fileError = true;
-                            MessageBox.Show("No fue posible guardar los datos en el disco." + ex.Message);
-                        }
-                    }
-
-                    if (!fileError)
-                    {
-                        try
-                        {
-                            using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
-                            {
-                                PdfWriter pdfWriter = new PdfWriter(stream);
-                                PdfDocument pdfDoc = new PdfDocument(pdfWriter);
-                                Document document = new Document(pdfDoc);
-
-                                // Crear la tabla y ajustar el ancho de las columnas automáticamente
-                                float[] columnWidths = new float[grd.Columns.Count - 1]; // Ignorar la primera columna (ID)
-                                for (int col = 1; col < grd.Columns.Count; col++)
-                                {
-                                    columnWidths[col - 1] = (float)grd.Columns[col].Width;
-                                }
-                                Table pdfTable = new Table(UnitValue.CreatePointArray(columnWidths));
-                                pdfTable.SetWidth(UnitValue.CreatePercentValue(100));
-
-                                // Encabezado de columnas
-                                for (int col = 1; col < grd.Columns.Count; col++)
-                                {
-                                    pdfTable.AddCell(new Cell().Add(new Paragraph(grd.Columns[col].HeaderText)));
-                                }
-
-                                // Agregar celdas para cada registro
-                                for (int row = 0; row < grd.Rows.Count; row++)
-                                {
-                                    for (int col = 1; col < grd.Columns.Count; col++)
-                                    {
-                                        pdfTable.AddCell(new Cell().Add(new Paragraph(grd.Rows[row].Cells[col].Value.ToString())));
-                                    }
-                                }
-
-                                document.Add(pdfTable);
-                                document.Close();
-
-                                MessageBox.Show("Datos exportados con éxito !!!", "Info");
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Error al generar el PDF: " + ex.Message , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("No hay registros para exportar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
