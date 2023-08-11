@@ -80,7 +80,8 @@ namespace UNAN.Presentacion
         private void txtContraseña_TextChanged(object sender, EventArgs e)
         {
             string contra = txtContraseña.Text;
-            Validaciones.ActualizarVisibilidadEtiquetas(contra, lblMayu, lblMin, lblNum, lblCarEsp);
+            
+           Validaciones.ActualizarVisibilidadEtiquetas(contra, lblMayu, lblMin, lblNum, lblCarEsp);
             //string contra = txtContraseña.Text;
             //ActualizarVisibilidadEtiquetas(contra);
 
@@ -88,12 +89,12 @@ namespace UNAN.Presentacion
             bool cumpleCriterios = Validaciones.ContraseñaCumpleCriterios(contra) && contra.Length >= 8;
 
             //// Cambiar el color del Label según si cumple los criterios
-            label15.ForeColor = cumpleCriterios ? Color.Green : Color.Red;
+           label15.ForeColor = cumpleCriterios ? Color.Green : Color.Red;
             //// Actualizar los colores de los labels y validar si todos están en verde
             labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
 
             // Habilitar o deshabilitar el botón btnActualizar
-            btnActualizar.Enabled = cumpleCriterios && labelsVerdes;
+          btnActualizar.Enabled = cumpleCriterios && labelsVerdes;
         }
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
@@ -104,7 +105,7 @@ namespace UNAN.Presentacion
                 lblIdentificacion.ForeColor = string.IsNullOrEmpty(txtIdentificacion.Text) ? Color.Red : Color.Green;
 
                 // Actualizar los colores de los labels y validar si todos están en verde
-                labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
+             labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
 
                 // Habilitar o deshabilitar el botón actualizar según el estado de los labels
                
@@ -114,10 +115,10 @@ namespace UNAN.Presentacion
             if (textBox == txtNombreApellidos)
             {
                 lblNombreApellidos.ForeColor = string.IsNullOrEmpty(txtNombreApellidos.Text) ? Color.Red : Color.Green;
-                //txtUsuario.Text = Validaciones.GenerarUsuario(txtNombreApellidos.Text);
+                txtUsuario.Text = Validaciones.GenerarUsuario(txtNombreApellidos.Text);
 
                 // Actualizar los colores de los labels y validar si todos están en verde
-                labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
+             labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
 
                 // Habilitar o deshabilitar el botón actualiar según el estado de los labels
                 btnActualizar.Enabled = labelsVerdes;
@@ -134,7 +135,7 @@ namespace UNAN.Presentacion
                     lblCelular.ForeColor = Color.Red;
                 }
                 // Actualizar los colores de los labels y validar si todos están en verde
-                labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
+               labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
 
                 // Habilitar o deshabilitar el botón actualizar según el estado de los labels
                 btnActualizar.Enabled = labelsVerdes;
@@ -144,7 +145,7 @@ namespace UNAN.Presentacion
             {
                 lblCorreo.ForeColor = Validaciones.EsCorreoValido(txtCorreo.Text) ? Color.Green : Color.Red;
                 // Actualizar los colores de los labels y validar si todos están en verde
-                labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
+               labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
 
                 // Habilitar o deshabilitar el botón actualizar según el estado de los labels
                 btnActualizar.Enabled = labelsVerdes;
@@ -154,7 +155,7 @@ namespace UNAN.Presentacion
             {
                 lblUsuario.ForeColor = string.IsNullOrEmpty(txtUsuario.Text) ? Color.Red : Color.Green;
                 // Actualizar los colores de los labels y validar si todos están en verde
-                labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
+               labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
 
                 // Habilitar o deshabilitar el botón actualizar según el estado de los labels
                 btnActualizar.Enabled = labelsVerdes;

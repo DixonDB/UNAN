@@ -15,6 +15,7 @@ namespace UNAN.Presentacion
         DAsistencia asis = new DAsistencia();
         DModalidades mod = new DModalidades();
         DAsignatura asig = new DAsignatura();
+        public static int IdAsistencia;
         public UCControlAsistencia()
         {
             InitializeComponent();
@@ -23,12 +24,12 @@ namespace UNAN.Presentacion
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             pnFormAsistencia.Visible = true;
-            pnFormAsistencia.Dock= DockStyle.Fill;
+            pnFormAsistencia.Dock = DockStyle.Fill;
             PanelPaginado.Visible = false;
         }
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            pnFormAsistencia.Visible= false;
+            pnFormAsistencia.Visible = false;
             PanelPaginado.Visible = true;
         }
         private async void UCControlAsistencia_Load(object sender, EventArgs e)
@@ -52,17 +53,17 @@ namespace UNAN.Presentacion
         {
             await Task.Delay(1500);
             MostrarAsistencia();
-            
+
             await Task.Delay(1000);
         }
         private void MostrarDatos()
         {
-            asis.ModalidadXProfesor(cbModalidad,Login.idprofesor);
+            asis.ModalidadXProfesor(cbModalidad, Login.idprofesor);
             asis.MostrarTemas(cbContenido, cbCarrera.Text, cbAsignaturas.Text, cbGrupo.Text, Login.idprofesor, cbSemestre.Text);
-            asis.CarreraXProfesor(cbCarrera, Login.idprofesor,cbModalidad.Text, cbSemestre.Text);
+            asis.CarreraXProfesor(cbCarrera, Login.idprofesor, cbModalidad.Text, cbSemestre.Text);
             Mostrarcod();
             GrupoXporfesor();
-            asis.SemestreXProfesor(cbSemestre,Login.idprofesor);
+            asis.SemestreXProfesor(cbSemestre, Login.idprofesor);
         }
         private void Mostrarcod()
         {
@@ -79,7 +80,7 @@ namespace UNAN.Presentacion
                 }
                 else
                 {
-                    asis.GrupoXProfesor(cbGrupo, cbCarrera.Text,Login.idprofesor);
+                    asis.GrupoXProfesor(cbGrupo, cbCarrera.Text, Login.idprofesor);
                 }
             }
             catch (Exception ex)
@@ -96,7 +97,7 @@ namespace UNAN.Presentacion
         }
         private void cbModalidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            asis.CarreraXProfesor(cbCarrera, Login.idprofesor,cbModalidad.Text,cbSemestre.Text);
+            asis.CarreraXProfesor(cbCarrera, Login.idprofesor, cbModalidad.Text, cbSemestre.Text);
             asis.AsignaturaXProfesor(cbAsignaturas, Login.idprofesor, cbModalidad.Text, cbCarrera.Text, cbSemestre.Text);
             asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
             GrupoXporfesor();
@@ -168,11 +169,17 @@ namespace UNAN.Presentacion
             GrupoXporfesor();
             Mostrarcod();
             btnAceptar.Enabled = false;
-        }            
+        }
         private void btnAddBloque_Click(object sender, EventArgs e)
         {
+            int idCarera = Convert.ToInt32(cbCarrera.SelectedValue.ToString());
+            int idmodalidad = Convert.ToInt32(cbModalidad.SelectedValue.ToString());
+            int idgrupo = Convert.ToInt32(cbGrupo.SelectedValue.ToString());
+            int idsemestre = Convert.ToInt32(cbSemestre.SelectedValue.ToString());
+            int idasignatura = Convert.ToInt32(cbAsignaturas.SelectedValue.ToString());
+            int idtema = Convert.ToInt32(cbContenido.SelectedValue.ToString());
             string Carrera = (cbCarrera.Text);
-            string Modalidad = (cbModalidad.Text);            
+            string Modalidad = (cbModalidad.Text);
             string Grupo = cbGrupo.Text;
             string Semestre = cbSemestre.Text;
             string Asignatura = cbAsignaturas.Text;
@@ -181,11 +188,11 @@ namespace UNAN.Presentacion
             {
                 dtAsistEntrada.Rows.Add(new object[]
                 {
-                Semestre,Carrera,Modalidad,Grupo,Asignatura,Tema
+                idsemestre,Semestre,idCarera,Carrera,idmodalidad,Modalidad,idgrupo,Grupo,idasignatura,Asignatura,idtema,Tema
                     //,Estado
                 });
-                int j = i+1;
-                lblbloque.Text =Convert.ToString(j);
+                int j = i + 1;
+                lblbloque.Text = Convert.ToString(j);
                 i++;
             }
             else
@@ -200,6 +207,7 @@ namespace UNAN.Presentacion
         }
         private void InsertarAsistencia()
         {
+            /* Fermin
             try
             {
                 List<LAsistencia> lst = new List<LAsistencia>();
@@ -240,6 +248,49 @@ namespace UNAN.Presentacion
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }*/
+
+            try
+            {
+                List<LAsis> lst = new List<LAsis>();
+
+                //LLenar
+                foreach (DataGridViewRow dr in dtAsistEntrada.Rows)
+                {
+                    LAsis oConcepto = new LAsis();
+                    
+                    oConcepto.IdAsignatura = int.Parse(dr.Cells[8].Value.ToString());
+                    oConcepto.IdTema = int.Parse(dr.Cells[10].Value.ToString());
+                    lst.Add(oConcepto);
+                }
+
+                LAsis parametros = new LAsis();
+
+                int hora = int.Parse(txtHora.Text);
+                int minuto = int.Parse(txtmin.Text);
+                int bloques = int.Parse(nudBloque.Text);
+                DateTime horaInicio = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hora, minuto, 0);
+                DateTime horaFin = horaInicio.AddMinutes(bloques * 45);
+
+                string horaInicioFormateada = horaInicio.ToString("HH:mm");
+                string horaFinFormateada = horaFin.ToString("HH:mm");
+
+                parametros.IdProfesor = Login.idprofesor;
+                parametros.Fecha = DateTime.Parse(lblFecha.Text);
+                parametros.Bloques = (int)nudBloque.Value;
+                parametros.HoraInicio = DateTime.Parse(horaInicioFormateada);
+                parametros.HoraFin = DateTime.Parse(horaFinFormateada);
+                parametros.Observacion = "Esto es una Asistencia";
+
+                DAsistencia funcion = new DAsistencia();
+                funcion.Insertaasistencias(parametros, lst);
+                MessageBox.Show("Registro realizado", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                pnFormAsistencia.Visible = false;
+                PanelPaginado.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
         private void MostrarAsistencia()
@@ -257,9 +308,22 @@ namespace UNAN.Presentacion
             PanelPaginado.Visible = true;
             dataAsistencia.Columns[5].Visible = false;
             dataAsistencia.Columns[6].Visible = false;
-            dataAsistencia.Columns["Tema"].Visible = false;
-            dataAsistencia.Columns["Carrera"].Visible = false;
-            dataAsistencia.Columns["Asignatura"].Visible = false;
+        }
+
+        private void dataAsistencia_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataAsistencia.Columns["Editar"].Index)
+            {
+                PasarIdAsistencia();
+            }
+           
+        }
+        private void PasarIdAsistencia()
+        {           
+            IdAsistencia = Convert.ToInt32(dataAsistencia.SelectedCells[5].Value);
+            DetalleAsistencias da = new DetalleAsistencias();
+            da.idasistencias = IdAsistencia;
+            da.ShowDialog();
         }
     }
 }

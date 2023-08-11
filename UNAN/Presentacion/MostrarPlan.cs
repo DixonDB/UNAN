@@ -15,7 +15,7 @@ namespace UNAN.Presentacion
     {
         private int conteo;
         public int idplan;
-        UCPlanDidactico planD=new UCPlanDidactico();
+        UCPlanDidactico planD = new UCPlanDidactico();
         public string Asig;
         DataTable dt = new DataTable();
         public MostrarPlan()
@@ -53,13 +53,11 @@ namespace UNAN.Presentacion
             flBotones.Location = new System.Drawing.Point(PnOpciones.Width / 2 - flBotones.Width / 2, PnOpciones.Height / 2 - flBotones.Height / 2);
             label1.Location = new System.Drawing.Point(panel2.Width / 2 - label1.Width / 2, panel2.Height / 2 - label1.Height / 2);
         }
-
         private void btnExcel_Click(object sender, EventArgs e)
         {
             string asig = UCPlanDidactico.Asignatura;
             ExportarDataExcel(dtDetallePlan, asig);
         }
-
         private void ExportarDataExcel(DataGridView grd, string nombreArchivo)
         {
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
@@ -115,8 +113,6 @@ namespace UNAN.Presentacion
                 }
             }
         }
-
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (btnGuardar.Text=="Editar")
@@ -168,7 +164,6 @@ namespace UNAN.Presentacion
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             pbrCarga.Location = new System.Drawing.Point(this.Width / 2 - pbrCarga.Width / 2, this.Height / 2 - pbrCarga.Height / 2);

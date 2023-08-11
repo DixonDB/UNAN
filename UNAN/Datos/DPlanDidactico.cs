@@ -93,7 +93,6 @@ namespace UNAN.Datos
                 }
             }
         }
-
         public bool EliminarPlanD(LPlanDidactico parametros)
         {
             try

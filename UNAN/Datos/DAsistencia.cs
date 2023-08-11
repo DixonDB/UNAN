@@ -9,48 +9,92 @@ namespace UNAN.Datos
 {
     public class DAsistencia
     {
-        public void InsertarAsistencia(LAsistencia parametros,List<LAsistencia> lst)
+        #region Felix
+        //public void InsertarAsistencia(LAsistencia parametros, List<LAsistencia> lst)
+        //{
+        //    var dt = new DataTable();
+        //    dt.Columns.Add("Id");
+        //    dt.Columns.Add("Asignatura");
+        //    dt.Columns.Add("NombreC");
+        //    dt.Columns.Add("Semestre");
+        //    dt.Columns.Add("Grupo");
+        //    dt.Columns.Add("Tema");
+        //    dt.Columns.Add("Modalidad");
+
+        //    int i = 1;
+        //    foreach (var oElement in lst)
+        //    {
+        //        dt.Rows.Add(i, oElement.Modalidad, oElement.Carrera, oElement.Grupo, oElement.Semestre, oElement.Asignatura, oElement.Tema);
+        //        i++;
+        //    }
+        //    Conexion.abrir();
+        //    SqlCommand cmd = new SqlCommand("InsertarAsistencia", Conexion.conectar);
+        //    var parameterlst = new SqlParameter("@lstNombre", SqlDbType.Structured)
+        //    {
+        //        TypeName = "AsisNombre",
+        //        Value = dt
+        //    };
+        //    cmd.CommandType = CommandType.StoredProcedure;
+
+        //    cmd.Parameters.Add(parameterlst);
+        //    cmd.Parameters.AddWithValue("@IdProfe", parametros.Idprofe);
+        //    cmd.Parameters.AddWithValue("@Observaciones", parametros.Observaciones);
+        //    cmd.Parameters.AddWithValue("@HoraI", parametros.HoraI);
+        //    cmd.Parameters.AddWithValue("@HoraF", parametros.HoraF);
+        //    cmd.Parameters.AddWithValue("Fecha", parametros.Fecha);
+        //    cmd.Parameters.AddWithValue("Bloque", parametros.Bloque);
+        //    cmd.ExecuteNonQuery();
+        //    Conexion.cerrar();
+        //}
+        #endregion
+        public void Insertaasistencias(LAsis parametros, List<LAsis> lst)
         {
-            var dt = new DataTable();
-            dt.Columns.Add("Id");
-            dt.Columns.Add("Asignatura");
-            dt.Columns.Add("NombreC");
-            dt.Columns.Add("Semestre");
-            dt.Columns.Add("Grupo");
-            dt.Columns.Add("Tema");
-            dt.Columns.Add("Modalidad");
-
-            int i = 1;
-            foreach (var oElement in lst)
+            try
             {
-                dt.Rows.Add(i, oElement.Modalidad, oElement.Carrera, oElement.Grupo,oElement.Semestre,oElement.Asignatura,oElement.Tema);
-                i++;
+                var dt = new DataTable();
+                dt.Columns.Add("Id");
+                dt.Columns.Add("IdAsignatura");
+                dt.Columns.Add("IdTema");
+
+                int i = 1;
+                foreach (var oElement in lst)
+                {
+                    dt.Rows.Add(i, oElement.IdAsignatura, oElement.IdTema);
+                    i++;
+                }
+
+                Conexion.abrir();
+                SqlCommand cmd = new SqlCommand("InsertarAsistenciaYBloques", Conexion.conectar);
+                var parameterlst = new SqlParameter("@ltsAsistencias", SqlDbType.Structured)
+                {
+                    TypeName = "Asistencias2",
+                    Value = dt
+                };
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(parameterlst);
+                cmd.Parameters.AddWithValue("@IdProfesor", parametros.IdProfesor);
+                cmd.Parameters.AddWithValue("@Fecha", parametros.Fecha);
+                cmd.Parameters.AddWithValue("@Bloques", parametros.Bloques);
+                cmd.Parameters.AddWithValue("@HoraI", parametros.HoraInicio);
+                cmd.Parameters.AddWithValue("@HoraF", parametros.HoraFin);
+                cmd.Parameters.AddWithValue("@Observacion", parametros.Observacion);
+                cmd.ExecuteNonQuery();
+                Conexion.cerrar();
             }
-            Conexion.abrir();
-            SqlCommand cmd = new SqlCommand("InsertarAsistencia", Conexion.conectar);
-            var parameterlst = new SqlParameter("@lstNombre", SqlDbType.Structured)
+            catch (Exception ex)
             {
-                TypeName = "AsisNombre",
-                Value = dt
-            };
-            cmd.CommandType = CommandType.StoredProcedure;
+                MessageBox.Show(ex.Message);
+            }
 
-            cmd.Parameters.Add(parameterlst);
-            cmd.Parameters.AddWithValue("@IdProfe", parametros.Idprofe);
-            cmd.Parameters.AddWithValue("@Observaciones", parametros.Observaciones);
-            cmd.Parameters.AddWithValue("@HoraI", parametros.HoraI);
-            cmd.Parameters.AddWithValue("@HoraF", parametros.HoraF);
-            cmd.Parameters.AddWithValue("Fecha", parametros.Fecha);
-            cmd.Parameters.AddWithValue("Bloque", parametros.Bloque);
-            cmd.ExecuteNonQuery();
-            Conexion.cerrar();
         }
         public void MostrarAsistencia(ref DataTable dt, int idProfesor)
         {
             try
             {
                 Conexion.abrir();
-                SqlDataAdapter da = new SqlDataAdapter("MostrarDetalleAsistencia", Conexion.conectar);
+                SqlDataAdapter da = new SqlDataAdapter("MostrarAsistencia", Conexion.conectar);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@IdProfesor", idProfesor);
                 da.Fill(dt);
@@ -64,7 +108,27 @@ namespace UNAN.Datos
                 Conexion.cerrar();
             }
         }
-        public void CarreraXProfesor(ComboBox combo,int Idprofe,string Modalidad,string Semestre)
+        public void MostrarDetalleAsistencia(ref DataTable dt, int idAsistencia)
+        {
+            try
+            {
+                Conexion.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("MostrarDetalleAsistencia", Conexion.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@IdAsistencia", idAsistencia);
+                da.Fill(dt);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Conexion.cerrar();
+            }
+        }
+        public void CarreraXProfesor(ComboBox combo, int Idprofe, string Modalidad, string Semestre)
         {
             try
             {
@@ -98,7 +162,7 @@ namespace UNAN.Datos
                 Conexion.cerrar();
             }
         }
-        public void AsignaturaXProfesor(ComboBox combo, int Idprofe, string Modalidad,string Carrera,string Semestre)
+        public void AsignaturaXProfesor(ComboBox combo, int Idprofe, string Modalidad, string Carrera, string Semestre)
         {
             try
             {
@@ -126,14 +190,14 @@ namespace UNAN.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en asignatura "+ex.Message);
+                MessageBox.Show("Error en asignatura " + ex.Message);
             }
             finally
             {
                 Conexion.cerrar();
             }
         }
-        public void ModalidadXProfesor(ComboBox combo,int idprofe)
+        public void ModalidadXProfesor(ComboBox combo, int idprofe)
         {
             try
             {
@@ -233,7 +297,6 @@ namespace UNAN.Datos
                 Conexion.cerrar();
             }
         }
-
         public void GrupoXProfesor(ComboBox combo, string carrera, int IdProfe)
         {
             try
@@ -267,6 +330,7 @@ namespace UNAN.Datos
                 Conexion.cerrar();
             }
         }
+
     }
 
 }
