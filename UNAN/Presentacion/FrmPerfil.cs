@@ -58,11 +58,6 @@ namespace UNAN.Presentacion
                 MemoryStream ms = new MemoryStream(b);
                 Icono.Image = Image.FromStream(ms);
                 lblTUsuario.Text = row["TUsuario"].ToString();
-                //Si no funciona probar este
-                /*Icono.BackgroundImage = null;
-                byte[] b = (byte[])(Login.Icono);
-                MemoryStream ms = new MemoryStream(b);
-                Icono.Image = Image.FromStream(ms);*/
             }
         }
         //Metodos de validación
@@ -82,8 +77,6 @@ namespace UNAN.Presentacion
             string contra = txtContraseña.Text;
             
            Validaciones.ActualizarVisibilidadEtiquetas(contra, lblMayu, lblMin, lblNum, lblCarEsp);
-            //string contra = txtContraseña.Text;
-            //ActualizarVisibilidadEtiquetas(contra);
 
             //// Verificar si la contraseña cumple con los criterios
             bool cumpleCriterios = Validaciones.ContraseñaCumpleCriterios(contra) && contra.Length >= 8;

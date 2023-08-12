@@ -16,6 +16,10 @@ namespace UNAN.Presentacion
         DModalidades mod = new DModalidades();
         DAsignatura asig = new DAsignatura();
         public static int IdAsistencia;
+        public static DateTime Fecha;
+        public static int Bloques;
+        public static DateTime Hentrada;
+        public static DateTime Hsalida;
         public UCControlAsistencia()
         {
             InitializeComponent();
@@ -29,8 +33,7 @@ namespace UNAN.Presentacion
         }
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            pnFormAsistencia.Visible = false;
-            PanelPaginado.Visible = true;
+            reset();
         }
         private async void UCControlAsistencia_Load(object sender, EventArgs e)
         {
@@ -47,7 +50,7 @@ namespace UNAN.Presentacion
         {
             pncarga.Dock = DockStyle.Fill;
             pncarga.BringToFront();
-            pbrCarga.Location = new System.Drawing.Point(pncarga.Width / 2 - pbrCarga.Width / 2, pncarga.Height - 150 - pbrCarga.Height / 2);
+            pbrCarga.Location = new System.Drawing.Point(pncarga.Width / 2- 220 - pbrCarga.Width / 2, pncarga.Height /2 -50 - pbrCarga.Height / 2);
         }
         public async Task CargarDatos()
         {
@@ -207,49 +210,6 @@ namespace UNAN.Presentacion
         }
         private void InsertarAsistencia()
         {
-            /* Fermin
-            try
-            {
-                List<LAsistencia> lst = new List<LAsistencia>();
-
-                //LLenar
-                foreach (DataGridViewRow dr in dtAsistEntrada.Rows)
-                {
-                    LAsistencia oConcepto = new LAsistencia();
-                    oConcepto.Semestre = (dr.Cells[0].Value.ToString());
-                    oConcepto.Modalidad = (dr.Cells[1].Value.ToString());
-                    oConcepto.Carrera = dr.Cells[2].Value.ToString();
-                    oConcepto.Grupo = dr.Cells[3].Value.ToString();
-                    oConcepto.Asignatura = dr.Cells[4].Value.ToString();
-                    oConcepto.Tema = dr.Cells[5].Value.ToString();
-                    lst.Add(oConcepto);
-                }
-                int hora = int.Parse(txtHora.Text);
-                int minuto = int.Parse(txtmin.Text);
-                DateTime horaCompleta = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hora, minuto, 0);
-                string horaFormateada = horaCompleta.ToString("HH:mm");
-                string horaI = horaFormateada;
-                string horaf = horaI;
-                string observaciones = "--";
-                LAsistencia parametros = new LAsistencia();
-                parametros.Fecha = DateTime.Parse(lblFecha.Text);
-                parametros.Idprofe = Login.idprofesor;
-                parametros.HoraI = DateTime.Parse(horaI);
-                parametros.HoraF = DateTime.Parse(horaf);
-                parametros.Observaciones = observaciones;
-                parametros.Bloque = (int)nudBloque.Value;
-
-                DAsistencia funcion = new DAsistencia();
-                funcion.InsertarAsistencia(parametros, lst);
-                MessageBox.Show("Registro realizado", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                pnFormAsistencia.Visible = false;
-                PanelPaginado.Visible = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }*/
-
             try
             {
                 List<LAsis> lst = new List<LAsis>();
@@ -285,13 +245,26 @@ namespace UNAN.Presentacion
                 DAsistencia funcion = new DAsistencia();
                 funcion.Insertaasistencias(parametros, lst);
                 MessageBox.Show("Registro realizado", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                pnFormAsistencia.Visible = false;
-                PanelPaginado.Visible = true;
+                reset();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        private void reset()
+        {
+            pnFormAsistencia.Visible = false;
+            i = 1;
+            dtAsistEntrada.Rows.Clear();
+            pnBloques.Enabled = true;
+            nudBloque.Value = 1;
+            nudBloque.Enabled = true;
+            txtHora.Enabled = true;
+            txtmin.Enabled = true;
+            btnAceptar.Enabled = true;
+            pnBloques.Enabled = false;
+            PanelPaginado.Visible = true;
         }
         private void MostrarAsistencia()
         {
@@ -321,8 +294,16 @@ namespace UNAN.Presentacion
         private void PasarIdAsistencia()
         {           
             IdAsistencia = Convert.ToInt32(dataAsistencia.SelectedCells[5].Value);
+            Fecha = Convert.ToDateTime(dataAsistencia.SelectedCells[7].Value);
+            Hentrada = Convert.ToDateTime(dataAsistencia.SelectedCells[8].Value);
+            Hsalida = Convert.ToDateTime(dataAsistencia.SelectedCells[9].Value);
+            Bloques = Convert.ToInt32(dataAsistencia.SelectedCells[10].Value);
             DetalleAsistencias da = new DetalleAsistencias();
             da.idasistencias = IdAsistencia;
+            da.fecha = Fecha;
+            da.entrada= Hentrada;
+            da.salida = Hsalida;
+            da.bloques = Bloques;
             da.ShowDialog();
         }
     }

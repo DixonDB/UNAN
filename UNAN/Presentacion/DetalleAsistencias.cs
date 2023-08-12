@@ -14,8 +14,11 @@ namespace UNAN.Presentacion
 {
     public partial class DetalleAsistencias : Form
     {
-
         public int idasistencias;
+        public DateTime fecha;
+        public int bloques;
+        public DateTime entrada;
+        public DateTime salida;
         private int conteo;
 
         public DetalleAsistencias()
@@ -31,6 +34,17 @@ namespace UNAN.Presentacion
             DAsistencia funcion = new DAsistencia();
             funcion.MostrarDetalleAsistencia(ref dt, idasis);
             DiseñoDgv();
+            Datos();
+        }
+        private void Datos()
+        {
+            string fechaFormateada = fecha.ToShortDateString();
+            lblFecha.Text = "Detalle Asistencia " + Convert.ToString(fechaFormateada);
+            string HrEntrada = entrada.ToShortTimeString();
+            lblEntrada.Text=Convert.ToString(HrEntrada);
+            string HrSalida = salida.ToShortTimeString();
+            lblSalida.Text=Convert.ToString(HrSalida);
+            lblBloques.Text = Convert.ToString(bloques);
         }
         private void DiseñoDgv()
         {
