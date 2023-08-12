@@ -41,16 +41,23 @@ namespace UNAN.Presentacion
             string fechaFormateada = fecha.ToShortDateString();
             lblFecha.Text = "Detalle Asistencia " + Convert.ToString(fechaFormateada);
             string HrEntrada = entrada.ToShortTimeString();
-            lblEntrada.Text=Convert.ToString(HrEntrada);
+            lblEntrada.Text = Convert.ToString(HrEntrada);
             string HrSalida = salida.ToShortTimeString();
-            lblSalida.Text=Convert.ToString(HrSalida);
+            lblSalida.Text = Convert.ToString(HrSalida);
             lblBloques.Text = Convert.ToString(bloques);
         }
         private void DiseñoDgv()
         {
             Bases.DiseñoDtv(ref dgvdetalleasistencia);
-            dgvdetalleasistencia.Columns[0].Visible= false;
-            dgvdetalleasistencia.Columns[1].Visible= false;
+            dgvdetalleasistencia.Columns[0].Visible = false;
+            dgvdetalleasistencia.Columns[1].Visible = false;
+
+
+            // Configuración de formato de la columna tema para que no se salga del formato
+            dgvdetalleasistencia.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvdetalleasistencia.Columns[5].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+         
         }
         private void DetalleAsistencias_Load(object sender, EventArgs e)
         {

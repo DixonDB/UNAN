@@ -117,21 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Tema.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Tema.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="txtTema.Text" xml:space="preserve">
+  <data name="txtUltimoTema.Text" xml:space="preserve">
     <value> El uso de controles para el diseño de ventanas. Porque utilizar botones para agregar funcionalidad. Cuando mostrar datos en Grillas. Cuando ingresar datos por cajas de texto y cuando utilizar listas. Diferencia entre un control Check y un Radio. El porqué de los controles de etiquetas. Diseño de ventana de usuario.  Agregar comandos de acción a la ventana. Mostrar información a través de grillas. Introducir o mostrar texto en la ventana. Opciones de selección en una ventana. Agregar títulos, encabezados a los controles de un formulario. Elección de controles en base a su fin. Diseñar interfaz gráfica de usuarios con los controles básicos predefinidos.</value>
   </data>
-  <metadata name="Eliminar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Editar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="Eliminar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

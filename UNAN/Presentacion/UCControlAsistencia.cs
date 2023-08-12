@@ -105,6 +105,7 @@ namespace UNAN.Presentacion
             asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
             GrupoXporfesor();
             Mostrarcod();
+
         }
         private void cbGrupo_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -282,7 +283,6 @@ namespace UNAN.Presentacion
             dataAsistencia.Columns[5].Visible = false;
             dataAsistencia.Columns[6].Visible = false;
         }
-
         private void dataAsistencia_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dataAsistencia.Columns["Editar"].Index)

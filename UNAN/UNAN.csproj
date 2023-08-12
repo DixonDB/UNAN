@@ -145,11 +145,10 @@
     <Compile Include="Datos\DAprendizaje.cs" />
     <Compile Include="Datos\DAsignatura.cs" />
     <Compile Include="Datos\DAsistencia.cs" />
+    <Compile Include="Datos\DAvanceProgramatico.cs" />
     <Compile Include="Datos\DCarreras.cs" />
     <Compile Include="Datos\DCorreoSoporte.cs" />
     <Compile Include="Datos\DModalidades.cs" />
-    <Compile Include="Datos\DModulos.cs" />
-    <Compile Include="Datos\DPermisos.cs" />
     <Compile Include="Datos\DPlanDidactico.cs" />
     <Compile Include="Datos\DProfesores.cs" />
     <Compile Include="Datos\DRecuperacion.cs" />
@@ -161,6 +160,7 @@
     <Compile Include="Logica\LAsignatura.cs" />
     <Compile Include="Logica\LAsis.cs" />
     <Compile Include="Logica\LAsistencia.cs" />
+    <Compile Include="Logica\LAvanceProgramatico.cs" />
     <Compile Include="Logica\LCarreras.cs" />
     <Compile Include="Logica\LGrupo.cs" />
     <Compile Include="Logica\LModalidad.cs" />
