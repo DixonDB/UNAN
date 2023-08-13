@@ -16,6 +16,7 @@ namespace UNAN.Presentacion
         /// En este caso se agregan SetToolTip para mostrar msj de ayuda sobre los campos
         /// </summary>
         private int conteo;
+        string contraseñaGenerada;
         public UCProfes()
         {
             InitializeComponent();
@@ -58,7 +59,7 @@ namespace UNAN.Presentacion
             btnActualizar.Visible = false;
             this.Limpiar();
             PanelPaginado.Visible = false;
-            string contraseñaGenerada = Validaciones.GenerarContraseñaAleatoria();
+            contraseñaGenerada = Validaciones.GenerarContraseñaAleatoria();
             txtContraseña.Text = contraseñaGenerada;
             Validaciones.ActualizarVisibilidadEtiquetas(contraseñaGenerada, lblMayu, lblMin, lblNum, lblCarEsp);
             txtContraseña.Visible = true;
@@ -255,6 +256,7 @@ namespace UNAN.Presentacion
             }
             if (e.ColumnIndex == dataProfesores.Columns["Enviar"].Index)
             {
+                contraseñaGenerada = Validaciones.GenerarContraseñaAleatoria();
                 var result = RecuperarPass(dataProfesores.SelectedCells[11].Value.ToString());
                 MessageBox.Show(result, "Recuperacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -542,8 +544,6 @@ namespace UNAN.Presentacion
         {
             string contra = txtContraseña.Text;
              Validaciones.ActualizarVisibilidadEtiquetas(contra, lblMayu, lblMin, lblNum, lblCarEsp);
-            //string contra = txtContraseña.Text;
-            //ActualizarVisibilidadEtiquetas(contra);
 
             //// Verificar si la contraseña cumple con los criterios
              bool cumpleCriterios = Validaciones.ContraseñaCumpleCriterios(contra) && contra.Length >= 8;
@@ -630,7 +630,7 @@ namespace UNAN.Presentacion
         //Enviar Correo de recuperacion
         public string RecuperarPass(string pass)
         {
-            return new DRecuperacion().recoverPassword(pass);
+            return new DRecuperacion().RecoverPassword2(pass,contraseñaGenerada);
         }
 
         private void txtbuscador_TextChanged(object sender, EventArgs e)

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Drawing;
-using System.Runtime.Remoting.Contexts;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using UNAN.Datos;
 
@@ -9,6 +9,7 @@ namespace UNAN.Presentacion
     public partial class FrmRestablecer : Form
     {
         private int conteo;
+        string contraseñaGenerada;
         public FrmRestablecer()
         {
             InitializeComponent();
@@ -21,20 +22,33 @@ namespace UNAN.Presentacion
             login.Show();
             Dispose();
         }
-
+        private void GenerarPass()
+        {
+            contraseñaGenerada = Validaciones.GenerarContraseñaAleatoria();
+        }
         public string RecuperarPass(string pass)
         {
-            return new DRecuperacion().recoverPassword(pass);
+            return new DRecuperacion().RecoverPassword2(pass, contraseñaGenerada);
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
+            lblMsj.Text = "";
+            GenerarPass();
             pbrInicio.Visible = true;
             lblProgress.Visible = true;
             lblProgress.BringToFront();
             timer1.Enabled = true;
             pbrInicio.Value = 0;
             conteo = 0;
+        }
+
+        private async Task Enviar()
+        {
+            await Task.Delay(1500);
+            var result = RecuperarPass(txtUser.Text);
+            lblMsj.Text = result;
+            await Task.Delay(1000);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
