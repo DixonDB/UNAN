@@ -126,6 +126,11 @@ namespace UNAN.Presentacion
                 ObtenerIdProfesor();
                 MostrarProfessores();
                 panelRegitroP.Visible = false;
+                ReiniciarPaginado();
+                txtbuscador.Visible = true;
+                pictureBox1.Visible = true;
+                btnMostrarTodos.Visible = true;
+                panel3.Visible = true;
 
             }
         }
@@ -178,26 +183,27 @@ namespace UNAN.Presentacion
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (validar())
+            try
             {
-                if (lblanuncioIcono.Visible == false)
+                if (validar())
                 {
-                    InsertarProfesores();
-                    MostrarProfessores();
-                    ReiniciarPaginado();
-                    txtbuscador.Visible = true;
-                    pictureBox1.Visible = true;
-                    btnMostrarTodos.Visible = true;
-                    panel3.Visible = true;
+                    if (lblanuncioIcono.Visible == false)
+                    {
+                        InsertarProfesores();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingresa un Icono Para agregar este Profesor");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Ingresa un Icono Para agregar este Profesor");
+                    MessageBox.Show("Completa todos los campos");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Completa todos los campos");
+                MessageBox.Show(ex.Message);
             }
         }
         private void MostrarProfessores()

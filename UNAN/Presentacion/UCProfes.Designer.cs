@@ -49,6 +49,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtbuscador = new System.Windows.Forms.TextBox();
+            this.btnVolverPersonal = new System.Windows.Forms.Button();
             this.dataProfesores = new System.Windows.Forms.DataGridView();
             this.space1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
@@ -73,7 +74,6 @@
             this.Icono = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.btnVolverPersonal = new System.Windows.Forms.Button();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -376,6 +376,23 @@
             this.txtbuscador.TabIndex = 0;
             this.txtbuscador.TextChanged += new System.EventHandler(this.txtbuscador_TextChanged);
             // 
+            // btnVolverPersonal
+            // 
+            this.btnVolverPersonal.BackColor = System.Drawing.Color.Transparent;
+            this.btnVolverPersonal.BackgroundImage = global::UNAN.Properties.Resources.volver;
+            this.btnVolverPersonal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVolverPersonal.FlatAppearance.BorderSize = 0;
+            this.btnVolverPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolverPersonal.Location = new System.Drawing.Point(12, 5);
+            this.btnVolverPersonal.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVolverPersonal.Name = "btnVolverPersonal";
+            this.btnVolverPersonal.Size = new System.Drawing.Size(81, 41);
+            this.btnVolverPersonal.TabIndex = 13;
+            this.btnVolverPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVolverPersonal.UseVisualStyleBackColor = false;
+            this.btnVolverPersonal.Visible = false;
+            this.btnVolverPersonal.Click += new System.EventHandler(this.btnVolverPersonal_Click);
+            // 
             // dataProfesores
             // 
             this.dataProfesores.AllowUserToAddRows = false;
@@ -489,10 +506,10 @@
             this.panelRegitroP.Controls.Add(this.label2);
             this.panelRegitroP.Controls.Add(this.label1);
             this.panelRegitroP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelRegitroP.Location = new System.Drawing.Point(282, 186);
+            this.panelRegitroP.Location = new System.Drawing.Point(-38, 61);
             this.panelRegitroP.Margin = new System.Windows.Forms.Padding(2);
             this.panelRegitroP.Name = "panelRegitroP";
-            this.panelRegitroP.Size = new System.Drawing.Size(570, 224);
+            this.panelRegitroP.Size = new System.Drawing.Size(890, 463);
             this.panelRegitroP.TabIndex = 9;
             this.panelRegitroP.Visible = false;
             // 
@@ -637,9 +654,9 @@
             // 
             this.lblanuncioIcono.BackColor = System.Drawing.Color.Gray;
             this.lblanuncioIcono.ForeColor = System.Drawing.Color.Black;
-            this.lblanuncioIcono.Location = new System.Drawing.Point(601, 0);
+            this.lblanuncioIcono.Location = new System.Drawing.Point(592, 0);
             this.lblanuncioIcono.Name = "lblanuncioIcono";
-            this.lblanuncioIcono.Size = new System.Drawing.Size(106, 98);
+            this.lblanuncioIcono.Size = new System.Drawing.Size(115, 98);
             this.lblanuncioIcono.TabIndex = 633;
             this.lblanuncioIcono.Text = "Agregue una foto";
             this.lblanuncioIcono.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -674,23 +691,6 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(160, 1);
             this.panel10.TabIndex = 17;
-            // 
-            // btnVolverPersonal
-            // 
-            this.btnVolverPersonal.BackColor = System.Drawing.Color.Transparent;
-            this.btnVolverPersonal.BackgroundImage = global::UNAN.Properties.Resources.volver;
-            this.btnVolverPersonal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnVolverPersonal.FlatAppearance.BorderSize = 0;
-            this.btnVolverPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolverPersonal.Location = new System.Drawing.Point(12, 5);
-            this.btnVolverPersonal.Margin = new System.Windows.Forms.Padding(2);
-            this.btnVolverPersonal.Name = "btnVolverPersonal";
-            this.btnVolverPersonal.Size = new System.Drawing.Size(81, 41);
-            this.btnVolverPersonal.TabIndex = 13;
-            this.btnVolverPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnVolverPersonal.UseVisualStyleBackColor = false;
-            this.btnVolverPersonal.Visible = false;
-            this.btnVolverPersonal.Click += new System.EventHandler(this.btnVolverPersonal_Click);
             // 
             // txtContraseña
             // 
