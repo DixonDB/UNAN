@@ -1,14 +1,11 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UNAN.Datos;
 using UNAN.Logica;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace UNAN.Presentacion
 {
@@ -54,6 +51,7 @@ namespace UNAN.Presentacion
         /// <param name="e"></param>
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            btnVolverPersonal.Visible = true;
             panelRegitroP.Visible = true;
             panelRegitroP.Dock = DockStyle.Fill;
             btnGuardar.Visible = true;
@@ -211,13 +209,11 @@ namespace UNAN.Presentacion
         }
         private async void UCProfesores_Load(object sender, EventArgs e)
         {
-            //carga();
             pncarga.Dock = DockStyle.Fill;
             timer1.Enabled = true;
             await CargarDatos();
             pncarga.Visible = false;
             panel1.Visible = true;
-           // MostrarProfessores();
         }
         public async Task CargarDatos()
         {
@@ -247,6 +243,7 @@ namespace UNAN.Presentacion
                 }
                 else
                 {
+                    btnVolverPersonal.Visible = true;
                     Obtenerdatos();
                     txtbuscador.Visible = false;
                     pictureBox1.Visible = false;
@@ -402,6 +399,7 @@ namespace UNAN.Presentacion
         }
         private void btnVolverPersonal_Click(object sender, EventArgs e)
         {
+            btnVolverPersonal.Visible = false;
             panelRegitroP.Visible = false;
             PanelPaginado.Visible = true;
             txtbuscador.Visible = true;
@@ -543,21 +541,21 @@ namespace UNAN.Presentacion
         private void txtContraseña_TextChanged(object sender, EventArgs e)
         {
             string contra = txtContraseña.Text;
-           // Validaciones.ActualizarVisibilidadEtiquetas(contra, lblMayu, lblMin, lblNum, lblCarEsp);
+             Validaciones.ActualizarVisibilidadEtiquetas(contra, lblMayu, lblMin, lblNum, lblCarEsp);
             //string contra = txtContraseña.Text;
             //ActualizarVisibilidadEtiquetas(contra);
 
             //// Verificar si la contraseña cumple con los criterios
-           // bool cumpleCriterios = Validaciones.ContraseñaCumpleCriterios(contra) && contra.Length >= 8;
+             bool cumpleCriterios = Validaciones.ContraseñaCumpleCriterios(contra) && contra.Length >= 8;
 
-            //// Cambiar el color del Label según si cumple los criterios
-           //label15.ForeColor = cumpleCriterios ? Color.Green : Color.Red;
-            //// Actualizar los colores de los labels y validar si todos están en verde
-          //  labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
+            // Cambiar el color del Label según si cumple los criterios
+            label15.ForeColor = cumpleCriterios ? Color.Green : Color.Red;
+            // Actualizar los colores de los labels y validar si todos están en verde
+            labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
 
             // Habilitar o deshabilitar el botón btnGuardar
-           // btnGuardar.Enabled = cumpleCriterios && labelsVerdes;
-           // btnActualizar.Enabled = cumpleCriterios && labelsVerdes;
+            btnGuardar.Enabled = cumpleCriterios && labelsVerdes;
+            btnActualizar.Enabled = cumpleCriterios && labelsVerdes;
         }
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
@@ -568,7 +566,7 @@ namespace UNAN.Presentacion
                 lblIdentificacion.ForeColor = string.IsNullOrEmpty(txtIdentificacion.Text) ? Color.Red : Color.Green;
 
                 // Actualizar los colores de los labels y validar si todos están en verde
-               // labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
+                labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
 
                 // Habilitar o deshabilitar el botón guardar según el estado de los labels
                 btnGuardar.Enabled = labelsVerdes;
@@ -578,10 +576,10 @@ namespace UNAN.Presentacion
             if (textBox == txtNombreApellidos)
             {
                 lblNombreApellidos.ForeColor = string.IsNullOrEmpty(txtNombreApellidos.Text) ? Color.Red : Color.Green;
-             //   txtUsuario.Text = Validaciones.GenerarUsuario(txtNombreApellidos.Text);
+                txtUsuario.Text = Validaciones.GenerarUsuario(txtNombreApellidos.Text);
 
                 // Actualizar los colores de los labels y validar si todos están en verde
-              //  labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
+                labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
 
                 // Habilitar o deshabilitar el botón guardar según el estado de los labels
                 btnGuardar.Enabled = labelsVerdes;
@@ -599,7 +597,7 @@ namespace UNAN.Presentacion
                     lblCelular.ForeColor = Color.Red;
                 }
                 // Actualizar los colores de los labels y validar si todos están en verde
-               // labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
+                labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
 
                 // Habilitar o deshabilitar el botón guardar según el estado de los labels
                 btnGuardar.Enabled = labelsVerdes;
@@ -608,9 +606,9 @@ namespace UNAN.Presentacion
 
             if (textBox == txtCorreo)
             {
-              //  lblCorreo.ForeColor = Validaciones.EsCorreoValido(txtCorreo.Text) ? Color.Green : Color.Red;
+                lblCorreo.ForeColor = Validaciones.EsCorreoValido(txtCorreo.Text) ? Color.Green : Color.Red;
                 // Actualizar los colores de los labels y validar si todos están en verde
-              //  labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
+                labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
 
                 // Habilitar o deshabilitar el botón guardar según el estado de los labels
                 btnGuardar.Enabled = labelsVerdes;
@@ -621,7 +619,7 @@ namespace UNAN.Presentacion
             {
                 lblUsuario.ForeColor = string.IsNullOrEmpty(txtUsuario.Text) ? Color.Red : Color.Green;
                 // Actualizar los colores de los labels y validar si todos están en verde
-              //  labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
+              labelsVerdes = Validaciones.ValidarLabelsVerdes(lblNombreApellidos, lblIdentificacion, lblCelular, lblCorreo, lblUsuario);
 
                 // Habilitar o deshabilitar el botón guardar según el estado de los labels
                 btnGuardar.Enabled = labelsVerdes;

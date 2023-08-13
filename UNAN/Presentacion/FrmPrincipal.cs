@@ -29,6 +29,7 @@ namespace UNAN
 
         private void FrmMenu_Load(object sender, EventArgs e)
         {
+            lblBienvenida.Text = "Bienvenido/a \n" + Login.nombreprofe;
             reloj.Enabled = true;
             lblUser.Text = Login.nombreprofe;
             pbUser.BackgroundImage = null;

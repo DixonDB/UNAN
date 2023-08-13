@@ -10,7 +10,7 @@ namespace UNAN.Presentacion
 {
     public partial class UCControlAsistencia : UserControl
     {
-        int cant, i = 1;
+        int cant, i = 0;
         private int conteo;
         DAsistencia asis = new DAsistencia();
         DModalidades mod = new DModalidades();
@@ -163,16 +163,24 @@ namespace UNAN.Presentacion
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             cant = int.Parse(nudBloque.Value.ToString());
-            nudBloque.Enabled = false;
-            txtHora.Enabled = false;
-            txtmin.Enabled = false;
-            pnBloques.Enabled = true;
-            asis.CarreraXProfesor(cbCarrera, Login.idprofesor, cbModalidad.Text, cbSemestre.Text);
-            asis.AsignaturaXProfesor(cbAsignaturas, Login.idprofesor, cbModalidad.Text, cbCarrera.Text, cbSemestre.Text);
-            asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
-            GrupoXporfesor();
-            Mostrarcod();
-            btnAceptar.Enabled = false;
+            if (cant==0)
+            {
+                MessageBox.Show("Los bloques no pueden tener un valor menor a 1", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                nudBloque.Value = 1;
+            }
+            else
+            {
+                nudBloque.Enabled = false;
+                txtHora.Enabled = false;
+                txtmin.Enabled = false;
+                pnBloques.Enabled = true;
+                asis.CarreraXProfesor(cbCarrera, Login.idprofesor, cbModalidad.Text, cbSemestre.Text);
+                asis.AsignaturaXProfesor(cbAsignaturas, Login.idprofesor, cbModalidad.Text, cbCarrera.Text, cbSemestre.Text);
+                asig.MostrarCodigoA(cbAsignaturas.Text, lblCodAsig);
+                GrupoXporfesor();
+                Mostrarcod();
+                btnAceptar.Enabled = false;
+            }
         }
         private void btnAddBloque_Click(object sender, EventArgs e)
         {
@@ -188,20 +196,22 @@ namespace UNAN.Presentacion
             string Semestre = cbSemestre.Text;
             string Asignatura = cbAsignaturas.Text;
             string Tema = cbContenido.Text;
+
+            i++; // Incrementar en cada clic
+
             if (i <= cant)
             {
                 dtAsistEntrada.Rows.Add(new object[]
                 {
-                idsemestre,Semestre,idCarera,Carrera,idmodalidad,Modalidad,idgrupo,Grupo,idasignatura,Asignatura,idtema,Tema
-                    //,Estado
+                    idsemestre, Semestre, idCarera, Carrera, idmodalidad, Modalidad, idgrupo, Grupo, idasignatura, Asignatura, idtema, Tema
                 });
-                int j = i + 1;
-                lblbloque.Text = Convert.ToString(j);
-                i++;
-            }
-            else
-            {
-                pnBloques.Enabled = false;
+
+                if (i == cant) // Verificar si i alcanzó el valor de cant
+                {
+                    pnBloques.Enabled = false; // Inhabilitar cuando i sea igual a cant
+                }
+
+                lblbloque.Text = Convert.ToString(i);
             }
         }
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -256,7 +266,7 @@ namespace UNAN.Presentacion
         private void reset()
         {
             pnFormAsistencia.Visible = false;
-            i = 1;
+            i = 0;
             dtAsistEntrada.Rows.Clear();
             pnBloques.Enabled = true;
             nudBloque.Value = 1;

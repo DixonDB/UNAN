@@ -250,6 +250,7 @@ namespace UNAN.FrmPlanDidactico
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            gbDatos.Dock = DockStyle.Top;
             pnPlan.Visible = true;
             pnPlan.Dock = DockStyle.Fill;
             PanelPaginado.Visible = false;
@@ -266,6 +267,7 @@ namespace UNAN.FrmPlanDidactico
             panel4.Visible = true;
             panel12.Visible = true;
             panel13.Visible = true;
+            gbDatos.Dock = DockStyle.Top;
         }
         public void MostrarPlanD()
         {
@@ -292,7 +294,6 @@ namespace UNAN.FrmPlanDidactico
             dtPlan2.Rows.Add(new object[]
             {
                 SemanaI,SemanaF,FechaI,FechaF,Objetivo,Tema, EA,FE, EE, Porcentaje
-                //,Estado
             });
             LimpiarControles();
         }

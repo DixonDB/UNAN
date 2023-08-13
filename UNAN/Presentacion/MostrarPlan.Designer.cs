@@ -72,13 +72,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtDetallePlan.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtDetallePlan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtDetallePlan.Location = new System.Drawing.Point(10, 47);
+            this.dtDetallePlan.Location = new System.Drawing.Point(10, 42);
             this.dtDetallePlan.Margin = new System.Windows.Forms.Padding(2);
             this.dtDetallePlan.Name = "dtDetallePlan";
             this.dtDetallePlan.ReadOnly = true;
             this.dtDetallePlan.RowHeadersWidth = 82;
             this.dtDetallePlan.RowTemplate.Height = 33;
-            this.dtDetallePlan.Size = new System.Drawing.Size(872, 394);
+            this.dtDetallePlan.Size = new System.Drawing.Size(872, 399);
             this.dtDetallePlan.TabIndex = 0;
             // 
             // panel2
@@ -117,13 +117,14 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(35, 6);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 20);
+            this.label1.Size = new System.Drawing.Size(892, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Detalle Plan Didáctico";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Visible = false;
             // 
             // PnOpciones
@@ -152,7 +153,7 @@
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 54);
+            this.label2.Size = new System.Drawing.Size(128, 66);
             this.label2.TabIndex = 2;
             this.label2.Text = "Descargar Plan Didáctico";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -162,9 +163,9 @@
             this.btnExcel.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcel.Image = global::UNAN.Properties.Resources.microsoft_excel_2019_48px;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(114, 3);
+            this.btnExcel.Location = new System.Drawing.Point(137, 3);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(104, 57);
+            this.btnExcel.Size = new System.Drawing.Size(128, 66);
             this.btnExcel.TabIndex = 1;
             this.btnExcel.Text = "EXCEL";
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -176,9 +177,9 @@
             this.btnGuardar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Image = global::UNAN.Properties.Resources.save32px;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(224, 3);
+            this.btnGuardar.Location = new System.Drawing.Point(271, 3);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(117, 57);
+            this.btnGuardar.Size = new System.Drawing.Size(128, 66);
             this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Editar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -190,9 +191,9 @@
             this.btnCancelar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = global::UNAN.Properties.Resources.Atras;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(347, 3);
+            this.btnCancelar.Location = new System.Drawing.Point(405, 3);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(128, 57);
+            this.btnCancelar.Size = new System.Drawing.Size(128, 66);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -204,7 +205,7 @@
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(10, 32);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(882, 15);
+            this.panel13.Size = new System.Drawing.Size(882, 10);
             this.panel13.TabIndex = 14;
             // 
             // panel12
@@ -218,9 +219,9 @@
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(882, 47);
+            this.panel1.Location = new System.Drawing.Point(882, 42);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 394);
+            this.panel1.Size = new System.Drawing.Size(10, 399);
             this.panel1.TabIndex = 15;
             // 
             // pncarga

@@ -34,7 +34,7 @@ namespace UNAN.Presentacion
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            gbDatos.Enabled = true;
+            pnDatos.Enabled = true;
             btnActualizar.Visible = true;
             btnEditar.Visible = false;
         }
@@ -194,7 +194,7 @@ namespace UNAN.Presentacion
                 MessageBox.Show("Se Edito correctamente");
                 btnEditar.Visible = true;
                 btnActualizar.Visible = false;
-                gbDatos.Enabled = false;
+                pnDatos.Enabled = false;
             }
         }
 

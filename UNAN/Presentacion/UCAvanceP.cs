@@ -1,8 +1,5 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Data;
-using System.Security.Cryptography;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UNAN.Datos;
@@ -32,6 +29,7 @@ namespace UNAN.Presentacion
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            asis.ModalidadXProfesor(cbModalidad, Login.idprofesor);
             pnAvanceP.Visible = true;
             pnAvanceP.Dock = DockStyle.Fill;
             PanelPaginado.Visible = false;
@@ -59,7 +57,6 @@ namespace UNAN.Presentacion
         private void CargarInformacion()
         {
             txtDocente.Text = Login.nombreprofe;
-            asis.ModalidadXProfesor(cbModalidad, Login.idprofesor);
             asis.CarreraXProfesor(cbCarrera, Login.idprofesor, cbModalidad.Text, cbSemestre.Text);
             asis.SemestreXProfesor(cbSemestre, Login.idprofesor);
             GrupoXporfesor();
@@ -161,6 +158,12 @@ namespace UNAN.Presentacion
         private void cbAsignaturas_SelectedIndexChanged(object sender, EventArgs e)
         {
            MostrarTemasAtrasados();
+        }
+
+        private void cbCarrera_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            Mostrarcod();
+            lblCod.Visible = true;
         }
 
         public async Task CargarDatos()
