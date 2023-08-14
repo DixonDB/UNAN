@@ -8,6 +8,11 @@ namespace UNAN.Datos
 {
     public class DAprendizaje
     {
+        /// <summary>
+        /// Este metodo Insertará un nuevo registro por medio de un procedimiento almacenado, el cual recibe patametros
+        /// </summary>
+        /// <param name="parametros"></param> parametros es la manera de llamar los datos existentes en LAprendizaje
+        /// <returns></returns>
         public bool InsertarEstrAprea(LAprendizaje parametros)
         {
             try
@@ -29,6 +34,11 @@ namespace UNAN.Datos
                 Conexion.cerrar();
             }
         }
+        /// <summary>
+        /// Muestra las estrategias de aprendizaje desde una base de datos en un ComboBox con autocompletado.
+        /// </summary>
+        /// <param name="combo">El ComboBox en el cual se mostrarán las estrategias de aprendizaje.</param>
+
         public void MostrarEstrategiaAprendizaje(ComboBox combo)
         {
             try
@@ -58,6 +68,12 @@ namespace UNAN.Datos
                 Conexion.cerrar();
             }
         }
+
+        /// <summary>
+        /// Inserta un nuevo registro en la EstrategiaEvaluacion
+        /// </summary>
+        /// <param name="parametros"></param>
+        /// <returns></returns>
         public bool InsertarEstrategiaEvaluacion(LAprendizaje parametros)
         {
             try
@@ -79,7 +95,10 @@ namespace UNAN.Datos
                 Conexion.cerrar();
             }
         }
-
+        /// <summary>
+        /// Muestra las Estrategias de Evaluacion desde una base de datos en un ComboBox con autocompletado.
+        /// </summary>
+        /// <param name="combo">El ComboBox en el cual se mostrarán las estrategias de aprendizaje.</param>
         public void MostrarEstrategiaEvaluacion(ComboBox combo)
         {
             try
@@ -109,6 +128,12 @@ namespace UNAN.Datos
                 Conexion.cerrar();
             }
         }
+
+        /// <summary>
+        /// Inserta un nuevo registro en la tabla FormaEvaluacion
+        /// </summary>
+        /// <param name="parametros"></param>
+        /// <returns></returns>
         public bool InsertarFormaEvaluacion(LAprendizaje parametros)
         {
             try
@@ -130,6 +155,10 @@ namespace UNAN.Datos
                 Conexion.cerrar();
             }
         }
+        /// <summary>
+        /// Muestra las Formas de Evaluacion desde una base de datos en un ComboBox con autocompletado.
+        /// </summary>
+        /// <param name="combo">El ComboBox en el cual se mostrarán las estrategias de aprendizaje.</param>
         public void MostrarFormaEvaluacion(ComboBox combo)
         {
             try

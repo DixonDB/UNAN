@@ -506,10 +506,10 @@
             this.panelRegitroP.Controls.Add(this.label2);
             this.panelRegitroP.Controls.Add(this.label1);
             this.panelRegitroP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelRegitroP.Location = new System.Drawing.Point(-38, 61);
+            this.panelRegitroP.Location = new System.Drawing.Point(262, 38);
             this.panelRegitroP.Margin = new System.Windows.Forms.Padding(2);
             this.panelRegitroP.Name = "panelRegitroP";
-            this.panelRegitroP.Size = new System.Drawing.Size(890, 463);
+            this.panelRegitroP.Size = new System.Drawing.Size(755, 464);
             this.panelRegitroP.TabIndex = 9;
             this.panelRegitroP.Visible = false;
             // 
