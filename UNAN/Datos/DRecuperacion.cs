@@ -11,6 +11,8 @@ namespace UNAN.Datos
 {
     public class DRecuperacion
     {
+        /* El fragmento de código declara propiedades privadas y protegidas y un campo en la clase
+        `DRecuperacion`. */
         private SmtpClient smtpClient;
         protected string remitenteCorreo { get; set; }
         protected string password { get; set; }
@@ -18,6 +20,10 @@ namespace UNAN.Datos
         protected int port { get; set; }
         protected bool ssl { get; set; }
 
+        /// <summary>
+        /// La función inicializa un objeto SmtpClient con las credenciales, el host, el puerto y la
+        /// configuración de SSL especificados.
+        /// </summary>
         protected void initialzeSmtpClient()
         {
             smtpClient = new SmtpClient();
@@ -27,6 +33,17 @@ namespace UNAN.Datos
             smtpClient.EnableSsl = ssl;
         }
 
+        /// <summary>
+        /// La función `enviarCorreo` envía un correo electrónico con un asunto, cuerpo y lista de
+        /// destinatarios especificados.
+        /// </summary>
+        /// <param name="subject">El asunto del correo electrónico que se enviará.</param>
+        /// <param name="body">El parámetro del cuerpo es una cadena que representa el contenido del
+        /// mensaje de correo electrónico. Puede contener texto, HTML o una combinación de
+        /// ambos.</param>
+        /// <param name="destinatarioCorreo">El parámetro "destinatarioCorreo" es una lista de cadenas
+        /// que representa las direcciones de correo electrónico de los destinatarios del correo
+        /// electrónico.</param>
         public void enviarCorreo(string subject, string body, List<string> destinatarioCorreo)
         {
             var MsjCorreo = new MailMessage();
@@ -52,6 +69,16 @@ namespace UNAN.Datos
                 smtpClient.Dispose();
             }
         }
+        /// <summary>
+        /// La función "NotificaciónCambio" envía un correo electrónico de notificación a un usuario si
+        /// su cuenta ha cambiado y devuelve un mensaje que indica el estado de la notificación.
+        /// </summary>
+        /// <param name="usuarioSolicitado">El parámetro "usuarioSolicitado" es una cadena que
+        /// representa el nombre de usuario o correo electrónico del usuario para quien se está
+        /// generando la notificación.</param>
+        /// <returns>
+        /// El método está devolviendo una cadena.
+        /// </returns>
         public string NotificacionCambio(string usuarioSolicitado)
         {
             try
@@ -110,6 +137,14 @@ namespace UNAN.Datos
             }
         }
 
+        /// <summary>
+        /// La función "RecoverPassword2" toma un nombre de usuario solicitado y una nueva contraseña, y
+        /// devuelve una cadena.
+        /// </summary>
+        /// <param name="usuarioSolicitado">El nombre de usuario del usuario que solicitó la
+        /// recuperación de la contraseña.</param>
+        /// <param name="nuevaContraseña">El parámetro "nuevaContraseña" es una cadena que representa la
+        /// nueva contraseña que el usuario quiere establecer.</param>
         public string RecoverPassword2(string usuarioSolicitado, string nuevaContraseña)
         {
             try
@@ -164,7 +199,5 @@ namespace UNAN.Datos
                 Conexion.cerrar();
             }
         }
-
-
     }
 }

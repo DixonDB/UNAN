@@ -2,6 +2,9 @@
 {
     public class DCorreoSoporte:DRecuperacion
     {
+        /* El método `public DCorreoSoporte()` es un constructor de la clase `DCorreoSoporte`. Se
+        encarga de inicializar las propiedades de la clase, como `remitenteCorreo`, `contraseña`,
+        `host`, `puerto` y `ssl`. */
         public DCorreoSoporte()
         {
             remitenteCorreo = "lfelixlopez732@gmail.com";
