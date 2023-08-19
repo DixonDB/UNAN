@@ -76,6 +76,7 @@ namespace UNAN.Presentacion
             btnMostrarTodos.Visible = false;
             panel3.Visible = false;
             cbTUsuario.Enabled = true;
+            panel1.Visible = false;
         }
         /// <summary>
         /// Método para limpiar el contenido de los textbox que se utilizarán para crear un nuevo registro.
@@ -103,6 +104,8 @@ namespace UNAN.Presentacion
             dataProfesores.Columns[6].Visible = false;
             dataProfesores.Columns[12].Visible = false;
             dataProfesores.Columns[14].Visible = false;
+            dataProfesores.Columns[15].Visible = false;
+
         }
         /// <summary>
         /// Método para insertar los registros a la base de datos.
@@ -415,6 +418,7 @@ namespace UNAN.Presentacion
             btnMostrarTodos.Visible = true;
             panel3.Visible = true;
             btnAgregar.Enabled = true;
+            panel1.Visible = true;
         }
         private void btn_atras_Click(object sender, EventArgs e)
         {

@@ -27,6 +27,8 @@ namespace UNAN.Presentacion
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            btnAgregar.Visible=false;
+            panel1.Visible = false;
             pnFormAsistencia.Visible = true;
             pnFormAsistencia.Dock = DockStyle.Fill;
             PanelPaginado.Visible = false;
@@ -34,6 +36,8 @@ namespace UNAN.Presentacion
         private void btnVolver_Click(object sender, EventArgs e)
         {
             reset();
+            btnAgregar.Visible = true;
+            panel1.Visible = true;
         }
         private async void UCControlAsistencia_Load(object sender, EventArgs e)
         {
@@ -218,6 +222,8 @@ namespace UNAN.Presentacion
         {
             InsertarAsistencia();
             MostrarAsistencia();
+            btnAgregar.Visible = true;
+            panel1.Visible = true;
         }
         private void InsertarAsistencia()
         {
@@ -241,7 +247,7 @@ namespace UNAN.Presentacion
                 int minuto = int.Parse(txtmin.Text);
                 int bloques = int.Parse(nudBloque.Text);
                 DateTime horaInicio = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hora, minuto, 0);
-                DateTime horaFin = horaInicio.AddMinutes(bloques * 45);
+                DateTime horaFin = horaInicio.AddMinutes(bloques * 80);
 
                 string horaInicioFormateada = horaInicio.ToString("HH:mm");
                 string horaFinFormateada = horaFin.ToString("HH:mm");

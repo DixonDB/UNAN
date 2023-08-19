@@ -8,8 +8,8 @@ namespace UNAN.Datos
         /// <summary>
         /// Se declara una variable de tipo string la cual es estatica y contendra la conexión a la base de datos
         /// </summary>
-        //public static string conexion = @"Data source=DIXONB; Initial Catalog=UNAN; Integrated Security = True";
-        public static string conexion = @"Data source=Felix\MSSQLSERVER01; Initial Catalog=UNAN; Integrated Security = True";
+        public static string conexion = @"Data source=DIXONB; Initial Catalog=UNAN; Integrated Security = True";
+        //public static string conexion = @"Data source=Felix\MSSQLSERVER01; Initial Catalog=UNAN; Integrated Security = True";
         //Convert.ToString(Logica.Desencryptacion.checkServer());
 
         /// <summary>
