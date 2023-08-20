@@ -106,7 +106,6 @@ namespace UNAN.Datos
                             body: "Hola, estimado/a " + nombreUsuario + "\nLos datos de su cuenta en KFDAsist ha cambiado recientemente.\n" +
                             "\nLe informamos que se ha hecho un cambio en su cuenta, si usted realizó dicho cambio ignore este correo," +
                             "\nPero si usted no ha realizado ningún cambio en su cuenta," +
-                            "\n" +
                             "\nle pedimos que cambie su contraseña inmediatamente una vez ingrese al sistema..." +
                             "\n" +
                             "\nSi no está seguro de si usted o su administrador ha realizado este cambio," +
